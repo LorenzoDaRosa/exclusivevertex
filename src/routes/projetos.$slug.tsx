@@ -81,7 +81,7 @@ function ProjetoDetail() {
                 Problemas identificados
               </h3>
               <ul className="space-y-3 text-ink-muted">
-                {project.problems.map((p) => (
+                {project.problems.map((p: string) => (
                   <li key={p} className="flex gap-3">
                     <span className="mt-2 h-px w-4 shrink-0 bg-ink-subtle" />
                     <span>{p}</span>
@@ -96,7 +96,7 @@ function ProjetoDetail() {
                 Soluções implementadas
               </h3>
               <ul className="space-y-3 text-ink-muted">
-                {project.solutions.map((p) => (
+                {project.solutions.map((p: string) => (
                   <li key={p} className="flex gap-3">
                     <span className="mt-2 h-px w-4 shrink-0 bg-brand" />
                     <span>{p}</span>
@@ -114,7 +114,7 @@ function ProjetoDetail() {
               Galeria
             </h3>
             <div className="grid gap-6 md:grid-cols-2">
-              {project.gallery.map((g, i) => (
+              {project.gallery.map((g: string, i: number) => (
                 <div key={g} className="aspect-[4/3]">
                   <ProjectMock
                     label={g}
@@ -134,7 +134,7 @@ function ProjetoDetail() {
                 Tecnologias
               </h3>
               <div className="flex flex-wrap gap-2">
-                {project.stack.map((t) => (
+                {project.stack.map((t: string) => (
                   <span
                     key={t}
                     className="rounded-full ring-1 ring-hairline px-4 py-1.5 text-xs text-ink-muted"
@@ -151,7 +151,7 @@ function ProjetoDetail() {
                 Resultados esperados
               </h3>
               <ul className="space-y-3 text-ink-muted">
-                {project.outcomes.map((o) => (
+                {project.outcomes.map((o: string) => (
                   <li key={o} className="flex gap-3">
                     <span className="mt-2 h-px w-4 shrink-0 bg-brand" />
                     <span>{o}</span>

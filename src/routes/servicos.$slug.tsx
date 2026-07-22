@@ -56,7 +56,7 @@ function ServicoDetail() {
               O que entregamos
             </h3>
             <ul className="space-y-4">
-              {s.deliverables.map((d) => (
+              {s.deliverables.map((d: string) => (
                 <li key={d} className="flex gap-3 text-ink-muted">
                   <span className="mt-3 h-px w-4 shrink-0 bg-brand" />
                   <span>{d}</span>
@@ -69,7 +69,7 @@ function ServicoDetail() {
               Resultados percebidos
             </h3>
             <ul className="space-y-4">
-              {s.outcomes.map((d) => (
+              {s.outcomes.map((d: string) => (
                 <li key={d} className="flex gap-3 text-ink-muted">
                   <span className="mt-3 h-px w-4 shrink-0 bg-ink-subtle" />
                   <span>{d}</span>
