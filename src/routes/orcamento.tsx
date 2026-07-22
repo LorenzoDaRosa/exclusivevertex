@@ -48,7 +48,7 @@ const WHATSAPP_NUMBER = "5599999999999";
 
 type Step = 0 | 1 | 2 | 3;
 
-export default function SimuladorPage() {
+function SimuladorPage() {
   return <Simulator />;
 }
 
