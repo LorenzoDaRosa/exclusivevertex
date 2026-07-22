@@ -141,8 +141,18 @@ function ProjetoDetail() {
         )}
 
         <Reveal delay={120}>
-          <div className="mt-16 aspect-[21/10] w-full">
-            <ProjectMock label={project.title} variant="site" />
+          <div className="mt-16 overflow-hidden rounded-2xl ring-1 ring-hairline bg-surface-2/40">
+            {project.slug === "serra-seguros" ? (
+              <img
+                src={serraHomeDepois.url}
+                alt={`${project.title} — home`}
+                className="w-full h-auto block"
+              />
+            ) : (
+              <div className="aspect-[21/10] w-full">
+                <ProjectMock label={project.title} variant="site" />
+              </div>
+            )}
           </div>
         </Reveal>
 
