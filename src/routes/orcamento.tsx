@@ -43,8 +43,8 @@ const FEATURES = [
   "Domínio",
 ] as const;
 
-// Replace with the agency's WhatsApp number
-const WHATSAPP_NUMBER = "5599999999999";
+// Exclusive Vertex WhatsApp
+const WHATSAPP_NUMBER = "5554992894672";
 
 type Step = 0 | 1 | 2 | 3;
 

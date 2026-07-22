@@ -41,8 +41,8 @@ function ContatoPage() {
             <div className="space-y-10">
               <ContactRow
                 label="WhatsApp"
-                value="Iniciar conversa"
-                href="https://wa.me/"
+                value="+55 54 99289-4672"
+                href="https://wa.me/5554992894672"
               />
               <ContactRow
                 label="E-mail"
@@ -51,8 +51,8 @@ function ContatoPage() {
               />
               <ContactRow
                 label="Instagram"
-                value="@exclusivevertex"
-                href="https://instagram.com/"
+                value="@exclusive.vertex"
+                href="https://instagram.com/exclusive.vertex"
               />
               <ContactRow label="Localização" value="Brasil · Atendimento nacional" />
 
