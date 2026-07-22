@@ -35,7 +35,7 @@ export function Nav() {
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-10">
         <Link to="/" className="flex items-center gap-3 shrink-0">
-          <Logo className="size-7" />
+          <Logo className="size-11" />
           <span className="hidden sm:inline text-[13px] font-medium tracking-[0.18em] text-ink uppercase">
             Exclusive Vertex
           </span>
