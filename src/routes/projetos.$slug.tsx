@@ -394,24 +394,6 @@ function ProjetoDetail() {
           </div>
         )}
 
-        {/* Gallery */}
-        <Reveal>
-          <div className="mt-32">
-            <h3 className="text-[11px] uppercase tracking-[0.28em] text-brand mb-8">
-              Galeria
-            </h3>
-            <div className="grid gap-6 md:grid-cols-2">
-              {project.gallery.map((g: string, i: number) => (
-                <div key={g} className="aspect-[4/3]">
-                  <ProjectMock
-                    label={g}
-                    variant={i % 3 === 0 ? "site" : i % 3 === 1 ? "dashboard" : "mobile"}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
 
         {/* Stack + outcomes */}
         <div className="mt-32 grid gap-16 lg:grid-cols-2 border-t border-hairline pt-16">
