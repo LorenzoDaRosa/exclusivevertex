@@ -106,6 +106,7 @@ export const Route = createFileRoute("/projetos/$slug")({
 function ProjetoDetail() {
   const project = Route.useLoaderData() as Project;
   const logoUrl = projectLogos[project.slug];
+  const beforeAfter = projectBeforeAfter[project.slug];
 
   return (
     <article className="px-6 lg:px-10 pt-40 pb-32">
