@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { ProjectMock } from "@/components/site/ProjectMock";
-import { projects } from "@/lib/site-data";
+import { projects, type Project } from "@/lib/site-data";
 import serraLogo from "@/assets/serra-seguros-logo.png.asset.json";
 
 const projectLogos: Record<string, string> = {
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/projetos/$slug")({
 });
 
 function ProjetoDetail() {
-  const project = Route.useLoaderData();
+  const project = Route.useLoaderData() as Project;
   const logoUrl = projectLogos[project.slug];
 
   return (
