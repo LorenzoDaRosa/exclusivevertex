@@ -71,15 +71,8 @@ function Hero() {
           className="vx-fade-up mt-8 max-w-[62ch] text-lg text-ink-muted text-pretty lg:text-xl"
           style={{ animationDelay: "260ms" }}
         >
-          Sites estratégicos que fortalecem sua marca, aumentam sua
-          credibilidade e geram mais oportunidades de negócio.
-        </p>
-
-        <p
-          className="vx-fade-up mt-4 max-w-[60ch] text-sm text-ink-subtle text-pretty"
-          style={{ animationDelay: "320ms" }}
-        >
-          Desenvolvemos experiências digitais para empresas que querem crescer.
+          Desenvolvemos sites estratégicos que fortalecem marcas, transmitem
+          credibilidade e transformam visitantes em clientes.
         </p>
 
         <div
@@ -96,7 +89,7 @@ function Hero() {
             to="/projetos"
             className="inline-flex items-center rounded-full bg-transparent px-6 py-3 text-sm font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:ring-ink/30"
           >
-            Ver projetos
+            Conheça nossos projetos
           </Link>
         </div>
 
