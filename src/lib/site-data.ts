@@ -185,6 +185,14 @@ export type Project = {
   stack: string[];
   outcomes: string[];
   status: "case" | "in-progress" | "coming-soon";
+  logo?: string;
+  tagline?: string;
+  metrics?: { label: string; value: string }[];
+  before?: string[];
+  after?: string[];
+  quotationForms?: { name: string; fields: string[] }[];
+  contentCategories?: string[];
+  conversionGoals?: string[];
 };
 
 export const projects: Project[] = [
@@ -193,10 +201,46 @@ export const projects: Project[] = [
     title: "Serra Seguros e Consórcios",
     category: "Seguros · Consórcios",
     year: "2025",
+    tagline:
+      "Transformando uma presença digital institucional em uma plataforma de conversão.",
     summary:
-      "Reposicionamento digital de uma corretora tradicional em plataforma de referência para seguros e consórcios.",
+      "Reposicionamento digital de uma corretora tradicional em plataforma de referência para seguros e consórcios — focada em confiança, atendimento e geração de oportunidades.",
     context:
-      "A Serra Seguros e Consórcios atende clientes há anos com uma operação sólida, mas seu site anterior não representava o nível de atendimento da empresa. O projeto nasceu para transformar essa presença em uma plataforma que reflete a qualidade real do serviço.",
+      "A Serra Seguros já possuía uma reputação sólida no mercado: mais de 5.000 clientes segurados, avaliação 5,0 estrelas, atendimento altamente elogiado e anos de experiência com diversas seguradoras parceiras. A presença digital, no entanto, não refletia essa credibilidade — cumpria a função institucional, mas deixava oportunidades importantes de relacionamento e geração de leads.",
+    metrics: [
+      { label: "Clientes segurados", value: "5.000+" },
+      { label: "Avaliação Google", value: "5,0★" },
+      { label: "Anos de mercado", value: "10+" },
+      { label: "Seguradoras parceiras", value: "12+" },
+    ],
+    before: [
+      "Layout simples e pouco marcante",
+      "Pouca hierarquia visual",
+      "Navegação limitada",
+      "Informações espalhadas",
+      "Botões sem objetivo claro",
+      "Experiência pouco intuitiva",
+      "Ausência de formulários inteligentes",
+      "Baixa estratégia de conversão",
+      "Pouca preparação para SEO",
+      "Conteúdo limitado",
+      "Integrações reduzidas",
+      "Não aproveitava o potencial da marca",
+    ],
+    after: [
+      "Nova identidade digital",
+      "Layout premium",
+      "Navegação reorganizada",
+      "Arquitetura moderna",
+      "Experiência muito mais intuitiva",
+      "Integração completa com WhatsApp",
+      "Google Maps incorporado",
+      "Blog estruturado para SEO",
+      "Páginas individuais para cada serviço",
+      "Formulários personalizados",
+      "Responsividade total",
+      "Melhor percepção de autoridade",
+    ],
     problems: [
       "Presença digital pouco alinhada ao posicionamento da empresa",
       "Ausência de estrutura clara para diferentes tipos de seguro",
@@ -206,15 +250,69 @@ export const projects: Project[] = [
     solutions: [
       "Nova arquitetura de informação por linha de produto",
       "Design institucional premium, com identidade consistente",
-      "Fluxos diretos para simulação e contato via WhatsApp",
+      "Fluxos diretos para cotação e contato via WhatsApp",
       "Estrutura técnica preparada para indexação e escala",
     ],
+    quotationForms: [
+      {
+        name: "Seguro Auto",
+        fields: ["Nome", "Cidade", "Veículo", "Ano", "Seguro atual", "Observações"],
+      },
+      {
+        name: "Seguro Residencial",
+        fields: ["Nome", "Cidade", "Tipo de imóvel", "Metragem", "Ocupação", "Observações"],
+      },
+      {
+        name: "Seguro Empresarial",
+        fields: ["Empresa", "CNPJ", "Segmento", "Faturamento", "Localização", "Observações"],
+      },
+      {
+        name: "Seguro de Vida",
+        fields: ["Nome", "Idade", "Profissão", "Cobertura desejada", "Beneficiários", "Observações"],
+      },
+      {
+        name: "Consórcio Automóvel",
+        fields: ["Nome", "Cidade", "Valor da carta", "Prazo desejado", "Observações"],
+      },
+      {
+        name: "Consórcio Imóvel",
+        fields: ["Nome", "Cidade", "Valor da carta", "Prazo desejado", "Finalidade"],
+      },
+      {
+        name: "Consórcio Linha Pesada",
+        fields: ["Empresa", "Tipo de veículo", "Valor da carta", "Prazo", "Observações"],
+      },
+    ],
+    contentCategories: [
+      "Seguro Auto",
+      "Seguro Residencial",
+      "Seguro Empresarial",
+      "Seguro de Vida",
+      "Consórcios",
+      "Dicas Financeiras",
+      "Sinistros",
+      "Perguntas Frequentes",
+    ],
+    conversionGoals: [
+      "Solicitar cotação",
+      "Conhecer serviços",
+      "Entrar em contato",
+      "Ler conteúdos",
+      "Falar pelo WhatsApp",
+    ],
     gallery: ["Home", "Página de Seguros", "Consórcios", "Contato"],
-    stack: ["Next-gen React", "Design System próprio", "SEO técnico", "WhatsApp API"],
+    stack: [
+      "Next-gen React",
+      "Design System próprio",
+      "SEO técnico",
+      "WhatsApp API",
+      "Google Maps",
+    ],
     outcomes: [
       "Percepção de marca elevada",
       "Contato direto simplificado",
       "Base pronta para novos serviços",
+      "Plataforma preparada para escala",
     ],
     status: "case",
   },
