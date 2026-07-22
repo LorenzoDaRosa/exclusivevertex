@@ -3,6 +3,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { ProjectMock } from "@/components/site/ProjectMock";
 import { services, processSteps } from "@/lib/site-data";
+import serraCapa from "@/assets/serra/capa_case_serra.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -164,8 +165,13 @@ function FeaturedProject() {
             params={{ slug: "serra-seguros" }}
             className="group block"
           >
-            <div className="relative aspect-[21/10] w-full overflow-hidden rounded-2xl">
-              <ProjectMock label="Case · Serra Seguros" variant="site" />
+            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[21/12] w-full overflow-hidden rounded-2xl ring-1 ring-hairline bg-black">
+              <img
+                src={serraCapa.url}
+                alt="Capa do case Serra Seguros e Consórcios — Exclusive Vertex"
+                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
               <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-t from-surface/70 via-transparent" />
               <div className="absolute bottom-6 right-6 flex items-center gap-3 text-sm text-ink opacity-0 -translate-x-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
                 Ver case completo
