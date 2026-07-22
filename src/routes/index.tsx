@@ -32,7 +32,9 @@ function HomePage() {
       <Credibility />
       <FeaturedProject />
       <ServicesGlimpse />
+      <ValuePoints />
       <ProcessGlimpse />
+      <BigCTA />
       <BlogInvite />
     </>
   );
@@ -63,11 +65,18 @@ function Hero() {
         </h1>
 
         <p
-          className="vx-fade-up mt-8 max-w-[58ch] text-lg text-ink-muted text-pretty lg:text-xl"
+          className="vx-fade-up mt-8 max-w-[62ch] text-lg text-ink-muted text-pretty lg:text-xl"
           style={{ animationDelay: "260ms" }}
         >
-          Criamos experiências digitais que unem design, estratégia e tecnologia
-          para transformar visitantes em clientes.
+          Sites estratégicos que fortalecem sua marca, aumentam sua
+          credibilidade e geram mais oportunidades de negócio.
+        </p>
+
+        <p
+          className="vx-fade-up mt-4 max-w-[60ch] text-sm text-ink-subtle text-pretty"
+          style={{ animationDelay: "320ms" }}
+        >
+          Desenvolvemos experiências digitais para empresas que querem crescer.
         </p>
 
         <div
@@ -84,7 +93,7 @@ function Hero() {
             to="/projetos"
             className="inline-flex items-center rounded-full bg-transparent px-6 py-3 text-sm font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:ring-ink/30"
           >
-            Conheça nossos projetos
+            Ver projetos
           </Link>
         </div>
 
@@ -141,10 +150,10 @@ function FeaturedProject() {
             </h2>
           </div>
           <div className="lg:w-1/3 border-t border-hairline pt-6">
-            <p className="text-sm text-ink-muted">Interface institucional & performance</p>
+            <p className="text-sm text-ink-muted">Reforma completa da presença digital</p>
             <p className="mt-2 text-xs text-ink-subtle leading-relaxed">
-              Reposicionamento digital de uma corretora tradicional em plataforma
-              de referência para seguros e consórcios.
+              Reposicionamento de uma corretora tradicional em uma plataforma
+              digital à altura da qualidade do atendimento.
             </p>
           </div>
         </Reveal>
@@ -167,10 +176,16 @@ function FeaturedProject() {
         </Reveal>
 
         <Reveal delay={200}>
-          <div className="mt-16 flex justify-between border-t border-hairline pt-6 text-xs uppercase tracking-[0.28em] text-ink-subtle">
-            <span>Ano · 2025</span>
-            <Link to="/projetos" className="story-link text-ink-muted hover:text-ink">
-              Todos os projetos
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
+            <Link
+              to="/projetos/$slug"
+              params={{ slug: "serra-seguros" }}
+              className="inline-flex items-center rounded-full bg-ink px-6 py-3 text-sm font-medium text-surface transition hover:brightness-110"
+            >
+              Ver case completo
+            </Link>
+            <Link to="/projetos" className="story-link text-sm text-ink-muted hover:text-ink">
+              Todos os projetos →
             </Link>
           </div>
         </Reveal>
@@ -187,7 +202,7 @@ function ServicesGlimpse() {
         <Reveal className="mb-16 max-w-2xl">
           <SectionLabel>Serviços</SectionLabel>
           <h2 className="mt-6 font-display text-5xl text-ink text-balance lg:text-6xl">
-            O que fazemos, feito com o cuidado que a sua marca merece.
+            Não vendemos entregáveis. Vendemos o resultado que eles geram.
           </h2>
         </Reveal>
 
@@ -222,6 +237,47 @@ function ServicesGlimpse() {
             </Link>
           </div>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function ValuePoints() {
+  const points = [
+    "Projetos personalizados",
+    "Atendimento individual",
+    "Design exclusivo",
+    "SEO estruturado",
+    "Integração WhatsApp",
+    "Código otimizado",
+    "Performance premium",
+    "Responsividade completa",
+  ];
+  return (
+    <section className="px-6 lg:px-10 py-32 border-t border-hairline">
+      <div className="mx-auto max-w-[1400px]">
+        <Reveal className="mb-14 max-w-2xl">
+          <SectionLabel>Padrão de trabalho</SectionLabel>
+          <h2 className="mt-6 font-display text-4xl lg:text-5xl text-ink text-balance">
+            O que está incluído em todo projeto Exclusive Vertex.
+          </h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-hairline ring-1 ring-hairline rounded-2xl overflow-hidden">
+          {points.map((p, i) => (
+            <Reveal key={p} delay={i * 30}>
+              <div className="bg-surface p-8 h-full flex items-start gap-4">
+                <span
+                  aria-hidden
+                  className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-brand/15 text-brand text-[11px]"
+                >
+                  ✓
+                </span>
+                <span className="text-sm text-ink">{p}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -269,6 +325,42 @@ function ProcessGlimpse() {
   );
 }
 
+function BigCTA() {
+  return (
+    <section className="px-6 lg:px-10 py-32">
+      <div className="mx-auto max-w-[1400px]">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl bg-[#05070d] ring-1 ring-hairline px-8 py-24 lg:px-20 lg:py-40 text-center">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-[0.18]"
+              style={{
+                background:
+                  "radial-gradient(900px 500px at 50% 0%, #2F6BFF, transparent 60%)",
+              }}
+            />
+            <div className="relative">
+              <SectionLabel>Vamos conversar</SectionLabel>
+              <h2 className="mt-8 font-display text-5xl leading-[1] text-ink text-balance sm:text-7xl lg:text-[104px] max-w-[18ch] mx-auto">
+                Sua empresa merece um site{" "}
+                <span className="italic text-brand">à altura</span>.
+              </h2>
+              <div className="mt-14">
+                <Link
+                  to="/orcamento"
+                  className="inline-flex items-center rounded-full bg-brand px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:brightness-110"
+                >
+                  Solicitar proposta
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function BlogInvite() {
   return (
     <section className="px-6 lg:px-10 py-24 pb-32">
@@ -277,11 +369,11 @@ function BlogInvite() {
           <div className="max-w-[52ch]">
             <SectionLabel>Central de Conteúdo</SectionLabel>
             <h2 className="mt-6 font-display text-4xl lg:text-5xl text-ink text-balance">
-              Insights sobre design, tecnologia e o futuro do digital.
+              Conteúdo direto para empresários que levam o digital a sério.
             </h2>
             <p className="mt-6 text-ink-muted">
-              Artigos escritos por quem constrói. Materiais objetivos para gestores
-              e empresas que levam o digital a sério.
+              Materiais objetivos sobre sites, SEO, design, marketing e decisões
+              digitais que impactam o crescimento do negócio.
             </p>
             <Link
               to="/blog"

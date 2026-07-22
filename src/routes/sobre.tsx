@@ -30,7 +30,7 @@ function SobrePage() {
         <Reveal>
           <SectionLabel>Sobre</SectionLabel>
           <h1 className="mt-6 font-display text-5xl lg:text-8xl text-ink text-balance max-w-[22ch]">
-            Acreditamos que um site não deve apenas existir.
+            Empresas excelentes representadas por sites à altura da sua qualidade.
           </h1>
         </Reveal>
 
@@ -41,18 +41,18 @@ function SobrePage() {
             </p>
             <div className="space-y-6 text-lg text-ink-muted leading-relaxed text-pretty">
               <p>
-                Ele deve representar a qualidade da empresa, transmitir confiança
-                e trabalhar continuamente para gerar oportunidades.
+                A Exclusive Vertex nasceu para resolver um problema comum:
+                empresas excelentes sendo representadas por sites que não
+                refletem a sua qualidade.
               </p>
               <p>
-                Nosso trabalho combina estratégia, design e desenvolvimento para
-                criar plataformas digitais capazes de fortalecer marcas e
-                impulsionar resultados.
+                Acreditamos que um site deve transmitir confiança, facilitar o
+                atendimento e contribuir diretamente para o crescimento do
+                negócio — não apenas existir como um cartão de visitas online.
               </p>
               <p>
-                Cada projeto é desenvolvido de forma personalizada. Nunca
-                utilizamos modelos prontos. Nos preocupamos com cada detalhe da
-                experiência do usuário.
+                Não utilizamos modelos prontos. Cada projeto é pensado de acordo
+                com os objetivos, o público e a operação de cada empresa.
               </p>
             </div>
           </div>

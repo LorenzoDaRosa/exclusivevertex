@@ -14,8 +14,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-ink-muted leading-relaxed">
-              Estúdio digital dedicado a construir plataformas que representam a
-              qualidade das empresas que atendemos.
+              Transformando empresas em referências digitais.
             </p>
           </div>
 
