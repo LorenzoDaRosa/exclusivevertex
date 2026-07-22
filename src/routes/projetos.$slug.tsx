@@ -65,6 +65,24 @@ const projectBeforeAfter: Record<string, BeforeAfterItem[]> = {
       before: serraRodapeAntes.url,
       after: serraRodapeDepois.url,
     },
+    {
+      title: "Página institucional que conta uma história.",
+      benefit:
+        "Reestruturamos a página Empresa com narrativa editorial (\"Muito além de assinar um contrato\") e uma faixa de números — +5.000 clientes, +50 seguradoras, 5,0★, PF & PJ — transformando o \"quem somos\" em prova de autoridade.",
+      after: serraEmpresaDepois.url,
+    },
+    {
+      title: "Diferenciais, missão e visão em hierarquia clara.",
+      benefit:
+        "Substituímos parágrafos densos por uma lista tipográfica dos diferenciais reais da Serra, combinada com missão e visão bem separadas — leitura rápida, tom institucional e posicionamento inconfundível.",
+      after: serraDiferenciaisDepois.url,
+    },
+    {
+      title: "Valores da marca e CTA de conversão.",
+      benefit:
+        "Fechamos a página com uma seção escura de princípios (Confiança, Comprometimento, Excelência, Ética, Atendimento humano) seguida de um CTA editorial — \"Uma conversa vale mais que uma proposta impressa\" — que direciona ao consultor.",
+      after: serraPrincipiosDepois.url,
+    },
   ],
 };
 
