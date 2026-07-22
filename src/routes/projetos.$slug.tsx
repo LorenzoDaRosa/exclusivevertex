@@ -213,7 +213,16 @@ function ProjetoDetail() {
               <h2 className="mt-6 font-display text-4xl lg:text-6xl text-ink text-balance max-w-[24ch]">
                 A reconstrução completa da presença digital.
               </h2>
+              <p className="mt-6 max-w-[64ch] text-ink-muted text-pretty">
+                Cada tela abaixo mostra o mesmo ponto do site — o antes, herdado
+                de um template genérico, e o depois construído pela Exclusive
+                Vertex com foco em posicionamento, credibilidade e conversão.
+              </p>
             </Reveal>
+
+            {beforeAfter && beforeAfter.length > 0 && (
+              <BeforeAfter items={beforeAfter} />
+            )}
             <div className="mt-14 grid gap-8 lg:grid-cols-2">
               {project.before && (
                 <Reveal delay={80}>
