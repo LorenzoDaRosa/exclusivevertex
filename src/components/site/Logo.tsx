@@ -1,4 +1,4 @@
-import iconAsset from "@/assets/vertex-icon.jpeg.asset.json";
+import iconAsset from "@/assets/vertex-icon.png.asset.json";
 
 export function Logo({ className = "size-11" }: { className?: string }) {
   return (
@@ -6,7 +6,6 @@ export function Logo({ className = "size-11" }: { className?: string }) {
       src={iconAsset.url}
       alt="Exclusive Vertex"
       className={`${className} object-contain`}
-      style={{ mixBlendMode: "screen" }}
       loading="eager"
       decoding="async"
     />
