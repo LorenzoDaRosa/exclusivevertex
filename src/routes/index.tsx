@@ -30,9 +30,11 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <FirstSalesman />
       <Credibility />
       <FeaturedProject />
       <ServicesGlimpse />
+      <WhyClients />
       <ValuePoints />
       <ProcessGlimpse />
       <BigCTA />
