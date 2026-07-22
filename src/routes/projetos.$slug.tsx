@@ -2,11 +2,67 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { ProjectMock } from "@/components/site/ProjectMock";
+import { BeforeAfter, type BeforeAfterItem } from "@/components/site/BeforeAfter";
 import { projects, type Project } from "@/lib/site-data";
 import serraLogo from "@/assets/serra-seguros-logo.png.asset.json";
+import serraHomeAntes from "@/assets/serra/home_serra_antes.png.asset.json";
+import serraHomeDepois from "@/assets/serra/home_serra_depois.png.asset.json";
+import serraAntes from "@/assets/serra/serra_antes.png.asset.json";
+import serraDepois from "@/assets/serra/serra_depois.png.asset.json";
+import serraCaminhoAntes from "@/assets/serra/caminho_serra_antes.png.asset.json";
+import serraCaminhoDepois from "@/assets/serra/caminho_serra_depois.png.asset.json";
+import serraCentralDepois from "@/assets/serra/central_de_conteudo_serra_depois.png.asset.json";
+import serraRodapeAntes from "@/assets/serra/rodape_serra_antes.png.asset.json";
+import serraRodapeDepois from "@/assets/serra/rodape_serra_depois.png.asset.json";
+import serraAvaliacoesDepois from "@/assets/serra/avaliacoes_serra_depois.png.asset.json";
 
 const projectLogos: Record<string, string> = {
   "serra-seguros": serraLogo.url,
+};
+
+const projectBeforeAfter: Record<string, BeforeAfterItem[]> = {
+  "serra-seguros": [
+    {
+      title: "Hero que comunica valor em 3 segundos.",
+      benefit:
+        "Antes, uma frase institucional sem contexto. Depois, um posicionamento claro em tipografia editorial, com CTAs diretos para cotação e simulação de consórcio.",
+      before: serraHomeAntes.url,
+      after: serraHomeDepois.url,
+    },
+    {
+      title: "Prova social e diferenciais em destaque.",
+      benefit:
+        "Números que sustentam a marca — desde 2012, 5.000+ clientes, 50+ seguradoras, 5.0 de avaliação — combinados com uma grade clara dos motivos para escolher a Serra.",
+      before: serraAntes.url,
+      after: serraDepois.url,
+    },
+    {
+      title: "Navegação orientada por objetivo do cliente.",
+      benefit:
+        "Trocamos as abas de produto genéricas por três frentes editoriais — Seguros, Consórcios e Empresarial — cada uma com imagem, número e propósito.",
+      before: serraCaminhoAntes.url,
+      after: serraCaminhoDepois.url,
+    },
+    {
+      title: "Central de Conteúdo pensada para SEO e autoridade.",
+      benefit:
+        "Uma nova arquitetura de conteúdo, com busca e categorias visuais, que transforma dúvidas de clientes em tráfego orgânico qualificado.",
+      after: serraCentralDepois.url,
+    },
+    {
+      title: "Página de Avaliações que constrói confiança.",
+      benefit:
+        "Depoimentos reais organizados em tipografia editorial, com nota consolidada de Google e Instagram — a prova social virou seção estratégica.",
+      after: serraAvaliacoesDepois.url,
+    },
+    {
+      title: "Rodapé institucional, com endereço, mapa e contato.",
+      benefit:
+        "Do rodapé denso em azul para um encerramento leve, com frase de marca, navegação completa, canais oficiais e mapa da matriz — reforçando presença física.",
+      before: serraRodapeAntes.url,
+      after: serraRodapeDepois.url,
+    },
+  ],
 };
 
 export const Route = createFileRoute("/projetos/$slug")({
