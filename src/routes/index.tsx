@@ -391,3 +391,83 @@ function BlogInvite() {
     </section>
   );
 }
+
+function FirstSalesman() {
+  return (
+    <section className="px-6 lg:px-10 py-24 lg:py-32 border-t border-hairline bg-surface-2/30">
+      <div className="mx-auto max-w-[1200px]">
+        <Reveal>
+          <SectionLabel>Reflexão</SectionLabel>
+          <p className="mt-8 font-display text-3xl leading-[1.15] text-ink text-balance sm:text-4xl lg:text-5xl max-w-[32ch]">
+            O site é o primeiro vendedor da sua empresa. Ele trabalha{" "}
+            <span className="italic text-brand">24 horas por dia</span>. A
+            pergunta é: ele está convencendo seus clientes ou afastando
+            oportunidades?
+          </p>
+          <div className="mt-10">
+            <Link
+              to="/orcamento"
+              className="inline-flex items-center rounded-full bg-ink px-6 py-3 text-sm font-medium text-surface transition hover:brightness-110"
+            >
+              Solicitar diagnóstico
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function WhyClients() {
+  const problems = [
+    "Meu site parece antigo.",
+    "Meu site não transmite confiança.",
+    "Meu site não gera contatos.",
+    "Meu concorrente parece maior.",
+    "Meu site não aparece no Google.",
+    "Meu atendimento demora.",
+    "Meu site não funciona bem no celular.",
+    "Meu site não representa minha empresa.",
+  ];
+  return (
+    <section className="px-6 lg:px-10 py-32 lg:py-40 border-t border-hairline">
+      <div className="mx-auto max-w-[1400px]">
+        <Reveal className="mb-16 max-w-3xl">
+          <SectionLabel>Por que empresas nos procuram?</SectionLabel>
+          <h2 className="mt-6 font-display text-5xl text-ink text-balance lg:text-6xl">
+            Os sinais de que o site atual está custando oportunidades.
+          </h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 gap-px bg-hairline ring-1 ring-hairline rounded-2xl overflow-hidden sm:grid-cols-2 lg:grid-cols-4">
+          {problems.map((p, i) => (
+            <Reveal key={p} delay={i * 40}>
+              <div className="bg-surface p-8 h-full flex flex-col gap-6 min-h-[180px]">
+                <span className="text-[11px] tabular-nums text-brand">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-display text-xl text-ink leading-snug text-pretty">
+                  {p}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={200}>
+          <div className="mt-14 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 border-t border-hairline pt-10">
+            <p className="font-display text-3xl lg:text-4xl text-ink text-balance max-w-[24ch]">
+              É exatamente isso que resolvemos.
+            </p>
+            <Link
+              to="/orcamento"
+              className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition hover:brightness-110"
+            >
+              Solicitar diagnóstico
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
