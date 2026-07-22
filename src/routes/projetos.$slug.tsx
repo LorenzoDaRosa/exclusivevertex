@@ -2,7 +2,12 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { ProjectMock } from "@/components/site/ProjectMock";
-import { projects } from "@/lib/site-data";
+import { projects, type Project } from "@/lib/site-data";
+import serraLogo from "@/assets/serra-seguros-logo.png.asset.json";
+
+const projectLogos: Record<string, string> = {
+  "serra-seguros": serraLogo.url,
+};
 
 export const Route = createFileRoute("/projetos/$slug")({
   loader: ({ params }) => {
@@ -43,20 +48,40 @@ export const Route = createFileRoute("/projetos/$slug")({
 });
 
 function ProjetoDetail() {
-  const project = Route.useLoaderData();
+  const project = Route.useLoaderData() as Project;
+  const logoUrl = projectLogos[project.slug];
 
   return (
     <article className="px-6 lg:px-10 pt-40 pb-32">
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
-          <SectionLabel>{project.category} · {project.year}</SectionLabel>
+          <SectionLabel>Case · {project.category} · {project.year}</SectionLabel>
           <h1 className="mt-6 font-display text-5xl lg:text-8xl text-ink text-balance max-w-[22ch]">
             {project.title}
           </h1>
-          <p className="mt-8 max-w-[64ch] text-lg text-ink-muted text-pretty">
+          {project.tagline && (
+            <p className="mt-8 max-w-[64ch] font-display text-2xl lg:text-3xl text-ink-muted text-pretty">
+              {project.tagline}
+            </p>
+          )}
+          <p className="mt-6 max-w-[64ch] text-base text-ink-muted text-pretty">
             {project.summary}
           </p>
         </Reveal>
+
+        {logoUrl && (
+          <Reveal delay={80}>
+            <div className="mt-14 flex items-center gap-6 border-y border-hairline py-8">
+              <div className="flex h-20 w-32 items-center justify-center rounded-xl bg-white p-4 ring-1 ring-hairline">
+                <img src={logoUrl} alt={`${project.title} — logo`} className="max-h-full max-w-full object-contain" />
+              </div>
+              <div className="text-sm text-ink-muted max-w-[52ch]">
+                Cliente atendido pela Exclusive Vertex em reposicionamento digital
+                completo — do design institucional à estrutura de conversão.
+              </div>
+            </div>
+          </Reveal>
+        )}
 
         <Reveal delay={120}>
           <div className="mt-16 aspect-[21/10] w-full">
@@ -64,11 +89,28 @@ function ProjetoDetail() {
           </div>
         </Reveal>
 
-        <div className="mt-24 grid gap-16 lg:grid-cols-3">
+        {project.metrics && project.metrics.length > 0 && (
+          <Reveal delay={160}>
+            <div className="mt-16 grid grid-cols-2 gap-px bg-hairline ring-1 ring-hairline rounded-2xl overflow-hidden md:grid-cols-4">
+              {project.metrics.map((m) => (
+                <div key={m.label} className="bg-surface p-8">
+                  <div className="font-display text-4xl lg:text-5xl text-ink">
+                    {m.value}
+                  </div>
+                  <div className="mt-3 text-[11px] uppercase tracking-[0.24em] text-ink-subtle">
+                    {m.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        )}
+
+        <div className="mt-32 grid gap-16 lg:grid-cols-3">
           <Reveal>
             <div>
               <h3 className="text-[11px] uppercase tracking-[0.28em] text-brand mb-4">
-                Contexto
+                O desafio
               </h3>
               <p className="text-ink-muted text-pretty leading-relaxed">
                 {project.context}
@@ -106,6 +148,154 @@ function ProjetoDetail() {
             </div>
           </Reveal>
         </div>
+
+        {(project.before || project.after) && (
+          <div className="mt-32">
+            <Reveal>
+              <SectionLabel>Antes & Depois</SectionLabel>
+              <h2 className="mt-6 font-display text-4xl lg:text-6xl text-ink text-balance max-w-[24ch]">
+                A reconstrução completa da presença digital.
+              </h2>
+            </Reveal>
+            <div className="mt-14 grid gap-8 lg:grid-cols-2">
+              {project.before && (
+                <Reveal delay={80}>
+                  <div className="rounded-2xl bg-surface-2/40 ring-1 ring-hairline p-8 lg:p-10 h-full">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-ink-subtle mb-6">
+                      Antes
+                    </p>
+                    <ul className="space-y-3 text-sm text-ink-muted">
+                      {project.before.map((b) => (
+                        <li key={b} className="flex gap-3">
+                          <span className="text-ink-subtle">✕</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              )}
+              {project.after && (
+                <Reveal delay={160}>
+                  <div className="rounded-2xl bg-brand/[0.06] ring-1 ring-brand/40 p-8 lg:p-10 h-full">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-brand mb-6">
+                      Depois
+                    </p>
+                    <ul className="space-y-3 text-sm text-ink">
+                      {project.after.map((b) => (
+                        <li key={b} className="flex gap-3">
+                          <span className="text-brand">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              )}
+            </div>
+          </div>
+        )}
+
+        {project.quotationForms && project.quotationForms.length > 0 && (
+          <div className="mt-32">
+            <Reveal>
+              <SectionLabel>Sistema de cotação inteligente</SectionLabel>
+              <h2 className="mt-6 font-display text-4xl lg:text-6xl text-ink text-balance max-w-[26ch]">
+                Cada serviço com o seu próprio fluxo — direto para o WhatsApp.
+              </h2>
+              <p className="mt-6 max-w-[60ch] text-ink-muted">
+                Antes, o visitante precisava entrar em contato sem fornecer
+                informações relevantes. Agora, cada linha de produto conta com
+                um formulário exclusivo, projetado para qualificar o lead e
+                acelerar o atendimento comercial.
+              </p>
+            </Reveal>
+            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {project.quotationForms.map((f, i) => (
+                <Reveal key={f.name} delay={i * 60}>
+                  <div className="rounded-2xl bg-surface-2/40 ring-1 ring-hairline p-6 h-full">
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="text-xs tabular-nums text-brand">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className="font-display text-xl text-ink">{f.name}</h3>
+                    </div>
+                    <ul className="space-y-2 text-sm text-ink-muted">
+                      {f.fields.map((field) => (
+                        <li key={field} className="flex gap-2">
+                          <span className="text-brand">✔</span>
+                          <span>{field}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-ink-subtle">
+                      <span>Envio automático</span>
+                      <span>→</span>
+                      <span className="text-ink">WhatsApp</span>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {project.conversionGoals && project.conversionGoals.length > 0 && (
+          <div className="mt-32 grid gap-16 lg:grid-cols-[1fr_1.4fr]">
+            <Reveal>
+              <SectionLabel>Conversão</SectionLabel>
+              <h2 className="mt-6 font-display text-3xl lg:text-4xl text-ink text-balance">
+                Cada página com um objetivo claro.
+              </h2>
+              <p className="mt-6 text-ink-muted max-w-[46ch]">
+                Antes, o visitante apenas navegava. Agora, é conduzido
+                naturalmente até uma ação.
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {project.conversionGoals.map((g, i) => (
+                  <div
+                    key={g}
+                    className="rounded-xl bg-surface ring-1 ring-hairline px-5 py-4 text-sm text-ink flex items-center justify-between"
+                  >
+                    <span>{g}</span>
+                    <span className="text-brand text-xs tabular-nums">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        )}
+
+        {project.contentCategories && project.contentCategories.length > 0 && (
+          <div className="mt-32 grid gap-16 lg:grid-cols-[1fr_1.4fr]">
+            <Reveal>
+              <SectionLabel>Central de conteúdo</SectionLabel>
+              <h2 className="mt-6 font-display text-3xl lg:text-4xl text-ink text-balance">
+                Conteúdo organizado por categoria, preparado para SEO.
+              </h2>
+              <p className="mt-6 text-ink-muted max-w-[46ch]">
+                Uma central estruturada que informa clientes e fortalece o
+                posicionamento orgânico da empresa.
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="flex flex-wrap gap-2">
+                {project.contentCategories.map((c) => (
+                  <span
+                    key={c}
+                    className="rounded-full ring-1 ring-hairline px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink-muted"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        )}
 
         {/* Gallery */}
         <Reveal>
@@ -148,7 +338,7 @@ function ProjetoDetail() {
           <Reveal delay={80}>
             <div>
               <h3 className="text-[11px] uppercase tracking-[0.28em] text-brand mb-6">
-                Resultados esperados
+                Resultados
               </h3>
               <ul className="space-y-3 text-ink-muted">
                 {project.outcomes.map((o: string) => (
@@ -162,15 +352,16 @@ function ProjetoDetail() {
           </Reveal>
         </div>
 
-        {/* Testimonial placeholder */}
         <Reveal>
           <div className="mt-24 rounded-3xl bg-surface-2 ring-1 ring-hairline p-12 lg:p-20">
             <p className="text-[11px] uppercase tracking-[0.28em] text-ink-subtle">
-              Depoimento
+              Resultado
             </p>
-            <p className="mt-6 font-display text-2xl lg:text-3xl text-ink italic max-w-[60ch]">
-              “Espaço reservado para o depoimento do cliente após a publicação
-              oficial do projeto.”
+            <p className="mt-6 font-display text-2xl lg:text-3xl text-ink max-w-[60ch] text-pretty">
+              Mais do que um novo site, a Serra passou a contar com uma
+              plataforma preparada para representar a qualidade da empresa e
+              apoiar seu processo comercial — com foco em experiência,
+              credibilidade, conversão e escalabilidade.
             </p>
           </div>
         </Reveal>
