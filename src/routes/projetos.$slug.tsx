@@ -15,6 +15,9 @@ import serraCentralDepois from "@/assets/serra/central_de_conteudo_serra_depois.
 import serraRodapeAntes from "@/assets/serra/rodape_serra_antes.png.asset.json";
 import serraRodapeDepois from "@/assets/serra/rodape_serra_depois.png.asset.json";
 import serraAvaliacoesDepois from "@/assets/serra/avaliacoes_serra_depois.png.asset.json";
+import serraEmpresaDepois from "@/assets/serra/empresa_serra_depois.png.asset.json";
+import serraDiferenciaisDepois from "@/assets/serra/diferenciais_serra_depois.png.asset.json";
+import serraPrincipiosDepois from "@/assets/serra/principios_serra_depois.png.asset.json";
 
 const projectLogos: Record<string, string> = {
   "serra-seguros": serraLogo.url,
