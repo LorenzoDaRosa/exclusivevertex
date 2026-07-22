@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Design, estratégia e tecnologia para transformar visitantes em clientes.",
+          "Estúdio digital que transforma empresas em referências. Sites, landing pages, redesign e experiências premium com design, estratégia e tecnologia.",
       },
       { property: "og:url", content: "/" },
     ],
