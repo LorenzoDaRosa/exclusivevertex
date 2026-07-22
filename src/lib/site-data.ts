@@ -11,7 +11,7 @@ export const services: Service[] = [
   {
     slug: "sites-institucionais",
     title: "Sites Institucionais",
-    short: "Presença digital que representa a qualidade da empresa.",
+    short: "Transmita autoridade e gere confiança desde o primeiro acesso.",
     intro:
       "Sites institucionais desenvolvidos como um ativo estratégico da marca — estruturados para transmitir confiança, gerar oportunidades e sustentar posicionamento premium.",
     deliverables: [
@@ -29,7 +29,7 @@ export const services: Service[] = [
   {
     slug: "landing-pages",
     title: "Landing Pages",
-    short: "Páginas de alta conversão para produtos e campanhas.",
+    short: "Transforme campanhas em oportunidades reais de venda.",
     intro:
       "Landing pages construídas com arquitetura de persuasão, foco em copy estratégico e componentes projetados para maximizar conversão.",
     deliverables: [
@@ -47,7 +47,7 @@ export const services: Service[] = [
   {
     slug: "redesign-de-sites",
     title: "Redesign de Sites",
-    short: "Reposicionamento visual e estrutural sem perder autoridade.",
+    short: "Modernize sua presença digital sem perder autoridade.",
     intro:
       "Auditamos o site atual, preservamos o que gera resultado e reconstruímos o restante com um padrão visual, técnico e estratégico superior.",
     deliverables: [
@@ -83,7 +83,7 @@ export const services: Service[] = [
   {
     slug: "seo",
     title: "SEO",
-    short: "Visibilidade orgânica construída desde a estrutura.",
+    short: "Seja encontrado por quem realmente procura seus serviços.",
     intro:
       "SEO técnico e estratégico integrado ao desenvolvimento do site, garantindo indexação, semântica correta e autoridade sustentável.",
     deliverables: [
@@ -101,7 +101,7 @@ export const services: Service[] = [
   {
     slug: "integracao-whatsapp",
     title: "Integração com WhatsApp",
-    short: "Contato imediato onde a decisão acontece.",
+    short: "Converta interesse em conversa no exato momento da decisão.",
     intro:
       "Implementação estratégica de WhatsApp com mensagens automáticas, deep links contextuais e rastreamento de conversas para converter interesse em conversa.",
     deliverables: [
@@ -249,31 +249,58 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "quanto-custa-um-site-profissional",
+    title: "Quanto custa um site profissional?",
+    excerpt:
+      "O que realmente define o preço de um site — e por que o mais barato costuma sair mais caro.",
+    category: "sites",
+    readMinutes: 6,
+    date: "2025-04-02",
+  },
+  {
+    slug: "vale-a-pena-investir-em-seo",
+    title: "Vale a pena investir em SEO?",
+    excerpt:
+      "Quando faz sentido investir em SEO, qual o retorno esperado e o que muda a partir do 6º mês.",
+    category: "seo",
+    readMinutes: 7,
+    date: "2025-03-22",
+  },
+  {
+    slug: "instagram-substitui-um-site",
+    title: "Instagram substitui um site?",
+    excerpt:
+      "Por que redes sociais são canais — e por que sua empresa ainda precisa de um endereço próprio.",
+    category: "marketing",
+    readMinutes: 5,
+    date: "2025-03-10",
+  },
+  {
+    slug: "10-sinais-de-que-sua-empresa-precisa-renovar-o-site",
+    title: "10 sinais de que sua empresa precisa renovar o site",
+    excerpt:
+      "Um checklist honesto para reconhecer quando o site virou um obstáculo à percepção da marca.",
+    category: "sites",
+    readMinutes: 6,
+    date: "2025-02-28",
+  },
+  {
+    slug: "como-um-bom-site-aumenta-a-confianca-do-cliente",
+    title: "Como um bom site aumenta a confiança do cliente",
+    excerpt:
+      "Os sinais visuais e estruturais que fazem um visitante decidir se vale a pena continuar.",
+    category: "design",
+    readMinutes: 5,
+    date: "2025-02-14",
+  },
+  {
     slug: "o-site-como-ativo-estrategico",
     title: "O site como ativo estratégico da empresa",
     excerpt:
       "Um site bem construído deixa de ser custo e passa a ser um dos ativos mais valiosos da operação comercial.",
     category: "sites",
     readMinutes: 6,
-    date: "2025-03-14",
-  },
-  {
-    slug: "por-que-design-importa-para-vendas",
-    title: "Por que design importa para vendas",
-    excerpt:
-      "Design não é decoração. É o que sustenta a confiança que antecede a compra.",
-    category: "design",
-    readMinutes: 5,
-    date: "2025-02-28",
-  },
-  {
-    slug: "seo-comeca-na-arquitetura",
-    title: "SEO começa na arquitetura, não no conteúdo",
-    excerpt:
-      "As decisões técnicas dos primeiros dias definem o teto de crescimento orgânico do seu site.",
-    category: "seo",
-    readMinutes: 7,
-    date: "2025-02-10",
+    date: "2025-01-30",
   },
 ];
 
