@@ -3,7 +3,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { services } from "@/lib/site-data";
 
-export const Route = createFileRoute("/servicos")({
+export const Route = createFileRoute("/servicos/")({
   head: () => ({
     meta: [
       { title: "Serviços — Exclusive Vertex" },

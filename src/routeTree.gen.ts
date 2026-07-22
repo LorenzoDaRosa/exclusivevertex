@@ -11,13 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicosRouteImport } from './routes/servicos'
-import { Route as ProjetosRouteImport } from './routes/projetos'
 import { Route as ProcessoRouteImport } from './routes/processo'
 import { Route as OrcamentoRouteImport } from './routes/orcamento'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
+import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 import { Route as ProjetosSlugRouteImport } from './routes/projetos.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -30,16 +30,6 @@ const SobreRoute = SobreRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicosRoute = ServicosRouteImport.update({
-  id: '/servicos',
-  path: '/servicos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjetosRoute = ProjetosRouteImport.update({
-  id: '/projetos',
-  path: '/projetos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProcessoRoute = ProcessoRouteImport.update({
@@ -67,15 +57,25 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicosIndexRoute = ServicosIndexRouteImport.update({
+  id: '/servicos/',
+  path: '/servicos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosIndexRoute = ProjetosIndexRouteImport.update({
+  id: '/projetos/',
+  path: '/projetos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicosSlugRoute = ServicosSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ServicosRoute,
+  id: '/servicos/$slug',
+  path: '/servicos/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ProjetosSlugRoute = ProjetosSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ProjetosRoute,
+  id: '/projetos/$slug',
+  path: '/projetos/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
@@ -89,13 +89,13 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
   '/processo': typeof ProcessoRoute
-  '/projetos': typeof ProjetosRouteWithChildren
-  '/servicos': typeof ServicosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/projetos/': typeof ProjetosIndexRoute
+  '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -103,13 +103,13 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
   '/processo': typeof ProcessoRoute
-  '/projetos': typeof ProjetosRouteWithChildren
-  '/servicos': typeof ServicosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/projetos': typeof ProjetosIndexRoute
+  '/servicos': typeof ServicosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -118,13 +118,13 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
   '/processo': typeof ProcessoRoute
-  '/projetos': typeof ProjetosRouteWithChildren
-  '/servicos': typeof ServicosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/projetos/$slug': typeof ProjetosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/projetos/': typeof ProjetosIndexRoute
+  '/servicos/': typeof ServicosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -134,13 +134,13 @@ export interface FileRouteTypes {
     | '/contato'
     | '/orcamento'
     | '/processo'
-    | '/projetos'
-    | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
     | '/projetos/$slug'
     | '/servicos/$slug'
+    | '/projetos/'
+    | '/servicos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -148,13 +148,13 @@ export interface FileRouteTypes {
     | '/contato'
     | '/orcamento'
     | '/processo'
-    | '/projetos'
-    | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
     | '/projetos/$slug'
     | '/servicos/$slug'
+    | '/projetos'
+    | '/servicos'
   id:
     | '__root__'
     | '/'
@@ -162,13 +162,13 @@ export interface FileRouteTypes {
     | '/contato'
     | '/orcamento'
     | '/processo'
-    | '/projetos'
-    | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
     | '/blog/$slug'
     | '/projetos/$slug'
     | '/servicos/$slug'
+    | '/projetos/'
+    | '/servicos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -177,10 +177,12 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   OrcamentoRoute: typeof OrcamentoRoute
   ProcessoRoute: typeof ProcessoRoute
-  ProjetosRoute: typeof ProjetosRouteWithChildren
-  ServicosRoute: typeof ServicosRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  ProjetosSlugRoute: typeof ProjetosSlugRoute
+  ServicosSlugRoute: typeof ServicosSlugRoute
+  ProjetosIndexRoute: typeof ProjetosIndexRoute
+  ServicosIndexRoute: typeof ServicosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -197,20 +199,6 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/servicos': {
-      id: '/servicos'
-      path: '/servicos'
-      fullPath: '/servicos'
-      preLoaderRoute: typeof ServicosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projetos': {
-      id: '/projetos'
-      path: '/projetos'
-      fullPath: '/projetos'
-      preLoaderRoute: typeof ProjetosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/processo': {
@@ -248,19 +236,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicos/': {
+      id: '/servicos/'
+      path: '/servicos'
+      fullPath: '/servicos/'
+      preLoaderRoute: typeof ServicosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos/': {
+      id: '/projetos/'
+      path: '/projetos'
+      fullPath: '/projetos/'
+      preLoaderRoute: typeof ProjetosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicos/$slug': {
       id: '/servicos/$slug'
-      path: '/$slug'
+      path: '/servicos/$slug'
       fullPath: '/servicos/$slug'
       preLoaderRoute: typeof ServicosSlugRouteImport
-      parentRoute: typeof ServicosRoute
+      parentRoute: typeof rootRouteImport
     }
     '/projetos/$slug': {
       id: '/projetos/$slug'
-      path: '/$slug'
+      path: '/projetos/$slug'
       fullPath: '/projetos/$slug'
       preLoaderRoute: typeof ProjetosSlugRouteImport
-      parentRoute: typeof ProjetosRoute
+      parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
       id: '/blog/$slug'
@@ -282,40 +284,18 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
-interface ProjetosRouteChildren {
-  ProjetosSlugRoute: typeof ProjetosSlugRoute
-}
-
-const ProjetosRouteChildren: ProjetosRouteChildren = {
-  ProjetosSlugRoute: ProjetosSlugRoute,
-}
-
-const ProjetosRouteWithChildren = ProjetosRoute._addFileChildren(
-  ProjetosRouteChildren,
-)
-
-interface ServicosRouteChildren {
-  ServicosSlugRoute: typeof ServicosSlugRoute
-}
-
-const ServicosRouteChildren: ServicosRouteChildren = {
-  ServicosSlugRoute: ServicosSlugRoute,
-}
-
-const ServicosRouteWithChildren = ServicosRoute._addFileChildren(
-  ServicosRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
   OrcamentoRoute: OrcamentoRoute,
   ProcessoRoute: ProcessoRoute,
-  ProjetosRoute: ProjetosRouteWithChildren,
-  ServicosRoute: ServicosRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  ProjetosSlugRoute: ProjetosSlugRoute,
+  ServicosSlugRoute: ServicosSlugRoute,
+  ProjetosIndexRoute: ProjetosIndexRoute,
+  ServicosIndexRoute: ServicosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
