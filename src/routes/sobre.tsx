@@ -28,9 +28,9 @@ function SobrePage() {
     <div className="px-6 lg:px-10 pt-40 pb-32">
       <div className="mx-auto max-w-[1200px]">
         <Reveal>
-          <SectionLabel>Sobre</SectionLabel>
+          <SectionLabel>Sobre a Exclusive Vertex</SectionLabel>
           <h1 className="mt-6 font-display text-5xl lg:text-8xl text-ink text-balance max-w-[22ch]">
-            Empresas excelentes representadas por sites à altura da sua qualidade.
+            Empresas excelentes merecem sites à altura da sua qualidade.
           </h1>
         </Reveal>
 
@@ -46,13 +46,20 @@ function SobrePage() {
                 refletem a sua qualidade.
               </p>
               <p>
-                Acreditamos que um site deve transmitir confiança, facilitar o
-                atendimento e contribuir diretamente para o crescimento do
-                negócio — não apenas existir como um cartão de visitas online.
+                Acreditamos que um site deve transmitir confiança antes mesmo
+                do primeiro contato. Cada detalhe — tipografia, ritmo,
+                hierarquia, performance — comunica algo sobre a empresa que
+                está por trás dele.
               </p>
               <p>
-                Não utilizamos modelos prontos. Cada projeto é pensado de acordo
-                com os objetivos, o público e a operação de cada empresa.
+                Não desenvolvemos páginas apenas para existir na internet.
+                Criamos plataformas digitais que fortalecem marcas, facilitam
+                o atendimento e geram oportunidades reais de negócio.
+              </p>
+              <p>
+                Cada projeto é desenvolvido de forma personalizada. Nunca
+                utilizamos modelos prontos — porque nenhum modelo é capaz de
+                traduzir o que torna a sua empresa única.
               </p>
             </div>
           </div>

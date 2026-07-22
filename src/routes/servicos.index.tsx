@@ -38,24 +38,27 @@ function ServicosPage() {
         <div className="mt-24">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={i * 40}>
-              <Link
-                to="/servicos/$slug"
-                params={{ slug: s.slug }}
-                className="group grid grid-cols-12 items-start gap-6 border-t border-hairline py-10 transition-colors hover:bg-surface-2/40"
-              >
+              <div className="group grid grid-cols-12 items-start gap-6 border-t border-hairline py-10 transition-colors hover:bg-surface-2/40">
                 <div className="col-span-2 md:col-span-1 text-xs tabular-nums text-brand">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="col-span-10 md:col-span-4 font-display text-2xl lg:text-3xl text-ink group-hover:text-brand transition-colors">
                   {s.title}
                 </div>
-                <div className="col-span-12 md:col-span-6 text-sm text-ink-muted leading-relaxed max-w-[52ch]">
+                <div className="col-span-12 md:col-span-5 text-sm text-ink-muted leading-relaxed max-w-[52ch]">
                   {s.short}
                 </div>
-                <div className="col-span-12 md:col-span-1 text-right text-ink-muted transition-transform duration-300 group-hover:translate-x-1">
-                  →
+                <div className="col-span-12 md:col-span-2 md:text-right">
+                  <Link
+                    to="/servicos/$slug"
+                    params={{ slug: s.slug }}
+                    className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-ink hover:text-brand transition-colors"
+                  >
+                    Conhecer serviço
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             </Reveal>
           ))}
           <div className="border-t border-hairline" />

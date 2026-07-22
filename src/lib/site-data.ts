@@ -403,13 +403,14 @@ export const articles: Article[] = [
 ];
 
 export const processSteps = [
-  { n: "01", title: "Diagnóstico", desc: "Entendemos o negócio, o público, a operação atual e o objetivo do projeto." },
-  { n: "02", title: "Estratégia", desc: "Definimos posicionamento, arquitetura de informação e prioridades." },
-  { n: "03", title: "Design", desc: "Criamos a identidade visual digital e as interfaces sob medida." },
-  { n: "04", title: "Desenvolvimento", desc: "Codificamos com foco em performance, semântica e escalabilidade." },
-  { n: "05", title: "Revisões", desc: "Rodadas objetivas de refinamento com base no uso real do projeto." },
-  { n: "06", title: "Publicação", desc: "Deploy, configuração de domínio, SSL, analytics e monitoramento." },
-  { n: "07", title: "Suporte", desc: "Acompanhamento contínuo, melhorias e evolução planejada." },
+  { n: "01", title: "Diagnóstico", desc: "Entendemos o seu negócio, o público, a operação atual e o objetivo do projeto." },
+  { n: "02", title: "Estratégia", desc: "Planejamos a melhor solução — posicionamento, prioridades e caminhos de conversão." },
+  { n: "03", title: "Arquitetura", desc: "Organizamos toda a estrutura do site: páginas, fluxos e hierarquia de informação." },
+  { n: "04", title: "UX/UI", desc: "Criamos uma experiência premium, com design exclusivo, tipografia impecável e interações refinadas." },
+  { n: "05", title: "Desenvolvimento", desc: "Transformamos o projeto em realidade — código limpo, performance e SEO desde a fundação." },
+  { n: "06", title: "Testes", desc: "Garantimos qualidade, responsividade e desempenho em todos os dispositivos e cenários." },
+  { n: "07", title: "Publicação", desc: "Seu novo site entra no ar com domínio, SSL, analytics e monitoramento configurados." },
+  { n: "08", title: "Suporte", desc: "Acompanhamos a evolução do projeto com melhorias contínuas e ajustes planejados." },
 ];
 
 export const differentiators = [

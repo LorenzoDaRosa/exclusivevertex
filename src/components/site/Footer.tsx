@@ -42,18 +42,21 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-ink-muted">
               <li>
                 <a href="https://wa.me/5554992894672" className="story-link hover:text-ink transition-colors">
-                  WhatsApp
+                  WhatsApp · +55 54 99289-4672
                 </a>
               </li>
               <li>
                 <a href="https://instagram.com/exclusive.vertex" className="story-link hover:text-ink transition-colors">
-                  Instagram
+                  Instagram · @exclusive.vertex
                 </a>
               </li>
               <li>
                 <a href="mailto:contato@exclusivevertex.com" className="story-link hover:text-ink transition-colors">
                   contato@exclusivevertex.com
                 </a>
+              </li>
+              <li className="text-ink-subtle text-xs pt-2 leading-relaxed">
+                Serra Gaúcha · Rio Grande do Sul · Brasil
               </li>
             </ul>
           </div>
