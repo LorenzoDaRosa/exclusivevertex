@@ -136,20 +136,23 @@ function Credibility() {
 
 function FeaturedProject() {
   return (
-    <section className="px-6 lg:px-10 py-32 lg:py-48">
+    <section className="px-6 lg:px-10 py-32 lg:py-48 border-t border-hairline">
       <div className="mx-auto max-w-[1400px]">
         <Reveal className="mb-14 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <SectionLabel>Projeto em destaque</SectionLabel>
-            <h2 className="mt-6 font-display text-5xl text-ink text-balance lg:text-7xl max-w-[20ch]">
-              Serra Seguros e Consórcios
+            <SectionLabel>Projetos que transformaram empresas</SectionLabel>
+            <h2 className="mt-6 font-display text-5xl text-ink text-balance lg:text-7xl max-w-[22ch]">
+              Cases reais. Marcas reposicionadas. Resultados construídos com intenção.
             </h2>
           </div>
           <div className="lg:w-1/3 border-t border-hairline pt-6">
-            <p className="text-sm text-ink-muted">Reforma completa da presença digital</p>
+            <p className="text-[11px] uppercase tracking-[0.24em] text-ink-subtle">
+              Em destaque
+            </p>
+            <p className="mt-3 text-sm text-ink">Serra Seguros e Consórcios</p>
             <p className="mt-2 text-xs text-ink-subtle leading-relaxed">
-              Reposicionamento de uma corretora tradicional em uma plataforma
-              digital à altura da qualidade do atendimento.
+              Seguros · Consórcios — reposicionamento digital completo, de uma
+              presença institucional a uma plataforma preparada para conversão.
             </p>
           </div>
         </Reveal>
