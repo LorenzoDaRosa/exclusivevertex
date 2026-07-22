@@ -1,0 +1,299 @@
+export type Service = {
+  slug: string;
+  title: string;
+  short: string;
+  intro: string;
+  deliverables: string[];
+  outcomes: string[];
+};
+
+export const services: Service[] = [
+  {
+    slug: "sites-institucionais",
+    title: "Sites Institucionais",
+    short: "Presença digital que representa a qualidade da empresa.",
+    intro:
+      "Sites institucionais desenvolvidos como um ativo estratégico da marca — estruturados para transmitir confiança, gerar oportunidades e sustentar posicionamento premium.",
+    deliverables: [
+      "Arquitetura de informação sob medida",
+      "Design de interface exclusivo",
+      "Desenvolvimento responsivo de alta performance",
+      "Estrutura SEO técnica",
+    ],
+    outcomes: [
+      "Percepção de autoridade no mercado",
+      "Consistência de marca em todos os pontos de contato",
+      "Base pronta para escalar campanhas",
+    ],
+  },
+  {
+    slug: "landing-pages",
+    title: "Landing Pages",
+    short: "Páginas de alta conversão para produtos e campanhas.",
+    intro:
+      "Landing pages construídas com arquitetura de persuasão, foco em copy estratégico e componentes projetados para maximizar conversão.",
+    deliverables: [
+      "Copywriting orientado à conversão",
+      "Design focado no CTA",
+      "Integração com CRM e pixels",
+      "Testes de performance",
+    ],
+    outcomes: [
+      "Maior taxa de conversão por visitante",
+      "Custo por aquisição reduzido",
+      "Rastreamento completo do funil",
+    ],
+  },
+  {
+    slug: "redesign-de-sites",
+    title: "Redesign de Sites",
+    short: "Reposicionamento visual e estrutural sem perder autoridade.",
+    intro:
+      "Auditamos o site atual, preservamos o que gera resultado e reconstruímos o restante com um padrão visual, técnico e estratégico superior.",
+    deliverables: [
+      "Auditoria completa (UX, SEO, performance)",
+      "Migração sem perda de rankings",
+      "Nova identidade visual digital",
+      "Componentes escaláveis",
+    ],
+    outcomes: [
+      "Percepção de marca elevada",
+      "Melhor experiência em todos os dispositivos",
+      "Redução de fricção no fluxo comercial",
+    ],
+  },
+  {
+    slug: "ui-ux-design",
+    title: "UI / UX Design",
+    short: "Interfaces claras, fluidas e memoráveis.",
+    intro:
+      "Design de interface e experiência baseado em pesquisa, arquitetura de conteúdo e princípios de usabilidade aplicados por profissionais dedicados.",
+    deliverables: [
+      "Wireframes e protótipos interativos",
+      "Design system próprio",
+      "Design responsivo mobile-first",
+      "Handoff técnico completo",
+    ],
+    outcomes: [
+      "Fluxos mais objetivos",
+      "Redução de erros e retrabalho",
+      "Base sólida para evolução do produto",
+    ],
+  },
+  {
+    slug: "seo",
+    title: "SEO",
+    short: "Visibilidade orgânica construída desde a estrutura.",
+    intro:
+      "SEO técnico e estratégico integrado ao desenvolvimento do site, garantindo indexação, semântica correta e autoridade sustentável.",
+    deliverables: [
+      "SEO técnico on-page",
+      "Estrutura semântica e schema",
+      "Otimização de Core Web Vitals",
+      "Sitemap e robots configurados",
+    ],
+    outcomes: [
+      "Melhor posicionamento em buscas",
+      "Tráfego orgânico qualificado",
+      "Fundação escalável para conteúdo",
+    ],
+  },
+  {
+    slug: "integracao-whatsapp",
+    title: "Integração com WhatsApp",
+    short: "Contato imediato onde a decisão acontece.",
+    intro:
+      "Implementação estratégica de WhatsApp com mensagens automáticas, deep links contextuais e rastreamento de conversas para converter interesse em conversa.",
+    deliverables: [
+      "Botão contextual em cada página",
+      "Mensagens automáticas por origem",
+      "Rastreamento por evento",
+      "Multi-atendimento (quando aplicável)",
+    ],
+    outcomes: [
+      "Redução do tempo de resposta",
+      "Maior conversão em contato direto",
+      "Registro completo da origem do lead",
+    ],
+  },
+  {
+    slug: "formularios-inteligentes",
+    title: "Formulários Inteligentes",
+    short: "Coleta de leads que respeita o usuário.",
+    intro:
+      "Formulários com validação em tempo real, campos condicionais, salvamento parcial e integração direta com e-mail, CRM ou WhatsApp.",
+    deliverables: [
+      "Validação e segurança",
+      "Anti-spam sem captcha invasivo",
+      "Integração com destino escolhido",
+      "Confirmação e follow-up",
+    ],
+    outcomes: [
+      "Maior taxa de preenchimento",
+      "Leads mais qualificados",
+      "Menos fricção na jornada",
+    ],
+  },
+  {
+    slug: "consultoria-digital",
+    title: "Consultoria Digital",
+    short: "Direcionamento estratégico para decisões digitais.",
+    intro:
+      "Sessões estratégicas para orientar decisões de branding digital, arquitetura de produto, tecnologia e priorização.",
+    deliverables: [
+      "Diagnóstico completo",
+      "Roadmap priorizado",
+      "Recomendações técnicas",
+      "Acompanhamento executivo",
+    ],
+    outcomes: [
+      "Clareza de próximos passos",
+      "Alinhamento entre marketing e produto",
+      "Investimento mais assertivo",
+    ],
+  },
+  {
+    slug: "otimizacao-performance",
+    title: "Otimização de Performance",
+    short: "Sites rápidos, leves e preparados para escala.",
+    intro:
+      "Auditoria e refino técnico para reduzir tempo de carregamento, melhorar Core Web Vitals e sustentar picos de tráfego.",
+    deliverables: [
+      "Auditoria Lighthouse & Web Vitals",
+      "Otimização de imagens e fontes",
+      "Cache, CDN e lazy loading",
+      "Refatoração pontual de código",
+    ],
+    outcomes: [
+      "Carregamento próximo do instantâneo",
+      "Melhor ranqueamento no Google",
+      "Mais conversão em conexões lentas",
+    ],
+  },
+];
+
+export type Project = {
+  slug: string;
+  title: string;
+  category: string;
+  year: string;
+  summary: string;
+  context: string;
+  problems: string[];
+  solutions: string[];
+  gallery: string[];
+  stack: string[];
+  outcomes: string[];
+  status: "case" | "in-progress" | "coming-soon";
+};
+
+export const projects: Project[] = [
+  {
+    slug: "serra-seguros",
+    title: "Serra Seguros e Consórcios",
+    category: "Seguros · Consórcios",
+    year: "2025",
+    summary:
+      "Reposicionamento digital de uma corretora tradicional em plataforma de referência para seguros e consórcios.",
+    context:
+      "A Serra Seguros e Consórcios atende clientes há anos com uma operação sólida, mas seu site anterior não representava o nível de atendimento da empresa. O projeto nasceu para transformar essa presença em uma plataforma que reflete a qualidade real do serviço.",
+    problems: [
+      "Presença digital pouco alinhada ao posicionamento da empresa",
+      "Ausência de estrutura clara para diferentes tipos de seguro",
+      "Baixa geração de contato qualificado pelo site",
+      "Falta de arquitetura preparada para SEO",
+    ],
+    solutions: [
+      "Nova arquitetura de informação por linha de produto",
+      "Design institucional premium, com identidade consistente",
+      "Fluxos diretos para simulação e contato via WhatsApp",
+      "Estrutura técnica preparada para indexação e escala",
+    ],
+    gallery: ["Home", "Página de Seguros", "Consórcios", "Contato"],
+    stack: ["Next-gen React", "Design System próprio", "SEO técnico", "WhatsApp API"],
+    outcomes: [
+      "Percepção de marca elevada",
+      "Contato direto simplificado",
+      "Base pronta para novos serviços",
+    ],
+    status: "case",
+  },
+];
+
+export type Category = {
+  slug: string;
+  name: string;
+  description: string;
+};
+
+export const blogCategories: Category[] = [
+  { slug: "sites", name: "Sites", description: "Arquitetura, design e estratégia de sites institucionais." },
+  { slug: "seo", name: "SEO", description: "Fundamentos técnicos e estratégicos para tráfego orgânico." },
+  { slug: "marketing", name: "Marketing", description: "Aquisição, posicionamento e conversão." },
+  { slug: "design", name: "Design", description: "Referências, princípios e sistemas visuais." },
+  { slug: "ux", name: "UX", description: "Fluxos, comportamento e experiência do usuário." },
+  { slug: "empreendedorismo", name: "Empreendedorismo", description: "Decisões de negócio e crescimento." },
+  { slug: "tecnologia", name: "Tecnologia", description: "Ferramentas, stacks e infraestrutura moderna." },
+  { slug: "ia", name: "IA", description: "Inteligência artificial aplicada ao digital." },
+  { slug: "vendas", name: "Vendas", description: "Estratégia comercial no ambiente digital." },
+];
+
+export type Article = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  readMinutes: number;
+  date: string;
+};
+
+export const articles: Article[] = [
+  {
+    slug: "o-site-como-ativo-estrategico",
+    title: "O site como ativo estratégico da empresa",
+    excerpt:
+      "Um site bem construído deixa de ser custo e passa a ser um dos ativos mais valiosos da operação comercial.",
+    category: "sites",
+    readMinutes: 6,
+    date: "2025-03-14",
+  },
+  {
+    slug: "por-que-design-importa-para-vendas",
+    title: "Por que design importa para vendas",
+    excerpt:
+      "Design não é decoração. É o que sustenta a confiança que antecede a compra.",
+    category: "design",
+    readMinutes: 5,
+    date: "2025-02-28",
+  },
+  {
+    slug: "seo-comeca-na-arquitetura",
+    title: "SEO começa na arquitetura, não no conteúdo",
+    excerpt:
+      "As decisões técnicas dos primeiros dias definem o teto de crescimento orgânico do seu site.",
+    category: "seo",
+    readMinutes: 7,
+    date: "2025-02-10",
+  },
+];
+
+export const processSteps = [
+  { n: "01", title: "Diagnóstico", desc: "Entendemos o negócio, o público, a operação atual e o objetivo do projeto." },
+  { n: "02", title: "Estratégia", desc: "Definimos posicionamento, arquitetura de informação e prioridades." },
+  { n: "03", title: "Design", desc: "Criamos a identidade visual digital e as interfaces sob medida." },
+  { n: "04", title: "Desenvolvimento", desc: "Codificamos com foco em performance, semântica e escalabilidade." },
+  { n: "05", title: "Revisões", desc: "Rodadas objetivas de refinamento com base no uso real do projeto." },
+  { n: "06", title: "Publicação", desc: "Deploy, configuração de domínio, SSL, analytics e monitoramento." },
+  { n: "07", title: "Suporte", desc: "Acompanhamento contínuo, melhorias e evolução planejada." },
+];
+
+export const differentiators = [
+  { title: "Estratégia antes do design", desc: "Toda decisão visual nasce de uma decisão estratégica." },
+  { title: "Design exclusivo", desc: "Nunca usamos templates. Cada projeto é desenhado do zero." },
+  { title: "Alta performance", desc: "Sites leves, rápidos e otimizados para conversão real." },
+  { title: "SEO desde a estrutura", desc: "Semântica, arquitetura e Core Web Vitals na fundação." },
+  { title: "Foco em conversão", desc: "Cada seção é pensada para gerar oportunidade comercial." },
+  { title: "Responsividade completa", desc: "Experiência impecável de desktop a celular." },
+  { title: "Código limpo", desc: "Base técnica organizada, escalável e fácil de evoluir." },
+  { title: "Experiência premium", desc: "Detalhes, microinterações e transições cuidadosamente construídas." },
+];
