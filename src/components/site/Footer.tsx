@@ -42,12 +42,12 @@ export function Footer() {
             </h5>
             <ul className="space-y-3 text-sm text-ink-muted">
               <li>
-                <a href="https://wa.me/" className="story-link hover:text-ink transition-colors">
+                <a href="https://wa.me/5554992894672" className="story-link hover:text-ink transition-colors">
                   WhatsApp
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/" className="story-link hover:text-ink transition-colors">
+                <a href="https://instagram.com/exclusive.vertex" className="story-link hover:text-ink transition-colors">
                   Instagram
                 </a>
               </li>
