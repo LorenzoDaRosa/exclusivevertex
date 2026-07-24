@@ -5,6 +5,7 @@ import { SectionLabel } from "@/components/site/SectionLabel";
 import { services, processSteps } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/capa_case_serra.jpeg.asset.json";
 import serraHomeDepois from "@/assets/serra/home_serra_depois.png.asset.json";
+import darosCapa from "@/assets/daros/daros_42.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -183,6 +184,25 @@ function ResultsStrip() {
 }
 
 function FeaturedProject() {
+  const featured = [
+    {
+      slug: "serra-seguros",
+      name: "Serra Seguros e Consórcios",
+      category: "Seguros · Consórcios",
+      description:
+        "Reposicionamento digital completo — de uma presença institucional a uma plataforma preparada para conversão.",
+      cover: serraCapa.url,
+    },
+    {
+      slug: "daros-lunettes",
+      name: "Daros Lunettes",
+      category: "Óptica · Boutique premium",
+      description:
+        "Primeira presença digital construída do zero — plataforma editorial à altura da experiência da boutique em Caxias do Sul.",
+      cover: darosCapa.url,
+    },
+  ] as const;
+
   return (
     <section className="px-6 lg:px-10 py-32 lg:py-48 border-t border-hairline">
       <div className="mx-auto max-w-[1400px]">
@@ -197,45 +217,54 @@ function FeaturedProject() {
             <p className="text-[11px] uppercase tracking-[0.24em] text-ink-subtle">
               Em destaque
             </p>
-            <p className="mt-3 text-sm text-ink">Serra Seguros e Consórcios</p>
+            <p className="mt-3 text-sm text-ink">2 casos construídos com estratégia</p>
             <p className="mt-2 text-xs text-ink-subtle leading-relaxed">
-              Seguros · Consórcios — reposicionamento digital completo, de uma
-              presença institucional a uma plataforma preparada para conversão.
+              Cada projeto começa com um objetivo claro de negócio — e termina
+              como um ativo digital que sustenta o crescimento da marca.
             </p>
           </div>
         </Reveal>
 
-        <Reveal delay={120}>
-          <Link
-            to="/projetos/$slug"
-            params={{ slug: "serra-seguros" }}
-            className="group block"
-          >
-            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[21/12] w-full overflow-hidden rounded-2xl ring-1 ring-hairline bg-surface-2 shadow-premium hover:shadow-premium-hover">
-              <img
-                src={serraCapa.url}
-                alt="Capa do case Serra Seguros e Consórcios — Exclusive Vertex"
-                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-t from-surface/70 via-transparent" />
-              <div className="absolute bottom-6 right-6 flex items-center gap-3 text-sm text-ink opacity-0 -translate-x-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0">
-                Ver case completo
-                <span>→</span>
-              </div>
-            </div>
-          </Link>
-        </Reveal>
+        <div className="grid gap-10 lg:grid-cols-2">
+          {featured.map((p, i) => (
+            <Reveal key={p.slug} delay={120 + i * 100}>
+              <Link
+                to="/projetos/$slug"
+                params={{ slug: p.slug }}
+                className="group block"
+              >
+                <div className="relative aspect-[4/3] md:aspect-[16/10] w-full overflow-hidden rounded-2xl ring-1 ring-hairline bg-surface-2 shadow-premium hover:shadow-premium-hover">
+                  <img
+                    src={p.cover}
+                    alt={`Capa do case ${p.name} — Exclusive Vertex`}
+                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-t from-surface/70 via-transparent" />
+                </div>
+                <div className="mt-6 flex items-start justify-between gap-6">
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-brand">
+                      {p.category}
+                    </p>
+                    <h3 className="mt-2 font-display text-2xl lg:text-3xl text-ink group-hover:text-brand transition-colors">
+                      {p.name}
+                    </h3>
+                    <p className="mt-3 text-sm text-ink-muted max-w-[46ch]">
+                      {p.description}
+                    </p>
+                  </div>
+                  <span className="shrink-0 text-sm text-ink-muted story-link mt-2">
+                    Ver case →
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
 
-        <Reveal delay={200}>
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
-            <Link
-              to="/projetos/$slug"
-              params={{ slug: "serra-seguros" }}
-              className="inline-flex items-center rounded-full bg-ink px-6 py-3 text-sm font-medium text-surface transition hover:brightness-110"
-            >
-              Ver case completo
-            </Link>
+        <Reveal delay={320}>
+          <div className="mt-14 flex justify-end">
             <Link to="/projetos" className="story-link text-sm text-ink-muted hover:text-ink">
               Todos os projetos →
             </Link>

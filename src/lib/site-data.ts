@@ -316,6 +316,93 @@ export const projects: Project[] = [
     ],
     status: "case",
   },
+  {
+    slug: "daros-lunettes",
+    title: "Daros Lunettes",
+    category: "Óptica · Boutique premium",
+    year: "2026",
+    tagline:
+      "A construção da primeira presença digital de uma boutique óptica que já era referência fora da tela.",
+    summary:
+      "A Daros Lunettes é uma óptica boutique no centro de Caxias do Sul, especializada em óculos premium de marcas internacionais. Não tinha site — apenas Instagram e o boca a boca. Construímos, do zero, uma plataforma editorial à altura da experiência oferecida na loja: hierarquia tipográfica clássica, curadoria de marcas em destaque, quiz de recomendação, consultoria personalizada e integração completa com WhatsApp.",
+    context:
+      "A Daros já era reconhecida em Caxias do Sul pelo atendimento consultivo, pela curadoria de marcas internacionais e pela experiência acolhedora dentro da boutique. O problema não era reputação — era ausência: fora do Instagram, a marca simplesmente não existia digitalmente. Clientes novos chegavam por indicação, mas não tinham um endereço próprio para conhecer o portfólio, a fundadora, a história e os diferenciais antes de agendar. O projeto nasceu para preencher exatamente esse vazio.",
+    metrics: [
+      { label: "Marcas internacionais", value: "20+" },
+      { label: "Avaliação média Google", value: "5,0★" },
+      { label: "Anos cuidando do olhar", value: "4" },
+      { label: "Atendimento personalizado", value: "100%" },
+    ],
+    after: [
+      "Identidade editorial premium, com serifada clássica e paleta clara e dourada",
+      "Hero cinemático com vídeo da boutique em background",
+      "Página institucional com a história de Rose Quadros, fundadora",
+      "Seção \"Um negócio de família\" que humaniza a marca",
+      "Grade de marcas internacionais com curadoria visual",
+      "Páginas dedicadas para óculos de grau e óculos de sol",
+      "Consultoria Daros em destaque, com 5 pilares e CTA próprio",
+      "Quiz interativo \"Encontre seu óculos em 2 minutos\" com 5 perguntas",
+      "Comparativo \"Óptica tradicional vs Daros Lunettes\"",
+      "Prova social com depoimentos reais e nota 5,0 do Google",
+      "Central de conteúdo categorizada e preparada para SEO",
+      "Bastidores do Instagram integrados à home",
+      "Formulário de atendimento personalizado com envio direto ao WhatsApp",
+      "FAQ editorial respondendo às dúvidas reais dos clientes",
+      "Rodapé escuro, elegante, com endereço, horários e canais",
+      "Integração completa com WhatsApp, Instagram e Facebook",
+    ],
+    problems: [
+      "Ausência total de presença digital fora do Instagram",
+      "Novos clientes chegavam apenas por indicação, sem canal de descoberta",
+      "Nenhum caminho estruturado para agendar atendimento ou tirar dúvidas",
+      "Curadoria de marcas internacionais invisível para quem ainda não conhecia a boutique",
+    ],
+    solutions: [
+      "Construção editorial completa do site — do posicionamento à arquitetura",
+      "Design tipográfico premium alinhado à experiência da boutique",
+      "Quiz consultivo que aproxima o atendimento online do presencial",
+      "Fluxos diretos para WhatsApp em cada seção estratégica",
+      "Central de conteúdo pensada para atrair tráfego orgânico qualificado",
+    ],
+    quotationForms: [
+      {
+        name: "Atendimento personalizado",
+        fields: ["Nome", "WhatsApp", "Cidade", "Produto procurado", "Possui receita?", "Atendimento presencial?", "Observações"],
+      },
+    ],
+    contentCategories: [
+      "Óculos de Grau",
+      "Óculos de Sol",
+      "Saúde Visual",
+      "Tendências",
+      "Marcas",
+      "Cuidados",
+      "Consultoria",
+    ],
+    conversionGoals: [
+      "Falar pelo WhatsApp",
+      "Fazer o quiz de indicação",
+      "Agendar consultoria",
+      "Explorar marcas",
+      "Conhecer a boutique",
+    ],
+    gallery: ["Home", "A Daros", "Óculos", "Marcas", "Consultoria", "Blog", "Contato"],
+    stack: [
+      "React de última geração",
+      "Design System editorial próprio",
+      "Tipografia serifada clássica",
+      "SEO técnico completo",
+      "Integração WhatsApp",
+      "Quiz interativo",
+    ],
+    outcomes: [
+      "Primeira presença digital à altura da experiência da boutique",
+      "Canal próprio de descoberta para clientes novos",
+      "Fluxo estruturado do primeiro contato ao atendimento",
+      "Base editorial pronta para conteúdo e SEO",
+    ],
+    status: "case",
+  },
 ];
 
 export type Category = {
