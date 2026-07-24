@@ -104,7 +104,7 @@ function Hero() {
           className="vx-fade-up hidden lg:block"
           style={{ animationDelay: "500ms" }}
         >
-          <div className="relative rounded-2xl overflow-hidden ring-1 ring-hairline bg-black shadow-[0_40px_120px_-40px_rgba(47,107,255,0.35)]">
+          <div className="relative rounded-2xl overflow-hidden ring-1 ring-hairline bg-surface shadow-premium">
             <div className="flex items-center gap-1.5 px-4 py-3 bg-surface-2/60 border-b border-hairline">
               <span className="h-2.5 w-2.5 rounded-full bg-ink-subtle/40" />
               <span className="h-2.5 w-2.5 rounded-full bg-ink-subtle/40" />
