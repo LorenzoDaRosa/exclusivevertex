@@ -186,10 +186,10 @@ function FeaturedVideoPlayer({ video }: { video: typeof featuredVideo }) {
 }
 
 function SecondaryGrid({ posts }: { posts: SecondaryPost[] }) {
-  const slots = posts.length > 0 ? posts : [null, null, null];
+  const slots = posts.length > 0 ? posts : [null, null, null, null];
 
   return (
-    <div className="mt-10 grid gap-6 md:grid-cols-3">
+    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {slots.map((post, i) => (
         <Reveal key={i} delay={80 * i}>
           {post ? (
