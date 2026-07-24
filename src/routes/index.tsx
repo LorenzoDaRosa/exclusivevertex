@@ -619,7 +619,7 @@ function BigCTA() {
     <section className="px-6 lg:px-10 py-32">
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-[#05070d] ring-1 ring-hairline px-8 py-24 lg:px-20 lg:py-40 text-center">
+          <div className="relative overflow-hidden rounded-3xl bg-surface-2 ring-1 ring-hairline px-8 py-24 lg:px-20 lg:py-40 text-center shadow-premium">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0 opacity-[0.18]"
