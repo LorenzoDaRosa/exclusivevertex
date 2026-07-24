@@ -3,7 +3,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { ContentSection } from "@/components/site/ContentSection";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { services, processSteps } from "@/lib/site-data";
-import serraCapa from "@/assets/serra/capa_case_serra.jpeg.asset.json";
+import serraCapa from "@/assets/serra/home_serra_depois.png.asset.json";
 import darosCapa from "@/assets/daros/daros_42.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -217,7 +217,7 @@ function FeaturedProject() {
                   <img
                     src={p.cover}
                     alt={`Capa do case ${p.name} — Exclusive Vertex`}
-                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                    className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-t from-surface/70 via-transparent" />
