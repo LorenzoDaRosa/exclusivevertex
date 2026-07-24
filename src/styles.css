@@ -139,6 +139,16 @@
 @utility hairline {
   border-color: var(--color-hairline);
 }
+@utility shadow-premium {
+  box-shadow: 0 12px 35px rgba(29, 99, 255, 0.08);
+  transition: box-shadow 400ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@utility shadow-premium-hover {
+  box-shadow: 0 24px 60px rgba(29, 99, 255, 0.14);
+  transform: translateY(-4px);
+}
+
 
 /* Story-link (animated underline) */
 @utility story-link {
