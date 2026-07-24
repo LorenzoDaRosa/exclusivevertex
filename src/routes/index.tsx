@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
-import { ProjectMock } from "@/components/site/ProjectMock";
 import { services, processSteps } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/capa_case_serra.jpeg.asset.json";
+import serraHomeDepois from "@/assets/serra/home_serra_depois.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -12,13 +12,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Estúdio digital que transforma empresas em referências. Sites, landing pages, redesign e experiências premium com design, estratégia e tecnologia.",
+          "Sites de alta conversão e estratégias digitais que transformam visitantes em clientes. Design exclusivo, SEO técnico e performance premium.",
       },
       { property: "og:title", content: "Exclusive Vertex — Agência digital premium" },
       {
         property: "og:description",
         content:
-          "Estúdio digital que transforma empresas em referências. Sites, landing pages, redesign e experiências premium com design, estratégia e tecnologia.",
+          "Sites de alta conversão e estratégias digitais que transformam visitantes em clientes.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -32,9 +32,13 @@ function HomePage() {
       <Hero />
       <FirstSalesman />
       <Credibility />
+      <ResultsStrip />
       <FeaturedProject />
+      <Testimonials />
       <ServicesGlimpse />
       <WhyClients />
+      <VertexVsOther />
+      <Differentials />
       <ValuePoints />
       <ProcessGlimpse />
       <BigCTA />
@@ -54,51 +58,65 @@ function Hero() {
             "radial-gradient(1000px 500px at 15% 20%, #2F6BFF, transparent 60%)",
         }}
       />
-      <div className="relative mx-auto w-full max-w-[1400px]">
-        <div className="vx-fade-in mb-8" style={{ animationDelay: "60ms" }}>
-          <SectionLabel>Agência digital · Exclusive Vertex</SectionLabel>
+      <div className="relative mx-auto w-full max-w-[1400px] grid lg:grid-cols-[1.15fr_1fr] gap-16 items-center">
+        <div>
+          <div className="vx-fade-in mb-8" style={{ animationDelay: "60ms" }}>
+            <SectionLabel>Agência digital · Exclusive Vertex</SectionLabel>
+          </div>
+
+          <h1
+            className="vx-fade-up font-display text-[48px] leading-[0.98] text-ink text-balance sm:text-6xl lg:text-[92px] max-w-[20ch]"
+            style={{ animationDelay: "120ms" }}
+          >
+            Sua empresa pode vender muito mais pela{" "}
+            <span className="italic text-brand">internet</span>.
+          </h1>
+
+          <p
+            className="vx-fade-up mt-8 max-w-[58ch] text-lg text-ink-muted text-pretty lg:text-xl"
+            style={{ animationDelay: "260ms" }}
+          >
+            Criamos sites de alta conversão e estratégias digitais que
+            transformam visitantes em clientes — com design exclusivo,
+            performance real e SEO desde a fundação.
+          </p>
+
+          <div
+            className="vx-fade-up mt-12 flex flex-wrap gap-3"
+            style={{ animationDelay: "400ms" }}
+          >
+            <Link
+              to="/orcamento"
+              className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:brightness-110"
+            >
+              Solicitar orçamento
+            </Link>
+            <Link
+              to="/projetos"
+              className="inline-flex items-center rounded-full bg-transparent px-6 py-3 text-sm font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:ring-ink/30"
+            >
+              Ver projetos
+            </Link>
+          </div>
         </div>
 
-        <h1
-          className="vx-fade-up font-display text-[52px] leading-[0.95] text-ink text-balance sm:text-7xl lg:text-[112px] max-w-[22ch]"
-          style={{ animationDelay: "120ms" }}
-        >
-          Transformamos empresas em{" "}
-          <span className="italic text-brand">referências</span> digitais.
-        </h1>
-
-        <p
-          className="vx-fade-up mt-8 max-w-[62ch] text-lg text-ink-muted text-pretty lg:text-xl"
-          style={{ animationDelay: "260ms" }}
-        >
-          Desenvolvemos sites estratégicos que fortalecem marcas, transmitem
-          credibilidade e transformam visitantes em clientes.
-        </p>
-
         <div
-          className="vx-fade-up mt-12 flex flex-wrap gap-3"
-          style={{ animationDelay: "400ms" }}
+          className="vx-fade-up hidden lg:block"
+          style={{ animationDelay: "500ms" }}
         >
-          <Link
-            to="/orcamento"
-            className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:brightness-110"
-          >
-            Solicitar orçamento
-          </Link>
-          <Link
-            to="/projetos"
-            className="inline-flex items-center rounded-full bg-transparent px-6 py-3 text-sm font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:ring-ink/30"
-          >
-            Conheça nossos projetos
-          </Link>
-        </div>
-
-        <div
-          className="vx-fade-up absolute right-6 bottom-4 lg:right-10 hidden md:flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-ink-subtle"
-          style={{ animationDelay: "600ms" }}
-        >
-          <span>Role para explorar</span>
-          <span className="h-px w-10 bg-ink-subtle" />
+          <div className="relative rounded-2xl overflow-hidden ring-1 ring-hairline bg-black shadow-[0_40px_120px_-40px_rgba(47,107,255,0.35)]">
+            <div className="flex items-center gap-1.5 px-4 py-3 bg-surface-2/60 border-b border-hairline">
+              <span className="h-2.5 w-2.5 rounded-full bg-ink-subtle/40" />
+              <span className="h-2.5 w-2.5 rounded-full bg-ink-subtle/40" />
+              <span className="h-2.5 w-2.5 rounded-full bg-ink-subtle/40" />
+            </div>
+            <img
+              src={serraHomeDepois.url}
+              alt="Exemplo de site criado pela Exclusive Vertex — Serra Seguros"
+              className="w-full h-auto block"
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -131,6 +149,33 @@ function Credibility() {
         </div>
       </div>
     </div>
+  );
+}
+
+function ResultsStrip() {
+  const items = [
+    { label: "Projetos", value: "Exclusivos" },
+    { label: "Design", value: "Sob medida" },
+    { label: "SEO", value: "Otimizado" },
+    { label: "Performance", value: "Máxima" },
+  ];
+  return (
+    <section className="px-6 lg:px-10 py-20 border-b border-hairline">
+      <div className="mx-auto max-w-[1400px] grid grid-cols-2 lg:grid-cols-4 gap-10">
+        {items.map((it, i) => (
+          <Reveal key={it.label} delay={i * 60}>
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.28em] text-ink-subtle">
+                {it.label}
+              </p>
+              <p className="mt-4 font-display text-3xl lg:text-4xl text-ink">
+                {it.value}
+              </p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -198,6 +243,87 @@ function FeaturedProject() {
   );
 }
 
+function Testimonials() {
+  const quotes = [
+    {
+      quote:
+        "Em menos de uma semana o novo site já começou a gerar contatos qualificados. A percepção da marca mudou completamente.",
+      author: "Serra Seguros e Consórcios",
+      role: "Corretora · 10+ anos de mercado",
+    },
+    {
+      quote:
+        "Atendimento impecável do início ao fim. Cada detalhe foi pensado com estratégia — não é só design bonito, é resultado.",
+      author: "Cliente Vertex",
+      role: "Segmento premium",
+    },
+    {
+      quote:
+        "O resultado final ficou muito acima do que imaginávamos. Hoje temos um site que representa o tamanho real da empresa.",
+      author: "Cliente Vertex",
+      role: "Serviços especializados",
+    },
+  ];
+  return (
+    <section className="px-6 lg:px-10 py-32 lg:py-40 border-t border-hairline">
+      <div className="mx-auto max-w-[1400px]">
+        <Reveal className="mb-16 max-w-2xl">
+          <SectionLabel>Prova social</SectionLabel>
+          <h2 className="mt-6 font-display text-5xl text-ink text-balance lg:text-6xl">
+            Confiança se constrói com histórias reais.
+          </h2>
+          <p className="mt-6 text-ink-muted max-w-[52ch]">
+            Depoimentos de quem decidiu elevar a presença digital com a Exclusive Vertex.
+          </p>
+        </Reveal>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {quotes.map((q, i) => (
+            <Reveal key={q.author + i} delay={i * 80}>
+              <figure className="h-full rounded-2xl ring-1 ring-hairline bg-surface-2/40 p-8 flex flex-col justify-between">
+                <div>
+                  <div className="text-brand text-sm tracking-widest">★★★★★</div>
+                  <blockquote className="mt-5 font-display text-xl text-ink leading-snug text-pretty">
+                    “{q.quote}”
+                  </blockquote>
+                </div>
+                <figcaption className="mt-8 pt-6 border-t border-hairline">
+                  <p className="text-sm text-ink">{q.author}</p>
+                  <p className="text-xs text-ink-subtle mt-1">{q.role}</p>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={200}>
+          <div className="mt-14 flex flex-wrap items-center justify-between gap-4">
+            <p className="text-sm text-ink-muted">
+              Quer estar entre as próximas empresas transformadas?
+            </p>
+            <div className="flex gap-3">
+              <Link
+                to="/orcamento"
+                className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition hover:brightness-110"
+              >
+                Quero um orçamento
+              </Link>
+              <a
+                href="https://wa.me/5554992894672"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full bg-transparent px-6 py-3 text-sm font-medium text-ink ring-1 ring-hairline transition hover:ring-ink/30"
+              >
+                Falar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function ServicesGlimpse() {
   const shown = services.slice(0, 6);
   return (
@@ -235,12 +361,141 @@ function ServicesGlimpse() {
         </div>
 
         <Reveal delay={200}>
-          <div className="mt-16">
+          <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
             <Link to="/servicos" className="story-link text-sm text-ink">
               Ver todos os serviços
             </Link>
+            <Link
+              to="/orcamento"
+              className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition hover:brightness-110"
+            >
+              Quero um orçamento
+            </Link>
           </div>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function VertexVsOther() {
+  const before = [
+    "Site lento e desatualizado",
+    "Não aparece no Google",
+    "Visual amador",
+    "Não gera contatos",
+    "Ruim no celular",
+    "Sem estratégia de conversão",
+  ];
+  const after = [
+    "Site rápido e otimizado",
+    "SEO desde a fundação",
+    "Aparência premium",
+    "Fluxos que geram oportunidade",
+    "Mobile first impecável",
+    "Cada seção pensada para converter",
+  ];
+  return (
+    <section className="px-6 lg:px-10 py-32 lg:py-40 border-t border-hairline bg-surface-2/30">
+      <div className="mx-auto max-w-[1400px]">
+        <Reveal className="mb-14 max-w-3xl">
+          <SectionLabel>Antes × Depois da Vertex</SectionLabel>
+          <h2 className="mt-6 font-display text-5xl text-ink text-balance lg:text-6xl">
+            A diferença entre ter um site e ter um ativo digital.
+          </h2>
+        </Reveal>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <Reveal>
+            <div className="rounded-2xl ring-1 ring-hairline bg-surface p-8 lg:p-10 h-full">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-ink-subtle">
+                Antes
+              </p>
+              <p className="mt-3 font-display text-2xl text-ink">
+                Site que atrapalha
+              </p>
+              <ul className="mt-8 space-y-4">
+                {before.map((b) => (
+                  <li key={b} className="flex items-start gap-3 text-sm text-ink-muted">
+                    <span
+                      aria-hidden
+                      className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-ink-subtle/10 text-ink-subtle text-[11px]"
+                    >
+                      ✕
+                    </span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="rounded-2xl ring-1 ring-brand/40 bg-surface p-8 lg:p-10 h-full shadow-[0_40px_120px_-60px_rgba(47,107,255,0.5)]">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-brand">
+                Depois · Vertex
+              </p>
+              <p className="mt-3 font-display text-2xl text-ink">
+                Site que vende por você
+              </p>
+              <ul className="mt-8 space-y-4">
+                {after.map((a) => (
+                  <li key={a} className="flex items-start gap-3 text-sm text-ink">
+                    <span
+                      aria-hidden
+                      className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-brand/15 text-brand text-[11px]"
+                    >
+                      ✓
+                    </span>
+                    <span>{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Differentials() {
+  const items = [
+    "Design exclusivo",
+    "SEO desde o primeiro dia",
+    "Carregamento rápido",
+    "Mobile first",
+    "Copywriting focado em conversão",
+    "Integração com WhatsApp",
+    "Google Analytics configurado",
+    "Google Search Console",
+    "Hospedagem gerenciada",
+    "Suporte contínuo",
+  ];
+  return (
+    <section className="px-6 lg:px-10 py-32 border-t border-hairline">
+      <div className="mx-auto max-w-[1400px]">
+        <Reveal className="mb-14 max-w-2xl">
+          <SectionLabel>Diferenciais</SectionLabel>
+          <h2 className="mt-6 font-display text-4xl lg:text-5xl text-ink text-balance">
+            Muito mais do que "criar um site".
+          </h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-hairline ring-1 ring-hairline rounded-2xl overflow-hidden">
+          {items.map((p, i) => (
+            <Reveal key={p} delay={i * 25}>
+              <div className="bg-surface p-6 h-full flex items-start gap-3">
+                <span
+                  aria-hidden
+                  className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-brand/15 text-brand text-[11px]"
+                >
+                  ✓
+                </span>
+                <span className="text-sm text-ink leading-snug">{p}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -282,6 +537,30 @@ function ValuePoints() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={200}>
+          <div className="mt-14 flex flex-wrap items-center justify-between gap-4">
+            <p className="text-sm text-ink-muted">
+              Vamos conversar sobre o seu projeto?
+            </p>
+            <div className="flex gap-3">
+              <Link
+                to="/orcamento"
+                className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition hover:brightness-110"
+              >
+                Quero um orçamento
+              </Link>
+              <a
+                href="https://wa.me/5554992894672"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full bg-transparent px-6 py-3 text-sm font-medium text-ink ring-1 ring-hairline transition hover:ring-ink/30"
+              >
+                Falar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -294,7 +573,7 @@ function ProcessGlimpse() {
         <Reveal className="mb-16 max-w-2xl">
           <SectionLabel>Processo</SectionLabel>
           <h2 className="mt-6 font-display text-5xl text-ink text-balance lg:text-6xl">
-            Sete etapas construídas para gerar previsibilidade e excelência.
+            Um caminho claro do primeiro contato ao crescimento contínuo.
           </h2>
         </Reveal>
 
@@ -318,9 +597,15 @@ function ProcessGlimpse() {
         </div>
 
         <Reveal delay={200}>
-          <div className="mt-16">
+          <div className="mt-16 flex flex-wrap items-center justify-between gap-4">
             <Link to="/processo" className="story-link text-sm text-ink">
               Explorar processo completo
+            </Link>
+            <Link
+              to="/orcamento"
+              className="inline-flex items-center rounded-full bg-ink px-6 py-3 text-sm font-medium text-surface transition hover:brightness-110"
+            >
+              Solicitar orçamento
             </Link>
           </div>
         </Reveal>
@@ -349,13 +634,21 @@ function BigCTA() {
                 Sua empresa merece um site{" "}
                 <span className="italic text-brand">à altura</span>.
               </h2>
-              <div className="mt-14">
+              <div className="mt-14 flex flex-wrap justify-center gap-3">
                 <Link
                   to="/orcamento"
                   className="inline-flex items-center rounded-full bg-brand px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:brightness-110"
                 >
                   Solicitar proposta
                 </Link>
+                <a
+                  href="https://wa.me/5554992894672"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center rounded-full bg-transparent px-8 py-4 text-sm font-medium text-ink ring-1 ring-hairline transition hover:ring-ink/30"
+                >
+                  Falar no WhatsApp
+                </a>
               </div>
             </div>
           </div>
