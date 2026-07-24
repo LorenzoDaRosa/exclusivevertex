@@ -103,7 +103,7 @@ function Hero() {
         </div>
 
         <div
-          className="vx-fade-up hidden lg:block"
+          className="vx-fade-up hidden lg:block min-w-0"
           style={{ animationDelay: "500ms" }}
         >
           <div className="relative rounded-2xl overflow-hidden ring-1 ring-hairline bg-surface shadow-premium">
