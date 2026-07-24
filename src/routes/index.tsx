@@ -3,7 +3,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { ContentSection } from "@/components/site/ContentSection";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { services, processSteps } from "@/lib/site-data";
-import serraCapa from "@/assets/serra/capa_case_serra.jpeg.asset.json";
+import serraCapa from "@/assets/serra/home_serra_depois.png.asset.json";
 import darosCapa from "@/assets/daros/daros_42.png.asset.json";
 
 export const Route = createFileRoute("/")({
