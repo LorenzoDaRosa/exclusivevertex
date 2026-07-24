@@ -188,7 +188,7 @@ function FeaturedProject() {
           <div>
             <SectionLabel>Projetos que transformaram empresas</SectionLabel>
             <h2 className="mt-6 font-display text-5xl text-ink text-balance lg:text-7xl max-w-[22ch]">
-              Cases reais. Marcas reposicionadas. Resultados construídos com intenção.
+              Casos reais. Marcas reposicionadas. Resultados construídos com intenção.
             </h2>
           </div>
           <div className="lg:w-1/3 border-t border-hairline pt-6">
