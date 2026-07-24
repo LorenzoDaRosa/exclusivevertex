@@ -63,8 +63,11 @@ export function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-hairline flex flex-col md:flex-row justify-between gap-4 text-[11px] uppercase tracking-[0.24em] text-ink-subtle">
-          <span>© {new Date().getFullYear()} Exclusive Vertex</span>
-          <span>Desenvolvido com precisão · Brasil</span>
+          <span>© {new Date().getFullYear()} Exclusive Vertex · CNPJ em breve</span>
+          <div className="flex gap-6">
+            <a href="mailto:contato@exclusivevertex.com" className="hover:text-ink transition-colors">Privacidade · LGPD</a>
+            <span>Desenvolvido com precisão · Brasil</span>
+          </div>
         </div>
       </div>
     </footer>
