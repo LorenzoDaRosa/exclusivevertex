@@ -2,6 +2,10 @@ import { useRef, useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import vertexVideo1 from "@/assets/videos/vertex-video-1.mp4.asset.json";
+import postReferencias from "@/assets/posts/post-referencias.png.asset.json";
+import postTresPerguntas from "@/assets/posts/post-tres-perguntas.png.asset.json";
+import postCompromisso from "@/assets/posts/post-compromisso.png.asset.json";
+import postSerra from "@/assets/posts/post-serra.png.asset.json";
 
 // ============================================================
 // EDITÁVEL — troque vídeos, títulos, descrições e links aqui
@@ -25,7 +29,30 @@ type SecondaryPost = {
 };
 
 const secondaryPosts: SecondaryPost[] = [
-  // Preencher em seguida — grade pronta para 3 posts
+  {
+    title: "Transformando empresas em referências digitais.",
+    description: "O compromisso que guia cada projeto Exclusive Vertex.",
+    thumbnail: postReferencias.url,
+    href: INSTAGRAM_URL,
+  },
+  {
+    title: "3 perguntas que todo site deve responder.",
+    description: "Confiança, qualidade e geração de contatos.",
+    thumbnail: postTresPerguntas.url,
+    href: INSTAGRAM_URL,
+  },
+  {
+    title: "Nosso compromisso.",
+    description: "Sem modelos prontos. Cada detalhe tem propósito.",
+    thumbnail: postCompromisso.url,
+    href: INSTAGRAM_URL,
+  },
+  {
+    title: "Antes x Depois — Serra Seguros.",
+    description: "Mais do que um novo visual. Uma nova experiência.",
+    thumbnail: postSerra.url,
+    href: INSTAGRAM_URL,
+  },
 ];
 
 // ============================================================
