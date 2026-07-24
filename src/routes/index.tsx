@@ -208,7 +208,7 @@ function FeaturedProject() {
             params={{ slug: "serra-seguros" }}
             className="group block"
           >
-            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[21/12] w-full overflow-hidden rounded-2xl ring-1 ring-hairline bg-black">
+            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[21/12] w-full overflow-hidden rounded-2xl ring-1 ring-hairline bg-surface-2 shadow-premium hover:shadow-premium-hover">
               <img
                 src={serraCapa.url}
                 alt="Capa do case Serra Seguros e Consórcios — Exclusive Vertex"
