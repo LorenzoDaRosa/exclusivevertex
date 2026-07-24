@@ -4,7 +4,6 @@ import { ContentSection } from "@/components/site/ContentSection";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { services, processSteps } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/capa_case_serra.jpeg.asset.json";
-import serraHomeDepois from "@/assets/serra/home_serra_depois.png.asset.json";
 import darosCapa from "@/assets/daros/daros_42.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -61,7 +60,7 @@ function Hero() {
             "radial-gradient(1000px 500px at 15% 20%, #2F6BFF, transparent 60%)",
         }}
       />
-      <div className="relative mx-auto w-full max-w-[1400px] grid lg:grid-cols-[1.15fr_1fr] gap-16 items-center">
+      <div className="relative mx-auto w-full max-w-[1400px]">
         <div className="min-w-0">
           <div className="vx-fade-in mb-8" style={{ animationDelay: "60ms" }}>
             <SectionLabel>Agência digital · Exclusive Vertex</SectionLabel>
@@ -103,25 +102,6 @@ function Hero() {
           </div>
         </div>
 
-        <div
-          className="vx-fade-up hidden lg:block min-w-0"
-          style={{ animationDelay: "500ms" }}
-        >
-          <div className="relative rounded-2xl overflow-hidden ring-1 ring-hairline bg-surface shadow-premium">
-            <div className="flex items-center gap-1.5 px-4 py-3 bg-surface-2 border-b border-hairline">
-              <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
-              <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
-              <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
-            </div>
-
-            <img
-              src={serraHomeDepois.url}
-              alt="Exemplo de site criado pela Exclusive Vertex — Serra Seguros"
-              className="w-full h-auto block"
-              loading="eager"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );
