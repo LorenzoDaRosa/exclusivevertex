@@ -61,7 +61,7 @@ function Hero() {
         }}
       />
       <div className="relative mx-auto w-full max-w-[1400px] grid lg:grid-cols-[1.15fr_1fr] gap-16 items-center">
-        <div>
+        <div className="min-w-0">
           <div className="vx-fade-in mb-8" style={{ animationDelay: "60ms" }}>
             <SectionLabel>Agência digital · Exclusive Vertex</SectionLabel>
           </div>
