@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
+import { ContentSection } from "@/components/site/ContentSection";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { services, processSteps } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/capa_case_serra.jpeg.asset.json";
@@ -41,6 +42,7 @@ function HomePage() {
       <Differentials />
       <ValuePoints />
       <ProcessGlimpse />
+      <ContentSection />
       <BigCTA />
       <BlogInvite />
     </>
