@@ -104,12 +104,13 @@ function Hero() {
           className="vx-fade-up hidden lg:block"
           style={{ animationDelay: "500ms" }}
         >
-          <div className="relative rounded-2xl overflow-hidden ring-1 ring-hairline bg-black shadow-[0_40px_120px_-40px_rgba(47,107,255,0.35)]">
-            <div className="flex items-center gap-1.5 px-4 py-3 bg-surface-2/60 border-b border-hairline">
-              <span className="h-2.5 w-2.5 rounded-full bg-ink-subtle/40" />
-              <span className="h-2.5 w-2.5 rounded-full bg-ink-subtle/40" />
-              <span className="h-2.5 w-2.5 rounded-full bg-ink-subtle/40" />
+          <div className="relative rounded-2xl overflow-hidden ring-1 ring-hairline bg-surface shadow-premium">
+            <div className="flex items-center gap-1.5 px-4 py-3 bg-surface-2 border-b border-hairline">
+              <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
+              <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
+              <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
             </div>
+
             <img
               src={serraHomeDepois.url}
               alt="Exemplo de site criado pela Exclusive Vertex — Serra Seguros"
@@ -208,7 +209,7 @@ function FeaturedProject() {
             params={{ slug: "serra-seguros" }}
             className="group block"
           >
-            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[21/12] w-full overflow-hidden rounded-2xl ring-1 ring-hairline bg-black">
+            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[21/12] w-full overflow-hidden rounded-2xl ring-1 ring-hairline bg-surface-2 shadow-premium hover:shadow-premium-hover">
               <img
                 src={serraCapa.url}
                 alt="Capa do case Serra Seguros e Consórcios — Exclusive Vertex"
@@ -619,7 +620,7 @@ function BigCTA() {
     <section className="px-6 lg:px-10 py-32">
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-[#05070d] ring-1 ring-hairline px-8 py-24 lg:px-20 lg:py-40 text-center">
+          <div className="relative overflow-hidden rounded-3xl bg-surface-2 ring-1 ring-hairline px-8 py-24 lg:px-20 lg:py-40 text-center shadow-premium">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0 opacity-[0.18]"
