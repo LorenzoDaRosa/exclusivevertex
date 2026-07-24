@@ -633,24 +633,30 @@ function BigCTA() {
             />
             <div className="relative">
               <SectionLabel>Vamos conversar</SectionLabel>
-              <h2 className="mt-8 font-display text-5xl leading-[1] text-ink text-balance sm:text-7xl lg:text-[104px] max-w-[18ch] mx-auto">
-                Sua empresa merece um site{" "}
-                <span className="italic text-brand">à altura</span>.
+              <h2 className="mt-8 font-display text-5xl leading-[1.05] text-ink text-balance sm:text-6xl lg:text-[88px] max-w-[22ch] mx-auto">
+                Vamos construir o próximo site que vai{" "}
+                <span className="italic text-brand">destacar sua empresa</span>?
               </h2>
+              <div className="mt-8 space-y-2 max-w-[52ch] mx-auto">
+                <p className="text-lg text-ink-muted">Você já viu como pensamos.</p>
+                <p className="text-lg text-ink-muted">
+                  Agora imagine essa estratégia aplicada ao seu negócio.
+                </p>
+              </div>
               <div className="mt-14 flex flex-wrap justify-center gap-3">
                 <Link
                   to="/orcamento"
                   className="inline-flex items-center rounded-full bg-brand px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:brightness-110"
                 >
-                  Solicitar proposta
+                  Solicitar orçamento
                 </Link>
                 <a
                   href="https://wa.me/5554992894672"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center rounded-full bg-transparent px-8 py-4 text-sm font-medium text-ink ring-1 ring-hairline transition hover:ring-ink/30"
+                  className="inline-flex items-center rounded-full bg-surface px-8 py-4 text-sm font-medium text-ink ring-1 ring-hairline transition hover:ring-ink/30"
                 >
-                  Falar no WhatsApp
+                  Conversar no WhatsApp
                 </a>
               </div>
             </div>
