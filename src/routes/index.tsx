@@ -61,7 +61,7 @@ function Hero() {
         }}
       />
       <div className="relative mx-auto w-full max-w-[1400px] grid lg:grid-cols-[1.15fr_1fr] gap-16 items-center">
-        <div>
+        <div className="min-w-0">
           <div className="vx-fade-in mb-8" style={{ animationDelay: "60ms" }}>
             <SectionLabel>Agência digital · Exclusive Vertex</SectionLabel>
           </div>
@@ -103,7 +103,7 @@ function Hero() {
         </div>
 
         <div
-          className="vx-fade-up hidden lg:block"
+          className="vx-fade-up hidden lg:block min-w-0"
           style={{ animationDelay: "500ms" }}
         >
           <div className="relative rounded-2xl overflow-hidden ring-1 ring-hairline bg-surface shadow-premium">
