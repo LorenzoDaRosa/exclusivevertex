@@ -2,15 +2,20 @@ import iconAsset from "@/assets/vertex-icon.png.asset.json";
 
 export function Logo({ className = "size-11" }: { className?: string }) {
   return (
-    <img
-      src={iconAsset.url}
-      alt="Exclusive Vertex"
-      className={`${className} object-contain`}
-      loading="eager"
-      decoding="async"
-    />
+    <span
+      className={`${className} inline-flex items-center justify-center rounded-xl bg-ink p-1.5`}
+    >
+      <img
+        src={iconAsset.url}
+        alt="Exclusive Vertex"
+        className="h-full w-full object-contain"
+        loading="eager"
+        decoding="async"
+      />
+    </span>
   );
 }
+
 
 export function Wordmark() {
   return (
