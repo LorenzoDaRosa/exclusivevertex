@@ -18,9 +18,35 @@ import serraAvaliacoesDepois from "@/assets/serra/avaliacoes_serra_depois.png.as
 import serraEmpresaDepois from "@/assets/serra/empresa_serra_depois.png.asset.json";
 import serraDiferenciaisDepois from "@/assets/serra/diferenciais_serra_depois.png.asset.json";
 import serraPrincipiosDepois from "@/assets/serra/principios_serra_depois.png.asset.json";
+import darosLogo from "@/assets/daros/daros-logo.png.asset.json";
+import darosHero from "@/assets/daros/daros_42.png.asset.json";
+import darosQuemSomos from "@/assets/daros/daros_43.png.asset.json";
+import darosNumeros from "@/assets/daros/daros_44.png.asset.json";
+import darosMarcas from "@/assets/daros/daros_45.png.asset.json";
+import darosOculos from "@/assets/daros/daros_46.png.asset.json";
+import darosQuiz1 from "@/assets/daros/daros_47.png.asset.json";
+import darosQuiz2 from "@/assets/daros/daros_48.png.asset.json";
+import darosConsultoria from "@/assets/daros/daros_49.png.asset.json";
+import darosMotivos from "@/assets/daros/daros_50.png.asset.json";
+import darosComparativo from "@/assets/daros/daros_51.png.asset.json";
+import darosProvaSocial from "@/assets/daros/daros_52.png.asset.json";
+import darosBastidores from "@/assets/daros/daros_53.png.asset.json";
+import darosFooter from "@/assets/daros/daros_54.png.asset.json";
+import darosFundadora from "@/assets/daros/daros_55.png.asset.json";
+import darosFamilia from "@/assets/daros/daros_56.png.asset.json";
+import darosConteudo from "@/assets/daros/daros_57.png.asset.json";
+import darosContato from "@/assets/daros/daros_58.png.asset.json";
+import darosForm from "@/assets/daros/daros_59.png.asset.json";
+import darosFaq from "@/assets/daros/daros_60.png.asset.json";
 
 const projectLogos: Record<string, string> = {
   "serra-seguros": serraLogo.url,
+  "daros-lunettes": darosLogo.url,
+};
+
+const projectHeroImages: Record<string, string> = {
+  "serra-seguros": serraHomeDepois.url,
+  "daros-lunettes": darosHero.url,
 };
 
 const projectBeforeAfter: Record<string, BeforeAfterItem[]> = {
@@ -84,6 +110,122 @@ const projectBeforeAfter: Record<string, BeforeAfterItem[]> = {
       after: serraPrincipiosDepois.url,
     },
   ],
+  "daros-lunettes": [
+    {
+      title: "Hero cinemático que traduz o clima da boutique.",
+      benefit:
+        "Antes não havia site. Agora, a home abre com um vídeo real da loja e a frase de marca em tipografia serifada — \"Veja a vida com bons olhos\" — posicionando a Daros como boutique premium desde o primeiro segundo.",
+      after: darosHero.url,
+    },
+    {
+      title: "\"Quem somos\" em tom editorial, não corporativo.",
+      benefit:
+        "A abertura institucional troca o clichê \"sobre nós\" por uma frase editorial — \"Uma Óptica dedicada a quem entende que um par de óculos é assinatura pessoal\" — que já filtra o público certo.",
+      after: darosQuemSomos.url,
+    },
+    {
+      title: "Rose Quadros — a fundadora como parte da narrativa.",
+      benefit:
+        "Apresentamos a Rose como personagem central da marca, com foto profissional, biografia e citação. Boutique premium precisa de rosto — e agora tem.",
+      after: darosFundadora.url,
+    },
+    {
+      title: "Um negócio de família, contado com verdade.",
+      benefit:
+        "A seção \"A Daros é feita com quem a Rose ama\" humaniza a marca sem cair no sentimental — mostra o time real e o cuidado que define o atendimento na loja.",
+      after: darosFamilia.url,
+    },
+    {
+      title: "Daros em números — autoridade tipográfica.",
+      benefit:
+        "Uma faixa escura editorial com 20+ marcas, 5,0★ no Google, 4 anos de mercado e 100% de atendimento personalizado. A prova de solidez ganhou hierarquia de página institucional.",
+      after: darosNumeros.url,
+    },
+    {
+      title: "Curadoria internacional em destaque.",
+      benefit:
+        "MaxMara, Missoni, Levi's, Ray-Ban, Oakley, Tom Ford — a grade de marcas foi tratada como galeria editorial, transformando portfólio em argumento de venda.",
+      after: darosMarcas.url,
+    },
+    {
+      title: "Óculos de Grau e de Sol — dois territórios, uma experiência.",
+      benefit:
+        "Cada linha ganhou sua própria porta de entrada, com foto editorial, copy dedicada e CTA para explorar modelos — separando o que antes era só \"produto\".",
+      after: darosOculos.url,
+    },
+    {
+      title: "Consultoria Daros — atendimento presencial traduzido para tela.",
+      benefit:
+        "Cinco pilares — formato do rosto, estilo pessoal, conforto, rotina, medidas técnicas — apresentados com ícones e um único CTA claro. Antes de comprar, o cliente entende que existe método.",
+      after: darosConsultoria.url,
+    },
+    {
+      title: "Seis motivos para vir até aqui.",
+      benefit:
+        "Consultoria de imagem, garantia de adaptação, atendimento personalizado, ajuste técnico, grandes marcas e conforto visual — numerados em grade editorial. Diferencial vira lista memorável.",
+      after: darosMotivos.url,
+    },
+    {
+      title: "Óptica tradicional vs Daros Lunettes.",
+      benefit:
+        "Um comparativo direto que reposiciona a marca no mercado: contra o atendimento padronizado, o cuidado consultivo; contra o volume, o tempo dedicado. É posicionamento em uma única tela.",
+      after: darosComparativo.url,
+    },
+    {
+      title: "Quiz \"Encontre seu óculos em 2 minutos\".",
+      benefit:
+        "Cinco perguntas rápidas em modo escuro cinematográfico — para quem, grau ou sol, estilo, rotina, orçamento — que traduzem a consultoria da loja em interação digital.",
+      after: darosQuiz1.url,
+    },
+    {
+      title: "Perguntas do quiz com hierarquia clara.",
+      benefit:
+        "Cada etapa apresenta uma pergunta editorial com opções em cards escuros — barra de progresso, botão voltar, contador. A experiência guiada substitui o formulário genérico de contato.",
+      after: darosQuiz2.url,
+    },
+    {
+      title: "Prova social com nota 5,0★ do Google em destaque.",
+      benefit:
+        "Depoimentos reais em cards editoriais, carrossel horizontal e CTA direto para \"Ver todas as avaliações no Google\" — a reputação da loja finalmente aparece online.",
+      after: darosProvaSocial.url,
+    },
+    {
+      title: "Bastidores do Instagram integrados à home.",
+      benefit:
+        "A seção \"Nossos bastidores\" traz os posts reais do @daroslunettes em destaque, criando uma ponte entre o site e a rede social — sem depender de embed genérico.",
+      after: darosBastidores.url,
+    },
+    {
+      title: "Central de conteúdo pensada para SEO.",
+      benefit:
+        "\"Leituras sobre olhar, estilo e visão\" — uma central com categorias claras (Grau, Sol, Saúde Visual, Tendências, Marcas, Cuidados, Consultoria) preparada para atrair tráfego orgânico.",
+      after: darosConteudo.url,
+    },
+    {
+      title: "FAQ editorial que responde antes da dúvida chegar.",
+      benefit:
+        "Dúvidas comuns organizadas em acordeão tipográfico — receita, ajustes, prazos, garantia, troca de lentes. Reduz fricção no atendimento e ainda ajuda no SEO.",
+      after: darosFaq.url,
+    },
+    {
+      title: "Atendimento personalizado com envio direto ao WhatsApp.",
+      benefit:
+        "Um único formulário editorial com nome, WhatsApp, cidade, produto, receita e preferência de atendimento presencial — a lead chega qualificada, sem passar por caixa de entrada.",
+      after: darosForm.url,
+    },
+    {
+      title: "Contato completo, sem esconder informações.",
+      benefit:
+        "Endereço, horários, e-mail, WhatsApp, Instagram e Facebook em hierarquia clara, com botão fixo para conversar agora. Presença física e digital finalmente conectadas.",
+      after: darosContato.url,
+    },
+    {
+      title: "Rodapé escuro, silencioso, elegante.",
+      benefit:
+        "Fecha o site com a assinatura da marca — \"Veja a vida com bons olhos\" — navegação completa, endereço da boutique e canais sociais em fundo escuro editorial.",
+      after: darosFooter.url,
+    },
+  ],
 };
 
 export const Route = createFileRoute("/projetos/$slug")({
@@ -127,7 +269,9 @@ export const Route = createFileRoute("/projetos/$slug")({
 function ProjetoDetail() {
   const project = Route.useLoaderData() as Project;
   const logoUrl = projectLogos[project.slug];
+  const heroImage = projectHeroImages[project.slug];
   const beforeAfter = projectBeforeAfter[project.slug];
+  const isFromScratch = project.slug === "daros-lunettes";
 
   return (
     <article className="px-6 lg:px-10 pt-40 pb-32">
@@ -154,8 +298,9 @@ function ProjetoDetail() {
                 <img src={logoUrl} alt={`${project.title} — logo`} className="max-h-full max-w-full object-contain" />
               </div>
               <div className="text-sm text-ink-muted max-w-[52ch]">
-                Cliente atendido pela Exclusive Vertex em reposicionamento digital
-                completo — do design institucional à estrutura de conversão.
+                {isFromScratch
+                  ? "Cliente atendido pela Exclusive Vertex na construção da primeira presença digital — do posicionamento editorial à estrutura de atendimento."
+                  : "Cliente atendido pela Exclusive Vertex em reposicionamento digital completo — do design institucional à estrutura de conversão."}
               </div>
             </div>
           </Reveal>
@@ -163,9 +308,9 @@ function ProjetoDetail() {
 
         <Reveal delay={120}>
           <div className="mt-16 overflow-hidden rounded-2xl ring-1 ring-hairline bg-surface-2/40">
-            {project.slug === "serra-seguros" ? (
+            {heroImage ? (
               <img
-                src={serraHomeDepois.url}
+                src={heroImage}
                 alt={`${project.title} — home`}
                 className="w-full h-auto block"
               />
@@ -240,14 +385,18 @@ function ProjetoDetail() {
         {(project.before || project.after) && (
           <div className="mt-32">
             <Reveal>
-              <SectionLabel>Antes & Depois</SectionLabel>
+              <SectionLabel>
+                {isFromScratch ? "A construção do site" : "Antes & Depois"}
+              </SectionLabel>
               <h2 className="mt-6 font-display text-4xl lg:text-6xl text-ink text-balance max-w-[24ch]">
-                A reconstrução completa da presença digital.
+                {isFromScratch
+                  ? "A primeira presença digital da marca, construída do zero."
+                  : "A reconstrução completa da presença digital."}
               </h2>
               <p className="mt-6 max-w-[64ch] text-ink-muted text-pretty">
-                Cada tela abaixo mostra o mesmo ponto do site — o antes, herdado
-                de um template genérico, e o depois construído pela Exclusive
-                Vertex com foco em posicionamento, credibilidade e conversão.
+                {isFromScratch
+                  ? "Cada tela abaixo mostra uma decisão editorial do projeto — construída pela Exclusive Vertex a partir da identidade da boutique, com foco em posicionamento, cuidado e conversão."
+                  : "Cada tela abaixo mostra o mesmo ponto do site — o antes, herdado de um template genérico, e o depois construído pela Exclusive Vertex com foco em posicionamento, credibilidade e conversão."}
               </p>
             </Reveal>
 
@@ -437,10 +586,9 @@ function ProjetoDetail() {
               Resultado
             </p>
             <p className="mt-6 font-display text-2xl lg:text-3xl text-ink max-w-[60ch] text-pretty">
-              Mais do que um novo site, a Serra passou a contar com uma
-              plataforma preparada para representar a qualidade da empresa e
-              apoiar seu processo comercial — com foco em experiência,
-              credibilidade, conversão e escalabilidade.
+              {isFromScratch
+                ? "Mais do que um novo site, a Daros passou a contar com uma plataforma editorial preparada para representar a experiência da boutique e apoiar seu processo de atendimento — com foco em posicionamento, cuidado, conversão e escalabilidade."
+                : "Mais do que um novo site, a Serra passou a contar com uma plataforma preparada para representar a qualidade da empresa e apoiar seu processo comercial — com foco em experiência, credibilidade, conversão e escalabilidade."}
             </p>
           </div>
         </Reveal>
