@@ -108,44 +108,62 @@ function SecondaryGrid({ posts }: { posts: SecondaryPost[] }) {
   const slots = posts.length > 0 ? posts : [null, null, null, null];
 
   return (
-    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {slots.map((post, i) => (
-        <Reveal key={i} delay={80 * i}>
-          {post ? (
-            <a
-              href={post.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block overflow-hidden bg-surface border hairline transition-all duration-500 hover:-translate-y-1 shadow-premium hover:shadow-premium-hover"
-              style={{ borderRadius: 20 }}
-            >
-              <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4 / 5" }}>
-                <img
-                  src={post.thumbnail}
-                  alt={post.title}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
-                />
+    <div className="mt-10 -mx-6 lg:-mx-10">
+      <div
+        className="flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-6 lg:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        style={{ scrollBehavior: "smooth" }}
+      >
+        {slots.map((post, i) => (
+          <div
+            key={i}
+            className="w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[32%] xl:w-[28%]"
+          >
+            {post ? (
+              <a
+                href={post.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block overflow-hidden bg-surface border hairline transition-all duration-500 hover:-translate-y-1 shadow-premium hover:shadow-premium-hover"
+                style={{ borderRadius: 20 }}
+              >
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{ aspectRatio: "4 / 5" }}
+                >
+                  <img
+                    src={post.thumbnail}
+                    alt={post.title}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-xl text-ink leading-tight">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-ink-muted leading-relaxed">
+                    {post.description}
+                  </p>
+                </div>
+              </a>
+            ) : (
+              <div
+                className="flex aspect-[4/5] items-center justify-center bg-surface-2 border hairline text-xs uppercase tracking-[0.28em] text-ink-subtle"
+                style={{ borderRadius: 20 }}
+              >
+                Em breve
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl text-ink leading-tight">
-                  {post.title}
-                </h3>
-                <p className="mt-2 text-sm text-ink-muted leading-relaxed">
-                  {post.description}
-                </p>
-              </div>
-            </a>
-          ) : (
-            <div
-              className="flex aspect-[4/5] items-center justify-center bg-surface-2 border hairline text-xs uppercase tracking-[0.28em] text-ink-subtle"
-              style={{ borderRadius: 20 }}
-            >
-              Em breve
-            </div>
-          )}
-        </Reveal>
-      ))}
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="px-6 lg:px-10">
+        <p className="text-[11px] uppercase tracking-[0.28em] text-ink-subtle">
+          Arraste para o lado →
+        </p>
+      </div>
     </div>
   );
 }
+
