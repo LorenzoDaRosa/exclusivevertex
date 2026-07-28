@@ -171,3 +171,37 @@
     transform-origin: left;
   }
 }
+
+/* ---- Home experience (Vertex) ---- */
+@keyframes vx-word-cycle {
+  0%, 26%   { opacity: 0; transform: translateY(0.35em); }
+  4%, 22%   { opacity: 1; transform: translateY(0); }
+  30%, 100% { opacity: 0; transform: translateY(-0.35em); }
+}
+@keyframes vx-scroll-cue {
+  0%   { transform: translateY(-60%); opacity: 0; }
+  40%  { opacity: 1; }
+  100% { transform: translateY(120%); opacity: 0; }
+}
+@keyframes vx-rise {
+  0%   { opacity: 0; transform: translateY(0.5em); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@utility vx-cue {
+  animation: vx-scroll-cue 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@utility vx-rise {
+  animation: vx-rise 1s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+@utility vx-line-grow {
+  animation: vx-line-grow 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vx-cue,
+  .vx-marquee {
+    animation: none;
+  }
+}
