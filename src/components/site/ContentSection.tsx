@@ -1,25 +1,15 @@
-import { useRef, useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
-import vertexVideo1 from "@/assets/videos/vertex-video-1.mp4.asset.json";
-import postReferencias from "@/assets/posts/post-referencias.png.asset.json";
-import postTresPerguntas from "@/assets/posts/post-tres-perguntas.png.asset.json";
-import postCompromisso from "@/assets/posts/post-compromisso.png.asset.json";
-import postSerra from "@/assets/posts/post-serra.png.asset.json";
+import capaPrecisaSite from "@/assets/conteudos/Exclusive_Vertex_3.png.asset.json";
+import capaSerraVertex from "@/assets/conteudos/Serra_X_Vertex.png.asset.json";
+import capaAfastando from "@/assets/conteudos/Capa_Reels_Vertex_2.png.asset.json";
+import capaClientes from "@/assets/conteudos/capa-reels-clientes.jpeg.asset.json";
 
 // ============================================================
-// EDITÁVEL — troque vídeos, títulos, descrições e links aqui
+// EDITÁVEL — troque capas, títulos, descrições e links aqui
 // ============================================================
 
 const INSTAGRAM_URL = "https://www.instagram.com/exclusive.vertex/";
-
-const featuredVideo = {
-  src: vertexVideo1.url,
-  poster: "", // opcional: cole aqui a URL de uma imagem de capa
-  title: "Bastidores Exclusive Vertex",
-  description:
-    "Um recorte do nosso processo — estratégia, design e desenvolvimento premium.",
-};
 
 type SecondaryPost = {
   title: string;
@@ -30,30 +20,31 @@ type SecondaryPost = {
 
 const secondaryPosts: SecondaryPost[] = [
   {
-    title: "Transformando empresas em referências digitais.",
-    description: "O compromisso que guia cada projeto Exclusive Vertex.",
-    thumbnail: postReferencias.url,
+    title: "Sua empresa realmente precisa de um site?",
+    description: "A resposta pode estar custando novos clientes.",
+    thumbnail: capaPrecisaSite.url,
     href: INSTAGRAM_URL,
   },
   {
-    title: "3 perguntas que todo site deve responder.",
-    description: "Confiança, qualidade e geração de contatos.",
-    thumbnail: postTresPerguntas.url,
+    title: "Como transformamos a presença digital da Serra Seguros.",
+    description: "O case completo por trás do reposicionamento.",
+    thumbnail: capaSerraVertex.url,
     href: INSTAGRAM_URL,
   },
   {
-    title: "Nosso compromisso.",
-    description: "Sem modelos prontos. Cada detalhe tem propósito.",
-    thumbnail: postCompromisso.url,
+    title: "O seu site pode estar afastando clientes.",
+    description: "Percepção errada custa contratos todos os dias.",
+    thumbnail: capaAfastando.url,
     href: INSTAGRAM_URL,
   },
   {
-    title: "Antes x Depois — Serra Seguros.",
-    description: "Mais do que um novo visual. Uma nova experiência.",
-    thumbnail: postSerra.url,
+    title: "O problema não é a falta de clientes.",
+    description: "É o que eles veem antes de falar com você.",
+    thumbnail: capaClientes.url,
     href: INSTAGRAM_URL,
   },
 ];
+
 
 // ============================================================
 
@@ -77,13 +68,10 @@ export function ContentSection() {
           </p>
         </Reveal>
 
-        <Reveal delay={220}>
-          <div className="mt-16">
-            <FeaturedVideoPlayer video={featuredVideo} />
-          </div>
-        </Reveal>
+        <div className="mt-14">
+          <SecondaryGrid posts={secondaryPosts} />
+        </div>
 
-        <SecondaryGrid posts={secondaryPosts} />
 
         <Reveal delay={120}>
           <div className="mt-16 flex justify-center">
@@ -115,75 +103,6 @@ export function ContentSection() {
   );
 }
 
-function FeaturedVideoPlayer({ video }: { video: typeof featuredVideo }) {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [playing, setPlaying] = useState(false);
-
-  const handlePlay = () => {
-    const el = videoRef.current;
-    if (!el) return;
-    el.play();
-    setPlaying(true);
-  };
-
-  return (
-    <div
-      className="group relative w-full overflow-hidden bg-surface-2 border hairline"
-      style={{
-        borderRadius: 20,
-        aspectRatio: "16 / 9",
-        boxShadow: "0 30px 80px -30px rgba(17,24,39,0.18)",
-      }}
-    >
-      <video
-        ref={videoRef}
-        src={video.src}
-        poster={video.poster || undefined}
-        preload="metadata"
-        controls={playing}
-        playsInline
-        onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      {!playing && (
-        <button
-          type="button"
-          onClick={handlePlay}
-          aria-label={`Reproduzir vídeo: ${video.title}`}
-          className="absolute inset-0 flex items-center justify-center transition-all duration-500"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(17,24,39,0.15) 0%, rgba(17,24,39,0.45) 100%)",
-          }}
-        >
-          <span
-            className="flex h-20 w-20 items-center justify-center rounded-full bg-surface/95 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 shadow-premium"
-            aria-hidden
-          >
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 24 24"
-              fill="var(--brand)"
-              className="translate-x-[2px]"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </span>
-          <div className="absolute bottom-6 left-6 right-6 text-left">
-            <p className="text-primary-foreground/90 text-xs uppercase tracking-[0.28em]">
-              Vídeo em destaque
-            </p>
-            <p className="mt-2 font-display text-2xl md:text-3xl text-primary-foreground">
-              {video.title}
-            </p>
-          </div>
-        </button>
-      )}
-    </div>
-  );
-}
 
 function SecondaryGrid({ posts }: { posts: SecondaryPost[] }) {
   const slots = posts.length > 0 ? posts : [null, null, null, null];
