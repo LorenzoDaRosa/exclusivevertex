@@ -1,25 +1,15 @@
-import { useRef, useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
-import vertexVideo1 from "@/assets/videos/vertex-video-1.mp4.asset.json";
-import postReferencias from "@/assets/posts/post-referencias.png.asset.json";
-import postTresPerguntas from "@/assets/posts/post-tres-perguntas.png.asset.json";
-import postCompromisso from "@/assets/posts/post-compromisso.png.asset.json";
-import postSerra from "@/assets/posts/post-serra.png.asset.json";
+import capaPrecisaSite from "@/assets/conteudos/Exclusive_Vertex_3.png.asset.json";
+import capaSerraVertex from "@/assets/conteudos/Serra_X_Vertex.png.asset.json";
+import capaAfastando from "@/assets/conteudos/Capa_Reels_Vertex_2.png.asset.json";
+import capaClientes from "@/assets/conteudos/capa-reels-clientes.jpeg.asset.json";
 
 // ============================================================
-// EDITÁVEL — troque vídeos, títulos, descrições e links aqui
+// EDITÁVEL — troque capas, títulos, descrições e links aqui
 // ============================================================
 
 const INSTAGRAM_URL = "https://www.instagram.com/exclusive.vertex/";
-
-const featuredVideo = {
-  src: vertexVideo1.url,
-  poster: "", // opcional: cole aqui a URL de uma imagem de capa
-  title: "Bastidores Exclusive Vertex",
-  description:
-    "Um recorte do nosso processo — estratégia, design e desenvolvimento premium.",
-};
 
 type SecondaryPost = {
   title: string;
@@ -30,30 +20,31 @@ type SecondaryPost = {
 
 const secondaryPosts: SecondaryPost[] = [
   {
-    title: "Transformando empresas em referências digitais.",
-    description: "O compromisso que guia cada projeto Exclusive Vertex.",
-    thumbnail: postReferencias.url,
+    title: "Sua empresa realmente precisa de um site?",
+    description: "A resposta pode estar custando novos clientes.",
+    thumbnail: capaPrecisaSite.url,
     href: INSTAGRAM_URL,
   },
   {
-    title: "3 perguntas que todo site deve responder.",
-    description: "Confiança, qualidade e geração de contatos.",
-    thumbnail: postTresPerguntas.url,
+    title: "Como transformamos a presença digital da Serra Seguros.",
+    description: "O case completo por trás do reposicionamento.",
+    thumbnail: capaSerraVertex.url,
     href: INSTAGRAM_URL,
   },
   {
-    title: "Nosso compromisso.",
-    description: "Sem modelos prontos. Cada detalhe tem propósito.",
-    thumbnail: postCompromisso.url,
+    title: "O seu site pode estar afastando clientes.",
+    description: "Percepção errada custa contratos todos os dias.",
+    thumbnail: capaAfastando.url,
     href: INSTAGRAM_URL,
   },
   {
-    title: "Antes x Depois — Serra Seguros.",
-    description: "Mais do que um novo visual. Uma nova experiência.",
-    thumbnail: postSerra.url,
+    title: "O problema não é a falta de clientes.",
+    description: "É o que eles veem antes de falar com você.",
+    thumbnail: capaClientes.url,
     href: INSTAGRAM_URL,
   },
 ];
+
 
 // ============================================================
 
