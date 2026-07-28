@@ -6,18 +6,20 @@ import { BeforeAfter, type BeforeAfterItem } from "@/components/site/BeforeAfter
 import { projects, type Project } from "@/lib/site-data";
 import serraLogo from "@/assets/serra-seguros-logo.png.asset.json";
 import serraHomeAntes from "@/assets/serra/home_serra_antes.png.asset.json";
-import serraHomeDepois from "@/assets/serra/home_serra_depois.png.asset.json";
 import serraAntes from "@/assets/serra/serra_antes.png.asset.json";
-import serraDepois from "@/assets/serra/serra_depois.png.asset.json";
 import serraCaminhoAntes from "@/assets/serra/caminho_serra_antes.png.asset.json";
-import serraCaminhoDepois from "@/assets/serra/caminho_serra_depois.png.asset.json";
-import serraCentralDepois from "@/assets/serra/central_de_conteudo_serra_depois.png.asset.json";
 import serraRodapeAntes from "@/assets/serra/rodape_serra_antes.png.asset.json";
-import serraRodapeDepois from "@/assets/serra/rodape_serra_depois.png.asset.json";
-import serraAvaliacoesDepois from "@/assets/serra/avaliacoes_serra_depois.png.asset.json";
-import serraEmpresaDepois from "@/assets/serra/empresa_serra_depois.png.asset.json";
-import serraDiferenciaisDepois from "@/assets/serra/diferenciais_serra_depois.png.asset.json";
-import serraPrincipiosDepois from "@/assets/serra/principios_serra_depois.png.asset.json";
+import serraHomeDepois from "@/assets/serra/serra_v2_62.png.asset.json";
+import serraJogoDepois from "@/assets/serra/serra_v2_63.png.asset.json";
+import serraAreasDepois from "@/assets/serra/serra_v2_64.png.asset.json";
+import serraComoFuncionaDepois from "@/assets/serra/serra_v2_65.png.asset.json";
+import serraAvaliacoesDepois from "@/assets/serra/serra_v2_66.png.asset.json";
+import serraPorqueDepois from "@/assets/serra/serra_v2_67.png.asset.json";
+import serraConteudoDepois from "@/assets/serra/serra_v2_68.png.asset.json";
+import serraCtaDepois from "@/assets/serra/serra_v2_69.png.asset.json";
+import serraRodapeDepois from "@/assets/serra/serra_v2_70.png.asset.json";
+import serraPrincipiosDepois from "@/assets/serra/serra_v2_71.png.asset.json";
+
 import darosLogo from "@/assets/daros/daros-logo.png.asset.json";
 import darosHero from "@/assets/daros/daros_42.png.asset.json";
 import darosQuemSomos from "@/assets/daros/daros_43.png.asset.json";
@@ -52,64 +54,71 @@ const projectHeroImages: Record<string, string> = {
 const projectBeforeAfter: Record<string, BeforeAfterItem[]> = {
   "serra-seguros": [
     {
-      title: "Hero que comunica valor em 3 segundos.",
+      title: "Hero cinematográfico que comunica valor em 3 segundos.",
       benefit:
-        "Antes, uma frase institucional sem contexto. Depois, um posicionamento claro em tipografia editorial, com CTAs diretos para cotação e simulação de consórcio.",
+        "Antes, um banner genérico sem posicionamento. Agora, a home abre com a marca em vídeo, a frase \"Protegemos o patrimônio que você conquistou\" e uma linha de prova social (5,0 no Google · +5.000 clientes · desde 2012) logo acima dos CTAs de cotação e simulação.",
       before: serraHomeAntes.url,
       after: serraHomeDepois.url,
     },
     {
-      title: "Prova social e diferenciais em destaque.",
+      title: "Narrativa emocional + números de autoridade.",
       benefit:
-        "Números que sustentam a marca — desde 2012, 5.000+ clientes, 50+ seguradoras, 5.0 de avaliação — combinados com uma grade clara dos motivos para escolher a Serra.",
+        "Trocamos o bloco institucional frio por uma seção que fala do que está em jogo — família, operação, patrimônio — seguida da faixa de números: 5,0★ no Google, 5.000+ clientes protegidos, desde 2012 e 50+ seguradoras parceiras.",
       before: serraAntes.url,
-      after: serraDepois.url,
+      after: serraJogoDepois.url,
     },
     {
-      title: "Navegação orientada por objetivo do cliente.",
+      title: "Áreas de atuação em carrossel editorial.",
       benefit:
-        "Trocamos as abas de produto genéricas por três frentes editoriais — Seguros, Consórcios e Empresarial — cada uma com imagem, número e propósito.",
+        "As linhas de produto viraram cards visuais com imagem, ícone, descrição e dois caminhos claros — \"Solicitar\" ou \"Saber mais\" — reduzindo o atrito entre interesse e cotação.",
       before: serraCaminhoAntes.url,
-      after: serraCaminhoDepois.url,
+      after: serraAreasDepois.url,
     },
     {
-      title: "Central de Conteúdo pensada para SEO e autoridade.",
+      title: "Como funciona: o processo em 5 etapas.",
       benefit:
-        "Uma nova arquitetura de conteúdo, com busca e categorias visuais, que transforma dúvidas de clientes em tráfego orgânico qualificado.",
-      after: serraCentralDepois.url,
+        "Do primeiro contato à apólice na mão. Explicitar o processo elimina a insegurança de quem nunca contratou com corretora e antecipa objeções antes do contato.",
+      after: serraComoFuncionaDepois.url,
     },
     {
-      title: "Página de Avaliações que constrói confiança.",
+      title: "Por que a Serra — diferenciais em grade.",
       benefit:
-        "Depoimentos reais organizados em tipografia editorial, com nota consolidada de Google e Instagram — a prova social virou seção estratégica.",
+        "Seis argumentos concretos (atendimento humano, proposta depois da conversa, 50+ seguradoras, 5.000 famílias, estratégia de lance, nada de pacote pronto) que separam a Serra de comparadores online.",
+      after: serraPorqueDepois.url,
+    },
+    {
+      title: "Avaliações reais como prova social.",
+      benefit:
+        "Depoimentos verificados do Google em carrossel, com nome, iniciais e 5 estrelas — a reputação offline finalmente visível no site.",
       after: serraAvaliacoesDepois.url,
     },
     {
-      title: "Rodapé institucional, com endereço, mapa e contato.",
+      title: "Instagram integrado e FAQ que resolve dúvidas.",
       benefit:
-        "Do rodapé denso em azul para um encerramento leve, com frase de marca, navegação completa, canais oficiais e mapa da matriz — reforçando presença física.",
+        "A grade do Instagram traz vida à página e o FAQ responde as objeções mais comuns antes do contato, reduzindo perguntas repetidas no WhatsApp.",
+      after: serraConteudoDepois.url,
+    },
+    {
+      title: "Missão, visão, valores e CTA institucional.",
+      benefit:
+        "Missão e visão em hierarquia clara, seguidas dos princípios da marca (Confiança, Comprometimento, Excelência, Ética, Atendimento humano) e do CTA editorial \"Uma conversa vale mais que uma proposta impressa\".",
+      after: serraPrincipiosDepois.url,
+    },
+    {
+      title: "CTA de fechamento em página inteira.",
+      benefit:
+        "\"Uma conversa de 10 minutos pode mudar como você enxerga o seu futuro.\" Um convite de baixa fricção que converte quem chegou ao fim da página.",
+      after: serraCtaDepois.url,
+    },
+    {
+      title: "Rodapé institucional com mapa e canais.",
+      benefit:
+        "Do rodapé denso em azul para um encerramento leve: navegação completa, telefones, e-mail, horários, endereço e Google Maps incorporado — reforçando presença física real.",
       before: serraRodapeAntes.url,
       after: serraRodapeDepois.url,
     },
-    {
-      title: "Página institucional que conta uma história.",
-      benefit:
-        "Reestruturamos a página Empresa com narrativa editorial (\"Muito além de assinar um contrato\") e uma faixa de números — +5.000 clientes, +50 seguradoras, 5,0★, PF & PJ — transformando o \"quem somos\" em prova de autoridade.",
-      after: serraEmpresaDepois.url,
-    },
-    {
-      title: "Diferenciais, missão e visão em hierarquia clara.",
-      benefit:
-        "Substituímos parágrafos densos por uma lista tipográfica dos diferenciais reais da Serra, combinada com missão e visão bem separadas — leitura rápida, tom institucional e posicionamento inconfundível.",
-      after: serraDiferenciaisDepois.url,
-    },
-    {
-      title: "Valores da marca e CTA de conversão.",
-      benefit:
-        "Fechamos a página com uma seção escura de princípios (Confiança, Comprometimento, Excelência, Ética, Atendimento humano) seguida de um CTA editorial — \"Uma conversa vale mais que uma proposta impressa\" — que direciona ao consultor.",
-      after: serraPrincipiosDepois.url,
-    },
   ],
+
   "daros-lunettes": [
     {
       title: "Hero cinemático que traduz o clima da boutique.",
