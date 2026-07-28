@@ -2,10 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { ContentSection } from "@/components/site/ContentSection";
 import { Counter } from "@/components/site/Counter";
+import { services } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
-import serraAntes from "@/assets/serra/home_serra_antes.png.asset.json";
 import darosCapa from "@/assets/daros/daros_42.png.asset.json";
-import darosAlt from "@/assets/daros/daros_46.png.asset.json";
 import vertexVideo from "@/assets/videos/vertex-video-1.mp4.asset.json";
 
 const WHATSAPP = "https://wa.me/5554992894672";
@@ -17,7 +16,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Criamos experiências digitais para empresas que precisam transmitir autoridade. Sites premium, estratégia e tecnologia para marcas que querem ser referência.",
+          "Construímos a percepção de valor de empresas que querem ser vistas como referência. Autoridade, credibilidade e crescimento em cada detalhe.",
       },
       {
         property: "og:title",
@@ -26,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Empresas extraordinárias merecem uma presença digital à altura.",
+          "Construímos a percepção de valor de empresas que querem ser vistas como referência.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -40,11 +39,12 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <Authority />
+      <Manifesto />
+      <Numbers />
       <Cases />
-      <Transform />
-      <Process />
-      <Impact />
+      <PullQuote />
+      <Positioning />
+      <Capabilities />
       <ContentSection />
       <ClosingCTA />
     </>
@@ -52,14 +52,109 @@ function HomePage() {
 }
 
 /* ------------------------------------------------------------------ */
-/* HERO — vídeo em background                                          */
+/* 01 — Abertura                                                       */
 /* ------------------------------------------------------------------ */
+
+const CYCLE = ["referência", "autoridade", "confiança", "escolha óbvia"];
 
 function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pt-40 pb-12 lg:px-10 lg:pb-16">
+    <section className="relative flex min-h-[100svh] flex-col justify-between px-6 pt-36 pb-10 lg:px-10 lg:pb-14">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          background:
+            "radial-gradient(900px 520px at 78% 12%, var(--brand), transparent 62%)",
+        }}
+      />
+
+      <div className="relative mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-center">
+        <div
+          className="vx-line-grow h-px w-24 bg-brand"
+          style={{ animationDelay: "120ms" }}
+        />
+
+        <h1 className="mt-10 max-w-[15ch] font-display text-[52px] leading-[0.92] text-ink sm:text-7xl lg:text-[112px] xl:text-[128px]">
+          <span className="vx-rise block" style={{ animationDelay: "180ms" }}>
+            Sua empresa
+          </span>
+          <span className="vx-rise block" style={{ animationDelay: "300ms" }}>
+            vista como
+          </span>
+          <span
+            className="vx-rise relative block h-[1.02em] overflow-hidden italic text-brand"
+            style={{ animationDelay: "420ms" }}
+          >
+            {CYCLE.map((word, i) => (
+              <span
+                key={word}
+                className="absolute inset-x-0 top-0 whitespace-nowrap"
+                style={{
+                  animation: `vx-word-cycle ${CYCLE.length * 2.8}s cubic-bezier(0.22,0.61,0.36,1) ${i * 2.8}s infinite`,
+                  opacity: 0,
+                }}
+              >
+                {word}.
+              </span>
+            ))}
+          </span>
+        </h1>
+
+        <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <p
+            className="vx-rise max-w-[46ch] text-lg leading-relaxed text-ink-muted lg:text-xl"
+            style={{ animationDelay: "620ms" }}
+          >
+            Antes de comparar preço, o mercado compara percepção. Trabalhamos
+            exatamente aí.
+          </p>
+
+          <div
+            className="vx-rise flex flex-wrap gap-3"
+            style={{ animationDelay: "760ms" }}
+          >
+            <Link
+              to="/orcamento"
+              className="group inline-flex items-center gap-3 rounded-full bg-brand px-7 py-4 text-sm font-medium text-white transition-all duration-500 hover:bg-brand-hover"
+            >
+              Iniciar uma conversa
+              <span className="transition-transform duration-500 group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+            <Link
+              to="/projetos"
+              className="inline-flex items-center rounded-full px-7 py-4 text-sm font-medium text-ink ring-1 ring-hairline transition-all duration-500 hover:ring-ink/30"
+            >
+              Ver transformações
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative mx-auto flex w-full max-w-[1400px] items-end justify-between gap-6 border-t border-hairline pt-6">
+        <p className="max-w-[34ch] text-xs leading-relaxed tracking-[0.02em] text-ink-subtle">
+          Estúdio digital dedicado a empresas que já entregam qualidade — e
+          precisam que isso seja evidente antes do primeiro contato.
+        </p>
+        <div className="hidden h-14 w-px overflow-hidden bg-hairline sm:block">
+          <span className="vx-cue block h-6 w-px bg-brand" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 02 — Bloco escuro com vídeo                                         */
+/* ------------------------------------------------------------------ */
+
+function Manifesto() {
+  return (
+    <section className="relative isolate overflow-hidden bg-ink">
       <video
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover opacity-25"
         src={vertexVideo.url}
         autoPlay
         muted
@@ -71,73 +166,66 @@ function Hero() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 bg-ink/70"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(11,11,11,0.86) 0%, rgba(11,11,11,0.74) 40%, rgba(11,11,11,0.96) 100%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="vx-glow pointer-events-none absolute -z-10 left-1/2 top-[38%] h-[560px] w-[860px] -translate-x-1/2 rounded-full blur-[140px]"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--brand) 46%, transparent), transparent 68%)",
+          backgroundImage:
+            "radial-gradient(720px 420px at 20% 100%, color-mix(in oklab, var(--brand) 32%, transparent), transparent 70%)",
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-[1400px]">
-        <div
-          className="vx-line-grow h-px w-20 bg-brand"
-          style={{ animationDelay: "100ms" }}
-        />
-
-        <h1 className="mt-10 max-w-[17ch] font-display text-[46px] font-semibold leading-[0.95] tracking-[-0.04em] text-ink sm:text-7xl lg:text-[104px] xl:text-[120px]">
-          <span className="vx-rise block" style={{ animationDelay: "160ms" }}>
-            Empresas extraordinárias
-          </span>
-          <span className="vx-rise block" style={{ animationDelay: "300ms" }}>
-            merecem uma presença
-          </span>
-          <span
-            className="vx-rise block text-brand"
-            style={{ animationDelay: "440ms" }}
-          >
-            digital à altura.
-          </span>
-        </h1>
-
-        <div className="mt-14 flex flex-col gap-10 border-t border-hairline pt-10 lg:flex-row lg:items-end lg:justify-between">
-          <p
-            className="vx-rise max-w-[44ch] text-base leading-relaxed text-ink-muted lg:text-lg"
-            style={{ animationDelay: "600ms" }}
-          >
-            A primeira impressão da sua empresa começa muito antes da primeira
-            conversa.
+      <div className="relative mx-auto max-w-[1400px] px-6 py-40 lg:px-10 lg:py-64">
+        <Reveal>
+          <p className="max-w-[19ch] font-display text-[40px] leading-[1.04] text-surface sm:text-6xl lg:text-[92px]">
+            Empresas sérias perdem contratos por parecerem
+            <span className="italic text-brand"> menores do que são</span>.
           </p>
+        </Reveal>
+        <Reveal delay={200}>
+          <p className="mt-14 max-w-[42ch] text-base leading-relaxed text-surface/60 lg:text-lg">
+            A decisão de confiar acontece em segundos, muito antes da proposta.
+            O que aparece na tela define o valor que sua empresa consegue
+            cobrar.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-          <div
-            className="vx-rise flex flex-wrap gap-3"
-            style={{ animationDelay: "720ms" }}
-          >
-            <Link
-              to="/orcamento"
-              className="group inline-flex items-center gap-3 rounded-full bg-brand px-8 py-4 text-sm font-medium text-white transition-all duration-500 hover:bg-brand-hover"
-            >
-              Solicitar orçamento
-              <span className="transition-transform duration-500 group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center rounded-full border border-hairline px-8 py-4 text-sm font-medium text-ink backdrop-blur-sm transition-all duration-500 hover:border-ink/40"
-            >
-              Conversar no WhatsApp
-            </a>
-          </div>
+/* ------------------------------------------------------------------ */
+/* 03 — Números                                                        */
+/* ------------------------------------------------------------------ */
+
+function Numbers() {
+  const stats = [
+    { to: 100, suffix: "%", caption: "dos projetos desenhados do zero" },
+    { to: 95, suffix: "+", caption: "de performance medida no Google" },
+    { to: 24, suffix: "h", caption: "de presença ativa, todos os dias" },
+    { to: 3, suffix: "x", caption: "mais clareza na jornada de decisão" },
+  ];
+
+  return (
+    <section className="px-6 py-32 lg:px-10 lg:py-48">
+      <div className="mx-auto max-w-[1400px]">
+        <Reveal>
+          <p className="max-w-[26ch] font-display text-3xl leading-[1.1] text-ink sm:text-4xl lg:text-5xl">
+            O que muda quando a percepção acompanha a entrega.
+          </p>
+        </Reveal>
+
+        <div className="mt-24 grid gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <Reveal key={s.caption} delay={i * 120}>
+              <div className="border-t border-hairline pt-8 pr-8">
+                <p className="font-display text-6xl leading-none text-ink lg:text-8xl">
+                  <Counter to={s.to} suffix={s.suffix} />
+                </p>
+                <p className="mt-6 max-w-[22ch] text-sm leading-relaxed text-ink-muted">
+                  {s.caption}
+                </p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
@@ -145,95 +233,36 @@ function Hero() {
 }
 
 /* ------------------------------------------------------------------ */
-/* AUTORIDADE — números animados                                       */
+/* 04 — Casos                                                          */
 /* ------------------------------------------------------------------ */
-
-function Authority() {
-  const stats = [
-    { to: 12, suffix: "+", label: "Projetos desenvolvidos" },
-    { to: 30, suffix: "+", label: "Clientes atendidos" },
-    { to: 8, suffix: "", label: "Empresas transformadas" },
-    { to: 5, suffix: ".0", label: "Avaliação média" },
-  ];
-
-  return (
-    <section className="border-y border-hairline bg-surface-2">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-y-14 px-6 py-24 lg:grid-cols-4 lg:gap-0 lg:px-10 lg:py-32">
-        {stats.map((s, i) => (
-          <Reveal key={s.label} delay={i * 110}>
-            <div className="lg:border-l lg:border-hairline lg:pl-10">
-              <p className="font-display text-5xl font-semibold leading-none tracking-[-0.05em] text-ink lg:text-7xl">
-                <Counter to={s.to} suffix={s.suffix} />
-              </p>
-              <p className="mt-5 text-[11px] uppercase tracking-[0.26em] text-ink-subtle">
-                {s.label}
-              </p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* CASES — cada um ocupa quase uma tela                                */
-/* ------------------------------------------------------------------ */
-
-type CaseItem = {
-  index: string;
-  name: string;
-  sector: string;
-  line: string;
-  cover: string;
-  before?: string;
-  slug?: string;
-  status?: string;
-};
-
-const CASES: CaseItem[] = [
-  {
-    index: "01",
-    name: "Serra Seguros",
-    sector: "Proteção patrimonial",
-    line: "Uma corretora consolidada que finalmente aparenta o tamanho que tem.",
-    cover: serraCapa.url,
-    before: serraAntes.url,
-    slug: "serra-seguros",
-  },
-  {
-    index: "02",
-    name: "Daros Lunettes",
-    sector: "Boutique de alto padrão",
-    line: "A primeira presença digital de uma boutique construída para durar.",
-    cover: darosCapa.url,
-    before: darosAlt.url,
-    slug: "daros-lunettes",
-  },
-  {
-    index: "03",
-    name: "Rose Quadros Nutri",
-    sector: "Saúde e performance",
-    line: "Autoridade clínica traduzida em uma experiência calma e direta.",
-    cover: "",
-    status: "Em produção",
-  },
-  {
-    index: "04",
-    name: "Scooby Auto Premium",
-    sector: "Automotivo premium",
-    line: "Um showroom digital para quem vende desejo antes de vender carro.",
-    cover: "",
-    status: "Em produção",
-  },
-];
 
 function Cases() {
+  const cases = [
+    {
+      slug: "serra-seguros",
+      index: "01",
+      name: "Serra Seguros",
+      sector: "Proteção patrimonial",
+      line: "Uma corretora consolidada que finalmente aparenta o tamanho que tem.",
+      note: "Reposicionamento completo",
+      cover: serraCapa.url,
+    },
+    {
+      slug: "daros-lunettes",
+      index: "02",
+      name: "Daros Lunettes",
+      sector: "Boutique de alto padrão",
+      line: "A primeira presença digital de uma boutique construída para durar.",
+      note: "Marca digital criada do zero",
+      cover: darosCapa.url,
+    },
+  ] as const;
+
   return (
-    <section className="py-28 lg:py-40">
+    <section className="bg-surface-2/60 py-32 lg:py-48">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <p className="max-w-[16ch] font-display text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-ink lg:text-6xl">
+          <p className="max-w-[18ch] font-display text-4xl leading-[1.05] text-ink lg:text-6xl">
             Marcas que mudaram de patamar.
           </p>
           <Link
@@ -245,150 +274,133 @@ function Cases() {
         </Reveal>
       </div>
 
-      <div className="mt-20 space-y-28 lg:mt-28 lg:space-y-44">
-        {CASES.map((c, i) => (
-          <CaseBlock key={c.name} item={c} flipped={i % 2 === 1} />
+      <div className="mt-24 space-y-32 lg:space-y-48">
+        {cases.map((c, i) => (
+          <Reveal key={c.slug}>
+            <Link
+              to="/projetos/$slug"
+              params={{ slug: c.slug }}
+              className="group block"
+            >
+              <div
+                className={`mx-auto flex max-w-[1400px] flex-col gap-10 px-6 lg:gap-16 lg:px-10 ${
+                  i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+                } lg:items-center`}
+              >
+                <div className="relative w-full overflow-hidden rounded-[28px] bg-surface lg:w-[62%]">
+                  <div className="aspect-[16/11] w-full overflow-hidden">
+                    <img
+                      src={c.cover}
+                      alt={`Projeto ${c.name} desenvolvido pela Exclusive Vertex`}
+                      className="h-full w-full object-cover object-top transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-inset ring-hairline" />
+                </div>
+
+                <div className="min-w-0 lg:w-[38%]">
+                  <p className="font-display text-5xl leading-none text-brand/25 lg:text-7xl">
+                    {c.index}
+                  </p>
+                  <p className="mt-8 text-[11px] uppercase tracking-[0.28em] text-ink-subtle">
+                    {c.sector}
+                  </p>
+                  <h3 className="mt-4 font-display text-4xl text-ink transition-colors duration-500 group-hover:text-brand lg:text-6xl">
+                    {c.name}
+                  </h3>
+                  <p className="mt-6 max-w-[32ch] text-base leading-relaxed text-ink-muted">
+                    {c.line}
+                  </p>
+                  <p className="mt-10 inline-flex items-center gap-3 border-t border-hairline pt-6 text-sm text-ink">
+                    {c.note}
+                    <span className="text-brand transition-transform duration-500 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </Reveal>
         ))}
       </div>
     </section>
   );
 }
 
-function CaseBlock({ item, flipped }: { item: CaseItem; flipped: boolean }) {
-  const media = item.cover ? (
-    <div className="relative overflow-hidden rounded-[24px] border border-hairline bg-surface-2">
-      <div className="aspect-[16/10] w-full overflow-hidden">
-        <img
-          src={item.cover}
-          alt={`Projeto ${item.name} desenvolvido pela Exclusive Vertex`}
-          className="h-full w-full object-cover object-top transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-[1.05]"
-          loading="lazy"
-        />
-      </div>
-      {item.before ? (
-        <img
-          src={item.before}
-          alt={`Versão anterior do site ${item.name}`}
-          className="absolute bottom-5 right-5 hidden w-[26%] rounded-lg border border-hairline object-cover object-top opacity-70 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0 sm:block"
-          loading="lazy"
-        />
-      ) : null}
-    </div>
-  ) : (
-    <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-[24px] border border-hairline bg-surface-2">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(520px 300px at 30% 20%, color-mix(in oklab, var(--brand) 22%, transparent), transparent 70%)",
-        }}
-      />
-      <p className="relative font-display text-3xl font-semibold tracking-[-0.04em] text-ink/25 lg:text-5xl">
-        {item.name}
-      </p>
-    </div>
-  );
+/* ------------------------------------------------------------------ */
+/* 05 — Citação                                                        */
+/* ------------------------------------------------------------------ */
 
-  const body = (
-    <div className="min-w-0">
-      <p className="font-display text-5xl font-semibold leading-none tracking-[-0.05em] text-brand/25 lg:text-7xl">
-        {item.index}
-      </p>
-      <p className="mt-8 text-[11px] uppercase tracking-[0.26em] text-ink-subtle">
-        {item.sector}
-      </p>
-      <h3 className="mt-4 font-display text-3xl font-semibold tracking-[-0.04em] text-ink transition-colors duration-500 group-hover:text-brand lg:text-5xl">
-        {item.name}
-      </h3>
-      <p className="mt-6 max-w-[34ch] text-base leading-relaxed text-ink-muted">
-        {item.line}
-      </p>
-      <p className="mt-10 inline-flex items-center gap-3 border-t border-hairline pt-6 text-sm text-ink">
-        {item.slug ? "Ver projeto" : item.status}
-        {item.slug ? (
-          <span className="text-brand transition-transform duration-500 group-hover:translate-x-1">
-            →
-          </span>
-        ) : null}
-      </p>
-    </div>
-  );
-
-  const inner = (
-    <div
-      className={`mx-auto flex max-w-[1400px] flex-col gap-10 px-6 lg:gap-20 lg:px-10 ${
-        flipped ? "lg:flex-row-reverse" : "lg:flex-row"
-      } lg:items-center`}
-    >
-      <div className="w-full min-w-0 lg:w-[64%]">{media}</div>
-      <div className="w-full min-w-0 lg:w-[36%]">{body}</div>
-    </div>
-  );
-
+function PullQuote() {
   return (
-    <Reveal>
-      {item.slug ? (
-        <Link
-          to="/projetos/$slug"
-          params={{ slug: item.slug }}
-          className="group block"
-        >
-          {inner}
-        </Link>
-      ) : (
-        <div className="group block">{inner}</div>
-      )}
-    </Reveal>
+    <section className="px-6 py-40 lg:px-10 lg:py-64">
+      <div className="mx-auto max-w-[1000px]">
+        <Reveal>
+          <figure className="text-center">
+            <blockquote className="font-display text-3xl leading-[1.12] text-ink text-balance sm:text-5xl lg:text-[64px]">
+              “Em menos de uma semana a percepção da marca mudou por completo.
+              Hoje o site sustenta a conversa antes mesmo de começarmos a
+              falar.”
+            </blockquote>
+            <figcaption className="mt-14 text-sm text-ink-subtle">
+              Serra Seguros e Consórcios
+              <span className="mx-3 text-hairline">/</span>
+              corretora com mais de 10 anos de mercado
+            </figcaption>
+          </figure>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/* O QUE TRANSFORMAMOS                                                 */
+/* 06 — Posicionamento                                                 */
 /* ------------------------------------------------------------------ */
 
-function Transform() {
-  const items = [
+function Positioning() {
+  const blocks = [
     {
-      title: "Empresas que precisam transmitir autoridade",
-      body: "Quando a entrega é séria, mas a percepção ainda não acompanha o tamanho do negócio.",
+      title: "Nada aqui é reaproveitado",
+      body: "Cada projeto nasce da realidade de uma empresa específica. Nenhum modelo pronto sobrevive a esse processo.",
     },
     {
-      title: "Empresas que querem vender mais",
-      body: "Jornada desenhada para conduzir o visitante até a conversa comercial, sem ruído.",
+      title: "Design a serviço da decisão",
+      body: "Hierarquia, ritmo e silêncio são usados para conduzir quem visita até a única ação que importa: falar com você.",
     },
     {
-      title: "Empresas que precisam de presença profissional",
-      body: "Uma base digital estável, rápida e encontrável — não um perfil solto em rede social.",
+      title: "Encontrado por quem procura",
+      body: "Estrutura técnica, velocidade e SEO tratados desde a fundação — não como ajuste posterior.",
     },
     {
-      title: "Empresas que querem crescer",
-      body: "Estrutura pronta para escalar campanhas, conteúdo e novas frentes de receita.",
+      title: "Uma relação, não um contrato",
+      body: "Acompanhamento próximo depois da entrega, porque presença digital é um ativo que continua trabalhando.",
     },
   ];
 
   return (
-    <section className="border-y border-hairline bg-surface-2 px-6 py-28 lg:px-10 lg:py-44">
-      <div className="mx-auto grid max-w-[1400px] gap-16 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-28">
+    <section className="border-t border-hairline px-6 py-32 lg:px-10 lg:py-48">
+      <div className="mx-auto grid max-w-[1400px] gap-16 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-24">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal>
-            <p className="text-[11px] uppercase tracking-[0.26em] text-brand">
-              O que transformamos
+            <p className="text-[11px] uppercase tracking-[0.28em] text-brand">
+              Por que a Vertex
             </p>
-            <p className="mt-8 max-w-[14ch] font-display text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-ink lg:text-6xl">
-              Não vendemos sites. Entregamos resultado.
+            <p className="mt-8 max-w-[16ch] font-display text-4xl leading-[1.05] text-ink lg:text-6xl">
+              Quatro decisões que mudam tudo.
             </p>
           </Reveal>
         </div>
 
         <div>
-          {items.map((b, i) => (
+          {blocks.map((b, i) => (
             <Reveal key={b.title} delay={i * 90}>
-              <div className="border-t border-hairline py-10 first:border-t-0 first:pt-0 lg:py-12">
-                <p className="font-display text-xl font-semibold tracking-[-0.03em] text-ink lg:text-3xl">
+              <div className="border-t border-hairline py-12 first:border-t-0 first:pt-0">
+                <p className="font-display text-2xl text-ink lg:text-4xl">
                   {b.title}
                 </p>
-                <p className="mt-4 max-w-[54ch] text-base leading-relaxed text-ink-muted">
+                <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-ink-muted">
                   {b.body}
                 </p>
               </div>
@@ -401,54 +413,53 @@ function Transform() {
 }
 
 /* ------------------------------------------------------------------ */
-/* PROCESSO — timeline horizontal                                      */
+/* 07 — Capacidades                                                    */
 /* ------------------------------------------------------------------ */
 
-function Process() {
-  const steps = [
-    { n: "1", title: "Estratégia", body: "Entendimento do negócio, do público e do que precisa ser provado." },
-    { n: "2", title: "Design", body: "Direção visual autoral, hierarquia e ritmo construídos sob medida." },
-    { n: "3", title: "Desenvolvimento", body: "Código próprio, performance alta e base técnica preparada para SEO." },
-    { n: "4", title: "Entrega", body: "Publicação, testes reais e acompanhamento dos primeiros resultados." },
-    { n: "5", title: "Suporte", body: "Evolução contínua, ajustes e presença ativa depois do lançamento." },
-  ];
+function Capabilities() {
+  const shown = services.slice(0, 6);
 
   return (
-    <section className="px-6 py-28 lg:px-10 lg:py-44">
+    <section className="bg-ink px-6 py-32 text-surface lg:px-10 lg:py-48">
       <div className="mx-auto max-w-[1400px]">
-        <Reveal>
-          <p className="max-w-[18ch] font-display text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-ink lg:text-6xl">
-            Um processo, cinco movimentos.
+        <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <p className="max-w-[20ch] font-display text-4xl leading-[1.05] text-surface lg:text-6xl">
+            O que colocamos em jogo.
           </p>
+          <Link
+            to="/servicos"
+            className="story-link shrink-0 text-sm text-surface/60 hover:text-surface"
+          >
+            Ver tudo
+          </Link>
         </Reveal>
 
-        <div className="mt-20 grid gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-          {steps.map((s, i) => (
-            <Reveal key={s.n} delay={i * 120}>
-              <div className="relative pt-8">
-                <span
-                  className="absolute left-0 top-0 h-px w-full origin-left bg-hairline"
-                  aria-hidden
-                />
-                <span
-                  className="absolute left-0 top-0 h-px w-full origin-left bg-brand"
-                  style={{
-                    animation: `vx-track 900ms cubic-bezier(0.22,0.61,0.36,1) ${i * 140}ms both`,
-                  }}
-                  aria-hidden
-                />
-                <p className="font-display text-sm font-semibold tabular-nums text-brand">
-                  {s.n}
-                </p>
-                <p className="mt-4 font-display text-2xl font-semibold tracking-[-0.03em] text-ink">
-                  {s.title}
-                </p>
-                <p className="mt-3 max-w-[28ch] text-sm leading-relaxed text-ink-muted">
-                  {s.body}
-                </p>
-              </div>
+        <div className="mt-20">
+          {shown.map((s, i) => (
+            <Reveal key={s.slug} delay={i * 60}>
+              <Link
+                to="/servicos/$slug"
+                params={{ slug: s.slug }}
+                className="group grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-6 border-t border-surface/10 py-8 transition-colors duration-500 hover:border-surface/30 lg:gap-12 lg:py-10"
+              >
+                <span className="text-[11px] tabular-nums text-surface/35">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-display text-2xl text-surface transition-transform duration-500 group-hover:translate-x-2 lg:text-4xl">
+                    {s.title}
+                  </span>
+                  <span className="mt-2 block max-w-[60ch] text-sm leading-relaxed text-surface/45 transition-transform duration-500 group-hover:translate-x-2">
+                    {s.short}
+                  </span>
+                </span>
+                <span className="text-brand opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 -translate-x-2">
+                  →
+                </span>
+              </Link>
             </Reveal>
           ))}
+          <div className="border-t border-surface/10" />
         </div>
       </div>
     </section>
@@ -456,64 +467,53 @@ function Process() {
 }
 
 /* ------------------------------------------------------------------ */
-/* BLOCO DE IMPACTO                                                    */
-/* ------------------------------------------------------------------ */
-
-function Impact() {
-  return (
-    <section className="relative isolate overflow-hidden border-y border-hairline px-6 py-40 lg:px-10 lg:py-64">
-      <div
-        aria-hidden
-        className="vx-glow pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[480px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[150px]"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--brand) 32%, transparent), transparent 70%)",
-        }}
-      />
-      <Reveal>
-        <p className="mx-auto max-w-[18ch] text-center font-display text-[40px] font-semibold leading-[0.98] tracking-[-0.05em] text-ink text-balance sm:text-7xl lg:text-[104px]">
-          Seu concorrente não parece maior por acaso.
-        </p>
-      </Reveal>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* FECHAMENTO                                                          */
+/* 08 — Fechamento                                                     */
 /* ------------------------------------------------------------------ */
 
 function ClosingCTA() {
   return (
-    <section className="relative overflow-hidden px-6 py-32 lg:px-10 lg:py-48">
+    <section className="relative overflow-hidden px-6 py-40 lg:px-10 lg:py-64">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          background:
+            "radial-gradient(900px 520px at 50% 110%, var(--brand), transparent 62%)",
+        }}
+      />
       <div className="relative mx-auto max-w-[1400px]">
         <Reveal>
-          <p className="max-w-[17ch] font-display text-[38px] font-semibold leading-[1.0] tracking-[-0.04em] text-ink sm:text-6xl lg:text-[88px]">
-            Vamos criar um site que represente o
-            <span className="text-brand"> verdadeiro potencial </span>
-            da sua empresa?
+          <p className="max-w-[16ch] font-display text-[46px] leading-[0.96] text-ink sm:text-7xl lg:text-[104px]">
+            Vamos elevar o que sua empresa
+            <span className="italic text-brand"> aparenta ser</span>?
           </p>
         </Reveal>
 
         <Reveal delay={160}>
-          <div className="mt-16 flex flex-wrap gap-3 border-t border-hairline pt-10">
-            <Link
-              to="/contato"
-              className="group inline-flex items-center gap-3 rounded-full bg-brand px-8 py-4 text-sm font-medium text-white transition-all duration-500 hover:bg-brand-hover"
-            >
-              Agendar reunião
-              <span className="transition-transform duration-500 group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center rounded-full border border-hairline px-8 py-4 text-sm font-medium text-ink transition-all duration-500 hover:border-ink/40"
-            >
-              WhatsApp
-            </a>
+          <div className="mt-16 grid gap-10 border-t border-hairline pt-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+            <p className="max-w-[38ch] text-base leading-relaxed text-ink-muted lg:text-lg">
+              Você já viu como pensamos. Agora imagine essa mesma atenção
+              aplicada ao seu negócio.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/orcamento"
+                className="group inline-flex items-center gap-3 rounded-full bg-brand px-8 py-4 text-sm font-medium text-white transition-all duration-500 hover:bg-brand-hover"
+              >
+                Solicitar orçamento
+                <span className="transition-transform duration-500 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full px-8 py-4 text-sm font-medium text-ink ring-1 ring-hairline transition-all duration-500 hover:ring-ink/30"
+              >
+                Conversar no WhatsApp
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>

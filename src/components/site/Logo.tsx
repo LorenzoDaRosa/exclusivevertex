@@ -7,7 +7,7 @@ export function Logo({ className = "size-11" }: { className?: string }) {
       <img
         src={iconAsset.url}
         alt="Exclusive Vertex"
-        className="h-full w-full object-contain invert"
+        className="h-full w-full object-contain"
         loading="eager"
         decoding="async"
       />
@@ -20,7 +20,7 @@ export function Wordmark({ className = "h-8" }: { className?: string }) {
     <img
       src={wordmarkAsset.url}
       alt="Exclusive Vertex"
-      className={`${className} w-auto object-contain invert`}
+      className={`${className} w-auto object-contain`}
       loading="eager"
       decoding="async"
     />
