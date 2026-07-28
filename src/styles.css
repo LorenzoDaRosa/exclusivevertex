@@ -41,43 +41,44 @@
   --color-ink-muted: var(--ink-muted);
   --color-ink-subtle: var(--ink-subtle);
 
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.75rem;
 
-  --brand: #1D63FF;
-  --brand-hover: #1552D6;
-  --brand-soft: #EAF2FF;
-  --surface: #FFFFFF;
-  --surface-2: #F8FAFC;
-  --surface-3: #EEF2F7;
-  --hairline: #E8EDF5;
-  --ink: #111827;
-  --ink-muted: #6B7280;
-  --ink-subtle: #9CA3AF;
+  --brand: #2B6BFF;
+  --brand-hover: #4C87FF;
+  --brand-soft: rgba(43, 107, 255, 0.12);
+  --surface: #0B0B0B;
+  --surface-2: #101011;
+  --surface-3: #151516;
+  --hairline: rgba(255, 255, 255, 0.10);
+  --ink: #FFFFFF;
+  --ink-muted: #A1A1AA;
+  --ink-subtle: #6B6B72;
 
-  --background: #FFFFFF;
-  --foreground: #111827;
-  --card: #FFFFFF;
-  --card-foreground: #111827;
-  --popover: #FFFFFF;
-  --popover-foreground: #111827;
-  --primary: #1D63FF;
+  --background: #0B0B0B;
+  --foreground: #FFFFFF;
+  --card: #101011;
+  --card-foreground: #FFFFFF;
+  --popover: #101011;
+  --popover-foreground: #FFFFFF;
+  --primary: #2B6BFF;
   --primary-foreground: #FFFFFF;
-  --secondary: #F8FAFC;
-  --secondary-foreground: #111827;
-  --muted: #F8FAFC;
-  --muted-foreground: #6B7280;
-  --accent: #1D63FF;
+  --secondary: #151516;
+  --secondary-foreground: #FFFFFF;
+  --muted: #151516;
+  --muted-foreground: #A1A1AA;
+  --accent: #2B6BFF;
   --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #FFFFFF;
-  --border: #E8EDF5;
-  --input: #E8EDF5;
-  --ring: #1D63FF;
+  --border: rgba(255, 255, 255, 0.10);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: #2B6BFF;
+
 }
 
 @theme inline {
@@ -92,7 +93,7 @@
 
   html {
     background-color: var(--color-surface);
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   body {
@@ -104,8 +105,13 @@
   }
 
   ::selection {
-    background-color: var(--brand-soft);
-    color: var(--color-brand);
+    background-color: var(--color-brand);
+    color: #FFFFFF;
+  }
+
+  .font-display {
+    letter-spacing: -0.035em;
+    font-weight: 600;
   }
 }
 
@@ -204,4 +210,16 @@
   .vx-marquee {
     animation: none;
   }
+}
+
+@keyframes vx-glow-drift {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: 0.55; }
+  50%      { transform: translate3d(2%, -3%, 0) scale(1.08); opacity: 0.8; }
+}
+@utility vx-glow {
+  animation: vx-glow-drift 14s ease-in-out infinite;
+}
+@keyframes vx-track {
+  0%   { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
 }
