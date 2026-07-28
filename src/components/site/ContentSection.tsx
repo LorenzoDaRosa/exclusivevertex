@@ -68,13 +68,10 @@ export function ContentSection() {
           </p>
         </Reveal>
 
-        <Reveal delay={220}>
-          <div className="mt-16">
-            <FeaturedVideoPlayer video={featuredVideo} />
-          </div>
-        </Reveal>
+        <div className="mt-14">
+          <SecondaryGrid posts={secondaryPosts} />
+        </div>
 
-        <SecondaryGrid posts={secondaryPosts} />
 
         <Reveal delay={120}>
           <div className="mt-16 flex justify-center">
