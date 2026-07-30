@@ -1,11 +1,11 @@
-import iconAsset from "@/assets/vertex-icon-2.png.asset.json";
-import wordmarkAsset from "@/assets/vertex-wordmark.png.asset.json";
+import iconLogo from "@/assets/4.png";
+import wordmarkLogo from "@/assets/4.png";
 
 export function Logo({ className = "size-11" }: { className?: string }) {
   return (
     <span className={`${className} inline-flex items-center justify-center`}>
       <img
-        src={iconAsset.url}
+        src={iconLogo}
         alt="Exclusive Vertex"
         className="h-full w-full object-contain"
         loading="eager"
@@ -18,7 +18,7 @@ export function Logo({ className = "size-11" }: { className?: string }) {
 export function Wordmark({ className = "h-8" }: { className?: string }) {
   return (
     <img
-      src={wordmarkAsset.url}
+      src={wordmarkLogo}
       alt="Exclusive Vertex"
       className={`${className} w-auto object-contain`}
       loading="eager"
