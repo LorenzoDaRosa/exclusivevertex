@@ -41,8 +41,8 @@ function ContatoPage() {
             <div className="space-y-10">
               <ContactRow
                 label="WhatsApp"
-                value="+55 54 99289-4672"
-                href="https://wa.me/5554992894672"
+                value="(54) 3214-4112"
+                href="https://wa.me/555432144112"
               />
               <ContactRow
                 label="E-mail"

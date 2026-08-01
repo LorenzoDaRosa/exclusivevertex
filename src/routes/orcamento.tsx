@@ -74,7 +74,7 @@ const BUDGETS = [
   "Preciso de orientação",
 ] as const;
 
-const WHATSAPP_NUMBER = "5554992894672";
+const WHATSAPP_NUMBER = "555432144112";
 
 const STEPS = [
   "Segmento",
