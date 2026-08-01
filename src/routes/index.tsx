@@ -110,10 +110,10 @@ function BrowserFrame({ src, alt }: { src: string; alt: string }) {
 /* ---------------- Authority strip ---------------- */
 
 const authority = [
-  { value: 2, suffix: "+", label: "Projetos desenvolvidos" },
+  { value: 2, suffix: "", label: "Projetos desenvolvidos" },
   { value: 100, suffix: "%", label: "Atendimento personalizado" },
   { value: 100, suffix: "%", label: "Sites premium" },
-  { value: 95, suffix: "+", label: "Foco em conversão" },
+  { value: 100, suffix: "%", label: "Foco em conversão" },
 ];
 
 function AuthorityStrip() {
@@ -393,7 +393,7 @@ function BeforeAfterSection() {
                 <img
                   src={serraAntes.url}
                   alt="Site da Serra Seguros antes do trabalho da Exclusive Vertex"
-                  className="h-full w-full object-cover object-top opacity-80 grayscale transition-all duration-700 hover:opacity-100 hover:grayscale-0"
+                  className="h-full w-full object-contain object-top opacity-80 grayscale transition-all duration-700 hover:opacity-100 hover:grayscale-0"
                   loading="lazy"
                 />
               </div>
@@ -409,7 +409,7 @@ function BeforeAfterSection() {
                 <img
                   src={serraCapa.url}
                   alt="Site da Serra Seguros depois do trabalho da Exclusive Vertex"
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-contain object-top"
                   loading="lazy"
                 />
               </div>
