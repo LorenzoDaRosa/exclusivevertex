@@ -7,6 +7,7 @@ import darosCapa from "@/assets/daros/daros_42.png.asset.json";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { QuickForm } from "@/components/site/QuickForm";
+import { CoffeeInvite } from "@/components/site/CoffeeInvite";
 import { waLink, waMessages } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
@@ -41,6 +42,7 @@ function Home() {
       <BeforeAfterSection />
       <Testimonials />
       <QuickForm />
+      <CoffeeInvite />
       <FinalCTA />
       <StickyCta />
     </>

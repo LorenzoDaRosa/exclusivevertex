@@ -1,5 +1,4 @@
 import { Logo } from "./Logo";
-import { Link } from "@tanstack/react-router";
 import { ADDRESS, MAPS_EMBED_URL, MAPS_LINK } from "@/lib/location";
 
 export function Footer() {
@@ -37,9 +36,6 @@ export function Footer() {
             >
               contato@exclusivevertex.com
             </a>
-            <Link to="/cafe" className="story-link transition-colors hover:text-ink">
-              Café com a Vertex
-            </Link>
           </nav>
         </div>
 
