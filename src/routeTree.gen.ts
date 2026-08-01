@@ -14,7 +14,6 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProcessoRouteImport } from './routes/processo'
 import { Route as OrcamentoRouteImport } from './routes/orcamento'
 import { Route as ContatoRouteImport } from './routes/contato'
-import { Route as CafeRouteImport } from './routes/cafe'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
@@ -46,11 +45,6 @@ const OrcamentoRoute = OrcamentoRouteImport.update({
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CafeRoute = CafeRouteImport.update({
-  id: '/cafe',
-  path: '/cafe',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -92,7 +86,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
-  '/cafe': typeof CafeRoute
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
   '/processo': typeof ProcessoRoute
@@ -107,7 +100,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
-  '/cafe': typeof CafeRoute
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
   '/processo': typeof ProcessoRoute
@@ -123,7 +115,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
-  '/cafe': typeof CafeRoute
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
   '/processo': typeof ProcessoRoute
@@ -140,7 +131,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/blog'
-    | '/cafe'
     | '/contato'
     | '/orcamento'
     | '/processo'
@@ -155,7 +145,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/blog'
-    | '/cafe'
     | '/contato'
     | '/orcamento'
     | '/processo'
@@ -170,7 +159,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/blog'
-    | '/cafe'
     | '/contato'
     | '/orcamento'
     | '/processo'
@@ -186,7 +174,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
-  CafeRoute: typeof CafeRoute
   ContatoRoute: typeof ContatoRoute
   OrcamentoRoute: typeof OrcamentoRoute
   ProcessoRoute: typeof ProcessoRoute
@@ -233,13 +220,6 @@ declare module '@tanstack/react-router' {
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cafe': {
-      id: '/cafe'
-      path: '/cafe'
-      fullPath: '/cafe'
-      preLoaderRoute: typeof CafeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -307,7 +287,6 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
-  CafeRoute: CafeRoute,
   ContatoRoute: ContatoRoute,
   OrcamentoRoute: OrcamentoRoute,
   ProcessoRoute: ProcessoRoute,
@@ -321,13 +300,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
