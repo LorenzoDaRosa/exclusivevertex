@@ -319,6 +319,14 @@ function Projects() {
                   >
                     Ver projeto
                   </Link>
+                  <a
+                    href={waLink(waMessages.projects)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-brand-hover"
+                  >
+                    Quero algo nesse nível
+                  </a>
                 </div>
               </article>
             </Reveal>
@@ -520,7 +528,7 @@ function Testimonials() {
 
 function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-brand py-28 lg:py-36">
+    <section className="relative overflow-hidden bg-brand py-28 pb-36 lg:py-36">
       <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
         <h2 className="font-display text-[2rem] leading-[1.14] font-semibold tracking-[-0.03em] text-white sm:text-[2.8rem]">
           Sua empresa parece do tamanho que ela realmente é?
@@ -539,5 +547,30 @@ function FinalCTA() {
         </a>
       </div>
     </section>
+  );
+}
+
+/* ---------------- Sticky mobile CTA ---------------- */
+
+function StickyCta() {
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-hairline bg-surface/95 px-4 py-3 backdrop-blur-xl md:hidden">
+      <div className="flex items-center gap-3">
+        <a
+          href="#formulario"
+          className="flex-1 rounded-full px-4 py-3 text-center text-[14px] font-medium text-ink ring-1 ring-hairline"
+        >
+          Orçamento rápido
+        </a>
+        <a
+          href={waLink(waMessages.hero)}
+          target="_blank"
+          rel="noreferrer"
+          className="flex-1 rounded-full bg-brand px-4 py-3 text-center text-[14px] font-semibold text-white"
+        >
+          WhatsApp
+        </a>
+      </div>
+    </div>
   );
 }
