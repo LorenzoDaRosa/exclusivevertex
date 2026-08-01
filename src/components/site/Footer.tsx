@@ -1,5 +1,4 @@
 import { Logo } from "./Logo";
-import { Link } from "@tanstack/react-router";
 import { ADDRESS, MAPS_EMBED_URL, MAPS_LINK } from "@/lib/location";
 
 export function Footer() {
