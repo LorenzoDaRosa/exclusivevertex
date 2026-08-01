@@ -37,9 +37,6 @@ export function Footer() {
             >
               contato@exclusivevertex.com
             </a>
-            <Link to="/cafe" className="story-link transition-colors hover:text-ink">
-              Café com a Vertex
-            </Link>
           </nav>
         </div>
 
