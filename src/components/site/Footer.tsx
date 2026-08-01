@@ -1,100 +1,48 @@
-import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-hairline">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-20">
-        <div className="grid gap-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div className="max-w-sm">
-            <div className="flex items-center gap-3 mb-6">
-              <Logo className="size-6" />
-              <span className="text-[13px] font-medium tracking-[0.18em] text-ink uppercase">
-                Exclusive Vertex
-              </span>
-            </div>
-            <p className="text-sm text-ink-muted leading-relaxed">
-              Transformando empresas em referências digitais.
-            </p>
+    <footer className="border-t border-hairline bg-surface">
+      <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-10">
+        <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-3">
+            <Logo className="size-8" />
+            <span className="text-[12px] font-medium uppercase tracking-[0.2em] text-ink">
+              Exclusive Vertex
+            </span>
           </div>
 
-          <FooterCol
-            title="Navegar"
-            items={[
-              { to: "/projetos", label: "Projetos" },
-              { to: "/servicos", label: "Serviços" },
-              { to: "/processo", label: "Processo" },
-              { to: "/sobre", label: "Sobre" },
-            ]}
-          />
-          <FooterCol
-            title="Conteúdo"
-            items={[
-              { to: "/blog", label: "Central de conteúdo" },
-              { to: "/orcamento", label: "Simulador de projeto" },
-              { to: "/contato", label: "Contato" },
-            ]}
-          />
-          <div>
-            <h5 className="text-[10px] font-medium uppercase tracking-[0.28em] text-ink-subtle mb-5">
-              Conecte-se
-            </h5>
-            <ul className="space-y-3 text-sm text-ink-muted">
-              <li>
-                <a href="https://wa.me/5554992894672" className="story-link hover:text-ink transition-colors">
-                  WhatsApp · +55 54 99289-4672
-                </a>
-              </li>
-              <li>
-                <a href="https://instagram.com/exclusive.vertex" className="story-link hover:text-ink transition-colors">
-                  Instagram · @exclusive.vertex
-                </a>
-              </li>
-              <li>
-                <a href="mailto:contato@exclusivevertex.com" className="story-link hover:text-ink transition-colors">
-                  contato@exclusivevertex.com
-                </a>
-              </li>
-              <li className="text-ink-subtle text-xs pt-2 leading-relaxed">
-                Serra Gaúcha · Rio Grande do Sul · Brasil
-              </li>
-            </ul>
-          </div>
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-ink-muted">
+            <a
+              href="https://wa.me/555432144112"
+              target="_blank"
+              rel="noreferrer"
+              className="story-link transition-colors hover:text-ink"
+            >
+              WhatsApp (54) 3214-4112
+            </a>
+            <a
+              href="https://instagram.com/exclusive.vertex"
+              target="_blank"
+              rel="noreferrer"
+              className="story-link transition-colors hover:text-ink"
+            >
+              Instagram
+            </a>
+            <a
+              href="mailto:contato@exclusivevertex.com"
+              className="story-link transition-colors hover:text-ink"
+            >
+              contato@exclusivevertex.com
+            </a>
+            <span>Caxias do Sul, RS</span>
+          </nav>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-hairline flex flex-col md:flex-row justify-between gap-4 text-[11px] uppercase tracking-[0.24em] text-ink-subtle">
-          <span>© {new Date().getFullYear()} Exclusive Vertex · CNPJ em breve</span>
-          <div className="flex gap-6">
-            <a href="mailto:contato@exclusivevertex.com" className="hover:text-ink transition-colors">Privacidade · LGPD</a>
-            <span>Desenvolvido com precisão · Brasil</span>
-          </div>
-        </div>
+        <p className="mt-12 text-[11px] uppercase tracking-[0.22em] text-ink-subtle">
+          © {new Date().getFullYear()} Exclusive Vertex. Todos os direitos reservados.
+        </p>
       </div>
     </footer>
-  );
-}
-
-function FooterCol({
-  title,
-  items,
-}: {
-  title: string;
-  items: { to: string; label: string }[];
-}) {
-  return (
-    <div>
-      <h5 className="text-[10px] font-medium uppercase tracking-[0.28em] text-ink-subtle mb-5">
-        {title}
-      </h5>
-      <ul className="space-y-3 text-sm text-ink-muted">
-        {items.map((i) => (
-          <li key={i.to}>
-            <Link to={i.to} className="story-link hover:text-ink transition-colors">
-              {i.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
