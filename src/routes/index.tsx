@@ -42,6 +42,7 @@ function Home() {
       <BeforeAfterSection />
       <Testimonials />
       <QuickForm />
+      <CoffeeInvite />
       <FinalCTA />
       <StickyCta />
     </>
