@@ -6,8 +6,8 @@ import serraAntes from "@/assets/serra/home_serra_antes.png.asset.json";
 import darosCapa from "@/assets/daros/daros_42.png.asset.json";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
-
-const WHATSAPP = "https://wa.me/555432144112";
+import { QuickForm } from "@/components/site/QuickForm";
+import { waLink, waMessages } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,7 +40,9 @@ function Home() {
       <Included />
       <BeforeAfterSection />
       <Testimonials />
+      <QuickForm />
       <FinalCTA />
+      <StickyCta />
     </>
   );
 }
@@ -64,12 +66,12 @@ function Hero() {
 
           <div className="vx-rise mt-10 flex flex-wrap items-center gap-3">
             <a
-              href={WHATSAPP}
+              href={waLink(waMessages.hero)}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover"
             >
-              Solicitar proposta
+              Solicitar proposta no WhatsApp
             </a>
             <Link
               to="/projetos"
@@ -151,7 +153,7 @@ function Problem() {
             confiança no digital.
           </p>
           <a
-            href={WHATSAPP}
+            href={waLink(waMessages.problem)}
             target="_blank"
             rel="noreferrer"
             className="mt-10 inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-colors duration-300 hover:bg-brand-hover"
@@ -247,7 +249,7 @@ function HowItWorks() {
 
         <Reveal className="mt-14">
           <a
-            href={WHATSAPP}
+            href={waLink(waMessages.process)}
             target="_blank"
             rel="noreferrer"
             className="story-link text-[15px] font-medium text-brand"
@@ -317,6 +319,14 @@ function Projects() {
                   >
                     Ver projeto
                   </Link>
+                  <a
+                    href={waLink(waMessages.projects)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-brand-hover"
+                  >
+                    Quero algo nesse nível
+                  </a>
                 </div>
               </article>
             </Reveal>
@@ -518,7 +528,7 @@ function Testimonials() {
 
 function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-brand py-28 lg:py-36">
+    <section className="relative overflow-hidden bg-brand py-28 pb-36 lg:py-36">
       <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
         <h2 className="font-display text-[2rem] leading-[1.14] font-semibold tracking-[-0.03em] text-white sm:text-[2.8rem]">
           Sua empresa parece do tamanho que ela realmente é?
@@ -528,7 +538,7 @@ function FinalCTA() {
           premium pode aumentar sua autoridade e gerar mais clientes.
         </p>
         <a
-          href={WHATSAPP}
+          href={waLink(waMessages.finalCta)}
           target="_blank"
           rel="noreferrer"
           className="mt-12 inline-flex items-center rounded-full bg-surface px-10 py-4.5 text-[16px] font-semibold text-brand transition-transform duration-300 hover:-translate-y-0.5"
@@ -537,5 +547,30 @@ function FinalCTA() {
         </a>
       </div>
     </section>
+  );
+}
+
+/* ---------------- Sticky mobile CTA ---------------- */
+
+function StickyCta() {
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-hairline bg-surface/95 px-4 py-3 backdrop-blur-xl md:hidden">
+      <div className="flex items-center gap-3">
+        <a
+          href="#formulario"
+          className="flex-1 rounded-full px-4 py-3 text-center text-[14px] font-medium text-ink ring-1 ring-hairline"
+        >
+          Orçamento rápido
+        </a>
+        <a
+          href={waLink(waMessages.hero)}
+          target="_blank"
+          rel="noreferrer"
+          className="flex-1 rounded-full bg-brand px-4 py-3 text-center text-[14px] font-semibold text-white"
+        >
+          WhatsApp
+        </a>
+      </div>
+    </div>
   );
 }
