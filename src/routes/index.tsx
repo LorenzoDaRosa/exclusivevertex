@@ -52,19 +52,14 @@ function Hero() {
     <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
       <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-10">
         <div className="min-w-0">
-          <span className="vx-fade-in inline-flex items-center gap-2 rounded-full bg-surface-2 px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-ink-muted">
-            <span className="size-1.5 rounded-full bg-brand" />
-            Estúdio digital · Serra Gaúcha
-          </span>
-
-          <h1 className="vx-rise mt-8 text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
-            Transformamos empresas da Serra Gaúcha em{" "}
-            <span className="text-brand">referências digitais</span>.
+          <h1 className="vx-rise text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
+            Primeira Agência da Serra Gaúcha focada em transformar empresas em{" "}
+            <span className="text-brand">Referências Digitais</span>.
           </h1>
 
           <p className="vx-rise mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
-            Criamos sites premium que geram autoridade, aumentam a percepção de valor e
-            transformam visitantes em clientes.
+            Cada projeto é construído para fortalecer marcas, transmitindo credibilidade e
+            gerando novas oportunidades de negócios.
           </p>
 
           <div className="vx-rise mt-10 flex flex-wrap items-center gap-3">
@@ -110,7 +105,7 @@ function BrowserFrame({ src, alt }: { src: string; alt: string }) {
 /* ---------------- Authority strip ---------------- */
 
 const authority = [
-  { value: 2, suffix: "", label: "Projetos desenvolvidos" },
+  { value: 12, suffix: "+", label: "Projetos desenvolvidos" },
   { value: 100, suffix: "%", label: "Atendimento personalizado" },
   { value: 100, suffix: "%", label: "Sites premium" },
   { value: 100, suffix: "%", label: "Foco em conversão" },
