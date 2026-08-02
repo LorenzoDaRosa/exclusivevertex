@@ -39,6 +39,7 @@ function Home() {
       <HowItWorks />
       <Projects />
       <Included />
+      <Versus />
       <BeforeAfterSection />
       <Testimonials />
       <QuickForm />
