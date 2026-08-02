@@ -54,57 +54,38 @@ function Home() {
 function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-10">
-        <div className="min-w-0">
-          <h1 className="vx-rise text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
-            Primeira Agência da Serra Gaúcha focada em transformar empresas em{" "}
-            <span className="text-brand">Referências Digitais</span>.
-          </h1>
+      <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
+        <h1 className="vx-rise text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
+          Primeira Agência da Serra Gaúcha focada em transformar empresas em{" "}
+          <span className="text-brand">Referências Digitais</span>.
+        </h1>
 
-          <p className="vx-rise mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
-            Cada projeto é construído para fortalecer marcas, transmitindo credibilidade e
-            gerando novas oportunidades de negócios.
-          </p>
+        <p className="vx-rise mx-auto mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
+          Cada projeto é construído para fortalecer marcas, transmitindo credibilidade e
+          gerando novas oportunidades de negócios.
+        </p>
 
-          <div className="vx-rise mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href={waLink(waMessages.hero)}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover"
-            >
-              Solicitar proposta no WhatsApp
-            </a>
-            <Link
-              to="/projetos"
-              className="inline-flex items-center rounded-full px-7 py-3.5 text-[15px] font-medium text-ink ring-1 ring-hairline transition-colors duration-300 hover:bg-surface-2"
-            >
-              Ver projetos
-            </Link>
-          </div>
-        </div>
-
-        <div className="min-w-0">
-          <BrowserFrame src={serraCapa.url} alt="Site desenvolvido pela Exclusive Vertex para a Serra Seguros" />
+        <div className="vx-rise mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={waLink(waMessages.hero)}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 active:scale-[0.98]"
+          >
+            Solicitar proposta no WhatsApp
+          </a>
+          <Link
+            to="/projetos"
+            className="inline-flex items-center rounded-full px-7 py-3.5 text-[15px] font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:bg-surface-2 hover:-translate-y-0.5 active:scale-[0.98]"
+          >
+            Ver projetos
+          </Link>
         </div>
       </div>
     </section>
   );
 }
 
-function BrowserFrame({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="vx-fade-up overflow-hidden rounded-2xl bg-surface ring-1 ring-hairline shadow-premium">
-      <div className="flex items-center gap-1.5 border-b border-hairline bg-surface-2 px-4 py-3">
-        <span className="size-2 rounded-full bg-surface-3" />
-        <span className="size-2 rounded-full bg-surface-3" />
-        <span className="size-2 rounded-full bg-surface-3" />
-        <span className="ml-3 h-4 w-40 rounded-full bg-surface-3" />
-      </div>
-      <img src={src} alt={alt} className="block w-full object-cover object-top" loading="eager" />
-    </div>
-  );
-}
 
 /* ---------------- Authority strip ---------------- */
 
