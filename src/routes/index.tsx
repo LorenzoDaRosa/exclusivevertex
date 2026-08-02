@@ -39,6 +39,7 @@ function Home() {
       <HowItWorks />
       <Projects />
       <Included />
+      <Versus />
       <BeforeAfterSection />
       <Testimonials />
       <QuickForm />
@@ -54,57 +55,38 @@ function Home() {
 function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-10">
-        <div className="min-w-0">
-          <h1 className="vx-rise text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
-            Primeira Agência da Serra Gaúcha focada em transformar empresas em{" "}
-            <span className="text-brand">Referências Digitais</span>.
-          </h1>
+      <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
+        <h1 className="vx-rise text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
+          Primeira Agência da Serra Gaúcha focada em transformar empresas em{" "}
+          <span className="text-brand">Referências Digitais</span>.
+        </h1>
 
-          <p className="vx-rise mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
-            Cada projeto é construído para fortalecer marcas, transmitindo credibilidade e
-            gerando novas oportunidades de negócios.
-          </p>
+        <p className="vx-rise mx-auto mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
+          Cada projeto é construído para fortalecer marcas, transmitindo credibilidade e
+          gerando novas oportunidades de negócios.
+        </p>
 
-          <div className="vx-rise mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href={waLink(waMessages.hero)}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover"
-            >
-              Solicitar proposta no WhatsApp
-            </a>
-            <Link
-              to="/projetos"
-              className="inline-flex items-center rounded-full px-7 py-3.5 text-[15px] font-medium text-ink ring-1 ring-hairline transition-colors duration-300 hover:bg-surface-2"
-            >
-              Ver projetos
-            </Link>
-          </div>
-        </div>
-
-        <div className="min-w-0">
-          <BrowserFrame src={serraCapa.url} alt="Site desenvolvido pela Exclusive Vertex para a Serra Seguros" />
+        <div className="vx-rise mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={waLink(waMessages.hero)}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 active:scale-[0.98]"
+          >
+            Solicitar proposta no WhatsApp
+          </a>
+          <Link
+            to="/projetos"
+            className="inline-flex items-center rounded-full px-7 py-3.5 text-[15px] font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:bg-surface-2 hover:-translate-y-0.5 active:scale-[0.98]"
+          >
+            Ver projetos
+          </Link>
         </div>
       </div>
     </section>
   );
 }
 
-function BrowserFrame({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="vx-fade-up overflow-hidden rounded-2xl bg-surface ring-1 ring-hairline shadow-premium">
-      <div className="flex items-center gap-1.5 border-b border-hairline bg-surface-2 px-4 py-3">
-        <span className="size-2 rounded-full bg-surface-3" />
-        <span className="size-2 rounded-full bg-surface-3" />
-        <span className="size-2 rounded-full bg-surface-3" />
-        <span className="ml-3 h-4 w-40 rounded-full bg-surface-3" />
-      </div>
-      <img src={src} alt={alt} className="block w-full object-cover object-top" loading="eager" />
-    </div>
-  );
-}
 
 /* ---------------- Authority strip ---------------- */
 
@@ -118,19 +100,29 @@ const authority = [
 function AuthorityStrip() {
   return (
     <section className="border-y border-hairline bg-surface-2">
-      <div className="mx-auto grid max-w-[1400px] divide-y divide-hairline px-6 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x lg:px-10">
-        {authority.map((a) => (
-          <div key={a.label} className="py-10 lg:px-8 first:lg:pl-0">
-            <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-ink">
-              <Counter to={a.value} suffix={a.suffix} />
-            </div>
-            <p className="mt-2 text-sm text-ink-muted">{a.label}</p>
-          </div>
-        ))}
+      <div className="mx-auto max-w-[1400px] lg:px-10">
+        <div className="scrollbar-none flex snap-x snap-mandatory gap-px overflow-x-auto px-6 lg:grid lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-hairline lg:overflow-visible lg:px-0">
+          {authority.map((a, i) => (
+            <Reveal
+              key={a.label}
+              delay={i * 80}
+              className="min-w-[62%] shrink-0 snap-start py-10 pr-6 sm:min-w-[40%] lg:min-w-0 lg:px-8 lg:pr-8 first:lg:pl-0"
+            >
+              <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-ink">
+                <Counter to={a.value} suffix={a.suffix} />
+              </div>
+              <p className="mt-2 text-sm text-ink-muted">{a.label}</p>
+            </Reveal>
+          ))}
+        </div>
+        <p className="pb-6 pl-6 text-[11px] uppercase tracking-[0.22em] text-ink-subtle lg:hidden">
+          Arraste para o lado →
+        </p>
       </div>
     </section>
   );
 }
+
 
 /* ---------------- Problem ---------------- */
 
@@ -362,21 +354,108 @@ function Included() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="scrollbar-none -mx-6 mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 lg:mx-0 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0">
           {included.map((c, i) => (
-            <Reveal key={c.title} delay={(i % 4) * 70}>
-              <div className="h-full rounded-2xl bg-surface p-7 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
-                <span className="block h-px w-8 bg-brand" />
+            <Reveal
+              key={c.title}
+              delay={(i % 4) * 70}
+              className="min-w-[78%] shrink-0 snap-start sm:min-w-[46%] lg:min-w-0"
+            >
+              <div className="h-full rounded-2xl bg-surface p-7 ring-1 ring-hairline transition-all duration-500 hover:-translate-y-1 hover:shadow-premium">
+                <span className="block h-px w-8 bg-brand transition-all duration-500 group-hover:w-14" />
                 <h3 className="mt-6 text-[15px] font-semibold text-ink">{c.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">{c.text}</p>
               </div>
             </Reveal>
           ))}
         </div>
+
+        <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-ink-subtle lg:hidden">
+          Arraste para o lado →
+        </p>
       </div>
     </section>
   );
 }
+
+/* ---------------- Sem Vertex x Com Vertex ---------------- */
+
+const versus = [
+  { without: "Site genérico, igual ao do concorrente", with: "Projeto único, feito para a sua marca" },
+  { without: "Cliente desconfia antes de falar com você", with: "Autoridade percebida no primeiro scroll" },
+  { without: "Visitante entra, olha e vai embora", with: "Cada seção conduz direto para o WhatsApp" },
+  { without: "Lento, quebrado no celular", with: "Rápido e impecável em qualquer tela" },
+  { without: "Ninguém encontra sua empresa no Google", with: "SEO local trabalhando todos os dias" },
+  { without: "Você depende só do Instagram", with: "Estrutura própria que sustenta a marca" },
+];
+
+function Versus() {
+  return (
+    <section className="py-28 lg:py-36">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <Reveal>
+          <h2 className="max-w-2xl font-display text-[2rem] leading-[1.12] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
+            Sem Vertex <span className="text-ink-subtle">x</span>{" "}
+            <span className="text-brand">Com Vertex</span>
+          </h2>
+        </Reveal>
+
+        <div className="mt-14 grid gap-5 lg:grid-cols-2">
+          <Reveal>
+            <div className="h-full rounded-2xl bg-surface-2 p-8 ring-1 ring-hairline">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle">Sem Vertex</p>
+              <ul className="mt-7 divide-y divide-hairline">
+                {versus.map((v) => (
+                  <li key={v.without} className="flex items-start gap-4 py-4">
+                    <span className="mt-2 block h-px w-4 shrink-0 bg-surface-3" />
+                    <span className="text-[15px] leading-relaxed text-ink-muted">{v.without}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="h-full rounded-2xl bg-surface p-8 ring-1 ring-brand/25 shadow-premium transition-transform duration-500 hover:-translate-y-1">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-brand">Com Vertex</p>
+              <ul className="mt-7 divide-y divide-hairline">
+                {versus.map((v) => (
+                  <li key={v.with} className="flex items-start gap-4 py-4">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="mt-0.5 size-4 shrink-0 text-brand"
+                      aria-hidden="true"
+                    >
+                      <path d="M4 12.5l5 5L20 6.5" />
+                    </svg>
+                    <span className="text-[15px] leading-relaxed text-ink">{v.with}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal className="mt-12">
+          <a
+            href={waLink(waMessages.problem)}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 active:scale-[0.98]"
+          >
+            Quero estar do lado Vertex
+          </a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 
 /* ---------------- Before / After ---------------- */
 
