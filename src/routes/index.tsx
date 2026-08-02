@@ -99,19 +99,29 @@ const authority = [
 function AuthorityStrip() {
   return (
     <section className="border-y border-hairline bg-surface-2">
-      <div className="mx-auto grid max-w-[1400px] divide-y divide-hairline px-6 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x lg:px-10">
-        {authority.map((a) => (
-          <div key={a.label} className="py-10 lg:px-8 first:lg:pl-0">
-            <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-ink">
-              <Counter to={a.value} suffix={a.suffix} />
-            </div>
-            <p className="mt-2 text-sm text-ink-muted">{a.label}</p>
-          </div>
-        ))}
+      <div className="mx-auto max-w-[1400px] lg:px-10">
+        <div className="scrollbar-none flex snap-x snap-mandatory gap-px overflow-x-auto px-6 lg:grid lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-hairline lg:overflow-visible lg:px-0">
+          {authority.map((a, i) => (
+            <Reveal
+              key={a.label}
+              delay={i * 80}
+              className="min-w-[62%] shrink-0 snap-start py-10 pr-6 sm:min-w-[40%] lg:min-w-0 lg:px-8 lg:pr-8 first:lg:pl-0"
+            >
+              <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-ink">
+                <Counter to={a.value} suffix={a.suffix} />
+              </div>
+              <p className="mt-2 text-sm text-ink-muted">{a.label}</p>
+            </Reveal>
+          ))}
+        </div>
+        <p className="pb-6 pl-6 text-[11px] uppercase tracking-[0.22em] text-ink-subtle lg:hidden">
+          Arraste para o lado →
+        </p>
       </div>
     </section>
   );
 }
+
 
 /* ---------------- Problem ---------------- */
 
