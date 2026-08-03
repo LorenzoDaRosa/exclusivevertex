@@ -403,7 +403,89 @@ export const projects: Project[] = [
     ],
     status: "case",
   },
+  {
+    slug: "meneseg",
+    title: "MeneSeg Consórcios e Seguros",
+    category: "Consórcios · Seguros",
+    year: "2026",
+    tagline:
+      "A primeira presença digital de uma corretora que sempre trabalhou com números na mesa.",
+    summary:
+      "A MeneSeg atua com consórcios e seguros em Caxias do Sul e região, com um atendimento consultivo baseado em transparência e planejamento financeiro. Não existia site — todo o contato acontecia por indicação e WhatsApp. Construímos do zero uma plataforma institucional sóbria e didática: comparativo honesto entre consórcio e financiamento, áreas de atuação, processo de contratação, prova social e formulário que envia a simulação direto para o consultor.",
+    context:
+      "A confiança da MeneSeg foi construída no boca a boca: clientes que voltavam para o segundo, terceiro e quarto objetivo. O que faltava era um endereço próprio capaz de explicar, antes da conversa, por que consórcio costuma custar menos que financiamento e como funciona cada etapa da contratação. Sem site, cada explicação começava do zero no WhatsApp — e muitos leads qualificados nunca chegavam a perguntar.",
+    metrics: [
+      { label: "Clientes atendidos na serra", value: "+900" },
+      { label: "Voltam ou indicam", value: "98%" },
+      { label: "Nota média de atendimento", value: "4,9" },
+      { label: "Anos de mercado", value: "9" },
+    ],
+    after: [
+      "Identidade digital sóbria, em azul-marinho institucional com detalhes em dourado",
+      "Hero direto ao ponto: \"Consórcio constrói. O seguro protege.\"",
+      "Seção \"Sobre a MeneSeg\" com posicionamento honesto e CTA para falar com o consultor",
+      "Bloco de planejamento, transparência e acompanhamento em cada etapa",
+      "Áreas de atuação em cards com CTA individual de simulação e cotação",
+      "Comparativo lado a lado Consórcio x Financiamento em 7 critérios",
+      "Processo de contratação em 4 etapas explicadas",
+      "Grade com 10 motivos para escolher a MeneSeg",
+      "Prova social com depoimentos reais e faixa de números",
+      "Vitrine de administradoras e seguradoras parceiras em carrossel",
+      "Formulário de simulação com envio direto ao WhatsApp",
+      "FAQ respondendo as objeções mais comuns sobre consórcio e seguro",
+    ],
+    problems: [
+      "Nenhuma presença digital própria — apenas indicação e WhatsApp",
+      "A vantagem do consórcio sobre o financiamento precisava ser explicada manualmente a cada contato",
+      "Ausência de caminho estruturado para solicitar simulação ou cotação",
+      "Autoridade construída em 9 anos de mercado invisível para quem ainda não conhecia a corretora",
+    ],
+    solutions: [
+      "Construção completa do site institucional, do posicionamento à arquitetura",
+      "Comparativo editorial que educa o cliente antes da conversa comercial",
+      "Cards de produto com CTA próprio para cada tipo de consórcio e seguro",
+      "Formulário de simulação que abre a conversa já qualificada no WhatsApp",
+      "Prova social e parceiros em destaque para sustentar credibilidade",
+    ],
+    quotationForms: [
+      {
+        name: "Solicitar simulação",
+        fields: ["Nome", "WhatsApp", "Interesse", "Objetivo"],
+      },
+    ],
+    contentCategories: [
+      "Consórcio Auto",
+      "Consórcio Imóvel",
+      "Consórcio de Investimento",
+      "Seguro Auto",
+      "Seguros empresariais",
+      "Planejamento financeiro",
+    ],
+    conversionGoals: [
+      "Simular próxima conquista",
+      "Solicitar cotação de seguro",
+      "Falar com o consultor no WhatsApp",
+      "Comparar consórcio x financiamento",
+      "Entender o processo de contratação",
+    ],
+    gallery: ["Home", "Sobre", "Áreas de atuação", "Comparativo", "Processo", "Contato"],
+    stack: [
+      "React de última geração",
+      "Design System institucional próprio",
+      "SEO técnico completo",
+      "Integração WhatsApp",
+      "Formulário de simulação",
+    ],
+    outcomes: [
+      "Primeira presença digital própria da corretora",
+      "Cliente chega à conversa já entendendo consórcio x financiamento",
+      "Caminho claro do interesse à simulação",
+      "Autoridade de 9 anos finalmente visível",
+    ],
+    status: "case",
+  },
 ];
+
 
 export type Category = {
   slug: string;
