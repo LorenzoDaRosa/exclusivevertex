@@ -41,6 +41,19 @@ import darosContato from "@/assets/daros/daros_58.png.asset.json";
 import darosForm from "@/assets/daros/daros_59.png.asset.json";
 import darosFaq from "@/assets/daros/daros_60.png.asset.json";
 
+import menesegHero from "@/assets/meneseg/meneseg_1.jpeg.asset.json";
+import menesegSobre from "@/assets/meneseg/meneseg_2.jpeg.asset.json";
+import menesegPlanejamento from "@/assets/meneseg/meneseg_3.jpeg.asset.json";
+import menesegAreasLabel from "@/assets/meneseg/meneseg_4.jpeg.asset.json";
+import menesegAreas from "@/assets/meneseg/meneseg_5.jpeg.asset.json";
+import menesegComparativo from "@/assets/meneseg/meneseg_6.jpeg.asset.json";
+import menesegProcesso from "@/assets/meneseg/meneseg_7.jpeg.asset.json";
+import menesegMotivos from "@/assets/meneseg/meneseg_8.jpeg.asset.json";
+import menesegProvaSocial from "@/assets/meneseg/meneseg_9.jpeg.asset.json";
+import menesegParceiros from "@/assets/meneseg/meneseg_10.jpeg.asset.json";
+import menesegForm from "@/assets/meneseg/meneseg_11.jpeg.asset.json";
+import menesegFaq from "@/assets/meneseg/meneseg_12.jpeg.asset.json";
+
 const projectLogos: Record<string, string> = {
   "serra-seguros": serraLogo.url,
   "daros-lunettes": darosLogo.url,
@@ -49,7 +62,9 @@ const projectLogos: Record<string, string> = {
 const projectHeroImages: Record<string, string> = {
   "serra-seguros": serraHomeDepois.url,
   "daros-lunettes": darosHero.url,
+  meneseg: menesegHero.url,
 };
+
 
 const projectBeforeAfter: Record<string, BeforeAfterItem[]> = {
   "serra-seguros": [
@@ -235,7 +250,78 @@ const projectBeforeAfter: Record<string, BeforeAfterItem[]> = {
       after: darosFooter.url,
     },
   ],
+
+  meneseg: [
+    {
+      title: "Hero que resume a tese da corretora em duas frases.",
+      benefit:
+        "Antes não havia site. Agora a home abre com \"Consórcio constrói. O seguro protege.\" e dois caminhos claros — simular a próxima conquista ou pedir cotação de seguro — sem promessa vazia e sem linguagem de vendedor.",
+      after: menesegHero.url,
+    },
+    {
+      title: "\"Uma corretora que senta do seu lado da mesa.\"",
+      benefit:
+        "A seção institucional assume o posicionamento: números antes da proposta, comparativos reais e liberdade para recomendar entre várias administradoras. Três cards reforçam origem na serra gaúcha, propósito e atuação em duas frentes.",
+      after: menesegSobre.url,
+    },
+    {
+      title: "Planejamento, transparência e acompanhamento em cada etapa.",
+      benefit:
+        "Um bloco que responde à principal insegurança do cliente: quem cuida do meu caso depois da assinatura. Atendimento personalizado, planejamento financeiro e acompanhamento completo, com CTA direto para falar com um especialista.",
+      after: menesegPlanejamento.url,
+    },
+    {
+      title: "Áreas de atuação organizadas por objetivo.",
+      benefit:
+        "Consórcio auto, imóvel, investimento e seguros ganharam cards numerados com descrição objetiva e CTA próprio (\"Quero simular\" / \"Solicitar cotação\") — cada interesse abre uma conversa já contextualizada.",
+      before: menesegAreasLabel.url,
+      after: menesegAreas.url,
+    },
+    {
+      title: "Comparativo honesto: consórcio x financiamento.",
+      benefit:
+        "Sete critérios lado a lado — juros, planejamento, poder de compra, flexibilidade, formação patrimonial, controle de parcelas e potencial de investimento. É a explicação que antes era repetida a cada atendimento, agora resolvida antes do contato.",
+      after: menesegComparativo.url,
+    },
+    {
+      title: "Como funciona a contratação, em 4 etapas.",
+      benefit:
+        "Da conversa inicial ao acompanhamento contínuo. Tornar o processo visível elimina o medo de burocracia e antecipa objeções antes da primeira mensagem.",
+      after: menesegProcesso.url,
+    },
+    {
+      title: "Dez motivos para escolher a MeneSeg.",
+      benefit:
+        "Argumentos concretos — atendimento realmente personalizado, transparência em todas as etapas, especialização em duas frentes, relacionamento de longo prazo — que separam a corretora de simuladores online.",
+      after: menesegMotivos.url,
+    },
+    {
+      title: "Prova social com depoimentos reais e números.",
+      benefit:
+        "Histórias de clientes que trocaram financiamento por consórcio, seguidas da faixa de autoridade: +900 clientes atendidos, 98% de retorno ou indicação, nota 4,9 e 9 anos de mercado.",
+      after: menesegProvaSocial.url,
+    },
+    {
+      title: "As maiores instituições do mercado em destaque.",
+      benefit:
+        "Carrossel com administradoras e seguradoras parceiras (Santander, Rodobens, Servopa, Bradesco, Azul, Porto, Tokio Marine, Yelum, HDI, Allianz) — credibilidade emprestada de marcas que o cliente já conhece.",
+      after: menesegParceiros.url,
+    },
+    {
+      title: "Formulário de simulação com envio direto ao WhatsApp.",
+      benefit:
+        "Nome, WhatsApp, interesse e objetivo em um formulário curto, sobre fundo escuro, com todos os canais e horários ao lado. A lead chega qualificada e a conversa começa no ponto certo.",
+      after: menesegForm.url,
+    },
+    {
+      title: "FAQ que responde as dúvidas antes da objeção.",
+      benefit:
+        "Juros, antecipação de parcelas, uso da carta em bem usado, seguradoras parceiras, atendimento presencial ou online e prazo de cotação — menos perguntas repetidas no WhatsApp e mais conteúdo indexável.",
+      after: menesegFaq.url,
+    },
+  ],
 };
+
 
 export const Route = createFileRoute("/projetos/$slug")({
   loader: ({ params }) => {
