@@ -271,7 +271,14 @@ const showcase = [
     kind: "Boutique óptica · Caxias do Sul",
     image: darosCapa.url,
   },
+  {
+    slug: "meneseg",
+    name: "MeneSeg Consórcios e Seguros",
+    kind: "Consórcios e seguros · Caxias do Sul",
+    image: menesegCapa.url,
+  },
 ];
+
 
 function Projects() {
   return (
