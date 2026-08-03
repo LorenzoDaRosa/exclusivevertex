@@ -1,8 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
-import { ProjectMock } from "@/components/site/ProjectMock";
 import { projects } from "@/lib/site-data";
+import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
+import darosCapa from "@/assets/daros/daros_42.png.asset.json";
+import menesegCapa from "@/assets/meneseg/meneseg_capa.png.asset.json";
+
+const covers: Record<string, string> = {
+  "serra-seguros": serraCapa.url,
+  "daros-lunettes": darosCapa.url,
+  meneseg: menesegCapa.url,
+};
 
 export const Route = createFileRoute("/projetos/")({
   head: () => ({
@@ -41,8 +49,13 @@ function ProjetosPage() {
                 params={{ slug: p.slug }}
                 className="group block"
               >
-                <div className="aspect-[21/10] w-full">
-                  <ProjectMock label={p.title} variant="site" />
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline sm:aspect-[21/9]">
+                  <img
+                    src={covers[p.slug]}
+                    alt={`Site desenvolvido para ${p.title}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+                  />
                 </div>
                 <div className="mt-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 border-t border-hairline pt-6">
                   <div>
