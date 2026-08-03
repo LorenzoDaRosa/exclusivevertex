@@ -41,6 +41,19 @@ import darosContato from "@/assets/daros/daros_58.png.asset.json";
 import darosForm from "@/assets/daros/daros_59.png.asset.json";
 import darosFaq from "@/assets/daros/daros_60.png.asset.json";
 
+import menesegHero from "@/assets/meneseg/meneseg_1.jpeg.asset.json";
+import menesegSobre from "@/assets/meneseg/meneseg_2.jpeg.asset.json";
+import menesegPlanejamento from "@/assets/meneseg/meneseg_3.jpeg.asset.json";
+import menesegAreasLabel from "@/assets/meneseg/meneseg_4.jpeg.asset.json";
+import menesegAreas from "@/assets/meneseg/meneseg_5.jpeg.asset.json";
+import menesegComparativo from "@/assets/meneseg/meneseg_6.jpeg.asset.json";
+import menesegProcesso from "@/assets/meneseg/meneseg_7.jpeg.asset.json";
+import menesegMotivos from "@/assets/meneseg/meneseg_8.jpeg.asset.json";
+import menesegProvaSocial from "@/assets/meneseg/meneseg_9.jpeg.asset.json";
+import menesegParceiros from "@/assets/meneseg/meneseg_10.jpeg.asset.json";
+import menesegForm from "@/assets/meneseg/meneseg_11.jpeg.asset.json";
+import menesegFaq from "@/assets/meneseg/meneseg_12.jpeg.asset.json";
+
 const projectLogos: Record<string, string> = {
   "serra-seguros": serraLogo.url,
   "daros-lunettes": darosLogo.url,
@@ -49,7 +62,9 @@ const projectLogos: Record<string, string> = {
 const projectHeroImages: Record<string, string> = {
   "serra-seguros": serraHomeDepois.url,
   "daros-lunettes": darosHero.url,
+  meneseg: menesegHero.url,
 };
+
 
 const projectBeforeAfter: Record<string, BeforeAfterItem[]> = {
   "serra-seguros": [
