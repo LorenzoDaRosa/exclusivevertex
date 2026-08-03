@@ -1,8 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
-import { ProjectMock } from "@/components/site/ProjectMock";
 import { projects } from "@/lib/site-data";
+import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
+import darosCapa from "@/assets/daros/daros_42.png.asset.json";
+import menesegCapa from "@/assets/meneseg/meneseg_capa.png.asset.json";
+
+const covers: Record<string, string> = {
+  "serra-seguros": serraCapa.url,
+  "daros-lunettes": darosCapa.url,
+  meneseg: menesegCapa.url,
+};
 
 export const Route = createFileRoute("/projetos/")({
   head: () => ({
