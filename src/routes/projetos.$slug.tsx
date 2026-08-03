@@ -41,7 +41,7 @@ import darosContato from "@/assets/daros/daros_58.png.asset.json";
 import darosForm from "@/assets/daros/daros_59.png.asset.json";
 import darosFaq from "@/assets/daros/daros_60.png.asset.json";
 
-import menesegHero from "@/assets/meneseg/meneseg_1.jpeg.asset.json";
+import menesegHero from "@/assets/meneseg/meneseg_capa.png.asset.json";
 import menesegSobre from "@/assets/meneseg/meneseg_2.jpeg.asset.json";
 import menesegPlanejamento from "@/assets/meneseg/meneseg_3.jpeg.asset.json";
 import menesegAreasLabel from "@/assets/meneseg/meneseg_4.jpeg.asset.json";
