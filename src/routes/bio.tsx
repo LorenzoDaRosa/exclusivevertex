@@ -28,13 +28,11 @@ const items = [
   {
     to: "/",
     label: "Site oficial",
-    desc: "Conheça a Exclusive Vertex e como trabalhamos.",
     icon: GlobeIcon,
   },
   {
     to: "/projetos",
     label: "Portfólio de projetos",
-    desc: "Casos reais de marcas reposicionadas.",
     icon: GridIcon,
   },
 ] as const;
@@ -50,7 +48,7 @@ function BioPage() {
       <div className="relative w-full max-w-[520px]">
         <div className="rounded-[28px] border border-hairline bg-surface-2/80 p-7 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:p-10">
           <div className="flex flex-col items-center text-center">
-            <span className="vx-rise inline-flex size-20 items-center justify-center rounded-2xl bg-brand/15 ring-1 ring-brand/25">
+            <span className="vx-rise inline-flex size-20 items-center justify-center rounded-2xl bg-white ring-1 ring-black/10">
               <img
                 src={iconLight.url}
                 alt="Exclusive Vertex"
@@ -79,11 +77,8 @@ function BioPage() {
                 <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white transition-transform duration-300 group-hover:scale-105">
                   <item.icon />
                 </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-[15px] font-semibold text-ink">{item.label}</span>
-                  <span className="mt-0.5 block truncate text-[13px] text-ink-muted">
-                    {item.desc}
-                  </span>
+                <span className="min-w-0 flex-1 text-[15px] font-semibold text-ink">
+                  {item.label}
                 </span>
                 <ArrowIcon />
               </Link>
@@ -100,13 +95,8 @@ function BioPage() {
               <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white transition-transform duration-300 group-hover:scale-105">
                 <WhatsIcon />
               </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-[15px] font-semibold text-ink">
-                  Fale Conosco | WhatsApp
-                </span>
-                <span className="mt-0.5 block truncate text-[13px] text-ink-muted">
-                  Entre em contato direto com nosso time.
-                </span>
+              <span className="min-w-0 flex-1 text-[15px] font-semibold text-ink">
+                Fale Conosco | WhatsApp
               </span>
               <ArrowIcon />
             </a>
@@ -133,8 +123,24 @@ function BioPage() {
 
 function VerifiedIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="size-4 shrink-0 text-brand">
-      <path d="M12 1.5l2.32 1.86 2.96-.24.9 2.84 2.55 1.53-1.06 2.78 1.06 2.78-2.55 1.53-.9 2.84-2.96-.24L12 22.5l-2.32-1.86-2.96.24-.9-2.84-2.55-1.53 1.06-2.78L3.27 8.0l2.55-1.53.9-2.84 2.96.24L12 1.5Zm-1.2 13.3l5.1-5.1-1.42-1.42-3.68 3.68-1.8-1.8-1.42 1.42 3.22 3.22Z" />
+    <svg
+      viewBox="0 0 24 24"
+      className="size-[15px] shrink-0 translate-y-[-0.5px] overflow-visible"
+      aria-hidden
+    >
+      <path
+        fill="currentColor"
+        className="text-brand"
+        d="M12 2.2l2.05 1.62 2.6-.2.79 2.49 2.24 1.34-.93 2.45.93 2.45-2.24 1.34-.79 2.49-2.6-.2L12 21.8l-2.05-1.62-2.6.2-.79-2.49-2.24-1.34.93-2.45-.93-2.45 2.24-1.34.79-2.49 2.6.2L12 2.2Z"
+      />
+      <path
+        d="M8.6 12.2l2.2 2.2 4.6-4.6"
+        fill="none"
+        stroke="#fff"
+        strokeWidth="1.9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
