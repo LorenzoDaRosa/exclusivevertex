@@ -3,6 +3,7 @@ import {
   Outlet,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -122,15 +123,17 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const bare = pathname === "/bio" || pathname === "/bio/";
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-surface text-ink font-sans">
-        <Nav />
+        {!bare && <Nav />}
         <main>
           <Outlet />
         </main>
-        <Footer />
+        {!bare && <Footer />}
       </div>
     </QueryClientProvider>
   );

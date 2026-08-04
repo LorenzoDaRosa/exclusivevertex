@@ -15,6 +15,7 @@ import { Route as ProcessoRouteImport } from './routes/processo'
 import { Route as OrcamentoRouteImport } from './routes/orcamento'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as BioRouteImport } from './routes/bio'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosIndexRouteImport } from './routes/servicos.index'
 import { Route as ProjetosIndexRouteImport } from './routes/projetos.index'
@@ -52,6 +53,11 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BioRoute = BioRouteImport.update({
+  id: '/bio',
+  path: '/bio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -85,6 +91,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bio': typeof BioRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bio': typeof BioRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
@@ -114,6 +122,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bio': typeof BioRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/orcamento': typeof OrcamentoRoute
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/bio'
     | '/blog'
     | '/contato'
     | '/orcamento'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/bio'
     | '/blog'
     | '/contato'
     | '/orcamento'
@@ -158,6 +169,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/bio'
     | '/blog'
     | '/contato'
     | '/orcamento'
@@ -173,6 +185,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BioRoute: typeof BioRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
   OrcamentoRoute: typeof OrcamentoRoute
@@ -227,6 +240,13 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bio': {
+      id: '/bio'
+      path: '/bio'
+      fullPath: '/bio'
+      preLoaderRoute: typeof BioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -286,6 +306,7 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BioRoute: BioRoute,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
   OrcamentoRoute: OrcamentoRoute,
