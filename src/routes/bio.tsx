@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Logo } from "@/components/site/Logo";
+import iconLight from "@/assets/vertex-icon.png.asset.json";
 import { waLink } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/bio")({
@@ -50,8 +50,14 @@ function BioPage() {
       <div className="relative w-full max-w-[520px]">
         <div className="rounded-[28px] border border-hairline bg-surface-2/80 p-7 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:p-10">
           <div className="flex flex-col items-center text-center">
-            <span className="vx-rise inline-flex size-20 items-center justify-center rounded-2xl bg-brand/15 ring-1 ring-brand/30">
-              <Logo className="size-14" />
+            <span className="vx-rise inline-flex size-20 items-center justify-center rounded-2xl bg-brand/15 ring-1 ring-brand/25">
+              <img
+                src={iconLight.url}
+                alt="Exclusive Vertex"
+                className="size-12 object-contain"
+                loading="eager"
+                decoding="async"
+              />
             </span>
             <h1 className="vx-rise mt-6 font-display text-4xl text-ink sm:text-5xl">
               Exclusive Vertex
