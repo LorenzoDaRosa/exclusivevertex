@@ -380,25 +380,27 @@ function Included() {
           </h2>
         </Reveal>
 
-        <div className="scrollbar-none -mx-6 mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 lg:mx-0 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0">
-          {included.map((c, i) => (
-            <Reveal
-              key={c.title}
-              delay={(i % 4) * 70}
-              className="min-w-[78%] shrink-0 snap-start sm:min-w-[46%] lg:min-w-0"
+        <div className="mt-14 space-y-5">
+          {[included.slice(0, 4), included.slice(4, 8)].map((group, g) => (
+            <div
+              key={g}
+              className="rounded-2xl bg-surface p-6 ring-1 ring-hairline sm:p-8"
             >
-              <div className="h-full rounded-2xl bg-surface p-7 ring-1 ring-hairline transition-all duration-500 hover:-translate-y-1 hover:shadow-premium">
-                <span className="block h-px w-8 bg-brand transition-all duration-500 group-hover:w-14" />
-                <h3 className="mt-6 text-[15px] font-semibold text-ink">{c.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">{c.text}</p>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {group.map((c, i) => (
+                  <Reveal key={c.title} delay={i * 70}>
+                    <div className="h-full rounded-xl bg-surface-2 p-6 ring-1 ring-hairline transition-all duration-500 hover:-translate-y-1 hover:shadow-premium">
+                      <span className="block h-px w-8 bg-brand" />
+                      <h3 className="mt-6 text-[15px] font-semibold text-ink">{c.title}</h3>
+                      <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">{c.text}</p>
+                    </div>
+                  </Reveal>
+                ))}
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
 
-        <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-ink-subtle lg:hidden">
-          Arraste para o lado →
-        </p>
       </div>
     </section>
   );
