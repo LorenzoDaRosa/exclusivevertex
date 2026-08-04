@@ -8,7 +8,7 @@ import menesegCapa from "@/assets/meneseg/meneseg_capa.png.asset.json";
 
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
-import { Typewriter } from "@/components/site/Typewriter";
+import { WordCycle } from "@/components/site/WordCycle";
 import { QuickForm } from "@/components/site/QuickForm";
 import { CoffeeInvite } from "@/components/site/CoffeeInvite";
 import { waLink, waMessages } from "@/lib/whatsapp";
@@ -55,38 +55,36 @@ function Home() {
 
 /* ---------------- Hero ---------------- */
 
+const heroWords = ["referência", "autoridade", "confiança", "premium", "líder do mercado"] as const;
+
 function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section className="relative overflow-hidden pt-44 pb-28 lg:pt-56 lg:pb-40">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-70 blur-[120px]"
         style={{
           background:
-            "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 16%, transparent), transparent)",
+            "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 12%, transparent), transparent)",
         }}
       />
-      <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
-        <p className="vx-fade-in mb-7 inline-flex items-center gap-2 rounded-full bg-surface-2 px-4 py-1.5 text-[11px] uppercase tracking-[0.22em] text-ink-muted ring-1 ring-hairline">
-          <span className="size-1.5 rounded-full bg-brand vx-pulse-dot" />
-          Serra Gaúcha · Caxias do Sul
-        </p>
-
-        <h1 className="text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
-          <Typewriter text="Primeira Agência da Serra Gaúcha focada em transformar empresas em Referências Digitais." />
+      <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
+        <h1 className="vx-rise font-display text-[2.7rem] font-semibold leading-[1.05] tracking-[-0.035em] text-ink sm:text-[3.6rem] lg:text-[4.6rem]">
+          <span className="block">Sua empresa vista como</span>
+          <WordCycle words={heroWords} className="mt-2" />
         </h1>
 
         <p
-          className="vx-rise mx-auto mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted"
-          style={{ animationDelay: "3.1s" }}
+          className="vx-rise mx-auto mt-14 max-w-xl text-[17px] leading-relaxed text-ink-muted lg:mt-16"
+          style={{ animationDelay: "0.35s" }}
         >
-          Cada projeto é construído para fortalecer marcas, transmitindo credibilidade e
-          gerando novas oportunidades de negócios.
+          Criamos sites e landing pages que aumentam a percepção de valor da sua empresa
+          e transformam visitantes em clientes.
         </p>
 
         <div
-          className="vx-rise mt-10 flex flex-wrap items-center justify-center gap-3"
-          style={{ animationDelay: "3.35s" }}
+          className="vx-rise mt-16 flex flex-wrap items-center justify-center gap-3 lg:mt-20"
+          style={{ animationDelay: "0.6s" }}
         >
           <a
             href={waLink(waMessages.hero)}
@@ -99,7 +97,7 @@ function Hero() {
           </a>
           <Link
             to="/projetos"
-            className="inline-flex items-center rounded-full px-7 py-3.5 text-[15px] font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:bg-surface-2 hover:-translate-y-0.5 active:scale-[0.98]"
+            className="inline-flex items-center rounded-full bg-surface px-7 py-3.5 text-[15px] font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:bg-surface-2 hover:-translate-y-0.5 active:scale-[0.98]"
           >
             Ver projetos
           </Link>
