@@ -8,6 +8,7 @@ import menesegCapa from "@/assets/meneseg/meneseg_capa.png.asset.json";
 
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
+import { Typewriter } from "@/components/site/Typewriter";
 import { QuickForm } from "@/components/site/QuickForm";
 import { CoffeeInvite } from "@/components/site/CoffeeInvite";
 import { waLink, waMessages } from "@/lib/whatsapp";
