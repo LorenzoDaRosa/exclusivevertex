@@ -8,6 +8,7 @@ import menesegCapa from "@/assets/meneseg/meneseg_capa.png.asset.json";
 
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
+import { Typewriter } from "@/components/site/Typewriter";
 import { QuickForm } from "@/components/site/QuickForm";
 import { CoffeeInvite } from "@/components/site/CoffeeInvite";
 import { waLink, waMessages } from "@/lib/whatsapp";
@@ -57,25 +58,44 @@ function Home() {
 function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-70 blur-[120px]"
+        style={{
+          background:
+            "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 16%, transparent), transparent)",
+        }}
+      />
       <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
-        <h1 className="vx-rise text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
-          Primeira Agência da Serra Gaúcha focada em transformar empresas em{" "}
-          <span className="text-brand">Referências Digitais</span>.
+        <p className="vx-fade-in mb-7 inline-flex items-center gap-2 rounded-full bg-surface-2 px-4 py-1.5 text-[11px] uppercase tracking-[0.22em] text-ink-muted ring-1 ring-hairline">
+          <span className="size-1.5 rounded-full bg-brand vx-pulse-dot" />
+          Serra Gaúcha · Caxias do Sul
+        </p>
+
+        <h1 className="text-[2.6rem] leading-[1.04] font-display font-semibold tracking-[-0.03em] text-ink sm:text-[3.4rem] lg:text-[4.1rem]">
+          <Typewriter text="Primeira Agência da Serra Gaúcha focada em transformar empresas em Referências Digitais." />
         </h1>
 
-        <p className="vx-rise mx-auto mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
+        <p
+          className="vx-rise mx-auto mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted"
+          style={{ animationDelay: "3.1s" }}
+        >
           Cada projeto é construído para fortalecer marcas, transmitindo credibilidade e
           gerando novas oportunidades de negócios.
         </p>
 
-        <div className="vx-rise mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div
+          className="vx-rise mt-10 flex flex-wrap items-center justify-center gap-3"
+          style={{ animationDelay: "3.35s" }}
+        >
           <a
             href={waLink(waMessages.hero)}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 active:scale-[0.98]"
+            className="group relative inline-flex items-center overflow-hidden rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(29,99,255,0.28)] active:scale-[0.98]"
           >
-            Solicitar proposta no WhatsApp
+            <span className="relative z-10">Solicitar proposta no WhatsApp</span>
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
           </a>
           <Link
             to="/projetos"
@@ -93,33 +113,35 @@ function Hero() {
 /* ---------------- Authority strip ---------------- */
 
 const authority = [
-  { value: 12, suffix: "+", label: "Projetos desenvolvidos" },
-  { value: 100, suffix: "%", label: "Atendimento personalizado" },
-  { value: 100, suffix: "%", label: "Sites premium" },
-  { value: 100, suffix: "%", label: "Foco em conversão" },
+  { value: 12, suffix: "+", label: "Projetos desenvolvidos", note: "Marcas construídas do zero ao posicionamento" },
+  { value: 100, suffix: "%", label: "Atendimento personalizado", note: "Sem esteira, sem template, sem terceirização" },
+  { value: 100, suffix: "%", label: "Sites premium", note: "Design autoral com padrão internacional" },
+  { value: 100, suffix: "%", label: "Foco em conversão", note: "Cada seção pensada para gerar contato" },
 ];
 
 function AuthorityStrip() {
   return (
-    <section className="border-y border-hairline bg-surface-2">
-      <div className="mx-auto max-w-[1400px] lg:px-10">
-        <div className="scrollbar-none flex snap-x snap-mandatory gap-px overflow-x-auto px-6 lg:grid lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-hairline lg:overflow-visible lg:px-0">
-          {authority.map((a, i) => (
-            <Reveal
-              key={a.label}
-              delay={i * 80}
-              className="min-w-[62%] shrink-0 snap-start py-10 pr-6 sm:min-w-[40%] lg:min-w-0 lg:px-8 lg:pr-8 first:lg:pl-0"
-            >
-              <div className="font-display text-4xl font-semibold tracking-[-0.03em] text-ink">
-                <Counter to={a.value} suffix={a.suffix} />
+    <section className="border-y border-hairline bg-surface-2 py-4">
+      <div className="mx-auto max-w-[1400px] divide-y divide-hairline px-6 lg:px-10">
+        {authority.map((a, i) => (
+          <Reveal key={a.label} delay={i * 110}>
+            <div className="group flex items-baseline gap-5 py-7 transition-all duration-500 hover:pl-2 sm:gap-10">
+              <span className="w-[3.2rem] shrink-0 text-[11px] tabular-nums uppercase tracking-[0.22em] text-ink-subtle">
+                0{i + 1}
+              </span>
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <span className="font-display text-4xl font-semibold tracking-[-0.03em] text-ink transition-colors duration-300 group-hover:text-brand sm:text-5xl">
+                    <Counter to={a.value} suffix={a.suffix} />
+                  </span>
+                  <span className="text-[15px] font-medium text-ink sm:text-base">{a.label}</span>
+                </div>
+                <p className="mt-1.5 text-sm text-ink-muted">{a.note}</p>
+                <span className="mt-4 block h-px w-full origin-left scale-x-0 bg-brand transition-transform duration-700 group-hover:scale-x-100" />
               </div>
-              <p className="mt-2 text-sm text-ink-muted">{a.label}</p>
-            </Reveal>
-          ))}
-        </div>
-        <p className="pb-6 pl-6 text-[11px] uppercase tracking-[0.22em] text-ink-subtle lg:hidden">
-          Arraste para o lado →
-        </p>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
