@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Logo } from "@/components/site/Logo";
+import iconLight from "@/assets/vertex-icon.png.asset.json";
 import { waLink } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/bio")({
@@ -41,23 +41,30 @@ const items = [
 
 function BioPage() {
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 py-16">
+    <div className="vx-scope-dark relative flex min-h-screen items-center justify-center overflow-hidden px-5 py-16">
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-brand/20 blur-[120px]"
       />
 
       <div className="relative w-full max-w-[520px]">
-        <div className="rounded-[28px] border border-hairline bg-surface/70 p-7 shadow-[0_30px_80px_-40px_rgba(17,24,39,0.35)] backdrop-blur-xl sm:p-10">
+        <div className="rounded-[28px] border border-hairline bg-surface-2/80 p-7 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:p-10">
           <div className="flex flex-col items-center text-center">
-            <span className="vx-rise inline-flex size-20 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/20">
-              <Logo className="size-14" />
+            <span className="vx-rise inline-flex size-20 items-center justify-center rounded-2xl bg-brand/15 ring-1 ring-brand/25">
+              <img
+                src={iconLight.url}
+                alt="Exclusive Vertex"
+                className="size-12 object-contain"
+                loading="eager"
+                decoding="async"
+              />
             </span>
             <h1 className="vx-rise mt-6 font-display text-4xl text-ink sm:text-5xl">
               Exclusive Vertex
             </h1>
-            <p className="vx-rise mt-3 max-w-[34ch] text-[15px] leading-relaxed text-ink-muted">
-              Transformamos empresas em referências digitais na Serra Gaúcha.
+            <p className="vx-rise mt-3 max-w-[36ch] text-[15px] leading-relaxed text-ink-muted">
+              Primeira Agência da Serra Gaúcha focada em transformar empresas em Referências
+              Digitais.
             </p>
           </div>
 
@@ -66,7 +73,7 @@ function BioPage() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="group flex items-center gap-4 rounded-2xl border border-hairline bg-surface px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-[0_18px_40px_-24px_rgba(29,99,255,0.5)]"
+                className="group flex items-center gap-4 rounded-2xl border border-hairline bg-surface-3/60 px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/50 hover:shadow-[0_18px_40px_-24px_rgba(29,99,255,0.7)]"
                 style={{ animationDelay: `${120 + i * 90}ms` }}
               >
                 <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white transition-transform duration-300 group-hover:scale-105">
@@ -88,17 +95,17 @@ function BioPage() {
               )}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center gap-4 rounded-2xl border border-brand/30 bg-brand/5 px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-[0_18px_40px_-24px_rgba(29,99,255,0.5)]"
+              className="group flex items-center gap-4 rounded-2xl border border-brand/40 bg-brand/10 px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/70 hover:shadow-[0_18px_40px_-24px_rgba(29,99,255,0.7)]"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white transition-transform duration-300 group-hover:scale-105">
                 <WhatsIcon />
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block text-[15px] font-semibold text-ink">
-                  WhatsApp (54) 3214-4112
+                  Fale Conosco | WhatsApp
                 </span>
                 <span className="mt-0.5 block truncate text-[13px] text-ink-muted">
-                  Fale direto com nosso time. Resposta rápida.
+                  Entre em contato direto com nosso time.
                 </span>
               </span>
               <ArrowIcon />
@@ -108,9 +115,10 @@ function BioPage() {
               href="https://instagram.com/exclusive.vertex"
               target="_blank"
               rel="noreferrer"
-              className="mt-2 text-center text-[12px] uppercase tracking-[0.22em] text-ink-subtle transition-colors hover:text-ink"
+              className="group mt-2 inline-flex items-center justify-center gap-2 text-center text-[12px] uppercase tracking-[0.22em] text-ink-subtle transition-colors hover:text-ink"
             >
               @exclusive.vertex
+              <VerifiedIcon />
             </a>
           </div>
         </div>
@@ -120,6 +128,14 @@ function BioPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+function VerifiedIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="size-4 shrink-0 text-brand">
+      <path d="M12 1.5l2.32 1.86 2.96-.24.9 2.84 2.55 1.53-1.06 2.78 1.06 2.78-2.55 1.53-.9 2.84-2.96-.24L12 22.5l-2.32-1.86-2.96.24-.9-2.84-2.55-1.53 1.06-2.78L3.27 8.0l2.55-1.53.9-2.84 2.96.24L12 1.5Zm-1.2 13.3l5.1-5.1-1.42-1.42-3.68 3.68-1.8-1.8-1.42 1.42 3.22 3.22Z" />
+    </svg>
   );
 }
 
