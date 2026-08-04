@@ -96,7 +96,7 @@ function BioPage() {
                 <WhatsIcon />
               </span>
               <span className="min-w-0 flex-1 text-[15px] font-semibold text-ink">
-                Fale Conosco | WhatsApp
+                Fale conosco
               </span>
               <ArrowIcon />
             </a>
