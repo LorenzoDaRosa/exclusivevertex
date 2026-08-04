@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import iconLight from "@/assets/vertex-icon.png.asset.json";
+import iconLight from "@/assets/vertex-icon-2.png.asset.json";
 import { waLink } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/bio")({
