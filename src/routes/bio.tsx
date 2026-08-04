@@ -123,8 +123,24 @@ function BioPage() {
 
 function VerifiedIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="size-4 shrink-0 text-brand">
-      <path d="M12 1.5l2.32 1.86 2.96-.24.9 2.84 2.55 1.53-1.06 2.78 1.06 2.78-2.55 1.53-.9 2.84-2.96-.24L12 22.5l-2.32-1.86-2.96.24-.9-2.84-2.55-1.53 1.06-2.78L3.27 8.0l2.55-1.53.9-2.84 2.96.24L12 1.5Zm-1.2 13.3l5.1-5.1-1.42-1.42-3.68 3.68-1.8-1.8-1.42 1.42 3.22 3.22Z" />
+    <svg
+      viewBox="0 0 24 24"
+      className="size-[15px] shrink-0 translate-y-[-0.5px] overflow-visible"
+      aria-hidden
+    >
+      <path
+        fill="currentColor"
+        className="text-brand"
+        d="M12 2.2l2.05 1.62 2.6-.2.79 2.49 2.24 1.34-.93 2.45.93 2.45-2.24 1.34-.79 2.49-2.6-.2L12 21.8l-2.05-1.62-2.6.2-.79-2.49-2.24-1.34.93-2.45-.93-2.45 2.24-1.34.79-2.49 2.6.2L12 2.2Z"
+      />
+      <path
+        d="M8.6 12.2l2.2 2.2 4.6-4.6"
+        fill="none"
+        stroke="#fff"
+        strokeWidth="1.9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
