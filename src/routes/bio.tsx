@@ -95,13 +95,8 @@ function BioPage() {
               <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white transition-transform duration-300 group-hover:scale-105">
                 <WhatsIcon />
               </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-[15px] font-semibold text-ink">
-                  Fale Conosco | WhatsApp
-                </span>
-                <span className="mt-0.5 block truncate text-[13px] text-ink-muted">
-                  Entre em contato direto com nosso time.
-                </span>
+              <span className="min-w-0 flex-1 text-[15px] font-semibold text-ink">
+                Fale Conosco | WhatsApp
               </span>
               <ArrowIcon />
             </a>
