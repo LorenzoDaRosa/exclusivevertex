@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
-import serraAntes from "@/assets/serra/home_serra_antes.png.asset.json";
 import darosCapa from "@/assets/daros/daros_42.png.asset.json";
 import menesegCapa from "@/assets/meneseg/meneseg_capa.png.asset.json";
 
