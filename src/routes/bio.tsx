@@ -28,13 +28,11 @@ const items = [
   {
     to: "/",
     label: "Site oficial",
-    desc: "Conheça a Exclusive Vertex e como trabalhamos.",
     icon: GlobeIcon,
   },
   {
     to: "/projetos",
     label: "Portfólio de projetos",
-    desc: "Casos reais de marcas reposicionadas.",
     icon: GridIcon,
   },
 ] as const;
