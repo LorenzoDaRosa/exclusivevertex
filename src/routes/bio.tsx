@@ -105,9 +105,9 @@ function BioPage() {
               href="https://instagram.com/exclusive.vertex"
               target="_blank"
               rel="noreferrer"
-              className="group mt-2 inline-flex items-center justify-center gap-2 text-center text-[12px] uppercase tracking-[0.22em] text-ink-subtle transition-colors hover:text-ink"
+              className="group mt-2 inline-flex min-h-6 items-center justify-center gap-1.5 text-center text-[12px] uppercase leading-none tracking-[0.22em] text-ink-subtle transition-colors hover:text-ink"
             >
-              @exclusive.vertex
+              <span className="inline-block leading-none">@exclusive.vertex</span>
               <VerifiedIcon />
             </a>
           </div>
@@ -123,25 +123,26 @@ function BioPage() {
 
 function VerifiedIcon() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      className="size-[15px] shrink-0 translate-y-[-0.5px] overflow-visible"
-      aria-hidden
+    <span
+      className="inline-flex size-4 shrink-0 items-center justify-center self-center leading-none text-brand"
+      aria-label="Conta verificada"
+      role="img"
     >
-      <path
-        fill="currentColor"
-        className="text-brand"
-        d="M12 2.2l2.05 1.62 2.6-.2.79 2.49 2.24 1.34-.93 2.45.93 2.45-2.24 1.34-.79 2.49-2.6-.2L12 21.8l-2.05-1.62-2.6.2-.79-2.49-2.24-1.34.93-2.45-.93-2.45 2.24-1.34.79-2.49 2.6.2L12 2.2Z"
-      />
-      <path
-        d="M8.6 12.2l2.2 2.2 4.6-4.6"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="1.9"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      <svg viewBox="0 0 20 20" className="block size-4 overflow-visible" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M10 1.25c.72 0 1.27.71 1.92.89.68.18 1.5-.15 2.09.19.6.35.72 1.22 1.21 1.71.49.49 1.36.61 1.71 1.21.34.59.01 1.41.19 2.09.18.65.89 1.2.89 1.92s-.71 1.27-.89 1.92c-.18.68.15 1.5-.19 2.09-.35.6-1.22.72-1.71 1.21-.49.49-.61 1.36-1.21 1.71-.59.34-1.41.01-2.09.19-.65.18-1.2.89-1.92.89s-1.27-.71-1.92-.89c-.68-.18-1.5.15-2.09-.19-.6-.35-.72-1.22-1.21-1.71-.49-.49-1.36-.61-1.71-1.21-.34-.59-.01-1.41-.19-2.09-.18-.65-.89-1.2-.89-1.92s.71-1.27.89-1.92c.18-.68-.15-1.5.19-2.09.35-.6 1.22-.72 1.71-1.21.49-.49.61-1.36 1.21-1.71.59-.34 1.41-.01 2.09-.19.65-.18 1.2-.89 1.92-.89Z"
+        />
+        <path
+          d="m6.55 10.05 2.1 2.1 4.8-4.8"
+          fill="none"
+          stroke="var(--color-surface)"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
   );
 }
 
