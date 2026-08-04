@@ -213,3 +213,28 @@
     display: none;
   }
 }
+
+@keyframes vx-caret-blink {
+  0%, 45%  { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100%     { opacity: 1; }
+}
+@keyframes vx-pulse-dot {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklab, var(--brand) 45%, transparent); }
+  100% { box-shadow: 0 0 0 10px transparent; }
+}
+
+@utility vx-caret-blink {
+  animation: vx-caret-blink 1s steps(1, end) infinite;
+}
+@utility vx-pulse-dot {
+  animation: vx-pulse-dot 2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vx-caret-blink,
+  .vx-pulse-dot {
+    animation: none;
+  }
+}
+
