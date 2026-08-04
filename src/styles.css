@@ -80,6 +80,21 @@
   --ring: #1D63FF;
 }
 
+/* Escopo escuro usado apenas na página /bio (link da bio das redes sociais) */
+.vx-scope-dark {
+  --brand-soft: #0F1B33;
+  --surface: #000000;
+  --surface-2: #0B0D12;
+  --surface-3: #14171F;
+  --hairline: #23262E;
+  --ink: #FFFFFF;
+  --ink-muted: #A1A7B3;
+  --ink-subtle: #6B7280;
+  background-color: var(--surface);
+  color: var(--ink);
+  color-scheme: dark;
+}
+
 @theme inline {
   --color-brand-hover: var(--brand-hover);
   --color-surface-3: var(--surface-3);
