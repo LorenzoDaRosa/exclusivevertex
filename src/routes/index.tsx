@@ -146,11 +146,11 @@ function AuthorityStrip() {
 /* ---------------- Problem ---------------- */
 
 const symptoms = [
-  "Sem site",
-  "Site antigo",
-  "Site lento",
-  "Site que não converte",
-  "Instagram bonito sem estrutura por trás",
+  "Site antigo que desvaloriza seu serviço",
+  "Design genérico que te faz parecer 'apenas mais um'",
+  "Lentidão que faz o cliente desistir em segundos",
+  "Falta de clareza na oferta e nos diferenciais",
+  "Instagram forte, mas site que não passa credibilidade",
 ];
 
 function Problem() {
