@@ -52,7 +52,7 @@ function Home() {
 
 /* ---------------- Hero ---------------- */
 
-const heroWords = ["referência", "autoridade", "confiança", "premium", "líder do mercado"] as const;
+const heroWords = ["o Líder do Mercado", "uma Autoridade", "Referência", "Objeto de Desejo", "Premium"] as const;
 
 function Hero() {
   return (
@@ -65,38 +65,38 @@ function Hero() {
             "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 12%, transparent), transparent)",
         }}
       />
-      <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
-        <h1 className="vx-rise font-display text-[2.7rem] font-semibold leading-[1.05] tracking-[-0.035em] text-ink sm:text-[3.6rem] lg:text-[4.6rem]">
+      <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
+        <h1 className="vx-rise font-display text-[2.7rem] font-semibold leading-[1.05] tracking-[-0.035em] text-ink sm:text-[3.6rem] lg:text-[5.2rem]">
           <span className="block">Sua empresa vista como</span>
-          <WordCycle words={heroWords} className="mt-2" />
+          <WordCycle words={heroWords} className="mt-2 text-brand" />
         </h1>
 
         <p
-          className="vx-rise mx-auto mt-14 max-w-xl text-[17px] leading-relaxed text-ink-muted lg:mt-16"
+          className="vx-rise mx-auto mt-14 max-w-2xl text-[18px] leading-relaxed text-ink-muted lg:mt-16"
           style={{ animationDelay: "0.35s" }}
         >
-          Criamos sites e landing pages que aumentam a percepção de valor da sua empresa
-          e transformam visitantes em clientes.
+          Pare de perder contratos para concorrentes visualmente inferiores. 
+          Construímos o ecossistema digital que valida seu preço e acelera sua decisão de venda.
         </p>
 
         <div
-          className="vx-rise mt-16 flex flex-wrap items-center justify-center gap-3 lg:mt-20"
+          className="vx-rise mt-16 flex flex-wrap items-center justify-center gap-4 lg:mt-20"
           style={{ animationDelay: "0.6s" }}
         >
           <a
             href={waLink(waMessages.hero)}
             target="_blank"
             rel="noreferrer"
-            className="group relative inline-flex items-center overflow-hidden rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(29,99,255,0.28)] active:scale-[0.98]"
+            className="group relative inline-flex items-center overflow-hidden rounded-full bg-brand px-10 py-4 text-[16px] font-semibold text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-[0_20px_45px_rgba(29,99,255,0.3)] active:scale-[0.98]"
           >
-            <span className="relative z-10">Solicitar proposta no WhatsApp</span>
-            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            <span className="relative z-10">Quero um posicionamento premium</span>
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
           </a>
           <Link
             to="/projetos"
-            className="inline-flex items-center rounded-full bg-surface px-7 py-3.5 text-[15px] font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:bg-surface-2 hover:-translate-y-0.5 active:scale-[0.98]"
+            className="inline-flex items-center rounded-full bg-surface px-10 py-4 text-[16px] font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:bg-surface-2 hover:-translate-y-0.5 active:scale-[0.98]"
           >
-            Ver projetos
+            Ver Portfólio de Elite
           </Link>
         </div>
       </div>
@@ -108,10 +108,10 @@ function Hero() {
 /* ---------------- Authority strip ---------------- */
 
 const authority = [
-  { value: 12, suffix: "+", label: "Projetos desenvolvidos", note: "Marcas construídas do zero ao posicionamento" },
-  { value: 100, suffix: "%", label: "Atendimento personalizado", note: "Sem esteira, sem template, sem terceirização" },
-  { value: 100, suffix: "%", label: "Sites premium", note: "Design autoral com padrão internacional" },
-  { value: 100, suffix: "%", label: "Foco em conversão", note: "Cada seção pensada para gerar contato" },
+  { value: 12, suffix: "+", label: "Empresas Reposicionadas", note: "Marcas que saíram do anonimato para o topo do mercado" },
+  { value: 100, suffix: "%", label: "Design Autoral Exclusivo", note: "Sem templates. Cada pixel é planejado para converter" },
+  { value: 24, suffix: "h", label: "Suporte Estratégico", note: "Acompanhamento focado em crescimento e escala" },
+  { value: 100, suffix: "%", label: "Foco em ROI Real", note: "Não entregamos 'likes', entregamos máquinas de vendas" },
 ];
 
 function AuthorityStrip() {
