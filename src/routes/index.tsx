@@ -383,8 +383,8 @@ function Included() {
     <section className="border-y border-hairline bg-surface-2 py-28 lg:py-36">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal>
-          <h2 className="font-display text-[2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
-            O que está incluso
+          <h2 className="font-display text-[2.2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
+            A Engenharia por trás do seu Sucesso
           </h2>
         </Reveal>
 
