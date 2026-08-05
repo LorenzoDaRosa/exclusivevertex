@@ -340,12 +340,16 @@ export const Route = createFileRoute("/projetos/$slug")({
     }
     return {
       meta: [
-        { title: `${loaderData.title} — Exclusive Vertex` },
+        { title: `${loaderData.title} | Case de Sucesso — Exclusive Vertex` },
         { name: "description", content: loaderData.summary },
-        { property: "og:title", content: `${loaderData.title} — Exclusive Vertex` },
+        { name: "keywords", content: `${loaderData.title}, case de sucesso, portfólio digital, exclusive vertex, ${loaderData.category}` },
+        { property: "og:title", content: `${loaderData.title} | Case de Sucesso — Exclusive Vertex` },
         { property: "og:description", content: loaderData.summary },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/projetos/${params.slug}` },
+        { property: "og:url", content: `https://exclusivevertex.com.br/projetos/${params.slug}` },
+        { property: "og:image", content: projectHeroImages[loaderData.slug] || "" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: projectHeroImages[loaderData.slug] || "" },
       ],
       links: [{ rel: "canonical", href: `/projetos/${params.slug}` }],
     };
@@ -406,8 +410,10 @@ function ProjetoDetail() {
             {heroImage ? (
               <img
                 src={heroImage}
-                alt={`${project.title} — home`}
+                alt={`${project.title} — Interface do site premium`}
                 className="w-full h-auto block"
+                loading="eager"
+                decoding="async"
               />
             ) : (
               <div className="aspect-[21/10] w-full">

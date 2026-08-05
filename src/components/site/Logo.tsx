@@ -6,8 +6,10 @@ export function Logo({ className = "size-11" }: { className?: string }) {
     <span className={`${className} inline-flex items-center justify-center`}>
       <img
         src={iconAsset.url}
-        alt="Exclusive Vertex"
+        alt="Exclusive Vertex Logo"
         className="h-full w-full object-contain"
+        width="44"
+        height="44"
         loading="eager"
         decoding="async"
       />

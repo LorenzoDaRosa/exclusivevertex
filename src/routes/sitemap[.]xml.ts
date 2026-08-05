@@ -1,61 +1,27 @@
-import { createFileRoute } from "@tanstack/react-router";
-import type {} from "@tanstack/react-start";
+import { createFileRoute } from '@tanstack/react-router'
 
-const BASE_URL = "";
-
-const staticPaths = [
-  "/",
-  "/projetos",
-  "/servicos",
-  "/processo",
-  "/sobre",
-  "/blog",
-  "/contato",
-  "/orcamento",
-];
-
-const dynamicProjects = ["/projetos/serra-seguros"];
-const dynamicServices = [
-  "sites-institucionais",
-  "landing-pages",
-  "redesign-de-sites",
-  "ui-ux-design",
-  "seo",
-  "integracao-whatsapp",
-  "formularios-inteligentes",
-  "consultoria-digital",
-  "otimizacao-performance",
-].map((s) => `/servicos/${s}`);
-const dynamicArticles = [
-  "o-site-como-ativo-estrategico",
-  "por-que-design-importa-para-vendas",
-  "seo-comeca-na-arquitetura",
-].map((s) => `/blog/${s}`);
-
-export const Route = createFileRoute("/sitemap.xml")({
+export const Route = createFileRoute('/sitemap.xml')({
   server: {
     handlers: {
       GET: async () => {
-        const paths = [
-          ...staticPaths,
-          ...dynamicProjects,
-          ...dynamicServices,
-          ...dynamicArticles,
-        ];
-        const urls = paths
-          .map(
-            (p) =>
-              `  <url>\n    <loc>${BASE_URL}${p}</loc>\n    <changefreq>weekly</changefreq>\n  </url>`,
-          )
-          .join("\n");
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
+        const baseUrl = 'https://exclusivevertex.com.br';
+        const pages = ['', '/projetos', '/bio', '/sobre', '/contato', '/servicos', '/processo', '/blog'];
+        
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages.map(page => `  <url>
+    <loc>${baseUrl}${page}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>${page === '' ? '1.0' : '0.8'}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+
         return new Response(xml, {
           headers: {
-            "Content-Type": "application/xml",
-            "Cache-Control": "public, max-age=3600",
+            'Content-Type': 'application/xml',
           },
         });
-      },
-    },
-  },
-});
+      }
+    }
+  }
+})
