@@ -29,6 +29,25 @@ export function Nav() {
     };
   }, [open]);
 
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(isDark ? "dark" : "light");
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "light" ? "dark" : "light";
+    setTheme(next);
+    if (next === "dark") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("vx-theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("vx-theme", "light");
+    }
+  };
+
   return (
     <>
       <nav
@@ -44,7 +63,7 @@ export function Nav() {
             <img
               src={lockup.url}
               alt="Exclusive Vertex Lockup"
-              className="h-10 w-auto object-contain sm:h-12 lg:h-14"
+              className={`h-10 w-auto object-contain sm:h-12 lg:h-14 transition-all duration-500 ${theme === 'dark' ? 'invert brightness-200' : ''}`}
               width="200"
               height="56"
               loading="eager"
@@ -52,16 +71,35 @@ export function Nav() {
             />
           </Link>
 
-          <button
-            aria-label="Abrir menu"
-            aria-expanded={open}
-            onClick={() => setOpen(true)}
-            className="absolute right-6 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center gap-[3px] rounded-full transition-colors duration-300 hover:bg-surface-2 lg:right-10"
-          >
-            <span className="size-[3px] rounded-full bg-ink" />
-            <span className="size-[3px] rounded-full bg-ink" />
-            <span className="size-[3px] rounded-full bg-ink" />
-          </button>
+          <div className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center gap-4 lg:right-10">
+            <button
+              onClick={toggleTheme}
+              aria-label="Alternar tema"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 hover:bg-surface-2 text-ink"
+            >
+              {theme === "light" ? (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-5">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-5">
+                  <circle cx="12" cy="12" r="5" />
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+              )}
+            </button>
+
+            <button
+              aria-label="Abrir menu"
+              aria-expanded={open}
+              onClick={() => setOpen(true)}
+              className="inline-flex h-10 w-10 items-center justify-center gap-[3px] rounded-full transition-colors duration-300 hover:bg-surface-2"
+            >
+              <span className="size-[3px] rounded-full bg-ink" />
+              <span className="size-[3px] rounded-full bg-ink" />
+              <span className="size-[3px] rounded-full bg-ink" />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -75,7 +113,7 @@ export function Nav() {
           <img
             src={lockup.url}
             alt="Exclusive Vertex"
-            className="h-10 w-auto object-contain sm:h-12"
+            className={`h-10 w-auto object-contain sm:h-12 transition-all duration-500 ${theme === 'dark' ? 'invert brightness-200' : ''}`}
           />
           <button
             aria-label="Fechar menu"

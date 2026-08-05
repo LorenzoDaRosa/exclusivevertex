@@ -81,7 +81,34 @@
   --ring: #1D63FF;
 }
 
-/* Escopo escuro usado apenas na página /bio (link da bio das redes sociais) */
+/* Dark Mode - Aplicado via classe .dark no HTML */
+html.dark {
+  --brand-soft: #0F1B33;
+  --surface: #0B0F19;
+  --surface-2: #121826;
+  --surface-3: #1B2436;
+  --hairline: #232D42;
+  --ink: #F9FAFB;
+  --ink-muted: #9CA3AF;
+  --ink-subtle: #6B7280;
+  
+  --background: #0B0F19;
+  --foreground: #F9FAFB;
+  --card: #121826;
+  --card-foreground: #F9FAFB;
+  --popover: #121826;
+  --popover-foreground: #F9FAFB;
+  --secondary: #121826;
+  --secondary-foreground: #F9FAFB;
+  --muted: #121826;
+  --muted-foreground: #9CA3AF;
+  --border: #232D42;
+  --input: #232D42;
+  
+  color-scheme: dark;
+}
+
+/* Escopo escuro usado na página /bio */
 .vx-scope-dark {
   --brand-soft: #0F1B33;
   --surface: #000000;
@@ -104,11 +131,11 @@
 @layer base {
   * {
     border-color: var(--color-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 
   html {
     background-color: var(--color-surface);
-    color-scheme: light;
   }
 
   body {
