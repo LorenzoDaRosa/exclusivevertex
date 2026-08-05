@@ -43,8 +43,10 @@ export function Nav() {
           <Link to="/" aria-label="Exclusive Vertex" className="inline-flex">
             <img
               src={lockup.url}
-              alt="Exclusive Vertex"
+              alt="Exclusive Vertex Lockup"
               className="h-10 w-auto object-contain sm:h-12 lg:h-14"
+              width="200"
+              height="56"
               loading="eager"
               decoding="async"
             />
