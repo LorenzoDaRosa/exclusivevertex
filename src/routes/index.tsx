@@ -368,14 +368,14 @@ function Projects() {
 /* ---------------- Included ---------------- */
 
 const included = [
-  { title: "Site institucional premium", text: "Estrutura, design e narrativa à altura da sua empresa." },
-  { title: "Landing page de alta conversão", text: "Uma página com um objetivo claro: gerar contato." },
-  { title: "Integração com WhatsApp", text: "Cada seção conduz o visitante direto para a conversa." },
-  { title: "SEO local", text: "Sua empresa encontrável por quem busca na sua região." },
-  { title: "Responsivo", text: "Experiência impecável no celular, tablet e desktop." },
-  { title: "Performance otimizada", text: "Carregamento rápido, sem travar a decisão do cliente." },
-  { title: "Identidade visual consistente", text: "Cores, tipografia e imagens falando a mesma língua." },
-  { title: "Publicação completa", text: "Domínio, hospedagem e site no ar, tudo por nossa conta." },
+  { title: "Design de Elite & Autoral", text: "Projetos únicos que distanciam sua marca da concorrência genérica." },
+  { title: "Copywriting de Alta Performance", text: "Textos escritos com técnicas de persuasão e neuromarketing." },
+  { title: "Ecossistema de Conversão", text: "Cada elemento é posicionado para transformar o desejo em contato real." },
+  { title: "Autoridade Digital Instantânea", text: "SEO e UX otimizados para que você seja visto como a melhor opção." },
+  { title: "Mobile-First Experience", text: "Navegação fluida e luxuosa na palma da mão do seu cliente." },
+  { title: "Infraestrutura de Classe Mundial", text: "Velocidade extrema, segurança e estabilidade absoluta no ar." },
+  { title: "Brand Consistency", text: "Sua identidade visual aplicada com rigor e sofisticação em cada detalhe." },
+  { title: "Consultoria Estratégica", text: "Mais que um site, entregamos o caminho para a sua escala digital." },
 ];
 
 function Included() {
