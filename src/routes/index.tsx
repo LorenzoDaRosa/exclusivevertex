@@ -158,34 +158,42 @@ function Problem() {
     <section className="py-28 lg:py-36">
       <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-[1fr_0.9fr] lg:px-10">
         <Reveal className="min-w-0">
-          <h2 className="max-w-2xl font-display text-[2rem] leading-[1.12] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
-            O problema da sua empresa provavelmente não é a falta de clientes.
+          <h2 className="max-w-2xl font-display text-[2.2rem] leading-[1.1] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
+            Você está deixando dinheiro na mesa por causa de um site amador?
           </h2>
-          <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
-            A maioria das empresas perde oportunidades todos os dias porque transmite pouca
-            confiança no digital.
+          <p className="mt-7 max-w-xl text-[18px] leading-relaxed text-ink-muted">
+            No mercado digital, a primeira impressão não é a que fica. É a que <span className="text-ink font-medium">vende</span> ou a que <span className="text-ink font-medium">expulsa</span> seu cliente.
+            Empresas premium exigem uma vitrine à altura.
           </p>
           <a
             href={waLink(waMessages.problem)}
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-colors duration-300 hover:bg-brand-hover"
+            className="group mt-10 inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-[16px] font-semibold text-white transition-all duration-300 hover:bg-brand-hover hover:gap-4"
           >
-            Quero descobrir quanto estou perdendo
+            Quero um diagnóstico gratuito
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="size-4" aria-hidden="true">
+              <path d="M5 12h14m-7-7l7 7-7 7" />
+            </svg>
           </a>
         </Reveal>
 
         <Reveal className="min-w-0">
-          <ul className="divide-y divide-hairline border-y border-hairline">
-            {symptoms.map((s, i) => (
-              <li key={s} className="flex items-baseline gap-5 py-5">
-                <span className="font-display text-sm text-ink-subtle tabular-nums">
-                  0{i + 1}
-                </span>
-                <span className="text-[17px] text-ink">{s}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="rounded-2xl bg-surface-2 p-8 ring-1 ring-hairline lg:p-10">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-brand mb-8">Sinais de alerta</h3>
+            <ul className="space-y-6">
+              {symptoms.map((s, i) => (
+                <li key={s} className="flex items-center gap-4">
+                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-600">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="size-3">
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <span className="text-[17px] font-medium text-ink">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </div>
     </section>
