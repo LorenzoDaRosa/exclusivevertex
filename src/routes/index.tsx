@@ -312,8 +312,8 @@ function Projects() {
     <section className="py-28 lg:py-36">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal>
-          <h2 className="max-w-2xl font-display text-[2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
-            Projetos
+          <h2 className="max-w-2xl font-display text-[2.2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
+            Cases Reais. Resultados Absolutos.
           </h2>
         </Reveal>
 
