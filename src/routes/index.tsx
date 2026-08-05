@@ -496,22 +496,23 @@ function Versus() {
 function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-brand py-28 pb-36 lg:py-36">
-      <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
-        <h2 className="font-display text-[2rem] leading-[1.14] font-semibold tracking-[-0.03em] text-white sm:text-[2.8rem]">
-          Sua empresa parece do tamanho que ela realmente é?
+      <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
+        <h2 className="font-display text-[2.2rem] leading-[1.1] font-semibold tracking-[-0.03em] text-white sm:text-[3.2rem]">
+          O próximo nível da sua empresa começa aqui.
         </h2>
-        <p className="mx-auto mt-7 max-w-xl text-[17px] leading-relaxed text-white/80">
-          Receba uma análise gratuita da presença digital da sua empresa e descubra como um site
-          premium pode aumentar sua autoridade e gerar mais clientes.
+        <p className="mx-auto mt-8 max-w-2xl text-[19px] leading-relaxed text-white/90">
+          Não deixe sua marca ser ignorada. Garanta agora uma presença digital que impõe respeito e converte visitantes em clientes de alto ticket.
         </p>
-        <a
-          href={waLink(waMessages.finalCta)}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-12 inline-flex items-center rounded-full bg-surface px-10 py-4.5 text-[16px] font-semibold text-brand transition-transform duration-300 hover:-translate-y-0.5"
-        >
-          Falar no WhatsApp
-        </a>
+        <div className="mt-14 flex flex-wrap justify-center gap-5">
+          <a
+            href={waLink(waMessages.finalCta)}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full bg-white px-10 py-4.5 text-[17px] font-bold text-brand shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-surface"
+          >
+            Garantir meu site premium
+          </a>
+        </div>
       </div>
     </section>
   );
