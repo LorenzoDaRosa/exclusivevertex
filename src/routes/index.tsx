@@ -15,17 +15,17 @@ import { waLink, waMessages } from "@/lib/whatsapp";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Exclusive Vertex · Sites premium para empresas da Serra Gaúcha" },
+      { title: "Exclusive Vertex | Posicionamento Digital de Alto Padrão" },
       {
         name: "description",
         content:
-          "Criamos sites premium que geram autoridade, aumentam a percepção de valor e transformam visitantes em clientes. Atendimento personalizado na Serra Gaúcha.",
+          "Transformamos empresas comuns em referências absolutas. Sites premium com design exclusivo, copywriting estratégico e foco total em conversão de alto valor.",
       },
-      { property: "og:title", content: "Exclusive Vertex · Sites premium para empresas da Serra Gaúcha" },
+      { property: "og:title", content: "Exclusive Vertex | Posicionamento Digital de Alto Padrão" },
       {
         property: "og:description",
         content:
-          "Sites estratégicos, personalizados e focados em conversão para empresas que querem ser referência no digital.",
+          "Não entregamos apenas sites. Entregamos autoridade, desejo e resultados mensuráveis para marcas que não aceitam ser apenas mais uma.",
       },
     ],
   }),
@@ -52,7 +52,7 @@ function Home() {
 
 /* ---------------- Hero ---------------- */
 
-const heroWords = ["referência", "autoridade", "confiança", "premium", "líder do mercado"] as const;
+const heroWords = ["o Líder do Mercado", "uma Autoridade", "Referência", "Objeto de Desejo", "Premium"] as const;
 
 function Hero() {
   return (
@@ -65,38 +65,38 @@ function Hero() {
             "radial-gradient(closest-side, color-mix(in oklab, var(--brand) 12%, transparent), transparent)",
         }}
       />
-      <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
-        <h1 className="vx-rise font-display text-[2.7rem] font-semibold leading-[1.05] tracking-[-0.035em] text-ink sm:text-[3.6rem] lg:text-[4.6rem]">
+      <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
+        <h1 className="vx-rise font-display text-[2.7rem] font-semibold leading-[1.05] tracking-[-0.035em] text-ink sm:text-[3.6rem] lg:text-[5.2rem]">
           <span className="block">Sua empresa vista como</span>
-          <WordCycle words={heroWords} className="mt-2" />
+          <WordCycle words={heroWords} className="mt-2 text-brand" />
         </h1>
 
         <p
-          className="vx-rise mx-auto mt-14 max-w-xl text-[17px] leading-relaxed text-ink-muted lg:mt-16"
+          className="vx-rise mx-auto mt-14 max-w-2xl text-[18px] leading-relaxed text-ink-muted lg:mt-16"
           style={{ animationDelay: "0.35s" }}
         >
-          Criamos sites e landing pages que aumentam a percepção de valor da sua empresa
-          e transformam visitantes em clientes.
+          Pare de perder contratos para concorrentes visualmente inferiores. 
+          Construímos o ecossistema digital que valida seu preço e acelera sua decisão de venda.
         </p>
 
         <div
-          className="vx-rise mt-16 flex flex-wrap items-center justify-center gap-3 lg:mt-20"
+          className="vx-rise mt-16 flex flex-wrap items-center justify-center gap-4 lg:mt-20"
           style={{ animationDelay: "0.6s" }}
         >
           <a
             href={waLink(waMessages.hero)}
             target="_blank"
             rel="noreferrer"
-            className="group relative inline-flex items-center overflow-hidden rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(29,99,255,0.28)] active:scale-[0.98]"
+            className="group relative inline-flex items-center overflow-hidden rounded-full bg-brand px-10 py-4 text-[16px] font-semibold text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-[0_20px_45px_rgba(29,99,255,0.3)] active:scale-[0.98]"
           >
-            <span className="relative z-10">Solicitar proposta no WhatsApp</span>
-            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            <span className="relative z-10">Quero um posicionamento premium</span>
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
           </a>
           <Link
             to="/projetos"
-            className="inline-flex items-center rounded-full bg-surface px-7 py-3.5 text-[15px] font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:bg-surface-2 hover:-translate-y-0.5 active:scale-[0.98]"
+            className="inline-flex items-center rounded-full bg-surface px-10 py-4 text-[16px] font-medium text-ink ring-1 ring-hairline transition-all duration-300 hover:bg-surface-2 hover:-translate-y-0.5 active:scale-[0.98]"
           >
-            Ver projetos
+            Ver Portfólio de Elite
           </Link>
         </div>
       </div>
@@ -108,10 +108,10 @@ function Hero() {
 /* ---------------- Authority strip ---------------- */
 
 const authority = [
-  { value: 12, suffix: "+", label: "Projetos desenvolvidos", note: "Marcas construídas do zero ao posicionamento" },
-  { value: 100, suffix: "%", label: "Atendimento personalizado", note: "Sem esteira, sem template, sem terceirização" },
-  { value: 100, suffix: "%", label: "Sites premium", note: "Design autoral com padrão internacional" },
-  { value: 100, suffix: "%", label: "Foco em conversão", note: "Cada seção pensada para gerar contato" },
+  { value: 12, suffix: "+", label: "Empresas Reposicionadas", note: "Marcas que saíram do anonimato para o topo do mercado" },
+  { value: 100, suffix: "%", label: "Design Autoral Exclusivo", note: "Sem templates. Cada pixel é planejado para converter" },
+  { value: 24, suffix: "h", label: "Suporte Estratégico", note: "Acompanhamento focado em crescimento e escala" },
+  { value: 100, suffix: "%", label: "Foco em ROI Real", note: "Não entregamos 'likes', entregamos máquinas de vendas" },
 ];
 
 function AuthorityStrip() {
@@ -146,11 +146,11 @@ function AuthorityStrip() {
 /* ---------------- Problem ---------------- */
 
 const symptoms = [
-  "Sem site",
-  "Site antigo",
-  "Site lento",
-  "Site que não converte",
-  "Instagram bonito sem estrutura por trás",
+  "Site antigo que desvaloriza seu serviço",
+  "Design genérico que te faz parecer 'apenas mais um'",
+  "Lentidão que faz o cliente desistir em segundos",
+  "Falta de clareza na oferta e nos diferenciais",
+  "Instagram forte, mas site que não passa credibilidade",
 ];
 
 function Problem() {
@@ -158,34 +158,42 @@ function Problem() {
     <section className="py-28 lg:py-36">
       <div className="mx-auto grid max-w-[1400px] gap-16 px-6 lg:grid-cols-[1fr_0.9fr] lg:px-10">
         <Reveal className="min-w-0">
-          <h2 className="max-w-2xl font-display text-[2rem] leading-[1.12] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
-            O problema da sua empresa provavelmente não é a falta de clientes.
+          <h2 className="max-w-2xl font-display text-[2.2rem] leading-[1.1] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
+            Você está deixando dinheiro na mesa por causa de um site amador?
           </h2>
-          <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
-            A maioria das empresas perde oportunidades todos os dias porque transmite pouca
-            confiança no digital.
+          <p className="mt-7 max-w-xl text-[18px] leading-relaxed text-ink-muted">
+            No mercado digital, a primeira impressão não é a que fica. É a que <span className="text-ink font-medium">vende</span> ou a que <span className="text-ink font-medium">expulsa</span> seu cliente.
+            Empresas premium exigem uma vitrine à altura.
           </p>
           <a
             href={waLink(waMessages.problem)}
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-[15px] font-medium text-white transition-colors duration-300 hover:bg-brand-hover"
+            className="group mt-10 inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-[16px] font-semibold text-white transition-all duration-300 hover:bg-brand-hover hover:gap-4"
           >
-            Quero descobrir quanto estou perdendo
+            Quero um diagnóstico gratuito
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="size-4" aria-hidden="true">
+              <path d="M5 12h14m-7-7l7 7-7 7" />
+            </svg>
           </a>
         </Reveal>
 
         <Reveal className="min-w-0">
-          <ul className="divide-y divide-hairline border-y border-hairline">
-            {symptoms.map((s, i) => (
-              <li key={s} className="flex items-baseline gap-5 py-5">
-                <span className="font-display text-sm text-ink-subtle tabular-nums">
-                  0{i + 1}
-                </span>
-                <span className="text-[17px] text-ink">{s}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="rounded-2xl bg-surface-2 p-8 ring-1 ring-hairline lg:p-10">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-brand mb-8">Sinais de alerta</h3>
+            <ul className="space-y-6">
+              {symptoms.map((s, i) => (
+                <li key={s} className="flex items-center gap-4">
+                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-600">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="size-3">
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <span className="text-[17px] font-medium text-ink">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </div>
     </section>
@@ -196,8 +204,8 @@ function Problem() {
 
 const steps = [
   {
-    title: "Diagnóstico",
-    text: "Analisamos sua empresa, seu mercado e seu posicionamento.",
+    title: "1. Imersão Estratégica",
+    text: "Não somos apenas 'designers'. Entendemos seu modelo de negócio para criar uma narrativa que converte.",
     icon: (
       <>
         <circle cx="12" cy="12" r="7" />
@@ -206,8 +214,8 @@ const steps = [
     ),
   },
   {
-    title: "Desenvolvimento",
-    text: "Criamos um site estratégico totalmente personalizado.",
+    title: "2. Design de Elite",
+    text: "Desenvolvemos uma interface exclusiva, focada em UX e Neuromarketing para guiar o cliente à ação.",
     icon: (
       <>
         <path d="M4 6h16v12H4z" />
@@ -216,8 +224,8 @@ const steps = [
     ),
   },
   {
-    title: "Resultado",
-    text: "Sua empresa passa a transmitir mais autoridade e gerar novos contatos todos os dias.",
+    title: "3. Dominação Digital",
+    text: "Lançamento do seu novo ecossistema. Sua marca passa a ditar as regras e atrair leads qualificados.",
     icon: (
       <>
         <path d="M4 19h16" />
@@ -304,8 +312,8 @@ function Projects() {
     <section className="py-28 lg:py-36">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal>
-          <h2 className="max-w-2xl font-display text-[2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
-            Projetos
+          <h2 className="max-w-2xl font-display text-[2.2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
+            Cases Reais. Resultados Absolutos.
           </h2>
         </Reveal>
 
@@ -360,14 +368,14 @@ function Projects() {
 /* ---------------- Included ---------------- */
 
 const included = [
-  { title: "Site institucional premium", text: "Estrutura, design e narrativa à altura da sua empresa." },
-  { title: "Landing page de alta conversão", text: "Uma página com um objetivo claro: gerar contato." },
-  { title: "Integração com WhatsApp", text: "Cada seção conduz o visitante direto para a conversa." },
-  { title: "SEO local", text: "Sua empresa encontrável por quem busca na sua região." },
-  { title: "Responsivo", text: "Experiência impecável no celular, tablet e desktop." },
-  { title: "Performance otimizada", text: "Carregamento rápido, sem travar a decisão do cliente." },
-  { title: "Identidade visual consistente", text: "Cores, tipografia e imagens falando a mesma língua." },
-  { title: "Publicação completa", text: "Domínio, hospedagem e site no ar, tudo por nossa conta." },
+  { title: "Design de Elite & Autoral", text: "Projetos únicos que distanciam sua marca da concorrência genérica." },
+  { title: "Copywriting de Alta Performance", text: "Textos escritos com técnicas de persuasão e neuromarketing." },
+  { title: "Ecossistema de Conversão", text: "Cada elemento é posicionado para transformar o desejo em contato real." },
+  { title: "Autoridade Digital Instantânea", text: "SEO e UX otimizados para que você seja visto como a melhor opção." },
+  { title: "Mobile-First Experience", text: "Navegação fluida e luxuosa na palma da mão do seu cliente." },
+  { title: "Infraestrutura de Classe Mundial", text: "Velocidade extrema, segurança e estabilidade absoluta no ar." },
+  { title: "Brand Consistency", text: "Sua identidade visual aplicada com rigor e sofisticação em cada detalhe." },
+  { title: "Consultoria Estratégica", text: "Mais que um site, entregamos o caminho para a sua escala digital." },
 ];
 
 function Included() {
@@ -375,8 +383,8 @@ function Included() {
     <section className="border-y border-hairline bg-surface-2 py-28 lg:py-36">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal>
-          <h2 className="font-display text-[2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
-            O que está incluso
+          <h2 className="font-display text-[2.2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
+            A Engenharia por trás do seu Sucesso
           </h2>
         </Reveal>
 
@@ -409,12 +417,12 @@ function Included() {
 /* ---------------- Sem Vertex x Com Vertex ---------------- */
 
 const versus = [
-  { without: "Site genérico, igual ao do concorrente", with: "Projeto único, feito para a sua marca" },
-  { without: "Cliente desconfia antes de falar com você", with: "Autoridade percebida no primeiro scroll" },
-  { without: "Visitante entra, olha e vai embora", with: "Cada seção conduz direto para o WhatsApp" },
-  { without: "Lento, quebrado no celular", with: "Rápido e impecável em qualquer tela" },
-  { without: "Ninguém encontra sua empresa no Google", with: "SEO local trabalhando todos os dias" },
-  { without: "Você depende só do Instagram", with: "Estrutura própria que sustenta a marca" },
+  { without: "Site 'template' que te iguala aos amadores", with: "Design de elite que valida seu preço premium" },
+  { without: "O cliente julga sua empresa pelo visual pobre", with: "Autoridade inquestionável em 3 segundos" },
+  { without: "Visitante perdido em excesso de informações", with: "Copywriting focado em fechamento de venda" },
+  { without: "Experiência mobile frustrante e lenta", with: "Navegação fluida que encanta o cliente" },
+  { without: "Marca invisível no Google e sem credibilidade", with: "Posicionamento estratégico de líder de mercado" },
+  { without: "Dependência total de algoritmos de terceiros", with: "Pilar digital sólido e propriedade da sua marca" },
 ];
 
 function Versus() {
@@ -488,22 +496,23 @@ function Versus() {
 function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-brand py-28 pb-36 lg:py-36">
-      <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
-        <h2 className="font-display text-[2rem] leading-[1.14] font-semibold tracking-[-0.03em] text-white sm:text-[2.8rem]">
-          Sua empresa parece do tamanho que ela realmente é?
+      <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
+        <h2 className="font-display text-[2.2rem] leading-[1.1] font-semibold tracking-[-0.03em] text-white sm:text-[3.2rem]">
+          O próximo nível da sua empresa começa aqui.
         </h2>
-        <p className="mx-auto mt-7 max-w-xl text-[17px] leading-relaxed text-white/80">
-          Receba uma análise gratuita da presença digital da sua empresa e descubra como um site
-          premium pode aumentar sua autoridade e gerar mais clientes.
+        <p className="mx-auto mt-8 max-w-2xl text-[19px] leading-relaxed text-white/90">
+          Não deixe sua marca ser ignorada. Garanta agora uma presença digital que impõe respeito e converte visitantes em clientes de alto ticket.
         </p>
-        <a
-          href={waLink(waMessages.finalCta)}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-12 inline-flex items-center rounded-full bg-surface px-10 py-4.5 text-[16px] font-semibold text-brand transition-transform duration-300 hover:-translate-y-0.5"
-        >
-          Falar no WhatsApp
-        </a>
+        <div className="mt-14 flex flex-wrap justify-center gap-5">
+          <a
+            href={waLink(waMessages.finalCta)}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full bg-white px-10 py-4.5 text-[17px] font-bold text-brand shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-surface"
+          >
+            Garantir meu site premium
+          </a>
+        </div>
       </div>
     </section>
   );

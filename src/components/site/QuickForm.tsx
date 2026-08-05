@@ -43,14 +43,13 @@ export function QuickForm() {
       <div className="mx-auto grid max-w-[1400px] gap-14 px-6 lg:grid-cols-[0.9fr_1fr] lg:gap-20 lg:px-10">
         <Reveal className="min-w-0">
           <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle">
-            Diagnóstico gratuito
+            Posicionamento Estratégico
           </p>
-          <h2 className="mt-5 font-display text-[2rem] leading-[1.12] font-semibold tracking-[-0.03em] text-ink sm:text-[2.6rem]">
-            Em 30 segundos você já está falando com a gente.
+          <h2 className="mt-5 font-display text-[2.2rem] leading-[1.12] font-semibold tracking-[-0.03em] text-ink sm:text-[2.6rem]">
+            O primeiro passo para se tornar um líder de mercado.
           </h2>
-          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-ink-muted">
-            Responda quatro campos rápidos. Sua mensagem chega no nosso WhatsApp já organizada, e
-            respondemos com uma análise da presença digital da sua empresa.
+          <p className="mt-6 max-w-md text-[18px] leading-relaxed text-ink-muted">
+            Preencha os dados e receba uma análise exclusiva do seu posicionamento digital. Vamos identificar as falhas que estão bloqueando seu crescimento.
           </p>
           <ul className="mt-8 space-y-3 text-sm text-ink-muted">
             {["Resposta no mesmo dia útil", "Sem compromisso e sem cobrança", "Atendimento direto com quem desenvolve"].map(
