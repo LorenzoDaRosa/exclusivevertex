@@ -204,8 +204,8 @@ function Problem() {
 
 const steps = [
   {
-    title: "Diagnóstico",
-    text: "Analisamos sua empresa, seu mercado e seu posicionamento.",
+    title: "1. Imersão Estratégica",
+    text: "Não somos apenas 'designers'. Entendemos seu modelo de negócio para criar uma narrativa que converte.",
     icon: (
       <>
         <circle cx="12" cy="12" r="7" />
@@ -214,8 +214,8 @@ const steps = [
     ),
   },
   {
-    title: "Desenvolvimento",
-    text: "Criamos um site estratégico totalmente personalizado.",
+    title: "2. Design de Elite",
+    text: "Desenvolvemos uma interface exclusiva, focada em UX e Neuromarketing para guiar o cliente à ação.",
     icon: (
       <>
         <path d="M4 6h16v12H4z" />
@@ -224,8 +224,8 @@ const steps = [
     ),
   },
   {
-    title: "Resultado",
-    text: "Sua empresa passa a transmitir mais autoridade e gerar novos contatos todos os dias.",
+    title: "3. Dominação Digital",
+    text: "Lançamento do seu novo ecossistema. Sua marca passa a ditar as regras e atrair leads qualificados.",
     icon: (
       <>
         <path d="M4 19h16" />
