@@ -15,14 +15,11 @@ export function CoffeeInvite() {
             <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle">
               Convite · Centro de Caxias do Sul
             </p>
-            <h2 className="mt-6 font-display text-[2rem] leading-[1.06] font-semibold tracking-[-0.03em] text-ink sm:text-[2.6rem] lg:text-[3rem]">
-              Um café, uma conversa honesta e o número que ninguém te mostrou: quanto sua empresa
-              está <span className="text-brand">deixando de faturar</span>.
+            <h2 className="mt-6 font-display text-[2rem] leading-[1.06] font-semibold tracking-[-0.03em] text-ink sm:text-[2.6rem] lg:text-[3.2rem]">
+              Vamos descobrir o quanto sua empresa está <span className="text-brand">deixando de faturar</span> hoje?
             </h2>
-            <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-ink-muted">
-              Sem apresentação de vendas e sem compromisso. Quarenta minutos, presencial ou por
-              chamada, para colocar na mesa o que a sua presença digital está deixando passar — e o
-              que fazer a respeito.
+            <p className="mt-7 max-w-xl text-[18px] leading-relaxed text-ink-muted">
+              Aceite um café no centro de Caxias do Sul para uma conversa estratégica. Vamos analisar seu posicionamento atual e traçar o caminho para transformar sua marca em uma referência digital de alto ticket.
             </p>
             <address className="mt-8 not-italic text-[15px] leading-relaxed text-ink">
               {ADDRESS.street} · {ADDRESS.unit}
