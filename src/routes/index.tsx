@@ -21,12 +21,15 @@ export const Route = createFileRoute("/")({
         content:
           "Transformamos empresas comuns em referências absolutas. Sites premium com design exclusivo, copywriting estratégico e foco total em conversão de alto valor.",
       },
+      { name: "keywords", content: "agência digital, site premium, posicionamento digital, design de elite, neuromarketing, caxias do sul, exclusive vertex" },
       { property: "og:title", content: "Exclusive Vertex | Posicionamento Digital de Alto Padrão" },
       {
         property: "og:description",
         content:
           "Não entregamos apenas sites. Entregamos autoridade, desejo e resultados mensuráveis para marcas que não aceitam ser apenas mais uma.",
       },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99337010-e42f-4bde-9a44-8ab7d3a239a2/id-preview-f4a7c83f--aa20e2c2-c2fb-4656-8e01-4a517037e1a5.lovable.app-1784727838130.png" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -66,10 +69,12 @@ function Hero() {
         }}
       />
       <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
-        <h1 className="vx-rise font-display text-[2.7rem] font-semibold leading-[1.05] tracking-[-0.035em] text-ink sm:text-[3.6rem] lg:text-[5.2rem]">
-          <span className="block">Sua empresa vista como</span>
-          <WordCycle words={heroWords} className="mt-2 text-brand" />
-        </h1>
+        <header>
+          <h1 className="vx-rise font-display text-[2.7rem] font-semibold leading-[1.05] tracking-[-0.035em] text-ink sm:text-[3.6rem] lg:text-[5.2rem]">
+            <span className="block">Sua empresa vista como</span>
+            <WordCycle words={heroWords} className="mt-2 text-brand" />
+          </h1>
+        </header>
 
         <p
           className="vx-rise mx-auto mt-14 max-w-2xl text-[18px] leading-relaxed text-ink-muted lg:mt-16"
@@ -328,6 +333,7 @@ function Projects() {
                       alt={`Site desenvolvido para ${p.name}`}
                       className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </Link>
@@ -383,9 +389,11 @@ function Included() {
     <section className="border-y border-hairline bg-surface-2 py-28 lg:py-36">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal>
-          <h2 className="font-display text-[2.2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
-            A Engenharia por trás do seu Sucesso
-          </h2>
+          <header>
+            <h2 className="font-display text-[2.2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.7rem]">
+              A Engenharia por trás do seu Sucesso
+            </h2>
+          </header>
         </Reveal>
 
         <div className="mt-14 space-y-5">
@@ -522,7 +530,7 @@ function FinalCTA() {
 
 function StickyCta() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-hairline bg-surface/95 px-4 py-3 backdrop-blur-xl md:hidden">
+    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-hairline bg-surface/95 px-4 py-3 backdrop-blur-xl md:hidden">
       <div className="flex items-center gap-3">
         <a
           href="#formulario"
@@ -539,6 +547,6 @@ function StickyCta() {
           WhatsApp
         </a>
       </div>
-    </div>
+    </nav>
   );
 }
