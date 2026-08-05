@@ -410,8 +410,10 @@ function ProjetoDetail() {
             {heroImage ? (
               <img
                 src={heroImage}
-                alt={`${project.title} — home`}
+                alt={`${project.title} — Interface do site premium`}
                 className="w-full h-auto block"
+                loading="eager"
+                decoding="async"
               />
             ) : (
               <div className="aspect-[21/10] w-full">
