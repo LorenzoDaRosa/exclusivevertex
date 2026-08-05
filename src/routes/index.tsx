@@ -15,17 +15,17 @@ import { waLink, waMessages } from "@/lib/whatsapp";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Exclusive Vertex · Sites premium para empresas da Serra Gaúcha" },
+      { title: "Exclusive Vertex | Posicionamento Digital de Alto Padrão" },
       {
         name: "description",
         content:
-          "Criamos sites premium que geram autoridade, aumentam a percepção de valor e transformam visitantes em clientes. Atendimento personalizado na Serra Gaúcha.",
+          "Transformamos empresas comuns em referências absolutas. Sites premium com design exclusivo, copywriting estratégico e foco total em conversão de alto valor.",
       },
-      { property: "og:title", content: "Exclusive Vertex · Sites premium para empresas da Serra Gaúcha" },
+      { property: "og:title", content: "Exclusive Vertex | Posicionamento Digital de Alto Padrão" },
       {
         property: "og:description",
         content:
-          "Sites estratégicos, personalizados e focados em conversão para empresas que querem ser referência no digital.",
+          "Não entregamos apenas sites. Entregamos autoridade, desejo e resultados mensuráveis para marcas que não aceitam ser apenas mais uma.",
       },
     ],
   }),
