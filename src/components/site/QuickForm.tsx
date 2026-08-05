@@ -35,7 +35,12 @@ export function QuickForm() {
       setErrors(next);
       return;
     }
-    window.open(waLink(waMessages.form(parsed.data)), "_blank", "noopener,noreferrer");
+    try {
+      window.open(waLink(waMessages.form(parsed.data)), "_blank", "noopener,noreferrer");
+    } catch (err) {
+      console.error("Erro ao processar formulário:", err);
+      setErrors({ root: "Ocorreu um erro ao processar sua solicitação. Tente novamente." });
+    }
   };
 
   return (
@@ -122,9 +127,13 @@ export function QuickForm() {
               </Field>
             </div>
 
+            {errors.root && (
+              <p className="mb-4 text-center text-sm font-medium text-destructive">{errors.root}</p>
+            )}
+
             <button
               type="submit"
-              className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-brand px-8 py-4 text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-brand-hover"
+              className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-brand px-8 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:bg-brand-hover hover:-translate-y-0.5 active:scale-[0.98]"
             >
               Enviar e falar no WhatsApp
             </button>

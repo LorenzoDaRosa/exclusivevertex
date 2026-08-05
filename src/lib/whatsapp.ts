@@ -1,8 +1,15 @@
 export const WHATSAPP_NUMBER = "555432144112";
 
+/** 
+ * Sanitize input to prevent injection in WhatsApp messages.
+ */
+function sanitize(val: string): string {
+  return val.replace(/[<>\"\'&]/g, "").trim();
+}
+
 /** Builds a WhatsApp link with a personalized, context-aware first message. */
 export function waLink(message: string) {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(sanitize(message))}`;
 }
 
 /** Pre-written openings per page section, so every CTA starts a qualified conversation. */
@@ -14,13 +21,20 @@ export const waMessages = {
   projects: "Olá! Vi os projetos da Vertex (Serra Seguros / Daros Lunettes) e quero algo nesse nível.",
   finalCta:
     "Olá! Quero receber a análise gratuita da presença digital da minha empresa.",
-  form: (d: { nome: string; empresa: string; segmento: string; objetivo: string }) =>
-    [
+  form: (d: { nome: string; empresa: string; segmento: string; objetivo: string }) => {
+    const safe = {
+      nome: sanitize(d.nome),
+      empresa: sanitize(d.empresa),
+      segmento: sanitize(d.segmento),
+      objetivo: sanitize(d.objetivo),
+    };
+    return [
       "Olá, Exclusive Vertex! Quero um site premium para a minha empresa.",
       "",
-      `Nome: ${d.nome}`,
-      `Empresa: ${d.empresa}`,
-      `Segmento: ${d.segmento}`,
-      `Objetivo principal: ${d.objetivo}`,
-    ].join("\n"),
+      `Nome: ${safe.nome}`,
+      `Empresa: ${safe.empresa}`,
+      `Segmento: ${safe.segmento}`,
+      `Objetivo principal: ${safe.objetivo}`,
+    ].join("\n");
+  },
 } as const;
