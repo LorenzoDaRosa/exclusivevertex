@@ -417,12 +417,12 @@ function Included() {
 /* ---------------- Sem Vertex x Com Vertex ---------------- */
 
 const versus = [
-  { without: "Site genérico, igual ao do concorrente", with: "Projeto único, feito para a sua marca" },
-  { without: "Cliente desconfia antes de falar com você", with: "Autoridade percebida no primeiro scroll" },
-  { without: "Visitante entra, olha e vai embora", with: "Cada seção conduz direto para o WhatsApp" },
-  { without: "Lento, quebrado no celular", with: "Rápido e impecável em qualquer tela" },
-  { without: "Ninguém encontra sua empresa no Google", with: "SEO local trabalhando todos os dias" },
-  { without: "Você depende só do Instagram", with: "Estrutura própria que sustenta a marca" },
+  { without: "Site 'template' que te iguala aos amadores", with: "Design de elite que valida seu preço premium" },
+  { without: "O cliente julga sua empresa pelo visual pobre", with: "Autoridade inquestionável em 3 segundos" },
+  { without: "Visitante perdido em excesso de informações", with: "Copywriting focado em fechamento de venda" },
+  { without: "Experiência mobile frustrante e lenta", with: "Navegação fluida que encanta o cliente" },
+  { without: "Marca invisível no Google e sem credibilidade", with: "Posicionamento estratégico de líder de mercado" },
+  { without: "Dependência total de algoritmos de terceiros", with: "Pilar digital sólido e propriedade da sua marca" },
 ];
 
 function Versus() {
