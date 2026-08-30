@@ -505,6 +505,12 @@ export const blogCategories: Category[] = [
   { slug: "vendas", name: "Vendas", description: "Estratégia comercial no ambiente digital." },
 ];
 
+export type ArticleSection = {
+  heading: string;
+  paragraphs: string[];
+  bullets?: string[];
+};
+
 export type Article = {
   slug: string;
   title: string;
@@ -512,6 +518,8 @@ export type Article = {
   category: string;
   readMinutes: number;
   date: string;
+  intro: string;
+  sections: ArticleSection[];
 };
 
 export const articles: Article[] = [
@@ -523,6 +531,38 @@ export const articles: Article[] = [
     category: "sites",
     readMinutes: 6,
     date: "2025-04-02",
+    intro:
+      "Não existe uma tabela universal de preço para sites. Existe escopo. O valor de um projeto é definido pela profundidade da estratégia, pela quantidade de páginas e fluxos, pelo nível de design autoral e pelo grau de exigência técnica envolvido.",
+    sections: [
+      {
+        heading: "O que realmente compõe o preço",
+        paragraphs: [
+          "Um site profissional é a soma de etapas que acontecem antes de qualquer linha de código: diagnóstico do negócio, definição de posicionamento, arquitetura de informação, redação orientada a conversão, design exclusivo, desenvolvimento, testes e publicação.",
+          "Quando um orçamento é muito baixo, alguma dessas etapas foi removida. Normalmente as invisíveis — estratégia, copy e performance — que são justamente as que geram resultado comercial.",
+        ],
+        bullets: [
+          "Escopo: número de páginas, seções e integrações",
+          "Design: template pronto ou projeto autoral",
+          "Conteúdo: textos entregues pelo cliente ou escritos pela agência",
+          "Técnica: performance, SEO estrutural, acessibilidade e responsividade",
+          "Continuidade: suporte, evolução e manutenção após a publicação",
+        ],
+      },
+      {
+        heading: "Por que o mais barato costuma sair mais caro",
+        paragraphs: [
+          "Um site genérico não é neutro: ele comunica algo sobre a empresa. Quando a percepção fica abaixo do valor real do serviço prestado, o custo aparece na negociação — em desconto pedido, em proposta ignorada, em lead que escolhe o concorrente.",
+          "Refazer um projeto mal executado normalmente custa mais do que fazer certo na primeira vez, porque envolve retrabalho de marca, conteúdo, estrutura e histórico de indexação.",
+        ],
+      },
+      {
+        heading: "Como avaliar uma proposta",
+        paragraphs: [
+          "Compare processos, não apenas números. Pergunte quem escreve os textos, se o design é criado do zero, como a performance será medida e o que acontece depois da publicação.",
+          "Um bom projeto se paga com posicionamento: quando o site sustenta o preço que a empresa quer cobrar, ele deixa de ser despesa e passa a ser ativo.",
+        ],
+      },
+    ],
   },
   {
     slug: "vale-a-pena-investir-em-seo",
@@ -532,6 +572,37 @@ export const articles: Article[] = [
     category: "seo",
     readMinutes: 7,
     date: "2025-03-22",
+    intro:
+      "SEO é aquisição composta. Diferente de anúncios, o investimento não desaparece quando você para de pagar — ele acumula. Em troca, exige consistência e paciência nos primeiros meses.",
+    sections: [
+      {
+        heading: "Quando faz sentido",
+        paragraphs: [
+          "SEO funciona bem quando existe demanda ativa pelo que a empresa vende: alguém já digita no Google o problema que você resolve. Se a busca existe, o trabalho é ocupar espaço nela.",
+          "Faz menos sentido quando o produto é totalmente novo, sem vocabulário de busca estabelecido. Nesse cenário, mídia paga e conteúdo de demanda latente vêm primeiro.",
+        ],
+      },
+      {
+        heading: "A linha do tempo realista",
+        paragraphs: [
+          "Os primeiros meses são de fundação: estrutura técnica, semântica, velocidade, indexação e conteúdo inicial. Resultados de tráfego relevantes aparecem tipicamente entre o terceiro e o sexto mês.",
+          "A partir do sexto mês, a curva muda de comportamento: páginas antigas ganham autoridade, novas indexam mais rápido e o custo por lead orgânico cai mês a mês.",
+        ],
+        bullets: [
+          "Mês 1–2: correções técnicas, arquitetura e páginas essenciais",
+          "Mês 3–4: conteúdo por intenção de busca e ganho de impressões",
+          "Mês 5–6: primeiras posições consistentes e leads orgânicos",
+          "Mês 7+: acúmulo de autoridade e redução do custo de aquisição",
+        ],
+      },
+      {
+        heading: "O erro mais comum",
+        paragraphs: [
+          "Tratar SEO como uma lista de tarefas isolada do site. Estrutura ruim, páginas lentas e conteúdo raso não são compensados por otimizações superficiais.",
+          "SEO começa na fundação do projeto: hierarquia de títulos, URLs limpas, performance, dados estruturados e conteúdo que responde melhor que o concorrente.",
+        ],
+      },
+    ],
   },
   {
     slug: "instagram-substitui-um-site",
@@ -541,6 +612,36 @@ export const articles: Article[] = [
     category: "marketing",
     readMinutes: 5,
     date: "2025-03-10",
+    intro:
+      "Rede social é canal alugado. Site é território próprio. Os dois trabalham juntos, mas cumprem funções diferentes na decisão de compra.",
+    sections: [
+      {
+        heading: "O que o Instagram faz bem",
+        paragraphs: [
+          "Gerar atenção, criar familiaridade e manter a marca presente no cotidiano de quem já conhece a empresa. É excelente para topo de relacionamento.",
+          "O que ele não faz bem é sustentar uma decisão racional de compra: não organiza informação, não é indexado pelo Google e não responde dúvidas de forma navegável.",
+        ],
+      },
+      {
+        heading: "O que só o site entrega",
+        paragraphs: [
+          "Controle total da narrativa, profundidade de informação, presença em buscas orgânicas, credibilidade institucional e fluxos de conversão desenhados para o seu processo comercial.",
+          "Além disso, um perfil pode ser restringido, hackeado ou perder alcance por mudança de algoritmo. O endereço próprio permanece.",
+        ],
+        bullets: [
+          "Aparecer no Google quando alguém busca sua solução",
+          "Apresentar portfólio, cases e provas de forma estruturada",
+          "Qualificar leads antes do primeiro contato comercial",
+          "Sustentar preço com percepção de marca consistente",
+        ],
+      },
+      {
+        heading: "A combinação correta",
+        paragraphs: [
+          "Use as redes para gerar atenção e o site para converter essa atenção em oportunidade. O link da bio existe justamente para transferir tráfego emprestado para território próprio.",
+        ],
+      },
+    ],
   },
   {
     slug: "10-sinais-de-que-sua-empresa-precisa-renovar-o-site",
@@ -550,6 +651,35 @@ export const articles: Article[] = [
     category: "sites",
     readMinutes: 6,
     date: "2025-02-28",
+    intro:
+      "Um site desatualizado raramente avisa. Ele apenas deixa de gerar oportunidades — e a empresa atribui isso ao mercado. Estes são os sinais mais frequentes.",
+    sections: [
+      {
+        heading: "Os dez sinais",
+        paragraphs: [
+          "Se três ou mais itens abaixo descrevem o seu site hoje, o problema já não é estético: é comercial.",
+        ],
+        bullets: [
+          "A empresa evita enviar o link do site para clientes importantes",
+          "O visual não corresponde ao nível do serviço prestado",
+          "A experiência no celular é pior que no computador",
+          "O carregamento é lento em conexões móveis",
+          "Não existe caminho claro para contato ou orçamento",
+          "O conteúdo está desatualizado ou incompleto",
+          "O site não aparece no Google para os termos do negócio",
+          "Não há cases, provas ou resultados apresentados",
+          "Nenhuma métrica de visitas ou conversão é acompanhada",
+          "Qualquer alteração depende de terceiros e demora semanas",
+        ],
+      },
+      {
+        heading: "O custo invisível de esperar",
+        paragraphs: [
+          "Cada mês com um site defasado é um mês de leads perdidos silenciosamente. Não existe registro dos visitantes que saíram sem entrar em contato.",
+          "A renovação começa por diagnóstico: entender o que o site precisa comunicar, para quem, e qual decisão ele deve provocar.",
+        ],
+      },
+    ],
   },
   {
     slug: "como-um-bom-site-aumenta-a-confianca-do-cliente",
@@ -559,6 +689,36 @@ export const articles: Article[] = [
     category: "design",
     readMinutes: 5,
     date: "2025-02-14",
+    intro:
+      "A decisão de confiar acontece antes da leitura. Em poucos segundos, o visitante avalia coerência visual, clareza e cuidado — e usa isso como proxy da qualidade do seu serviço.",
+    sections: [
+      {
+        heading: "Os sinais que geram confiança",
+        paragraphs: [
+          "Confiança digital é construída por consistência: tipografia legível, espaçamento generoso, hierarquia clara e ausência de ruído.",
+        ],
+        bullets: [
+          "Identidade visual coerente em todas as páginas",
+          "Textos objetivos, sem promessas vagas",
+          "Provas reais: cases, números verificáveis e depoimentos",
+          "Informação de contato, endereço e canais visíveis",
+          "Velocidade de carregamento e navegação previsível",
+        ],
+      },
+      {
+        heading: "O que destrói confiança",
+        paragraphs: [
+          "Imagens genéricas de banco, textos inflados, elementos desalinhados, formulários longos e qualquer sinal de improviso técnico.",
+          "Cada atrito reduz a disposição do visitante em continuar — e ele raramente avisa que desistiu.",
+        ],
+      },
+      {
+        heading: "Design como argumento comercial",
+        paragraphs: [
+          "Quando a experiência transmite domínio e cuidado, o preço deixa de ser o primeiro assunto da conversa. O site passa a defender o valor da marca antes do vendedor.",
+        ],
+      },
+    ],
   },
   {
     slug: "o-site-como-ativo-estrategico",
@@ -568,8 +728,113 @@ export const articles: Article[] = [
     category: "sites",
     readMinutes: 6,
     date: "2025-01-30",
+    intro:
+      "Existe uma diferença contábil e prática entre despesa e ativo. Despesa se consome; ativo produz ao longo do tempo. Um site bem projetado pertence à segunda categoria.",
+    sections: [
+      {
+        heading: "Por que é um ativo",
+        paragraphs: [
+          "Ele trabalha continuamente: recebe buscas orgânicas, apresenta a empresa, qualifica interessados e sustenta o posicionamento de preço sem custo marginal por visita.",
+          "Com o tempo, o histórico de indexação e a autoridade acumulada tornam esse ativo mais difícil de replicar por concorrentes.",
+        ],
+        bullets: [
+          "Aquisição orgânica com custo decrescente",
+          "Percepção de marca que sustenta margem",
+          "Qualificação de leads antes do contato humano",
+          "Dados de comportamento para decisões comerciais",
+        ],
+      },
+      {
+        heading: "Como medir o retorno",
+        paragraphs: [
+          "Acompanhe visitas qualificadas, taxa de contato, origem dos leads e valor médio dos negócios fechados a partir do canal digital.",
+          "Sem medição, o site volta a ser tratado como despesa — porque ninguém consegue provar o que ele produziu.",
+        ],
+      },
+      {
+        heading: "A decisão estratégica",
+        paragraphs: [
+          "Empresas que tratam o site como ativo investem em fundação: estratégia, design autoral, performance e evolução contínua. Empresas que tratam como despesa compram o mais barato a cada três anos.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "branding-alto-padrao",
+    title: "Branding para empresas de alto padrão",
+    excerpt:
+      "Como uma empresa sai de uma imagem genérica para um posicionamento premium — na prática, com decisões visuais, editoriais e comerciais.",
+    category: "design",
+    readMinutes: 8,
+    date: "2025-04-18",
+    intro:
+      "Posicionamento premium não é resultado de um logotipo novo. É a consequência de coerência: o que a marca mostra, como escreve, o que escolhe não fazer e o quanto disso se sustenta em cada ponto de contato digital.",
+    sections: [
+      {
+        heading: "O que separa uma marca genérica de uma marca de alto padrão",
+        paragraphs: [
+          "Marcas genéricas comunicam categoria — dizem o que fazem. Marcas de alto padrão comunicam critério: mostram como fazem, para quem, e por que isso custa o que custa.",
+          "Na prática, a diferença aparece em três camadas: autoridade visual, tom editorial e valor percebido. Quando uma delas destoa, a percepção cai para o nível do elo mais fraco.",
+        ],
+      },
+      {
+        heading: "Autoridade visual",
+        paragraphs: [
+          "Autoridade visual vem de disciplina, não de ornamento. Menos elementos, mais intenção: um sistema tipográfico definido, uma paleta curta, espaçamento generoso e uso consistente de imagens próprias.",
+          "Fotografia genérica de banco de imagens é o sinal mais rápido de queda de percepção. Registro real da operação, dos produtos e da equipe vale mais do que qualquer render impecável.",
+        ],
+        bullets: [
+          "Uma tipografia de destaque e uma de leitura — nada além disso",
+          "Paleta reduzida, com um único acento de marca",
+          "Espaço em branco tratado como recurso, não como sobra",
+          "Imagens autorais e padronizadas em enquadramento e tratamento",
+          "Consistência entre site, propostas, redes e materiais impressos",
+        ],
+      },
+      {
+        heading: "Tom editorial",
+        paragraphs: [
+          "Marcas premium escrevem com precisão e economia. Adjetivos superlativos sem prova reduzem credibilidade; números, processos e critérios aumentam.",
+          "Troque promessas vagas por afirmações verificáveis. 'Atendimento excepcional' não convence; 'resposta em até quatro horas úteis, com um responsável nomeado por projeto' convence.",
+        ],
+      },
+      {
+        heading: "Valor percebido",
+        paragraphs: [
+          "Valor percebido é construído por evidência acumulada: cases com contexto e resultado, transparência de processo, clareza de escopo e ausência de atrito na experiência digital.",
+          "Empresas que sustentam preço acima da média normalmente explicam melhor o próprio método. O cliente não paga apenas pelo entregável — paga pela previsibilidade de como chegar até ele.",
+        ],
+        bullets: [
+          "Cases estruturados: situação, decisão, execução, resultado",
+          "Processo publicado, com etapas e prazos",
+          "Escopo explícito, incluindo o que não está incluído",
+          "Prova social específica, com nome, empresa e contexto",
+        ],
+      },
+      {
+        heading: "Como conduzir a transição",
+        paragraphs: [
+          "A migração de imagem genérica para posicionamento premium funciona melhor em ordem: primeiro definir o critério e o público, depois o sistema visual, em seguida o conteúdo e por último os canais.",
+          "Inverter essa ordem produz o erro mais comum do mercado: um visual bonito sobre uma proposta indefinida. O design amplifica o que já existe — inclusive a falta de clareza.",
+        ],
+      },
+      {
+        heading: "Erros que derrubam a percepção",
+        paragraphs: [
+          "Alguns detalhes custam mais caro do que parecem, porque contradizem o discurso de excelência exatamente no momento da avaliação.",
+        ],
+        bullets: [
+          "Site lento ou instável no celular",
+          "Materiais com identidades visuais diferentes entre si",
+          "Descontos frequentes, que ensinam o mercado a esperar promoção",
+          "Textos escritos para agradar todos os públicos ao mesmo tempo",
+          "Ausência de qualquer prova concreta de resultado",
+        ],
+      },
+    ],
   },
 ];
+
 
 export const processSteps = [
   { n: "01", title: "Diagnóstico", desc: "Entendemos o seu negócio, o público, a operação atual e o objetivo do projeto." },

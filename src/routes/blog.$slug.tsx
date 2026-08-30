@@ -14,6 +14,7 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!loaderData) {
       return { meta: [{ title: "Artigo — Exclusive Vertex" }, { name: "robots", content: "noindex" }] };
     }
+    const url = `https://exclusivevertex.com.br/blog/${params.slug}`;
     return {
       meta: [
         { title: `${loaderData.article.title} — Exclusive Vertex` },
@@ -21,11 +22,34 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: loaderData.article.title },
         { property: "og:description", content: loaderData.article.excerpt },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/blog/${params.slug}` },
+        { property: "og:url", content: url },
       ],
-      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: loaderData.article.title,
+            description: loaderData.article.excerpt,
+            datePublished: loaderData.article.date,
+            dateModified: loaderData.article.date,
+            articleSection: loaderData.category?.name,
+            inLanguage: "pt-BR",
+            mainEntityOfPage: url,
+            author: { "@type": "Organization", name: "Exclusive Vertex" },
+            publisher: {
+              "@type": "Organization",
+              name: "Exclusive Vertex",
+              url: "https://exclusivevertex.com.br",
+            },
+          }),
+        },
+      ],
     };
   },
+
   notFoundComponent: () => (
     <div className="px-6 pt-40 pb-32 text-center">
       <p className="text-sm text-ink-muted">Artigo não encontrado.</p>
@@ -55,20 +79,36 @@ function ArticlePage() {
         </Reveal>
 
         <Reveal delay={100}>
-          <div className="mt-12 space-y-6 text-lg text-ink-muted leading-relaxed text-pretty">
-            <p>{article.excerpt}</p>
-            <p>
-              Este é um espaço reservado para o conteúdo completo do artigo. A
-              estrutura editorial da Exclusive Vertex está preparada para
-              publicações regulares, com hierarquia tipográfica, imagens de apoio
-              e blocos de destaque.
-            </p>
-            <p>
-              O conteúdo real deste artigo será publicado em breve, mantendo o
-              mesmo rigor editorial dos demais materiais da central de conteúdo.
-            </p>
-          </div>
+          <p className="mt-12 text-xl text-ink leading-relaxed text-pretty">
+            {article.intro}
+          </p>
         </Reveal>
+
+        {article.sections.map((section, i) => (
+          <Reveal key={section.heading} delay={140 + i * 40}>
+            <section className="mt-14">
+              <h2 className="font-display text-2xl lg:text-3xl text-ink text-balance">
+                {section.heading}
+              </h2>
+              <div className="mt-5 space-y-5 text-lg text-ink-muted leading-relaxed text-pretty">
+                {section.paragraphs.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+              {section.bullets && (
+                <ul className="mt-6 space-y-3">
+                  {section.bullets.map((b) => (
+                    <li key={b} className="flex gap-3 text-base text-ink-muted leading-relaxed">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          </Reveal>
+        ))}
+
 
         <div className="mt-16 border-t border-hairline pt-6 flex justify-between text-sm">
           <Link to="/blog" className="story-link text-ink-muted hover:text-ink">

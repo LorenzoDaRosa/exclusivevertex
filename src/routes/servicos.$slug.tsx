@@ -13,17 +13,38 @@ export const Route = createFileRoute("/servicos/$slug")({
     if (!loaderData) {
       return { meta: [{ title: "Serviço — Exclusive Vertex" }, { name: "robots", content: "noindex" }] };
     }
+    const url = `https://exclusivevertex.com.br/servicos/${params.slug}`;
     return {
       meta: [
         { title: `${loaderData.title} — Exclusive Vertex` },
         { name: "description", content: loaderData.short },
         { property: "og:title", content: `${loaderData.title} — Exclusive Vertex` },
         { property: "og:description", content: loaderData.short },
-        { property: "og:url", content: `/servicos/${params.slug}` },
+        { property: "og:url", content: url },
       ],
-      links: [{ rel: "canonical", href: `/servicos/${params.slug}` }],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: loaderData.title,
+            description: loaderData.short,
+            serviceType: loaderData.title,
+            url,
+            areaServed: { "@type": "Place", name: "Serra Gaúcha, RS, Brasil" },
+            provider: {
+              "@type": "Organization",
+              name: "Exclusive Vertex",
+              url: "https://exclusivevertex.com.br",
+            },
+          }),
+        },
+      ],
     };
   },
+
   notFoundComponent: () => (
     <div className="px-6 pt-40 pb-32 text-center">
       <p className="text-sm text-ink-muted">Serviço não encontrado.</p>

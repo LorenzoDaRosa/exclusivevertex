@@ -104,6 +104,42 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://exclusivevertex.com.br/#organization",
+              name: "Exclusive Vertex",
+              url: "https://exclusivevertex.com.br",
+              description:
+                "Agência digital premium da Serra Gaúcha focada em transformar empresas em referências digitais.",
+              telephone: "+555432144112",
+              sameAs: ["https://instagram.com/exclusive.vertex"],
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Rua Marechal Floriano, 555, Sala 804 — Centro",
+                addressLocality: "Caxias do Sul",
+                addressRegion: "RS",
+                addressCountry: "BR",
+              },
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://exclusivevertex.com.br/#website",
+              name: "Exclusive Vertex",
+              url: "https://exclusivevertex.com.br",
+              inLanguage: "pt-BR",
+              publisher: { "@id": "https://exclusivevertex.com.br/#organization" },
+            },
+          ],
+        }),
+      },
+    ],
+
   }),
   shellComponent: RootShell,
   component: RootComponent,
