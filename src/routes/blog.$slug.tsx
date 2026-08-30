@@ -14,6 +14,7 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!loaderData) {
       return { meta: [{ title: "Artigo — Exclusive Vertex" }, { name: "robots", content: "noindex" }] };
     }
+    const url = `https://exclusivevertex.com.br/blog/${params.slug}`;
     return {
       meta: [
         { title: `${loaderData.article.title} — Exclusive Vertex` },
@@ -21,11 +22,34 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: loaderData.article.title },
         { property: "og:description", content: loaderData.article.excerpt },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/blog/${params.slug}` },
+        { property: "og:url", content: url },
       ],
-      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: loaderData.article.title,
+            description: loaderData.article.excerpt,
+            datePublished: loaderData.article.date,
+            dateModified: loaderData.article.date,
+            articleSection: loaderData.category?.name,
+            inLanguage: "pt-BR",
+            mainEntityOfPage: url,
+            author: { "@type": "Organization", name: "Exclusive Vertex" },
+            publisher: {
+              "@type": "Organization",
+              name: "Exclusive Vertex",
+              url: "https://exclusivevertex.com.br",
+            },
+          }),
+        },
+      ],
     };
   },
+
   notFoundComponent: () => (
     <div className="px-6 pt-40 pb-32 text-center">
       <p className="text-sm text-ink-muted">Artigo não encontrado.</p>
