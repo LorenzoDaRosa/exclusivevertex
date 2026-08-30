@@ -79,20 +79,36 @@ function ArticlePage() {
         </Reveal>
 
         <Reveal delay={100}>
-          <div className="mt-12 space-y-6 text-lg text-ink-muted leading-relaxed text-pretty">
-            <p>{article.excerpt}</p>
-            <p>
-              Este é um espaço reservado para o conteúdo completo do artigo. A
-              estrutura editorial da Exclusive Vertex está preparada para
-              publicações regulares, com hierarquia tipográfica, imagens de apoio
-              e blocos de destaque.
-            </p>
-            <p>
-              O conteúdo real deste artigo será publicado em breve, mantendo o
-              mesmo rigor editorial dos demais materiais da central de conteúdo.
-            </p>
-          </div>
+          <p className="mt-12 text-xl text-ink leading-relaxed text-pretty">
+            {article.intro}
+          </p>
         </Reveal>
+
+        {article.sections.map((section, i) => (
+          <Reveal key={section.heading} delay={140 + i * 40}>
+            <section className="mt-14">
+              <h2 className="font-display text-2xl lg:text-3xl text-ink text-balance">
+                {section.heading}
+              </h2>
+              <div className="mt-5 space-y-5 text-lg text-ink-muted leading-relaxed text-pretty">
+                {section.paragraphs.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+              {section.bullets && (
+                <ul className="mt-6 space-y-3">
+                  {section.bullets.map((b) => (
+                    <li key={b} className="flex gap-3 text-base text-ink-muted leading-relaxed">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          </Reveal>
+        ))}
+
 
         <div className="mt-16 border-t border-hairline pt-6 flex justify-between text-sm">
           <Link to="/blog" className="story-link text-ink-muted hover:text-ink">
