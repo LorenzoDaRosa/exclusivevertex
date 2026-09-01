@@ -150,3 +150,76 @@ function ServicoDetail() {
     </div>
   );
 }
+
+function ServiceCases({ serviceSlug, serviceTitle }: { serviceSlug: string; serviceTitle: string }) {
+  const cases = getServiceCases(serviceSlug);
+  if (cases.length === 0) return null;
+
+  return (
+    <section className="mt-28" aria-labelledby="cases-servico">
+      <Reveal>
+        <h2
+          id="cases-servico"
+          className="font-display text-3xl lg:text-5xl text-ink text-balance max-w-[24ch]"
+        >
+          {serviceTitle} na prática: casos reais de empresas da Serra Gaúcha
+        </h2>
+        <p className="mt-5 max-w-[62ch] text-ink-muted text-pretty">
+          Projetos entregues pela Exclusive Vertex em que este serviço foi parte
+          central da estratégia — com contexto, decisões de projeto e resultados
+          percebidos por cada cliente.
+        </p>
+      </Reveal>
+
+      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        {cases.map((p, i) => (
+          <Reveal key={p.slug} delay={i * 70}>
+            <article className="h-full rounded-3xl bg-surface-2 ring-1 ring-hairline p-8 lg:p-10 flex flex-col">
+              <p className="text-[11px] uppercase tracking-[0.28em] text-brand">
+                {p.category} · {p.year}
+              </p>
+              <h3 className="mt-4 font-display text-2xl lg:text-3xl text-ink">
+                {p.title}
+              </h3>
+              {p.tagline && (
+                <p className="mt-3 text-sm text-ink-muted text-pretty">{p.tagline}</p>
+              )}
+
+              {p.metrics && p.metrics.length > 0 && (
+                <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-4">
+                  {p.metrics.slice(0, 4).map((m) => (
+                    <div key={m.label}>
+                      <dt className="text-[11px] uppercase tracking-[0.18em] text-ink-subtle">
+                        {m.label}
+                      </dt>
+                      <dd className="mt-1 font-display text-xl text-ink">{m.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+
+              <ul className="mt-7 space-y-3">
+                {p.outcomes.slice(0, 3).map((o) => (
+                  <li key={o} className="flex gap-3 text-sm text-ink-muted">
+                    <span className="mt-2.5 h-px w-4 shrink-0 bg-brand" />
+                    <span>{o}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 pt-6 border-t border-hairline">
+                <Link
+                  to="/projetos/$slug"
+                  params={{ slug: p.slug }}
+                  className="story-link text-sm text-ink hover:text-brand"
+                >
+                  Ver o case completo de {p.title} →
+                </Link>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
