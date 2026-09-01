@@ -857,3 +857,26 @@ export const differentiators = [
   { title: "Código limpo", desc: "Base técnica organizada, escalável e fácil de evoluir." },
   { title: "Experiência premium", desc: "Detalhes, microinterações e transições cuidadosamente construídas." },
 ];
+
+/**
+ * Casos reais associados a cada serviço.
+ * Usado nas páginas /servicos/$slug para provar entrega com projetos publicados.
+ */
+export const serviceCases: Record<string, string[]> = {
+  "sites-institucionais": ["serra-seguros", "meneseg", "daros-lunettes"],
+  "landing-pages": ["meneseg", "serra-seguros"],
+  "redesign-de-sites": ["serra-seguros"],
+  "ui-ux-design": ["daros-lunettes", "serra-seguros"],
+  seo: ["serra-seguros", "daros-lunettes"],
+  "integracao-whatsapp": ["meneseg", "daros-lunettes", "serra-seguros"],
+  "formularios-inteligentes": ["meneseg", "daros-lunettes"],
+  "consultoria-digital": ["daros-lunettes", "meneseg"],
+  "otimizacao-performance": ["serra-seguros"],
+};
+
+export function getServiceCases(serviceSlug: string) {
+  const slugs = serviceCases[serviceSlug] ?? [];
+  return slugs
+    .map((s) => projects.find((p) => p.slug === s))
+    .filter((p): p is Project => Boolean(p) && p!.status === "case");
+}
