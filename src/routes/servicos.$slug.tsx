@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
-import { services } from "@/lib/site-data";
+import { services, getServiceCases } from "@/lib/site-data";
 
 export const Route = createFileRoute("/servicos/$slug")({
   loader: ({ params }) => {
