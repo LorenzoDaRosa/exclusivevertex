@@ -46,6 +46,11 @@ export const Route = createFileRoute("/servicos/$slug")({
             serviceType: loaderData.title,
             url,
             areaServed: { "@type": "Place", name: "Serra Gaúcha, RS, Brasil" },
+            subjectOf: getServiceCases(params.slug).map((p) => ({
+              "@type": "CreativeWork",
+              name: `Case ${p.title} — ${loaderData.title}`,
+              url: `https://exclusivevertex.com.br/projetos/${p.slug}`,
+            })),
             provider: {
               "@type": "Organization",
               name: "Exclusive Vertex",
