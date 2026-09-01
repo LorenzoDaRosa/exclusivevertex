@@ -352,6 +352,34 @@ export const Route = createFileRoute("/projetos/$slug")({
         { name: "twitter:image", content: projectHeroImages[loaderData.slug] || "" },
       ],
       links: [{ rel: "canonical", href: `https://exclusivevertex.com.br/projetos/${params.slug}` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: loaderData.title,
+            description: loaderData.summary,
+            url: `https://exclusivevertex.com.br/projetos/${params.slug}`,
+            inLanguage: "pt-BR",
+            genre: loaderData.category,
+            image: projectHeroImages[loaderData.slug] || undefined,
+            creator: { "@id": "https://exclusivevertex.com.br/#organization" },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://exclusivevertex.com.br/" },
+              { "@type": "ListItem", position: 2, name: "Projetos", item: "https://exclusivevertex.com.br/projetos" },
+              { "@type": "ListItem", position: 3, name: loaderData.title, item: `https://exclusivevertex.com.br/projetos/${params.slug}` },
+            ],
+          }),
+        },
+      ],
     };
   },
   notFoundComponent: () => (

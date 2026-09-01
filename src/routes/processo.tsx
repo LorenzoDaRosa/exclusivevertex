@@ -30,7 +30,7 @@ export const Route = createFileRoute("/processo")({
             "@type": "HowToStep",
             position: i + 1,
             name: s.title,
-            text: s.description ?? s.title,
+            text: s.desc,
           })),
         }),
       },
