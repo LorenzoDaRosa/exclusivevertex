@@ -117,6 +117,8 @@ function ServicoDetail() {
           </Reveal>
         </div>
 
+        <ServiceCases serviceSlug={s.slug} serviceTitle={s.title} />
+
         <Reveal>
           <div className="mt-24 rounded-3xl bg-surface-2 ring-1 ring-hairline p-12 lg:p-16 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <p className="font-display text-3xl lg:text-4xl text-ink max-w-[26ch]">
