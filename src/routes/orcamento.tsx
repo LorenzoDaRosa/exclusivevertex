@@ -17,6 +17,30 @@ export const Route = createFileRoute("/orcamento")({
       { property: "og:url", content: "https://exclusivevertex.com.br/orcamento" },
     ],
     links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/orcamento" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Simulador de Projeto — Exclusive Vertex",
+          url: "https://exclusivevertex.com.br/orcamento",
+          inLanguage: "pt-BR",
+          isPartOf: { "@id": "https://exclusivevertex.com.br/#website" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://exclusivevertex.com.br/" },
+            { "@type": "ListItem", position: 2, name: "Orçamento", item: "https://exclusivevertex.com.br/orcamento" },
+          ],
+        }),
+      },
+    ],
   }),
   component: SimuladorPage,
 });

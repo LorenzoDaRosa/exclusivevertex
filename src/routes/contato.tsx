@@ -17,6 +17,39 @@ export const Route = createFileRoute("/contato")({
       { property: "og:url", content: "https://exclusivevertex.com.br/contato" },
     ],
     links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/contato" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contato — Exclusive Vertex",
+          url: "https://exclusivevertex.com.br/contato",
+          inLanguage: "pt-BR",
+          mainEntity: {
+            "@id": "https://exclusivevertex.com.br/#organization",
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "customer service",
+              telephone: "+555432144112",
+              email: "contato@exclusivevertex.com",
+              availableLanguage: ["pt-BR"],
+            },
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://exclusivevertex.com.br/" },
+            { "@type": "ListItem", position: 2, name: "Contato", item: "https://exclusivevertex.com.br/contato" },
+          ],
+        }),
+      },
+    ],
   }),
   component: ContatoPage,
 });
