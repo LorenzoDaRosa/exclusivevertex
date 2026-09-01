@@ -14,9 +14,38 @@ export const Route = createFileRoute("/processo")({
       },
       { property: "og:title", content: "Processo — Exclusive Vertex" },
       { property: "og:description", content: "Sete etapas do nosso processo de trabalho." },
-      { property: "og:url", content: "/processo" },
+      { property: "og:url", content: "https://exclusivevertex.com.br/processo" },
     ],
-    links: [{ rel: "canonical", href: "/processo" }],
+    links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/processo" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: "Como a Exclusive Vertex desenvolve um projeto digital",
+          url: "https://exclusivevertex.com.br/processo",
+          inLanguage: "pt-BR",
+          step: processSteps.map((s, i) => ({
+            "@type": "HowToStep",
+            position: i + 1,
+            name: s.title,
+            text: s.desc,
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://exclusivevertex.com.br/" },
+            { "@type": "ListItem", position: 2, name: "Processo", item: "https://exclusivevertex.com.br/processo" },
+          ],
+        }),
+      },
+    ],
   }),
   component: ProcessoPage,
 });

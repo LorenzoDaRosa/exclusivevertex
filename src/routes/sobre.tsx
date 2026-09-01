@@ -16,9 +16,33 @@ export const Route = createFileRoute("/sobre")({
         property: "og:description",
         content: "Posicionamento, princípios e forma de trabalho da Exclusive Vertex.",
       },
-      { property: "og:url", content: "/sobre" },
+      { property: "og:url", content: "https://exclusivevertex.com.br/sobre" },
     ],
-    links: [{ rel: "canonical", href: "/sobre" }],
+    links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/sobre" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "Sobre — Exclusive Vertex",
+          url: "https://exclusivevertex.com.br/sobre",
+          inLanguage: "pt-BR",
+          mainEntity: { "@id": "https://exclusivevertex.com.br/#organization" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://exclusivevertex.com.br/" },
+            { "@type": "ListItem", position: 2, name: "Sobre", item: "https://exclusivevertex.com.br/sobre" },
+          ],
+        }),
+      },
+    ],
   }),
   component: SobrePage,
 });

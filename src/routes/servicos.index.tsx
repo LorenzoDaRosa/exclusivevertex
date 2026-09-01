@@ -17,9 +17,41 @@ export const Route = createFileRoute("/servicos/")({
         property: "og:description",
         content: "Nove frentes de trabalho para elevar a presença digital da sua empresa.",
       },
-      { property: "og:url", content: "/servicos" },
+      { property: "og:url", content: "https://exclusivevertex.com.br/servicos" },
     ],
-    links: [{ rel: "canonical", href: "/servicos" }],
+    links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/servicos" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Serviços — Exclusive Vertex",
+          url: "https://exclusivevertex.com.br/servicos",
+          inLanguage: "pt-BR",
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: services.map((s, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: s.title,
+              url: `https://exclusivevertex.com.br/servicos/${s.slug}`,
+            })),
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://exclusivevertex.com.br/" },
+            { "@type": "ListItem", position: 2, name: "Serviços", item: "https://exclusivevertex.com.br/servicos" },
+          ],
+        }),
+      },
+    ],
   }),
   component: ServicosPage,
 });

@@ -17,9 +17,40 @@ export const Route = createFileRoute("/blog")({
         property: "og:description",
         content: "Insights sobre design, tecnologia e o futuro do digital.",
       },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://exclusivevertex.com.br/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/blog" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Central de Conteúdo — Exclusive Vertex",
+          url: "https://exclusivevertex.com.br/blog",
+          inLanguage: "pt-BR",
+          publisher: { "@id": "https://exclusivevertex.com.br/#organization" },
+          blogPost: articles.map((a) => ({
+            "@type": "BlogPosting",
+            headline: a.title,
+            description: a.excerpt,
+            datePublished: a.date,
+            url: `https://exclusivevertex.com.br/blog/${a.slug}`,
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://exclusivevertex.com.br/" },
+            { "@type": "ListItem", position: 2, name: "Central de Conteúdo", item: "https://exclusivevertex.com.br/blog" },
+          ],
+        }),
+      },
+    ],
   }),
   component: BlogPage,
 });
