@@ -351,7 +351,7 @@ export const Route = createFileRoute("/projetos/$slug")({
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: projectHeroImages[loaderData.slug] || "" },
       ],
-      links: [{ rel: "canonical", href: `/projetos/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://exclusivevertex.com.br/projetos/${params.slug}` }],
     };
   },
   notFoundComponent: () => (

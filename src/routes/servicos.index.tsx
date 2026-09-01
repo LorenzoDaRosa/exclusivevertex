@@ -17,9 +17,9 @@ export const Route = createFileRoute("/servicos/")({
         property: "og:description",
         content: "Nove frentes de trabalho para elevar a presença digital da sua empresa.",
       },
-      { property: "og:url", content: "/servicos" },
+      { property: "og:url", content: "https://exclusivevertex.com.br/servicos" },
     ],
-    links: [{ rel: "canonical", href: "/servicos" }],
+    links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/servicos" }],
   }),
   component: ServicosPage,
 });

@@ -17,9 +17,9 @@ export const Route = createFileRoute("/blog")({
         property: "og:description",
         content: "Insights sobre design, tecnologia e o futuro do digital.",
       },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://exclusivevertex.com.br/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/blog" }],
   }),
   component: BlogPage,
 });

@@ -14,9 +14,9 @@ export const Route = createFileRoute("/processo")({
       },
       { property: "og:title", content: "Processo — Exclusive Vertex" },
       { property: "og:description", content: "Sete etapas do nosso processo de trabalho." },
-      { property: "og:url", content: "/processo" },
+      { property: "og:url", content: "https://exclusivevertex.com.br/processo" },
     ],
-    links: [{ rel: "canonical", href: "/processo" }],
+    links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/processo" }],
   }),
   component: ProcessoPage,
 });
