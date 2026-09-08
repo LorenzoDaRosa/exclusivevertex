@@ -340,7 +340,7 @@ function Projects() {
             >
               <DeviceShowcase
                 desktopImage={serraCapa.url}
-                mobileImage={serraCapa.url}
+                mobileImage={serraMobile.url}
                 alt="Site da Serra Seguros e Consórcios"
               />
             </a>
