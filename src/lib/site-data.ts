@@ -957,15 +957,15 @@ export const differentiators = [
  * Usado nas páginas /servicos/$slug para provar entrega com projetos publicados.
  */
 export const serviceCases: Record<string, string[]> = {
-  "sites-institucionais": ["serra-seguros", "meneseg", "daros-lunettes"],
-  "landing-pages": ["meneseg", "serra-seguros"],
-  "redesign-de-sites": ["serra-seguros"],
-  "ui-ux-design": ["daros-lunettes", "serra-seguros"],
-  seo: ["serra-seguros", "daros-lunettes"],
-  "integracao-whatsapp": ["meneseg", "daros-lunettes", "serra-seguros"],
-  "formularios-inteligentes": ["meneseg", "daros-lunettes"],
-  "consultoria-digital": ["daros-lunettes", "meneseg"],
-  "otimizacao-performance": ["serra-seguros"],
+  "sites-institucionais": ["serra-seguros", "rs-recargas", "meneseg", "daros-lunettes"],
+  "landing-pages": ["meneseg", "serra-seguros", "rs-recargas"],
+  "redesign-de-sites": ["serra-seguros", "rs-recargas"],
+  "ui-ux-design": ["daros-lunettes", "serra-seguros", "rs-recargas"],
+  seo: ["serra-seguros", "daros-lunettes", "rs-recargas"],
+  "integracao-whatsapp": ["meneseg", "daros-lunettes", "serra-seguros", "rs-recargas"],
+  "formularios-inteligentes": ["meneseg", "daros-lunettes", "rs-recargas"],
+  "consultoria-digital": ["daros-lunettes", "meneseg", "rs-recargas"],
+  "otimizacao-performance": ["serra-seguros", "rs-recargas"],
 };
 
 export function getServiceCases(serviceSlug: string) {
