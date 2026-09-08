@@ -102,6 +102,7 @@ function ProjetoDetail() {
   const logoUrl = projectLogos[project.slug];
   const heroImage = projectHeroImages[project.slug];
   const isFromScratch = project.slug === "daros-lunettes";
+  const isRsRecargas = project.slug === "rs-recargas";
 
   return (
     <article className="px-6 lg:px-10 pt-40 pb-32">
