@@ -4,6 +4,7 @@ import { SectionLabel } from "@/components/site/SectionLabel";
 import { DeviceShowcase } from "@/components/site/DeviceShowcase";
 import { projects } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
+import serraMobile from "@/assets/serra/serra-mobile-preview.png.asset.json";
 
 const portfolioProjects = projects.filter((project) => project.slug === "serra-seguros");
 
@@ -79,7 +80,7 @@ function ProjetosPage() {
             >
               <DeviceShowcase
                 desktopImage={serraCapa.url}
-                mobileImage={serraCapa.url}
+                mobileImage={serraMobile.url}
                 alt="Site da Serra Seguros e Consórcios"
               />
             </a>

@@ -5,6 +5,7 @@ import { ProjectMock } from "@/components/site/ProjectMock";
 import { projects, type Project } from "@/lib/site-data";
 import serraLogo from "@/assets/serra-seguros-logo.png.asset.json";
 import serraHomeDepois from "@/assets/serra/serra_v2_62.png.asset.json";
+import serraMobile from "@/assets/serra/serra-mobile-preview.png.asset.json";
 
 import darosLogo from "@/assets/daros/daros-logo.png.asset.json";
 import darosHero from "@/assets/daros/daros_42.png.asset.json";
