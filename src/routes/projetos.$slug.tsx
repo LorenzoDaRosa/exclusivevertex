@@ -12,6 +12,8 @@ import darosHero from "@/assets/daros/daros_42.png.asset.json";
 
 import menesegHero from "@/assets/meneseg/meneseg_capa.png.asset.json";
 
+import rsRecargasHero from "@/assets/rs-recargas/rs-recargas-desktop.png.asset.json";
+
 const projectLogos: Record<string, string> = {
   "serra-seguros": serraLogo.url,
   "daros-lunettes": darosLogo.url,
@@ -21,6 +23,7 @@ const projectHeroImages: Record<string, string> = {
   "serra-seguros": serraHomeDepois.url,
   "daros-lunettes": darosHero.url,
   meneseg: menesegHero.url,
+  "rs-recargas": rsRecargasHero.url,
 };
 
 
