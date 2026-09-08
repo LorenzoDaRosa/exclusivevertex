@@ -71,42 +71,81 @@ function ProjetosPage() {
           </h1>
         </Reveal>
 
-        <Reveal className="mt-24">
-          <article className="group overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
-            <a
-              href="https://www.serraseguros.com.br"
-              target="_blank"
-              rel="noreferrer"
-              className="block p-4 sm:p-8 lg:p-12"
-              aria-label="Visitar o site da Serra Seguros e Consórcios"
-            >
-              <DeviceShowcase
-                desktopImage={serraCapa.url}
-                mobileImage={serraMobile.url}
-                alt="Site da Serra Seguros e Consórcios"
-              />
-            </a>
-            <div className="flex flex-col gap-5 border-t border-hairline bg-surface p-6 sm:p-8 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.28em] text-brand">
-                  Seguros · Consórcios · 2025
-                </p>
-                <h2 className="mt-3 font-display text-3xl text-ink transition-colors group-hover:text-brand lg:text-5xl">
-                  Serra Seguros e Consórcios
-                </h2>
-              </div>
+        <div className="mt-24 grid gap-8 lg:grid-cols-2">
+          <Reveal>
+            <article className="group h-full overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
               <a
                 href="https://www.serraseguros.com.br"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 self-start rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-hover lg:self-auto"
+                className="block p-4 sm:p-8 lg:p-10"
+                aria-label="Visitar o site da Serra Seguros e Consórcios"
               >
-                Visitar site
-                <span aria-hidden="true">↗</span>
+                <DeviceShowcase
+                  desktopImage={serraCapa.url}
+                  mobileImage={serraMobile.url}
+                  alt="Site da Serra Seguros e Consórcios"
+                />
               </a>
-            </div>
-          </article>
-        </Reveal>
+              <div className="flex flex-col gap-5 border-t border-hairline bg-surface p-6 sm:p-8">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.28em] text-brand">
+                    Seguros · Consórcios · 2025
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl text-ink transition-colors group-hover:text-brand lg:text-4xl">
+                    Serra Seguros e Consórcios
+                  </h2>
+                </div>
+                <a
+                  href="https://www.serraseguros.com.br"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 self-start rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
+                >
+                  Visitar site
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <article className="group h-full overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
+              <a
+                href="https://www.rsrecargas.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="block p-4 sm:p-8 lg:p-10"
+                aria-label="Visitar o site da RS Recargas e Informática"
+              >
+                <DeviceShowcase
+                  desktopImage={rsRecargasDesktop.url}
+                  mobileImage={rsRecargasMobile.url}
+                  alt="Site da RS Recargas e Informática"
+                />
+              </a>
+              <div className="flex flex-col gap-5 border-t border-hairline bg-surface p-6 sm:p-8">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.28em] text-brand">
+                    Tecnologia · Impressão · 2026
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl text-ink transition-colors group-hover:text-brand lg:text-4xl">
+                    RS Recargas e Informática
+                  </h2>
+                </div>
+                <a
+                  href="https://www.rsrecargas.com.br"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 self-start rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
+                >
+                  Visitar site
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </Reveal>
+        </div>
       </div>
     </div>
   );
