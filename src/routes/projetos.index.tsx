@@ -1,9 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { DeviceShowcase } from "@/components/site/DeviceShowcase";
 import { projects } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
+
+const portfolioProjects = projects.filter((project) => project.slug === "serra-seguros");
 
 export const Route = createFileRoute("/projetos/")({
   head: () => ({
@@ -30,7 +32,7 @@ export const Route = createFileRoute("/projetos/")({
           inLanguage: "pt-BR",
           mainEntity: {
             "@type": "ItemList",
-            itemListElement: projects.map((p, i) => ({
+            itemListElement: portfolioProjects.map((p, i) => ({
               "@type": "ListItem",
               position: i + 1,
               name: p.title,
