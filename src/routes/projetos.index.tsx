@@ -5,8 +5,10 @@ import { DeviceShowcase } from "@/components/site/DeviceShowcase";
 import { projects } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
 import serraMobile from "@/assets/serra/serra-mobile-preview.png.asset.json";
+import rsRecargasDesktop from "@/assets/rs-recargas/rs-recargas-desktop.png.asset.json";
+import rsRecargasMobile from "@/assets/rs-recargas/rs-recargas-mobile.png.asset.json";
 
-const portfolioProjects = projects.filter((project) => project.slug === "serra-seguros");
+const portfolioProjects = projects.filter((project) => ["serra-seguros", "rs-recargas"].includes(project.slug));
 
 export const Route = createFileRoute("/projetos/")({
   head: () => ({
