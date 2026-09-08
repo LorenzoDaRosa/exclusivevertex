@@ -12,6 +12,8 @@ import darosHero from "@/assets/daros/daros_42.png.asset.json";
 
 import menesegHero from "@/assets/meneseg/meneseg_capa.png.asset.json";
 
+import rsRecargasHero from "@/assets/rs-recargas/rs-recargas-desktop.png.asset.json";
+
 const projectLogos: Record<string, string> = {
   "serra-seguros": serraLogo.url,
   "daros-lunettes": darosLogo.url,
@@ -21,6 +23,7 @@ const projectHeroImages: Record<string, string> = {
   "serra-seguros": serraHomeDepois.url,
   "daros-lunettes": darosHero.url,
   meneseg: menesegHero.url,
+  "rs-recargas": rsRecargasHero.url,
 };
 
 
@@ -99,6 +102,7 @@ function ProjetoDetail() {
   const logoUrl = projectLogos[project.slug];
   const heroImage = projectHeroImages[project.slug];
   const isFromScratch = project.slug === "daros-lunettes";
+  const isRsRecargas = project.slug === "rs-recargas";
 
   return (
     <article className="px-6 lg:px-10 pt-40 pb-32">
@@ -357,7 +361,9 @@ function ProjetoDetail() {
             <p className="mt-6 font-display text-2xl lg:text-3xl text-ink max-w-[60ch] text-pretty">
               {isFromScratch
                 ? "Mais do que um novo site, a Daros passou a contar com uma plataforma editorial preparada para representar a experiência da boutique e apoiar seu processo de atendimento — com foco em posicionamento, cuidado, conversão e escalabilidade."
-                : "Mais do que um novo site, a Serra passou a contar com uma plataforma preparada para representar a qualidade da empresa e apoiar seu processo comercial — com foco em experiência, credibilidade, conversão e escalabilidade."}
+                : isRsRecargas
+                  ? "Mais do que um novo site, a RS Recargas passou a contar com uma vitrine digital que traduz 16 anos de experiência em autoridade, confiança e conversão — fortalecendo sua posição como referência em soluções de impressão e informática na Serra Gaúcha."
+                  : "Mais do que um novo site, a Serra passou a contar com uma plataforma preparada para representar a qualidade da empresa e apoiar seu processo comercial — com foco em experiência, credibilidade, conversão e escalabilidade."}
             </p>
           </div>
         </Reveal>

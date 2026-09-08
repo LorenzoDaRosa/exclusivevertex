@@ -317,6 +317,100 @@ export const projects: Project[] = [
     status: "case",
   },
   {
+    slug: "rs-recargas",
+    title: "RS Recargas e Informática",
+    category: "Tecnologia · Impressão",
+    year: "2026",
+    tagline:
+      "Transformando uma loja tradicional de recargas em referência digital para soluções de impressão e informática.",
+    summary:
+      "A RS Recargas é referência em Caxias do Sul com 16 anos de experiência em recarga de cartuchos, toner compatível, manutenção de impressoras e computadores. Reconstruímos sua presença digital para refletir autoridade, confiança e a amplitude real dos seus serviços.",
+    context:
+      "Com 16 anos de mercado, nota 5,0 no Google e mais de 300 avaliações, a RS Recargas já era uma empresa consolidada no atendimento presencial. O site anterior, porém, não comunicava essa trajetória: era básico, pouco estratégico e não convertia visitantes em orçamentos. A empresa precisava de uma vitrine digital à altura da sua reputação.",
+    metrics: [
+      { label: "Anos de experiência", value: "16" },
+      { label: "Avaliação Google", value: "5,0★" },
+      { label: "Avaliações recebidas", value: "304+" },
+      { label: "Atendimento para empresas", value: "Sim" },
+    ],
+    before: [
+      "Site antigo com aparência desatualizada",
+      "Pouca clareza sobre serviços e diferenciais",
+      "CTAs sem objetivo de conversão definido",
+      "Ausência de prova social estruturada",
+      "Navegação pouco intuitiva no mobile",
+      "Conteúdo sem estratégia de SEO",
+      "Integração com WhatsApp limitada",
+      "Imagem visual distante da autoridade da marca",
+    ],
+    after: [
+      "Design moderno, limpo e de alta conversão",
+      "Hero direto com proposta de valor clara",
+      "Destaque para 16 anos de experiência e avaliações Google",
+      "Botão principal direcionado ao WhatsApp",
+      "Seção de serviços organizada e objetiva",
+      "Prova social com estrelas e número de avaliações",
+      "Layout totalmente responsivo",
+      "Identidade visual alinhada à confiança da marca",
+    ],
+    problems: [
+      "Presença digital desatualizada em relação à reputação offline",
+      "Dificuldade em comunicar a amplitude dos serviços",
+      "Baixa conversão de visitantes em orçamentos",
+      "Falta de estrutura para escalar o atendimento digital",
+    ],
+    solutions: [
+      "Reformulação visual completa com foco em autoridade e conversão",
+      "Estrutura de serviços clara e navegável",
+      "Integração estratégica com WhatsApp para orçamentos rápidos",
+      "SEO técnico e semântico para fortalecer a indexação local",
+    ],
+    quotationForms: [
+      {
+        name: "Orçamento de recarga",
+        fields: ["Nome", "WhatsApp", "Modelo do cartucho/toner", "Quantidade", "Observações"],
+      },
+      {
+        name: "Manutenção de impressora",
+        fields: ["Nome", "WhatsApp", "Marca/modelo", "Defeito relatado", "Urgência"],
+      },
+      {
+        name: "Manutenção de computador",
+        fields: ["Nome", "WhatsApp", "Tipo de equipamento", "Problema", "Observações"],
+      },
+    ],
+    contentCategories: [
+      "Recarga de cartuchos",
+      "Toner compatível",
+      "Manutenção de impressoras",
+      "Manutenção de computadores",
+      "Impressões",
+      "Atendimento para empresas",
+    ],
+    conversionGoals: [
+      "Pedir orçamento pelo WhatsApp",
+      "Conhecer os serviços",
+      "Ver avaliações no Google",
+      "Solicitar manutenção",
+      "Entrar em contato",
+    ],
+    gallery: ["Home", "Serviços", "Avaliações", "Contato"],
+    stack: [
+      "React de última geração",
+      "Design System próprio",
+      "SEO técnico",
+      "Integração WhatsApp",
+      "Mobile-first",
+    ],
+    outcomes: [
+      "Presença digital alinhada à autoridade da marca",
+      "Aumento de orçamentos via WhatsApp",
+      "Maior clareza sobre serviços oferecidos",
+      "Base estruturada para escalar digitalmente",
+    ],
+    status: "case",
+  },
+  {
     slug: "daros-lunettes",
     title: "Daros Lunettes",
     category: "Óptica · Boutique premium",
@@ -863,15 +957,15 @@ export const differentiators = [
  * Usado nas páginas /servicos/$slug para provar entrega com projetos publicados.
  */
 export const serviceCases: Record<string, string[]> = {
-  "sites-institucionais": ["serra-seguros", "meneseg", "daros-lunettes"],
-  "landing-pages": ["meneseg", "serra-seguros"],
-  "redesign-de-sites": ["serra-seguros"],
-  "ui-ux-design": ["daros-lunettes", "serra-seguros"],
-  seo: ["serra-seguros", "daros-lunettes"],
-  "integracao-whatsapp": ["meneseg", "daros-lunettes", "serra-seguros"],
-  "formularios-inteligentes": ["meneseg", "daros-lunettes"],
-  "consultoria-digital": ["daros-lunettes", "meneseg"],
-  "otimizacao-performance": ["serra-seguros"],
+  "sites-institucionais": ["serra-seguros", "rs-recargas", "meneseg", "daros-lunettes"],
+  "landing-pages": ["meneseg", "serra-seguros", "rs-recargas"],
+  "redesign-de-sites": ["serra-seguros", "rs-recargas"],
+  "ui-ux-design": ["daros-lunettes", "serra-seguros", "rs-recargas"],
+  seo: ["serra-seguros", "daros-lunettes", "rs-recargas"],
+  "integracao-whatsapp": ["meneseg", "daros-lunettes", "serra-seguros", "rs-recargas"],
+  "formularios-inteligentes": ["meneseg", "daros-lunettes", "rs-recargas"],
+  "consultoria-digital": ["daros-lunettes", "meneseg", "rs-recargas"],
+  "otimizacao-performance": ["serra-seguros", "rs-recargas"],
 };
 
 export function getServiceCases(serviceSlug: string) {

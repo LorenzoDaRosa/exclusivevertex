@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
 import serraMobile from "@/assets/serra/serra-mobile-preview.png.asset.json";
+import rsRecargasDesktop from "@/assets/rs-recargas/rs-recargas-desktop.png.asset.json";
+import rsRecargasMobile from "@/assets/rs-recargas/rs-recargas-mobile.png.asset.json";
 
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
@@ -329,42 +331,81 @@ function Projects() {
           </h2>
         </Reveal>
 
-        <Reveal className="mt-14">
-          <article className="group overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
-            <a
-              href="https://www.serraseguros.com.br"
-              target="_blank"
-              rel="noreferrer"
-              className="block p-4 sm:p-8 lg:p-12"
-              aria-label="Visitar o site da Serra Seguros e Consórcios"
-            >
-              <DeviceShowcase
-                desktopImage={serraCapa.url}
-                mobileImage={serraMobile.url}
-                alt="Site da Serra Seguros e Consórcios"
-              />
-            </a>
-            <div className="flex flex-wrap items-end justify-between gap-6 border-t border-hairline bg-surface p-6 sm:p-8">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle">
-                  Seguros e consórcios · Caxias do Sul
-                </p>
-                <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
-                  Serra Seguros e Consórcios
-                </h3>
-              </div>
+        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+          <Reveal>
+            <article className="group h-full overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
               <a
                 href="https://www.serraseguros.com.br"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
+                className="block p-4 sm:p-8 lg:p-10"
+                aria-label="Visitar o site da Serra Seguros e Consórcios"
               >
-                Visitar site
-                <span aria-hidden="true">↗</span>
+                <DeviceShowcase
+                  desktopImage={serraCapa.url}
+                  mobileImage={serraMobile.url}
+                  alt="Site da Serra Seguros e Consórcios"
+                />
               </a>
-            </div>
-          </article>
-        </Reveal>
+              <div className="flex flex-col gap-5 border-t border-hairline bg-surface p-6 sm:p-8">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle">
+                    Seguros e consórcios · Caxias do Sul
+                  </p>
+                  <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
+                    Serra Seguros e Consórcios
+                  </h3>
+                </div>
+                <a
+                  href="https://www.serraseguros.com.br"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 self-start rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
+                >
+                  Visitar site
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <article className="group h-full overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
+              <a
+                href="https://www.rsrecargas.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="block p-4 sm:p-8 lg:p-10"
+                aria-label="Visitar o site da RS Recargas e Informática"
+              >
+                <DeviceShowcase
+                  desktopImage={rsRecargasDesktop.url}
+                  mobileImage={rsRecargasMobile.url}
+                  alt="Site da RS Recargas e Informática"
+                />
+              </a>
+              <div className="flex flex-col gap-5 border-t border-hairline bg-surface p-6 sm:p-8">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle">
+                    Tecnologia e impressão · Caxias do Sul
+                  </p>
+                  <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
+                    RS Recargas e Informática
+                  </h3>
+                </div>
+                <a
+                  href="https://www.rsrecargas.com.br"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 self-start rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
+                >
+                  Visitar site
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
