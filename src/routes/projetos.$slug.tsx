@@ -2,7 +2,6 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { ProjectMock } from "@/components/site/ProjectMock";
-import { BeforeAfter, type BeforeAfterItem } from "@/components/site/BeforeAfter";
 import { projects, type Project } from "@/lib/site-data";
 import serraLogo from "@/assets/serra-seguros-logo.png.asset.json";
 import serraHomeAntes from "@/assets/serra/home_serra_antes.png.asset.json";
@@ -529,9 +528,6 @@ function ProjetoDetail() {
               </p>
             </Reveal>
 
-            {beforeAfter && beforeAfter.length > 0 && (
-              <BeforeAfter items={beforeAfter} />
-            )}
             <div className="mt-14 grid gap-8 lg:grid-cols-2">
               {project.before && (
                 <Reveal delay={80}>

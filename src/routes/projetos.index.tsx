@@ -1,16 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
+import { DeviceShowcase } from "@/components/site/DeviceShowcase";
 import { projects } from "@/lib/site-data";
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
-import darosCapa from "@/assets/daros/daros_42.png.asset.json";
-import menesegCapa from "@/assets/meneseg/meneseg_capa.png.asset.json";
-
-const covers: Record<string, string> = {
-  "serra-seguros": serraCapa.url,
-  "daros-lunettes": darosCapa.url,
-  meneseg: menesegCapa.url,
-};
 
 export const Route = createFileRoute("/projetos/")({
   head: () => ({
@@ -73,51 +66,42 @@ function ProjetosPage() {
           </h1>
         </Reveal>
 
-        <div className="mt-24 grid gap-24">
-          {projects.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 100}>
-              <Link
-                to="/projetos/$slug"
-                params={{ slug: p.slug }}
-                className="group block"
+        <Reveal className="mt-24">
+          <article className="group overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
+            <a
+              href="https://www.serraseguros.com.br"
+              target="_blank"
+              rel="noreferrer"
+              className="block p-4 sm:p-8 lg:p-12"
+              aria-label="Visitar o site da Serra Seguros e Consórcios"
+            >
+              <DeviceShowcase
+                desktopImage={serraCapa.url}
+                mobileImage={serraCapa.url}
+                alt="Site da Serra Seguros e Consórcios"
+              />
+            </a>
+            <div className="flex flex-col gap-5 border-t border-hairline bg-surface p-6 sm:p-8 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-brand">
+                  Seguros · Consórcios · 2025
+                </p>
+                <h2 className="mt-3 font-display text-3xl text-ink transition-colors group-hover:text-brand lg:text-5xl">
+                  Serra Seguros e Consórcios
+                </h2>
+              </div>
+              <a
+                href="https://www.serraseguros.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 self-start rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-hover lg:self-auto"
               >
-                <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline sm:aspect-[21/9]">
-                  <img
-                    src={covers[p.slug]}
-                    alt={`Site desenvolvido para ${p.title}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="mt-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 border-t border-hairline pt-6">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.28em] text-brand">
-                      {p.category} · {p.year}
-                    </p>
-                    <h2 className="mt-3 font-display text-3xl lg:text-5xl text-ink group-hover:text-brand transition-colors">
-                      {p.title}
-                    </h2>
-                  </div>
-                  <span className="text-sm text-ink-muted story-link">Ver case</span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-
-          <Reveal>
-            <div className="rounded-3xl border border-dashed border-hairline p-14 text-center">
-              <p className="text-xs uppercase tracking-[0.28em] text-ink-subtle">
-                Próximos cases
-              </p>
-              <p className="mt-4 font-display text-3xl text-ink">
-                Novos projetos em produção.
-              </p>
-              <p className="mt-3 text-sm text-ink-muted">
-                Estamos preparando os próximos cases para publicação.
-              </p>
+                Visitar site
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
-          </Reveal>
-        </div>
+          </article>
+        </Reveal>
       </div>
     </div>
   );

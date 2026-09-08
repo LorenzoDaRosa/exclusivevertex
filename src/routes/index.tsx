@@ -2,14 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
-import darosCapa from "@/assets/daros/daros_42.png.asset.json";
-import menesegCapa from "@/assets/meneseg/meneseg_capa.png.asset.json";
 
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { WordCycle } from "@/components/site/WordCycle";
 import { QuickForm } from "@/components/site/QuickForm";
 import { CoffeeInvite } from "@/components/site/CoffeeInvite";
+import { DeviceShowcase } from "@/components/site/DeviceShowcase";
 import { waLink, waMessages } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
@@ -319,28 +318,6 @@ function HowItWorks() {
 
 /* ---------------- Projects ---------------- */
 
-const showcase = [
-  {
-    slug: "serra-seguros",
-    name: "Serra Seguros e Consórcios",
-    kind: "Seguros e consórcios · Caxias do Sul",
-    image: serraCapa.url,
-  },
-  {
-    slug: "daros-lunettes",
-    name: "Daros Lunettes",
-    kind: "Boutique óptica · Caxias do Sul",
-    image: darosCapa.url,
-  },
-  {
-    slug: "meneseg",
-    name: "MeneSeg Consórcios e Seguros",
-    kind: "Consórcios e seguros · Caxias do Sul",
-    image: menesegCapa.url,
-  },
-];
-
-
 function Projects() {
   return (
     <section className="py-28 lg:py-36">
@@ -351,50 +328,42 @@ function Projects() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 space-y-8">
-          {showcase.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 80}>
-              <article className="group overflow-hidden rounded-2xl ring-1 ring-hairline">
-                <Link to="/projetos/$slug" params={{ slug: p.slug }} className="block">
-                  <div className="aspect-[16/9] overflow-hidden bg-surface-2 sm:aspect-[21/9]">
-                    <img
-                      src={p.image}
-                      alt={`Site desenvolvido para ${p.name}`}
-                      className="h-full w-full object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                </Link>
-                <div className="flex flex-wrap items-end justify-between gap-6 border-t border-hairline p-8">
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle">
-                      {p.kind}
-                    </p>
-                    <h3 className="mt-3 font-display text-2xl font-semibold tracking-[-0.02em] text-ink">
-                      {p.name}
-                    </h3>
-                  </div>
-                  <Link
-                    to="/projetos/$slug"
-                    params={{ slug: p.slug }}
-                    className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium text-ink ring-1 ring-hairline transition-colors duration-300 hover:bg-surface-2"
-                  >
-                    Ver projeto
-                  </Link>
-                  <a
-                    href={waLink(waMessages.projects)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-brand-hover"
-                  >
-                    Quero algo nesse nível
-                  </a>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal className="mt-14">
+          <article className="group overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-hairline transition-shadow duration-500 hover:shadow-premium">
+            <a
+              href="https://www.serraseguros.com.br"
+              target="_blank"
+              rel="noreferrer"
+              className="block p-4 sm:p-8 lg:p-12"
+              aria-label="Visitar o site da Serra Seguros e Consórcios"
+            >
+              <DeviceShowcase
+                desktopImage={serraCapa.url}
+                mobileImage={serraCapa.url}
+                alt="Site da Serra Seguros e Consórcios"
+              />
+            </a>
+            <div className="flex flex-wrap items-end justify-between gap-6 border-t border-hairline bg-surface p-6 sm:p-8">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle">
+                  Seguros e consórcios · Caxias do Sul
+                </p>
+                <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
+                  Serra Seguros e Consórcios
+                </h3>
+              </div>
+              <a
+                href="https://www.serraseguros.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-hover"
+              >
+                Visitar site
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </Reveal>
       </div>
     </section>
   );
