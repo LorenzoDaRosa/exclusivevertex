@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
 import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
+import serraMobile from "@/assets/serra/serra-mobile-preview.png.asset.json";
 
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
