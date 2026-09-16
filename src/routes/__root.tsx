@@ -167,6 +167,20 @@ function RootShell({ children }: { children: ReactNode }) {
             `,
           }}
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18419085949"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18419085949');
+            `,
+          }}
+        />
         <HeadContent />
       </head>
       <body>
@@ -182,6 +196,16 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const bare = pathname === "/bio" || pathname === "/bio/";
+
+  useEffect(() => {
+    const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
+    if (typeof w.gtag === "function") {
+      w.gtag("event", "page_view", {
+        page_path: pathname,
+        page_location: window.location.href,
+      });
+    }
+  }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
