@@ -197,6 +197,16 @@ function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const bare = pathname === "/bio" || pathname === "/bio/";
 
+  useEffect(() => {
+    const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
+    if (typeof w.gtag === "function") {
+      w.gtag("event", "page_view", {
+        page_path: pathname,
+        page_location: window.location.href,
+      });
+    }
+  }, [pathname]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-surface text-ink font-sans">
