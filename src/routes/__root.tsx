@@ -118,6 +118,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               url: "https://exclusivevertex.com.br",
               description:
                 "Agência digital premium da Serra Gaúcha focada em transformar empresas em referências digitais.",
+              founder: {
+                "@type": "Person",
+                name: "Lorenzo da Rosa",
+              },
               telephone: "+555432144112",
               sameAs: ["https://instagram.com/exclusive.vertex"],
               address: {
