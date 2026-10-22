@@ -5,6 +5,7 @@ import serraCapa from "@/assets/serra/serra_v2_62.png.asset.json";
 import serraMobile from "@/assets/serra/serra-mobile-preview.png.asset.json";
 import rsRecargasDesktop from "@/assets/rs-recargas/rs-recargas-desktop.png.asset.json";
 import rsRecargasMobile from "@/assets/rs-recargas/rs-recargas-mobile.png.asset.json";
+import siteLogo from "@/assets/vertex-lockup.png.asset.json";
 
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
@@ -14,23 +15,27 @@ import { CoffeeInvite } from "@/components/site/CoffeeInvite";
 import { DeviceShowcase } from "@/components/site/DeviceShowcase";
 import { waLink, waMessages } from "@/lib/whatsapp";
 
+const seoTitle = "Criação de Sites em Caxias do Sul | Exclusive Vertex";
+const seoDescription = "Estúdio digital em Caxias do Sul: sites premium, landing pages e redesign com design autoral, copy estratégico e foco em gerar contatos e orçamentos.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Exclusive Vertex | Posicionamento Digital de Alto Padrão" },
+      { title: seoTitle },
       {
         name: "description",
         content:
-          "Transformamos empresas comuns em referências absolutas. Sites premium com design exclusivo, copywriting estratégico e foco total em conversão de alto valor.",
+          seoDescription,
       },
-      { name: "keywords", content: "agência digital, site premium, posicionamento digital, design de elite, neuromarketing, caxias do sul, exclusive vertex" },
-      { property: "og:title", content: "Exclusive Vertex | Posicionamento Digital de Alto Padrão" },
+      { property: "og:title", content: seoTitle },
       {
         property: "og:description",
         content:
-          "Não entregamos apenas sites. Entregamos autoridade, desejo e resultados mensuráveis para marcas que não aceitam ser apenas mais uma.",
+          seoDescription,
       },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99337010-e42f-4bde-9a44-8ab7d3a239a2/id-preview-f4a7c83f--aa20e2c2-c2fb-4656-8e01-4a517037e1a5.lovable.app-1784727838130.png" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: seoTitle },
+      { name: "twitter:description", content: seoDescription },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://exclusivevertex.com.br/" },
     ],
@@ -44,12 +49,14 @@ export const Route = createFileRoute("/")({
           "@id": "https://exclusivevertex.com.br/#business",
           name: "Exclusive Vertex",
           url: "https://exclusivevertex.com.br/",
-          description:
-            "Agência digital premium da Serra Gaúcha especializada em sites institucionais, landing pages e posicionamento digital de alto padrão.",
-          telephone: "+555432144112",
+          description: seoDescription,
+          logo: new URL(siteLogo.url, "https://exclusivevertex.com.br/").href,
+          telephone: "+55 54 3214-4112",
+          email: "contato@exclusivevertex.com",
+          serviceType: ["criação de sites", "landing pages", "redesign de sites", "UI/UX", "SEO"],
           priceRange: "$$$",
           image: "https://exclusivevertex.com.br/vertex-favicon.png",
-          areaServed: { "@type": "Place", name: "Brasil" },
+          areaServed: { "@type": "Place", name: "Caxias do Sul e região" },
           address: {
             "@type": "PostalAddress",
             streetAddress: "Rua Marechal Floriano, 555, Sala 804 — Centro",
@@ -102,7 +109,8 @@ function Hero() {
       <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
         <header>
           <h1 className="vx-rise font-display text-[2.7rem] font-semibold leading-[1.05] tracking-[-0.035em] text-ink sm:text-[3.6rem] lg:text-[5.2rem]">
-            <span className="block">Sua empresa vista como</span>
+            <span className="sr-only">Sites premium em Caxias do Sul que posicionam sua empresa como líder de mercado</span>
+            <span aria-hidden="true" className="block">Sua empresa vista como</span>
             <WordCycle words={heroWords} className="mt-2 text-brand" />
           </h1>
         </header>

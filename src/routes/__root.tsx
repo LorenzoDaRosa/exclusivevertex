@@ -89,8 +89,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Estúdio digital que transforma empresas em referências. Sites, landing pages, redesign e experiências premium com design, estratégia e tecnologia." },
       { property: "og:description", content: "Estúdio digital que transforma empresas em referências. Sites, landing pages, redesign e experiências premium com design, estratégia e tecnologia." },
       { name: "twitter:description", content: "Estúdio digital que transforma empresas em referências. Sites, landing pages, redesign e experiências premium com design, estratégia e tecnologia." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99337010-e42f-4bde-9a44-8ab7d3a239a2/id-preview-f4a7c83f--aa20e2c2-c2fb-4656-8e01-4a517037e1a5.lovable.app-1784727838130.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99337010-e42f-4bde-9a44-8ab7d3a239a2/id-preview-f4a7c83f--aa20e2c2-c2fb-4656-8e01-4a517037e1a5.lovable.app-1784727838130.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
