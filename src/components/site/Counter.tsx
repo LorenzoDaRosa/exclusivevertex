@@ -14,7 +14,7 @@ export function Counter({
   decimals?: number;
 }) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     const node = ref.current;
@@ -33,6 +33,7 @@ export function Counter({
       (entries) => {
         if (!entries.some((e) => e.isIntersecting)) return;
         io.disconnect();
+        setValue(0);
         const tick = (t: number) => {
           if (!start) start = t;
           const p = Math.min((t - start) / duration, 1);

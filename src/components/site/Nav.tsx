@@ -62,7 +62,7 @@ export function Nav() {
           <Link to="/" aria-label="Exclusive Vertex" className="inline-flex">
             <img
               src={lockup.url}
-              alt="Exclusive Vertex Lockup"
+              alt="Logotipo da Exclusive Vertex"
               className={`h-10 w-auto object-contain sm:h-12 lg:h-14 transition-all duration-500 ${theme === 'dark' ? 'invert brightness-200' : ''}`}
               width="200"
               height="56"
@@ -113,6 +113,8 @@ export function Nav() {
           <img
             src={lockup.url}
             alt="Exclusive Vertex"
+            width={1347}
+            height={470}
             className={`h-10 w-auto object-contain sm:h-12 transition-all duration-500 ${theme === 'dark' ? 'invert brightness-200' : ''}`}
           />
           <button

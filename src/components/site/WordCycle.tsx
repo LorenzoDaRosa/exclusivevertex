@@ -19,14 +19,14 @@ export function WordCycle({
   }, [words.length, interval]);
 
   return (
-    <span className={`relative inline-block align-bottom ${className}`}>
+    <span aria-hidden="true" className={`relative inline-block align-bottom ${className}`}>
       <span className="invisible block" aria-hidden="true">
         {words.reduce((a, b) => (a.length >= b.length ? a : b))}
       </span>
       {words.map((w, idx) => (
         <span
           key={w}
-          aria-hidden={idx !== i}
+          aria-hidden="true"
           className="absolute inset-0 block whitespace-nowrap text-brand"
           style={{
             opacity: idx === i ? 1 : 0,

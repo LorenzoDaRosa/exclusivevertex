@@ -13,6 +13,8 @@ export function DeviceShowcase({ desktopImage, mobileImage, alt }: DeviceShowcas
             <img
               src={desktopImage}
               alt={`${alt} no computador`}
+              width={1600}
+              height={950}
               loading="lazy"
               decoding="async"
               className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.015]"
@@ -31,6 +33,8 @@ export function DeviceShowcase({ desktopImage, mobileImage, alt }: DeviceShowcas
             <img
               src={mobileImage}
               alt={`${alt} no celular`}
+              width={900}
+              height={1800}
               loading="lazy"
               decoding="async"
               className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
