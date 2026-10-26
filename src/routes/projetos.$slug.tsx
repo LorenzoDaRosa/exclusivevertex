@@ -26,6 +26,17 @@ const projectHeroImages: Record<string, string> = {
   "rs-recargas": rsRecargasHero.url,
 };
 
+const heroDimensions: Record<string, { width: number; height: number }> = {
+  "serra-seguros": { width: 1920, height: 1080 },
+  "daros-lunettes": { width: 1397, height: 933 },
+  meneseg: { width: 1187, height: 883 },
+  "rs-recargas": { width: 1131, height: 896 },
+};
+
+const logoDimensions: Record<string, { width: number; height: number }> = {
+  "serra-seguros": { width: 1080, height: 1350 },
+  "daros-lunettes": { width: 1024, height: 1024 },
+};
 
 export const Route = createFileRoute("/projetos/$slug")({
   loader: ({ params }) => {
@@ -51,9 +62,7 @@ export const Route = createFileRoute("/projetos/$slug")({
         { property: "og:description", content: loaderData.summary },
         { property: "og:type", content: "article" },
         { property: "og:url", content: `https://exclusivevertex.com.br/projetos/${params.slug}` },
-        { property: "og:image", content: projectHeroImages[loaderData.slug] || "" },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:image", content: projectHeroImages[loaderData.slug] || "" },
       ],
       links: [{ rel: "canonical", href: `https://exclusivevertex.com.br/projetos/${params.slug}` }],
       scripts: [
@@ -126,7 +135,7 @@ function ProjetoDetail() {
           <Reveal delay={80}>
             <div className="mt-14 flex items-center gap-6 border-y border-hairline py-8">
               <div className="flex h-20 w-32 items-center justify-center rounded-xl bg-white p-4 ring-1 ring-hairline">
-                <img src={logoUrl} alt={`${project.title} — logo`} className="max-h-full max-w-full object-contain" />
+                <img src={logoUrl} alt={`Logotipo da ${project.title}`} width={logoDimensions[project.slug]?.width} height={logoDimensions[project.slug]?.height} loading="lazy" decoding="async" className="max-h-full max-w-full object-contain" />
               </div>
               <div className="text-sm text-ink-muted max-w-[52ch]">
                 {isFromScratch
@@ -143,6 +152,8 @@ function ProjetoDetail() {
               <img
                 src={heroImage}
                 alt={`${project.title} — Interface do site premium`}
+                width={heroDimensions[project.slug]?.width}
+                height={heroDimensions[project.slug]?.height}
                 className="w-full h-auto block"
                 loading="eager"
                 decoding="async"
