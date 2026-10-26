@@ -2,7 +2,7 @@ import { describe, expect, test } from "bun:test";
 import { renderToStaticMarkup } from "react-dom/server";
 import { Counter } from "./Counter";
 
-const initialNumber = (to: number, suffix: string) =>
+const initialNumber = (to, suffix) =>
   Number.parseFloat(renderToStaticMarkup(<Counter to={to} suffix={suffix} />).replace(/<[^>]*>/g, ""));
 
 describe("counter initial server values", () => {
