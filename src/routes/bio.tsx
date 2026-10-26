@@ -52,6 +52,8 @@ function BioPage() {
               <img
                 src={iconLight.url}
                 alt="Exclusive Vertex"
+                width={391}
+                height={761}
                 className="size-12 object-contain"
                 loading="eager"
                 decoding="async"

@@ -15,6 +15,8 @@ export const Route = createFileRoute("/contato")({
       { property: "og:title", content: "Contato — Exclusive Vertex" },
       { property: "og:description", content: "Vamos conversar sobre o seu próximo projeto." },
       { property: "og:url", content: "https://exclusivevertex.com.br/contato" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/contato" }],
     scripts: [

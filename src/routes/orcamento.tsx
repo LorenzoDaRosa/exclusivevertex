@@ -15,6 +15,8 @@ export const Route = createFileRoute("/orcamento")({
       { property: "og:title", content: "Simulador de Projeto — Exclusive Vertex" },
       { property: "og:description", content: "Solicite orçamento personalizado para o seu projeto." },
       { property: "og:url", content: "https://exclusivevertex.com.br/orcamento" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/orcamento" }],
     scripts: [
