@@ -22,6 +22,8 @@ export const Route = createFileRoute("/projetos/")({
       { property: "og:title", content: "Projetos — Exclusive Vertex" },
       { property: "og:description", content: "Cases desenvolvidos pela Exclusive Vertex." },
       { property: "og:url", content: "https://exclusivevertex.com.br/projetos" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/projetos" }],
     scripts: [

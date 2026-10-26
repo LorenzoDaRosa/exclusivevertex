@@ -21,6 +21,8 @@ export const Route = createFileRoute("/servicos/$slug")({
         { property: "og:title", content: `${loaderData.title} — Exclusive Vertex` },
         { property: "og:description", content: loaderData.short },
         { property: "og:url", content: url },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [

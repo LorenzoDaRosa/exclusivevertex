@@ -17,6 +17,8 @@ export const Route = createFileRoute("/sobre")({
         content: "Posicionamento, princípios e forma de trabalho da Exclusive Vertex.",
       },
       { property: "og:url", content: "https://exclusivevertex.com.br/sobre" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://exclusivevertex.com.br/sobre" }],
     scripts: [
