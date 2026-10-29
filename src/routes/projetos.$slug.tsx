@@ -377,7 +377,9 @@ function ProjetoDetail() {
                 ? "Mais do que um novo site, a Daros passou a contar com uma plataforma editorial preparada para representar a experiência da boutique e apoiar seu processo de atendimento — com foco em posicionamento, cuidado, conversão e escalabilidade."
                 : isRsRecargas
                   ? "Mais do que um novo site, a RS Recargas passou a contar com uma vitrine digital que traduz 16 anos de experiência em autoridade, confiança e conversão — fortalecendo sua posição como referência em soluções de impressão e informática na Serra Gaúcha."
-                  : "Mais do que um novo site, a Serra passou a contar com uma plataforma preparada para representar a qualidade da empresa e apoiar seu processo comercial — com foco em experiência, credibilidade, conversão e escalabilidade."}
+                  : project.slug === "gentlemans-club"
+                    ? "Mais do que um novo site, a Gentleman's Club passou a contar com uma experiência digital à altura da sua marca — com agendamento online, presença premium e mais tempo para o que importa: atender bem."
+                    : "Mais do que um novo site, a Serra passou a contar com uma plataforma preparada para representar a qualidade da empresa e apoiar seu processo comercial — com foco em experiência, credibilidade, conversão e escalabilidade."}
             </p>
           </div>
         </Reveal>
