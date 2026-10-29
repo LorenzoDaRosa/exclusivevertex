@@ -350,7 +350,7 @@ export const projects: Project[] = [
       "Marca percebida como premium já no primeiro acesso",
       "Menos tempo gasto organizando a agenda",
     ],
-    status: "published",
+    status: "case",
   },
   {
     slug: "rs-recargas",
