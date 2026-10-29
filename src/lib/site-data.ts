@@ -317,6 +317,42 @@ export const projects: Project[] = [
     status: "case",
   },
   {
+    slug: "gentlemans-club",
+    title: "Gentleman's Club Barbearia",
+    category: "Barbearia · Estilo",
+    year: "2026",
+    tagline: "O lugar onde homens se transformam em cavalheiros — agora também no digital.",
+    summary:
+      "Site com agendamento online para a Gentleman's Club, barbearia em Caxias do Sul. Uma presença digital sofisticada que traduz a identidade clássica da marca e transforma visitantes em horários marcados.",
+    context:
+      "A Gentleman's Club tem uma identidade forte e clássica, mas dependia de mensagens manuais para organizar a agenda. Faltava um site que representasse o padrão da barbearia e permitisse ao cliente escolher serviço e horário sozinho.",
+    metrics: [
+      { value: "24h", label: "Agendamento online" },
+      { value: "3", label: "Passos para agendar" },
+      { value: "100%", label: "Responsivo" },
+      { value: "WhatsApp", label: "Contato direto" },
+    ],
+    problems: [
+      "Agenda organizada manualmente por mensagens",
+      "Identidade visual sem vitrine digital à altura",
+      "Serviços e preços pouco acessíveis ao cliente",
+    ],
+    solutions: [
+      "Sistema de agendamento online em 3 passos",
+      "Área “Meus agendamentos” para o cliente",
+      "Vitrine de serviços com preços e duração",
+      "Design escuro e dourado fiel à marca",
+    ],
+    gallery: [],
+    stack: ["React", "Agendamento online", "SEO local", "Integração WhatsApp"],
+    outcomes: [
+      "Clientes agendando sozinhos a qualquer hora",
+      "Marca percebida como premium já no primeiro acesso",
+      "Menos tempo gasto organizando a agenda",
+    ],
+    status: "published",
+  },
+  {
     slug: "rs-recargas",
     title: "RS Recargas e Informática",
     category: "Tecnologia · Impressão",
