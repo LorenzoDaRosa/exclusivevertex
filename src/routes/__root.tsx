@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/site/Nav";
 import { Footer } from "../components/site/Footer";
 import { CookieConsent } from "../components/site/CookieConsent";
+import { supabase } from "@/integrations/supabase/client";
 
 function NotFoundComponent() {
   return (
@@ -197,10 +198,21 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const bare = pathname === "/bio" || pathname === "/bio/";
+  const bare = pathname === "/bio" || pathname === "/bio/" || pathname === "/admin" || pathname.startsWith("/admin/");
 
   useEffect(() => {
+    const { data } = supabase.auth.onAuthStateChange((event) => {
+      if (event !== "SIGNED_IN" && event !== "SIGNED_OUT" && event !== "USER_UPDATED") return;
+      void router.invalidate();
+      if (event !== "SIGNED_OUT") void queryClient.invalidateQueries({ queryKey: ["vertex-admin"] });
+    });
+    return () => data.subscription.unsubscribe();
+  }, [router, queryClient]);
+
+  useEffect(() => {
+    if (pathname === "/admin" || pathname.startsWith("/admin/")) return;
     const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
     if (typeof w.gtag === "function") {
       w.gtag("event", "page_view", {
