@@ -16,3 +16,4 @@
 - Convert leads into clients through a locking, idempotent database function keyed by source lead to prevent duplicates.
 - Keep admin styles scoped and private screens outside the public navigation and sitemap to preserve the public brand.
 - Use a client-only pathless admin gate with /admin/login redirects, revalidated getUser, and a role check; server functions independently enforce the same role for every operation.
+- Keep the public home experience in scoped home components with one frame-batched, reversible scroll controller; render its own header/footer only at `/` so shared pages and private administration remain unchanged.

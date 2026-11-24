@@ -201,6 +201,7 @@ function RootComponent() {
   const router = useRouter();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const bare = pathname === "/bio" || pathname === "/bio/" || pathname === "/admin" || pathname.startsWith("/admin/");
+  const publicHome = pathname === "/";
 
   useEffect(() => {
     const { data } = supabase.auth.onAuthStateChange((event) => {
@@ -225,11 +226,11 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-surface text-ink font-sans">
-        {!bare && <Nav />}
+        {!bare && !publicHome && <Nav />}
         <main>
           <Outlet />
         </main>
-        {!bare && <Footer />}
+        {!bare && !publicHome && <Footer />}
       </div>
     </QueryClientProvider>
   );

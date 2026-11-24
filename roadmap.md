@@ -1,3 +1,9 @@
+# Redesign da home V8
+- [x] Adaptar conteúdo, abertura, projetos, café e formulário à V8 sem alterar outras páginas.
+- [x] Implementar contraste da frase, zoom do símbolo e sequências fixas reversíveis em computador e celular.
+- [x] Conferir imagens, mapa, formulário e sequências no Preview.
+- [ ] Publicar a nova home (aguarda revisão e autorização do usuário).
+
 # Área administrativa
 - [x] Ativar Cloud e criar tabelas vazias com RLS administrativa.
 - [x] Implementar login, autorização e saída segura.
