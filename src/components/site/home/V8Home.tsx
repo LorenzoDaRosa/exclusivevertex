@@ -84,6 +84,8 @@ export function V8Home() {
       <FloatingHeader home />
       <Hero />
       <ImmersiveStory />
+      <div className="home-shift" aria-hidden="true"><div className="home-shift-stage"><img className="home-shift-logo" src={symbol.url} alt="" width={391} height={761} /></div></div>
+      <Projects />
       <section className="home-story" aria-labelledby="home-story-title">
         <div className="home-statement"><div className="home-wrap">
           <h2 id="home-story-title" aria-label={storyPhrase}>
@@ -91,8 +93,6 @@ export function V8Home() {
           </h2>
         </div></div>
       </section>
-      <div className="home-shift" aria-hidden="true"><div className="home-shift-stage"><img className="home-shift-logo" src={symbol.url} alt="" width={391} height={761} /></div></div>
-      <Projects />
       <ScrollSequence id="services" className="home-services" title="O que a Vertex faz." panels={services.map((service) => ({ label: service.label, content: <><h3>{service.title}</h3><p>{service.text}</p></> }))} />
       <ScrollSequence id="comparison" className="home-comparison" title={<>Sem Vertex <span>× Com Vertex</span></>} panels={comparisons.map((item) => ({ label: item.label, content: <div className="home-pair"><div><h3>Sem Vertex</h3><p>{item.without}</p></div><div><h3>Com Vertex</h3><p>{item.with}</p></div></div> }))} />
       <ScrollSequence id="processo" className="home-process" title="Como a gente trabalha." panels={processSteps.map((step) => ({ label: step.label, content: <><h3>{step.title}</h3><p>{step.text}</p></> }))} />
