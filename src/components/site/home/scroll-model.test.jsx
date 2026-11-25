@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { sceneIndex, sceneStep, sceneTravel } from "./scroll-model";
+import { circleRadius, circleReveal, sceneIndex, sceneStep, sceneTravel } from "./scroll-model";
 
 describe("V8 reversible scroll sequences", () => {
   test("desktop advances through all five panels and returns on upward scrolling", () => {
@@ -13,5 +13,20 @@ describe("V8 reversible scroll sequences", () => {
   test("three process panels stay bounded before and after the sequence", () => {
     expect([-300, 0, 182, 364, 900].map((distance) => sceneIndex(distance, 182, 3))).toEqual([0, 0, 1, 2, 2]);
     expect(sceneTravel(182, 3)).toBe(464.09999999999997);
+  });
+});
+
+describe("scroll-controlled circular reveal", () => {
+  test("the first statement stays fully visible through 20 percent", () => {
+    expect(circleReveal(0)).toBe(0);
+    expect(circleReveal(0.2)).toBe(0);
+    expect(circleRadius(0.2, 390, 844)).toBe(0);
+  });
+  test("the circle covers every corner at 75 percent and holds until the end", () => {
+    expect(circleRadius(0.75, 390, 844)).toBe(Math.hypot(195, 422));
+    expect(circleRadius(1, 1280, 900)).toBe(Math.hypot(640, 450));
+  });
+  test("the same scroll position reveals the same circle in both directions", () => {
+    expect([0.2, 0.475, 0.75, 0.475, 0.2].map(circleReveal)).toEqual([0, 0.4999999999999999, 1, 0.4999999999999999, 0]);
   });
 });

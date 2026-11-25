@@ -1,44 +1,29 @@
 import { Link } from "@tanstack/react-router";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import symbol from "@/assets/vertex-icon-2.png.asset.json";
 import serra from "@/assets/serra/serra_v2_62.png.asset.json";
 import gentlemans from "@/assets/gentlemans/gentlemans-desktop.png.asset.json";
 import { ADDRESS, MAPS_EMBED_URL, MAPS_LINK } from "@/lib/location";
-import { waLink, waMessages } from "@/lib/whatsapp";
-import { comparisons, heroWords, processSteps, services, storyPhrase } from "./content";
+import { waLink } from "@/lib/whatsapp";
+import { FloatingHeader } from "@/components/site/FloatingHeader";
+import { comparisons, processSteps, services, storyPhrase } from "./content";
+import { HeroHeading } from "./HeroHeading";
+import { ImmersiveStory } from "./ImmersiveStory";
 import { ScrollSequence } from "./ScrollSequence";
 import { HomeForm } from "./HomeForm";
 import { useHomeMotion } from "./useHomeMotion";
 
 function Hero() {
-  const [active, setActive] = useState(0);
-  useEffect(() => {
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let timer: ReturnType<typeof setInterval> | undefined;
-    const configure = () => {
-      clearInterval(timer);
-      if (preference.matches) { setActive(0); return; }
-      timer = setInterval(() => setActive((index) => (index + 1) % heroWords.length), 2200);
-    };
-    configure();
-    preference.addEventListener("change", configure);
-    return () => { clearInterval(timer); preference.removeEventListener("change", configure); };
-  }, []);
   return (
     <section className="home-hero">
       <div className="home-wrap">
-        <h1 aria-label="Sites premium em Caxias do Sul que posicionam sua empresa como líder de mercado">
-          <span className="home-hero-prefix" aria-hidden="true">Sua empresa vista como</span>
-          <span className="home-hero-cycle" aria-hidden="true">
-            {heroWords.map((word, index) => <span key={word} className="home-hero-word" data-active={index === active ? "" : undefined}>{word}</span>)}
-          </span>
-        </h1>
+        <HeroHeading />
         <p>Pare de perder contratos para concorrentes visualmente inferiores. Construímos o ecossistema digital que valida seu preço e acelera sua decisão de venda.</p>
         <div className="home-actions">
-          <Button asChild className="home-button"><a href={waLink(waMessages.hero)} target="_blank" rel="noopener noreferrer">Quero um posicionamento premium</a></Button>
-          <Link to="/projetos" className="home-text-link">Ver Portfólio de Elite</Link>
+          <Button asChild className="home-button"><a href="#processo">Como funciona</a></Button>
+          <Button asChild variant="outline" className="home-button home-button-secondary"><a href="#projetos">Ver projetos entregues</a></Button>
         </div>
       </div>
     </section>
@@ -96,14 +81,9 @@ export function V8Home() {
   useHomeMotion(ref);
   return (
     <div className="vx-home" id="inicio" ref={ref}>
-      <header className="home-header">
-        <nav className="home-wrap home-nav" aria-label="Principal">
-          <a className="home-brand" href="#inicio"><img src={symbol.url} width={22} height={24} alt="" />EXCLUSIVE VERTEX</a>
-          <div className="home-nav-links"><a href="#projetos">Projetos</a><a href="#processo">Como funciona</a><a href="#cafe">Escritório</a></div>
-          <Button asChild className="home-button home-button-small"><a href="#contato">Falar com a Vertex</a></Button>
-        </nav>
-      </header>
+      <FloatingHeader home />
       <Hero />
+      <ImmersiveStory />
       <section className="home-story" aria-labelledby="home-story-title">
         <div className="home-statement"><div className="home-wrap">
           <h2 id="home-story-title" aria-label={storyPhrase}>

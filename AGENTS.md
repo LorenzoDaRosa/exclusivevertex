@@ -17,3 +17,6 @@
 - Keep admin styles scoped and private screens outside the public navigation and sitemap to preserve the public brand.
 - Use a client-only pathless admin gate with /admin/login redirects, revalidated getUser, and a role check; server functions independently enforce the same role for every operation.
 - Keep the public home experience in scoped home components with one frame-batched, reversible scroll controller; render its own header/footer only at `/` so shared pages and private administration remain unchanged.
+- Use one shared floating public header with semantic global theme tokens and a persisted manual theme hook; this keeps navigation and appearance consistent without touching the scoped admin design.
+- Keep the immersive circular reveal in the existing passive home scroll loop, with consecutive static sections under reduced motion; this preserves natural scrolling and avoids redundant animation engines.
+- Animate one hero expression with exit-before-entry, fit the active full line after fonts load, and reserve a fixed line height; this prevents overlap while retaining readable typography on narrow phones.

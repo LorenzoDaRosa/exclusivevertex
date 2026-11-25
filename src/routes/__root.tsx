@@ -162,10 +162,7 @@ function RootShell({ children }: { children: ReactNode }) {
               (function() {
                 try {
                   const theme = localStorage.getItem('vx-theme');
-                  const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (theme === 'dark' || (!theme && supportDarkMode)) {
-                    document.documentElement.classList.add('dark');
-                  }
+                   document.documentElement.classList.toggle('dark', theme === 'dark');
                 } catch (e) {}
               })();
             `,

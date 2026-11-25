@@ -1,5 +1,5 @@
 import { useEffect, type RefObject } from "react";
-import { clamp, sceneIndex, sceneStep, sceneTravel } from "./scroll-model";
+import { circleRadius, clamp, sceneIndex, sceneStep, sceneTravel } from "./scroll-model";
 
 /** One passive, frame-batched scroll loop, scoped to the public home only. */
 export function useHomeMotion(ref: RefObject<HTMLDivElement | null>) {
@@ -7,11 +7,14 @@ export function useHomeMotion(ref: RefObject<HTMLDivElement | null>) {
     const root = ref.current;
     if (!root) return;
     const header = root.querySelector<HTMLElement>(".home-header");
+    const immersion = root.querySelector<HTMLElement>(".home-immersion");
+    const immersionStage = root.querySelector<HTMLElement>(".home-immersion-stage");
+    const immersionSecond = root.querySelector<HTMLElement>(".home-immersion-second");
     const story = root.querySelector<HTMLElement>(".home-story");
     const shift = root.querySelector<HTMLElement>(".home-shift");
     const stage = root.querySelector<HTMLElement>(".home-shift-stage");
     const logo = root.querySelector<HTMLImageElement>(".home-shift-logo");
-    if (!header || !story || !shift || !stage || !logo) return;
+    if (!header || !immersion || !immersionStage || !immersionSecond || !story || !shift || !stage || !logo) return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const words = [...root.querySelectorAll<HTMLElement>(".home-story-word")];
     const reveals = [...root.querySelectorAll<HTMLElement>("[data-home-reveal]")];
@@ -41,15 +44,38 @@ export function useHomeMotion(ref: RefObject<HTMLDivElement | null>) {
 
     function draw() {
       frame = null;
-      if (preference.matches) return;
       const height = window.innerHeight;
       // Read all positions before writing animation values.
+      const immersionRect = immersion?.getBoundingClientRect();
+      const headerRect = header?.getBoundingClientRect();
+      const secondRect = immersionSecond?.getBoundingClientRect();
+      const stageRect = immersionStage?.getBoundingClientRect();
+      const stageHeight = immersionStage?.clientHeight ?? height;
+      const travel = (immersion?.offsetHeight ?? height) - stageHeight;
+      const circleProgress = clamp(-(immersionRect?.top ?? 0) / Math.max(1, travel));
+      const radius = circleRadius(circleProgress, window.innerWidth, stageHeight);
+      const headerMiddle = (headerRect?.top ?? 16) + (headerRect?.height ?? 64) / 2;
+      let tone = "auto";
+      if (preference.matches) {
+        if (immersionRect && headerMiddle >= immersionRect.top && headerMiddle < immersionRect.bottom) {
+          tone = secondRect && headerMiddle >= secondRect.top ? "dark" : "light";
+        }
+      } else if (immersionRect && headerMiddle >= immersionRect.top && headerMiddle < immersionRect.bottom) {
+        const circleCenter = (stageRect?.top ?? 0) + stageHeight / 2;
+        tone = radius > Math.abs(circleCenter - headerMiddle) ? "dark" : "light";
+      }
+      if (preference.matches) {
+        header?.setAttribute("data-section-tone", tone);
+        return;
+      }
       const reading = clamp((height * .39 - (story?.getBoundingClientRect().top ?? 0)) / (height * .53));
       const zoom = clamp((height * .22 - (shift?.getBoundingClientRect().top ?? 0)) / (height * .53));
       const positions = scenes.map((scene) => scene.section.getBoundingClientRect().top);
       const revealPositions = reveals.map((item) => item.getBoundingClientRect().top - (Number.parseFloat(item.style.getPropertyValue("--reveal-offset")) || 0));
       const cover = Math.max((stage?.clientWidth ?? 1) / (logo?.offsetWidth || 1), (stage?.clientHeight ?? 1) / (logo?.offsetHeight || 1));
       const fade = clamp((zoom - .72) / .24);
+      immersionSecond?.style.setProperty("--circle-radius", `${radius}px`);
+      if (header?.dataset['sectionTone'] !== tone) header?.setAttribute("data-section-tone", tone);
       words.forEach((word, index) => word.style.setProperty("--ink-level", `${clamp((reading * (words.length + 1) - index) / 1.55) * 100}%`));
       stage?.style.setProperty("--logo-scale", String(Math.pow(cover * 1.1, Math.min(zoom / .72, 1)) * (1 + fade * .2)));
       stage?.style.setProperty("--logo-opacity", String(1 - fade));
@@ -73,7 +99,8 @@ export function useHomeMotion(ref: RefObject<HTMLDivElement | null>) {
     }
 
     function fit() {
-      const nav = header?.offsetHeight ?? 72;
+      const nav = Math.ceil((header?.getBoundingClientRect().bottom ?? 80) + 12);
+      root?.style.setProperty("--home-nav", `${nav}px`);
       const available = window.innerHeight - nav;
       const step = sceneStep(window.innerWidth);
       root?.toggleAttribute("data-motion", !preference.matches);

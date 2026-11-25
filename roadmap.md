@@ -1,3 +1,9 @@
+# Refinamento visual e navegação
+- [x] Aplicar header flutuante, menu acessível e tema claro padrão com preferência manual persistente.
+- [x] Corrigir composição e alternância das expressões, fundo e botões da abertura.
+- [x] Adicionar revelação circular reversível, preservando demais sequências e conteúdo.
+- [x] Validar abertura em 320/375/390/430px e desktop em Chromium e WebKit, temas, menu, scroll, zoom, mapa e formulário; 21 testes aprovados.
+
 # Redesign da home V8
 - [x] Adaptar conteúdo, abertura, projetos, café e formulário à V8 sem alterar outras páginas.
 - [x] Implementar contraste da frase, zoom do símbolo e sequências fixas reversíveis em computador e celular.

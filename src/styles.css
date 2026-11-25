@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import "./components/admin/admin.css";
 @import "./components/site/home/home.css";
+@import "./components/site/floating-header.css";
 @source "../src";
 
 @custom-variant dark (&:is(.dark *));
@@ -54,30 +55,30 @@
   --brand: #1D63FF;
   --brand-hover: #1552D6;
   --brand-soft: #EAF2FF;
-  --surface: #FFFFFF;
-  --surface-2: #F8FAFC;
+  --surface: oklch(1.000000 0.000000 0.0000);
+  --surface-2: oklch(0.972949 0.002870 264.5420);
   --surface-3: #EEF2F7;
   --hairline: #E8EDF5;
-  --ink: #111827;
-  --ink-muted: #6B7280;
-  --ink-subtle: #9CA3AF;
+  --ink: oklch(0.191827 0.030803 274.5099);
+  --ink-muted: oklch(0.514437 0.022952 269.9639);
+  --ink-subtle: oklch(0.728013 0.021331 267.2262);
 
-  --background: #FFFFFF;
-  --foreground: #111827;
-  --card: #FFFFFF;
-  --card-foreground: #111827;
-  --popover: #FFFFFF;
-  --popover-foreground: #111827;
+  --background: oklch(1.000000 0.000000 0.0000);
+  --foreground: oklch(0.191827 0.030803 274.5099);
+  --card: oklch(1.000000 0.000000 0.0000);
+  --card-foreground: oklch(0.191827 0.030803 274.5099);
+  --popover: oklch(1.000000 0.000000 0.0000);
+  --popover-foreground: oklch(0.191827 0.030803 274.5099);
   --primary: #1D63FF;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F8FAFC;
-  --secondary-foreground: #111827;
-  --muted: #F8FAFC;
-  --muted-foreground: #6B7280;
+  --primary-foreground: oklch(1.000000 0.000000 0.0000);
+  --secondary: oklch(0.972949 0.002870 264.5420);
+  --secondary-foreground: oklch(0.191827 0.030803 274.5099);
+  --muted: oklch(0.972949 0.002870 264.5420);
+  --muted-foreground: oklch(0.514437 0.022952 269.9639);
   --accent: #1D63FF;
-  --accent-foreground: #FFFFFF;
+  --accent-foreground: oklch(1.000000 0.000000 0.0000);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: #FFFFFF;
+  --destructive-foreground: oklch(1.000000 0.000000 0.0000);
   --border: #E8EDF5;
   --input: #E8EDF5;
   --ring: #1D63FF;
@@ -86,24 +87,24 @@
 /* Dark Mode - Aplicado via classe .dark no HTML */
 html.dark {
   --brand-soft: #0F1B33;
-  --surface: #0B0F19;
-  --surface-2: #121826;
+  --surface: oklch(0.178649 0.021722 267.3809);
+  --surface-2: oklch(0.218643 0.024872 266.8566);
   --surface-3: #1B2436;
   --hairline: #232D42;
-  --ink: #F9FAFB;
-  --ink-muted: #9CA3AF;
-  --ink-subtle: #6B7280;
+  --ink: oklch(1.000000 0.000000 0.0000);
+  --ink-muted: oklch(0.728013 0.021331 267.2262);
+  --ink-subtle: oklch(0.514437 0.022952 269.9639);
   
-  --background: #0B0F19;
-  --foreground: #F9FAFB;
-  --card: #121826;
-  --card-foreground: #F9FAFB;
-  --popover: #121826;
-  --popover-foreground: #F9FAFB;
-  --secondary: #121826;
-  --secondary-foreground: #F9FAFB;
-  --muted: #121826;
-  --muted-foreground: #9CA3AF;
+  --background: oklch(0.178649 0.021722 267.3809);
+  --foreground: oklch(1.000000 0.000000 0.0000);
+  --card: oklch(0.218643 0.024872 266.8566);
+  --card-foreground: oklch(1.000000 0.000000 0.0000);
+  --popover: oklch(0.218643 0.024872 266.8566);
+  --popover-foreground: oklch(1.000000 0.000000 0.0000);
+  --secondary: oklch(0.218643 0.024872 266.8566);
+  --secondary-foreground: oklch(1.000000 0.000000 0.0000);
+  --muted: oklch(0.218643 0.024872 266.8566);
+  --muted-foreground: oklch(0.728013 0.021331 267.2262);
   --border: #232D42;
   --input: #232D42;
   
@@ -117,9 +118,9 @@ html.dark {
   --surface-2: #0B0D12;
   --surface-3: #14171F;
   --hairline: #23262E;
-  --ink: #FFFFFF;
+  --ink: oklch(1.000000 0.000000 0.0000);
   --ink-muted: #A1A7B3;
-  --ink-subtle: #6B7280;
+  --ink-subtle: oklch(0.514437 0.022952 269.9639);
   background-color: var(--surface);
   color: var(--ink);
   color-scheme: dark;

@@ -1,4 +1,4 @@
-export const heroWords = ["o Líder do Mercado", "uma Autoridade", "Referência", "Objeto de Desejo", "Premium"] as const;
+export const heroWords = ["Referência.", "Autoridade.", "A escolha certa.", "Uma marca premium."] as const;
 
 export const storyPhrase = "Quando alguém procura tua empresa, o que encontra?";
 

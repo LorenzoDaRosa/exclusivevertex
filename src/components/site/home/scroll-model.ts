@@ -15,3 +15,12 @@ export function sceneStep(width: number) {
 export function sceneTravel(step: number, count: number) {
   return step * (count - 0.45);
 }
+
+/** Hold the opening for 20%, reveal until 75%, then hold the second statement. */
+export function circleReveal(progress: number) {
+  return clamp((progress - 0.2) / 0.55);
+}
+
+export function circleRadius(progress: number, width: number, height: number) {
+  return circleReveal(progress) * Math.hypot(width / 2, height / 2);
+}
