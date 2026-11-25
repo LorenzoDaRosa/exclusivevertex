@@ -1,4 +1,5 @@
 # Refinamento visual e navegação
+- [x] Colocar a frase antes dos projetos, mover o zoom da logo para depois dos serviços e ampliar a logo completa no rodapé; conferido no computador e celular, em ambos os temas.
 - [x] Aplicar header flutuante, menu acessível e tema claro padrão com preferência manual persistente.
 - [x] Corrigir composição e alternância das expressões, fundo e botões da abertura.
 - [x] Adicionar revelação circular reversível, preservando demais sequências e conteúdo.

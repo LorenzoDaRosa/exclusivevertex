@@ -3,6 +3,7 @@ import { Fragment, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import symbol from "@/assets/vertex-icon-2.png.asset.json";
+import lockup from "@/assets/vertex-lockup.png.asset.json";
 import serra from "@/assets/serra/serra_v2_62.png.asset.json";
 import gentlemans from "@/assets/gentlemans/gentlemans-desktop.png.asset.json";
 import { ADDRESS, MAPS_EMBED_URL, MAPS_LINK } from "@/lib/location";
@@ -84,8 +85,6 @@ export function V8Home() {
       <FloatingHeader home />
       <Hero />
       <ImmersiveStory />
-      <div className="home-shift" aria-hidden="true"><div className="home-shift-stage"><img className="home-shift-logo" src={symbol.url} alt="" width={391} height={761} /></div></div>
-      <Projects />
       <section className="home-story" aria-labelledby="home-story-title">
         <div className="home-statement"><div className="home-wrap">
           <h2 id="home-story-title" aria-label={storyPhrase}>
@@ -93,12 +92,19 @@ export function V8Home() {
           </h2>
         </div></div>
       </section>
+      <Projects />
       <ScrollSequence id="services" className="home-services" title="O que a Vertex faz." panels={services.map((service) => ({ label: service.label, content: <><h3>{service.title}</h3><p>{service.text}</p></> }))} />
+      <div className="home-shift" aria-hidden="true"><div className="home-shift-stage"><img className="home-shift-logo" src={symbol.url} alt="" width={391} height={761} /></div></div>
       <ScrollSequence id="comparison" className="home-comparison" title={<>Sem Vertex <span>× Com Vertex</span></>} panels={comparisons.map((item) => ({ label: item.label, content: <div className="home-pair"><div><h3>Sem Vertex</h3><p>{item.without}</p></div><div><h3>Com Vertex</h3><p>{item.with}</p></div></div> }))} />
       <ScrollSequence id="processo" className="home-process" title="Como a gente trabalha." panels={processSteps.map((step) => ({ label: step.label, content: <><h3>{step.title}</h3><p>{step.text}</p></> }))} />
       <Coffee />
       <HomeForm />
-      <footer className="home-footer"><div className="home-wrap"><span>Exclusive Vertex · Caxias do Sul, RS</span><a href="https://instagram.com/exclusive.vertex" target="_blank" rel="noopener noreferrer">Instagram</a></div></footer>
+      <footer className="home-footer">
+        <div className="home-wrap"><span>Exclusive Vertex · Caxias do Sul, RS</span><a href="https://instagram.com/exclusive.vertex" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+        <a href="#inicio" className="home-footer-brand" aria-label="Exclusive Vertex — Voltar ao início">
+          <img src={lockup.url} alt="Exclusive Vertex" width={1347} height={470} loading="lazy" decoding="async" />
+        </a>
+      </footer>
     </div>
   );
 }

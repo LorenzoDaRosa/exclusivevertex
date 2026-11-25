@@ -131,6 +131,9 @@ html.dark .vx-home { --home-faded: oklch(0.36 0.012 260); }
 .vx-home .home-form .home-error { margin: 0; color: var(--destructive); font-size: 13px; }
 .vx-home .home-footer { border-top: 1px solid var(--home-line); color: var(--home-muted); font-size: 13px; }
 .vx-home .home-footer .home-wrap { display: flex; align-items: center; justify-content: space-between; gap: 13px; padding-block: 20px; }
+.vx-home .home-footer-brand { display: block; width: calc(100% - 40px); margin: 32px auto 0; padding-bottom: max(24px, env(safe-area-inset-bottom, 0px)); }
+.vx-home .home-footer-brand img { display: block; width: 100%; height: auto; aspect-ratio: 1347 / 470; object-fit: contain; }
+html.dark .vx-home .home-footer-brand img { filter: brightness(0) invert(1); }
 .vx-home[data-motion] [data-home-reveal] { opacity: var(--reveal, 1); translate: 0 var(--reveal-offset, 0px); }
 .vx-home[data-motion] [data-home-reveal]:focus-within { opacity: 1; translate: none; }
 @media (min-width: 1440px) { .vx-home h2 { font-size: 76px; } .vx-home .home-sequence h2 { font-size: 68px; } }
