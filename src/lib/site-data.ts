@@ -317,6 +317,90 @@ export const projects: Project[] = [
     status: "case",
   },
   {
+    slug: "espetinhos-do-pepe",
+    title: "Espetinhos do Pepê",
+    category: "Espetinhos · Cardápio digital",
+    year: "2026",
+    tagline: "O sabor da brasa em um cardápio digital que transforma escolha em pedido.",
+    summary:
+      "Cardápio digital para o Espetinhos do Pepê, em Caxias do Sul, com produtos organizados por categoria, carrinho, opções de retirada ou entrega e pedido finalizado diretamente pelo WhatsApp.",
+    context:
+      "O projeto precisava apresentar um cardápio extenso sem tornar a escolha cansativa, especialmente no celular. Também deveria conduzir o cliente da seleção dos espetinhos à revisão do pedido e ao contato com o Pepê, além de oferecer um caminho próprio para orçamentos de eventos.",
+    problems: [
+      "Organizar espetinhos, opções gourmet, doces e bebidas em uma navegação simples",
+      "Facilitar a escolha de quantidades e a revisão do pedido no celular",
+      "Estruturar as informações antes da conversa no WhatsApp",
+      "Criar um fluxo específico para solicitações de eventos",
+    ],
+    solutions: [
+      "Cardápio digital com categorias, busca, fotos, descrições e preços",
+      "Carrinho com quantidades, retirada ou entrega e forma de pagamento",
+      "Pedido preenchido automaticamente para revisão e envio no WhatsApp",
+      "Formulário de eventos com data, local e estimativa de convidados",
+    ],
+    quotationForms: [
+      {
+        name: "Espetinhos para eventos",
+        fields: ["Nome", "WhatsApp", "Tipo de evento", "Data prevista", "Convidados", "Cidade ou local", "Observações"],
+      },
+    ],
+    contentCategories: ["Espetinhos", "Espetinhos Gourmet", "Doces", "Bebidas", "Eventos"],
+    conversionGoals: [
+      "Montar um pedido",
+      "Enviar o pedido pelo WhatsApp",
+      "Solicitar orçamento para evento",
+      "Consultar localização e contato",
+    ],
+    gallery: [],
+    stack: ["React", "Cardápio digital", "Carrinho de pedidos", "Integração WhatsApp", "Design responsivo"],
+    outcomes: [
+      "Cardápio organizado por categorias e fácil de pesquisar",
+      "Pedido montado antes da conversa no WhatsApp",
+      "Orçamento de eventos com as informações essenciais",
+      "Experiência de compra adaptada ao celular",
+    ],
+    status: "case",
+  },
+  {
+    slug: "behappy-cookies",
+    title: "BeHappy Cookies",
+    category: "Cookies artesanais · Pedidos online",
+    year: "2026",
+    tagline: "Uma experiência digital tão acolhedora e desejável quanto os cookies da marca.",
+    summary:
+      "Site e cardápio online para a BeHappy Cookies, com apresentação dos sabores, seleção de quantidades, montagem do pedido e envio direto para o WhatsApp, além de páginas para eventos e para a história da marca.",
+    context:
+      "A BeHappy precisava reunir identidade, produtos e pedidos em uma experiência simples e próxima da marca. O projeto apresenta os cookies com fotos e descrições, destaca os sabores mais desejados e orienta o cliente desde a escolha até a combinação de retirada ou entrega pelo WhatsApp.",
+    problems: [
+      "Apresentar os sabores com informações claras e imagens que despertassem desejo",
+      "Simplificar a montagem do pedido sem depender de mensagens manuais",
+      "Dar visibilidade às encomendas para eventos e à história da marca",
+      "Manter toda a experiência fluida no celular",
+    ],
+    solutions: [
+      "Cardápio com fotos, descrições, preços e seleção de quantidades",
+      "Fluxo de pedido integrado ao WhatsApp",
+      "Área dedicada a casamentos, aniversários, empresas e outros eventos",
+      "Conteúdo institucional, dúvidas frequentes e integração com Instagram",
+    ],
+    contentCategories: ["Cookies artesanais", "Sabores", "Pedidos", "Eventos", "Nossa história"],
+    conversionGoals: [
+      "Conhecer os sabores",
+      "Montar e enviar um pedido",
+      "Solicitar cookies para eventos",
+      "Falar com a BeHappy pelo WhatsApp",
+    ],
+    gallery: [],
+    stack: ["React", "Cardápio digital", "Pedidos online", "Integração WhatsApp", "Design responsivo"],
+    outcomes: [
+      "Sabores apresentados em uma vitrine digital clara e atrativa",
+      "Pedido organizado antes do atendimento no WhatsApp",
+      "Encomendas para eventos com um caminho próprio de contato",
+      "Identidade acolhedora aplicada em todas as etapas da navegação",
+    ],
+    status: "case",
+  },
+  {
     slug: "gentlemans-club",
     title: "Gentleman's Club Barbearia",
     category: "Barbearia · Estilo",
@@ -993,13 +1077,13 @@ export const differentiators = [
  * Usado nas páginas /servicos/$slug para provar entrega com projetos publicados.
  */
 export const serviceCases: Record<string, string[]> = {
-  "sites-institucionais": ["serra-seguros", "rs-recargas", "meneseg", "daros-lunettes"],
+  "sites-institucionais": ["serra-seguros", "espetinhos-do-pepe", "behappy-cookies", "rs-recargas", "meneseg", "daros-lunettes"],
   "landing-pages": ["meneseg", "serra-seguros", "rs-recargas"],
   "redesign-de-sites": ["serra-seguros", "rs-recargas"],
-  "ui-ux-design": ["daros-lunettes", "serra-seguros", "rs-recargas"],
+  "ui-ux-design": ["espetinhos-do-pepe", "behappy-cookies", "daros-lunettes", "serra-seguros", "rs-recargas"],
   seo: ["serra-seguros", "daros-lunettes", "rs-recargas"],
-  "integracao-whatsapp": ["meneseg", "daros-lunettes", "serra-seguros", "rs-recargas"],
-  "formularios-inteligentes": ["meneseg", "daros-lunettes", "rs-recargas"],
+  "integracao-whatsapp": ["espetinhos-do-pepe", "behappy-cookies", "meneseg", "daros-lunettes", "serra-seguros", "rs-recargas"],
+  "formularios-inteligentes": ["espetinhos-do-pepe", "meneseg", "daros-lunettes", "rs-recargas"],
   "consultoria-digital": ["daros-lunettes", "meneseg", "rs-recargas"],
   "otimizacao-performance": ["serra-seguros", "rs-recargas"],
 };

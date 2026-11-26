@@ -1,3 +1,8 @@
+# Novos cases do portfólio
+- [x] Adicionar BeHappy Cookies e Espetinhos do Pepê com imagens reais, páginas de case e links.
+- [x] Ordenar o portfólio com Serra Seguros e Espetinhos do Pepê primeiro.
+- [x] Conferir os cinco projetos, links, sitemap e páginas no computador e no celular; 21 testes aprovados.
+
 # Refinamento visual e navegação
 - [x] Restaurar o título em três linhas com tipografia estável, centralizar visualmente a logo do rodapé sem mudar seu tamanho e retirar o aviso de cookies; conferido em Chromium e WebKit em 320/375/393/430px e desktop.
 - [x] Colocar a frase antes dos projetos, mover o zoom da logo para depois dos serviços e ampliar a logo completa no rodapé; conferido no computador e celular, em ambos os temas.

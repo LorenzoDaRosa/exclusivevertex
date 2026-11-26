@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import symbol from "@/assets/vertex-icon-2.png.asset.json";
 import lockup from "@/assets/vertex-lockup.png.asset.json";
 import serra from "@/assets/serra/serra_v2_62.png.asset.json";
-import gentlemans from "@/assets/gentlemans/gentlemans-desktop.png.asset.json";
+import espetinhos from "@/assets/espetinhos/espetinhos-desktop.png.asset.json";
 import { ADDRESS, MAPS_EMBED_URL, MAPS_LINK } from "@/lib/location";
 import { waLink } from "@/lib/whatsapp";
 import { FloatingHeader } from "@/components/site/FloatingHeader";
@@ -34,7 +34,7 @@ function Hero() {
 function Projects() {
   const cases = [
     { title: "Serra Seguros e Consórcios", image: serra.url, href: "https://www.serraseguros.com.br/", text: "Seguros e consórcios organizados por tipo, com formulários que ajudam o cliente a pedir cotação." },
-    { title: "Gentleman’s Club Barbearia", image: gentlemans.url, href: "https://barbeariagentlemansclub.com/", text: "Um site que apresenta a barbearia, seus serviços e o caminho pra agendar um horário." },
+    { title: "Espetinhos do Pepê", image: espetinhos.url, href: "https://espetinhosdopepe.com/", text: "Cardápio digital com fotos, preços e carrinho. O cliente monta o pedido e envia tudo pronto pelo WhatsApp." },
   ];
   return (
     <section id="projetos" className="home-projects" aria-labelledby="projects-title">

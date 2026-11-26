@@ -14,6 +14,8 @@ import menesegHero from "@/assets/meneseg/meneseg_capa.png.asset.json";
 
 import rsRecargasHero from "@/assets/rs-recargas/rs-recargas-desktop.png.asset.json";
 import gentlemansHero from "@/assets/gentlemans/gentlemans-desktop.png.asset.json";
+import espetinhosHero from "@/assets/espetinhos/espetinhos-desktop.png.asset.json";
+import beHappyHero from "@/assets/be-happy/be-happy-desktop.png.asset.json";
 
 const projectLogos: Record<string, string> = {
   "serra-seguros": serraLogo.url,
@@ -26,6 +28,8 @@ const projectHeroImages: Record<string, string> = {
   meneseg: menesegHero.url,
   "rs-recargas": rsRecargasHero.url,
   "gentlemans-club": gentlemansHero.url,
+  "espetinhos-do-pepe": espetinhosHero.url,
+  "behappy-cookies": beHappyHero.url,
 };
 
 const heroDimensions: Record<string, { width: number; height: number }> = {
@@ -34,6 +38,8 @@ const heroDimensions: Record<string, { width: number; height: number }> = {
   meneseg: { width: 1187, height: 883 },
   "rs-recargas": { width: 1131, height: 896 },
   "gentlemans-club": { width: 1440, height: 900 },
+  "espetinhos-do-pepe": { width: 1440, height: 1000 },
+  "behappy-cookies": { width: 1440, height: 1000 },
 };
 
 const logoDimensions: Record<string, { width: number; height: number }> = {
@@ -56,6 +62,8 @@ export const Route = createFileRoute("/projetos/$slug")({
         ],
       };
     }
+    const heroImage = projectHeroImages[loaderData.slug];
+    const socialImage = heroImage ? new URL(heroImage, "https://exclusivevertex.com.br").toString() : undefined;
     return {
       meta: [
         { title: `${loaderData.title} | Case de Sucesso — Exclusive Vertex` },
@@ -66,6 +74,10 @@ export const Route = createFileRoute("/projetos/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: `https://exclusivevertex.com.br/projetos/${params.slug}` },
         { name: "twitter:card", content: "summary_large_image" },
+        ...(socialImage ? [
+          { property: "og:image", content: socialImage },
+          { name: "twitter:image", content: socialImage },
+        ] : []),
       ],
       links: [{ rel: "canonical", href: `https://exclusivevertex.com.br/projetos/${params.slug}` }],
       scripts: [
@@ -79,7 +91,7 @@ export const Route = createFileRoute("/projetos/$slug")({
             url: `https://exclusivevertex.com.br/projetos/${params.slug}`,
             inLanguage: "pt-BR",
             genre: loaderData.category,
-            image: projectHeroImages[loaderData.slug] || undefined,
+            image: socialImage,
             creator: { "@id": "https://exclusivevertex.com.br/#organization" },
           }),
         },
@@ -379,7 +391,11 @@ function ProjetoDetail() {
                   ? "Mais do que um novo site, a RS Recargas passou a contar com uma vitrine digital que traduz 16 anos de experiência em autoridade, confiança e conversão — fortalecendo sua posição como referência em soluções de impressão e informática na Serra Gaúcha."
                   : project.slug === "gentlemans-club"
                     ? "Mais do que um novo site, a Gentleman's Club passou a contar com uma experiência digital à altura da sua marca — com agendamento online, presença premium e mais tempo para o que importa: atender bem."
-                    : "Mais do que um novo site, a Serra passou a contar com uma plataforma preparada para representar a qualidade da empresa e apoiar seu processo comercial — com foco em experiência, credibilidade, conversão e escalabilidade."}
+                    : project.slug === "espetinhos-do-pepe"
+                      ? "O Espetinhos do Pepê passou a contar com um cardápio digital que organiza a escolha, simplifica a montagem do pedido e leva o cliente até o WhatsApp com as informações prontas para confirmar."
+                      : project.slug === "behappy-cookies"
+                        ? "A BeHappy passou a reunir sabores, história, eventos e pedidos em uma experiência digital acolhedora, com a identidade da marca presente do primeiro acesso até a conversa no WhatsApp."
+                        : "Mais do que um novo site, a Serra passou a contar com uma plataforma preparada para representar a qualidade da empresa e apoiar seu processo comercial — com foco em experiência, credibilidade, conversão e escalabilidade."}
             </p>
           </div>
         </Reveal>
